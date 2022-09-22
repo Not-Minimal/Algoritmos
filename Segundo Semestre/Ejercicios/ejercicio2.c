@@ -1,8 +1,5 @@
 #include<stdio.h>
-
-
 int x1, x2, y1, y2, resultado;
-
 int main()
 {
     printf("Ingrese 4 puntos del plano cartesiano, tales que sea: x1, x2, y1 e y2");
