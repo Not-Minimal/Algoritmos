@@ -1,10 +1,7 @@
 // Sirve para documentar o comentar en c
-
 #include<stdio.h>
 // Definicion de Variables Globales
 int a, b, s;
-
-
 int main(){
     //Definicion de Variables locales
     printf("Ingrese valores a sumar: ");
