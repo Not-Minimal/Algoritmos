@@ -1,4 +1,4 @@
-//Calcular Potencia o Factorial segun X
+//Calcular Potencia o Factorial segun par o impar
 #include<stdio.h>
 
 int x, b, a, pot, i;
