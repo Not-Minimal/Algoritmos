@@ -19,7 +19,6 @@ int main(int argc, char const *argv[])
             {
                pot = pot*(x-1);
             }
-           
        } 
        else
        {
@@ -28,7 +27,6 @@ int main(int argc, char const *argv[])
         {
             a = (a*i);
         }
-       
        }   
     }
     printf("La potencia es: %d", pot);
