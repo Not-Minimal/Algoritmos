@@ -33,7 +33,7 @@ int main(int argc, char const *argv[])
                 printf("\n");
             }
             
-            
+            //No muestra los 5 resultados :(
         }
     }
     return 0;
