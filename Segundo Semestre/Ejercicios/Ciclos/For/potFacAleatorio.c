@@ -3,38 +3,43 @@
 #include<time.h>
 #include<stdlib.h>
 
-int x,b,n,f, pot, i, j;
+int x,b,n,f, potencia, i, j, exponente, bandera;
 int main(int argc, char const *argv[])
 {
     printf("Ingrese el tamaño del arreglo: ");
     scanf("%d", &n);
     int v[n];
     srand(time(NULL));
-    for (j = 1; j <= n; j++)
+    for (j = 0; j < n; j++)
     {
-        v[i] = rand() % 11 + 15;
-
-        if (v[i] % 2 == 0)
+        v[j] = rand() % 11+10;
+        if (v[j] % 2 == 0)
         {
-            for (i = 1; i <= (n+3); i++)
+            potencia = 1;
+            exponente = (n+3);
+            for (i = 1; i <= exponente; i++)
             {
-                pot = pot*v[i];
-                printf("La potencia de %d es : %d", v[i], (2*pot));
-                printf("\n");
+                potencia = potencia*v[i];
             }
-        } 
-        else
+            bandera = 0;
+        } else if (v[j] % 2 == 1)
         {
             f = 1;
-            for (i = 1; i < (n - 1); i++)
+            for (i = 1; i < n-1; i++)
             {
                 f = f*i;
-                printf("El factorial de %d es : %d", v[i], f);
-                printf("\n");
             }
-            
-            //No muestra los 5 resultados :(
+            bandera = 1;
         }
     }
+    if (bandera == 0)
+    {
+        printf("La potencia es: %d", potencia);
+        printf("\n");
+    } else
+    {
+       printf("El factorial de %d! es %d:",n-2, f);
+    printf("\n");
+    }    
     return 0;
 }
