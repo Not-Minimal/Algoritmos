@@ -1,5 +1,4 @@
 //Calcular o aproximar la raíz cuadrada de un número ingresado por teclado, sin funciones.
-
 #include <stdio.h>
 
 double valorAbsoluto(double numero)
@@ -10,7 +9,6 @@ double valorAbsoluto(double numero)
     }
     return numero;
 }
-
 double raizCuadrada(int numero)
 {
     double margen = 0.000001;
