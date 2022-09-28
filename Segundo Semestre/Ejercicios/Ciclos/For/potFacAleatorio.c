@@ -12,34 +12,33 @@ int main(int argc, char const *argv[])
     srand(time(NULL));
     for (j = 0; j < n; j++)
     {
-        v[j] = i+1;
-    }
-    for (i = 1; i < n; i++)
+        v[j] = j+1;
+    }//todo bem
+    for (i = 0; i < n; i++)
     {
         if (v[i] % 2 == 0)
         {
             potencia = 1;
             exponente = (n+3);
-            for (i = 1; i < exponente; i++)
+            for (j = 1; j <= v[i]; j++)
             {
-                potencia = potencia*v[j];
-                printf("La potencia de %d elavado a %d es: %d", v[j], i, potencia);
-                printf("\n");
+                potencia = potencia*v[i];
             }
-        } 
-    }
-    for (i = 1; i < n; i++)
-    {
-        if (!(v[i] % 2 == 0))
+            printf("La potencia de %d elevado a %d es: %d \n", v[i], j-1, potencia);
+        } else
         {
-            f = 1;
-            for (i = 1; i < n; i++)
             {
-                f = f*i;
-                printf("El factorial de %d! es: %d",i, f);
-                printf("\n");
+            f = 1;
+            for (j = 1; j <= v[i]; j++)
+            {
+                f = f*j;
+            }
+            printf("\nEl factorial de %d! es: %d \n",j-1, f);
             }
         }
+        
     }
+ 
+   
     return 0;
 }
