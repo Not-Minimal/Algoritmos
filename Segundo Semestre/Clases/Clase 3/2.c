@@ -30,7 +30,6 @@ int i, j, arregloA,arregloB,arregloC;
                 printf("Arreglo B: ");
 			    printf("%d", arregloA[i]);
 			    printf("\n");
-                
 			}
             printf("Arreglo C: ");
 			printf("%d + %d", arregloA[i], arregloA[i-1]);
