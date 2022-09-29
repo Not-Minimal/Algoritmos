@@ -1,18 +1,30 @@
 #include <stdio.h>
 
+int i, j, arregloA,arregloB,arregloC;
+
 	int main() /* Rellenamos una matriz */
 	{
-		int x,i,numeros[3][4];
-		for (x=0;x<3;x++)
-			for (i=0;i<4;i++)
-            {
-                scanf("%d",&numeros[x][i]);
-            }
-		for (x=0;x<3;x++)
-			for (i=0;i<4;i++)
-            {
-                printf("%d",numeros[x][i]);
-                printf("\n");
-            }
+		int arregloA[10], arregloB[10], arregloC[10];
+
+		for (i = 0; i < 10; i++)
+		{
+			if (i % 2 == 0)
+			{
+				arregloA[i] = i;
+			}
+			else if (i % 2 == 1)
+			{
+				arregloB[i] = i;
+			}
+		}
+			printf("Arreglo A: ");
+			printf("%d", arregloA);
+			printf("\n");
+			printf("Arreglo B: ");
+			printf("%d", arregloB);
+			printf("\n");
+			printf("Arreglo C: ");
+			printf("%d + %d", arregloA, arregloB);
+			printf("\n");
 	return 0;
 	}
