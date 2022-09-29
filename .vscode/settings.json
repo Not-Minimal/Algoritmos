@@ -1,6 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
-        "PrimeraClase.C": "cpp"
+        "PrimeraClase.C": "cpp",
+        "stdio.h": "c"
     }
 }
