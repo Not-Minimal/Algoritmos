@@ -10,22 +10,23 @@ int main(int argc, char const *argv[])
     scanf("%d", &n);
     filas = n;
     columnas = n;
-    int matriz[filas][columnas];
+    char matriz[filas][columnas];
     srand(time(NULL));
     for (i = 0; i < filas; i++) //Relleno el arreglo desde la posicion 0 hasta n-1
     {
         for (j = 0; j < columnas; j++)
         {
-           matriz[i][j] = rand() % 110;
+           matriz[i][j] = rand() % 26 + 65;
         }        
     }
     for (i = 0; i < filas; i++) //Relleno el arreglo desde la posicion 0 hasta n-1
     {
         for (j = 0; j < columnas; j++)
         {
-           printf("%d",matriz[i][j]);
-           printf("\n");
-        }        
+           printf("%c  ",matriz[i][j]);
+           
+        }   
+        printf("\n");     
     }
     return 0;
 }
