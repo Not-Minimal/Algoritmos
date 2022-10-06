@@ -4,11 +4,11 @@ double millas, kilometros;
 
 int main(int argc, char const *argv[])
 {
-    printf("Ingrese la temperatura en grados celsius: ");
-    scanf("%lf", &pulgadas);
+    printf("Ingrese las millas por hora: ");
+    scanf("%lf", &millas);
 
-    milimetros = (pulgadas*25.4);
-    printf("%.2lf° Pulgadas son equivalentes a %.1lf °mm", pulgadas, milimetros);
+    kilometros = (millas*1.6093);
+    printf("%.2lf° M/H son equivalentes a %.3lf °KM/H", millas, kilometros);
     printf("\n");
     return 0;
 }
