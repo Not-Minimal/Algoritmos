@@ -1,14 +1,25 @@
 #include<stdio.h>
 
-double millas, kilometros;
+int notas, suma, i;
+double promedio;
+
 
 int main(int argc, char const *argv[])
 {
-    printf("Ingrese las millas por hora: ");
-    scanf("%lf", &millas);
+    printf("Ingrese la cantidad de notas: ");
+    scanf("%d", &notas);
+    int arreglo[notas];
+    
+    suma = 0;
+    for (i = 0; i < notas; i++)
+    {
+        printf("Ingrese la Nota N°%d: ", i+1);
+        scanf("%d", &arreglo[i]);
+        suma = suma + arreglo[i];
+    }
 
-    kilometros = (millas*1.6093);
-    printf("%.2lf° M/H son equivalentes a %.3lf °KM/H", millas, kilometros);
+    promedio = suma/notas;
+    printf("El promedio es: %.2lf", promedio);
     printf("\n");
-    return 0;
+    
 }
