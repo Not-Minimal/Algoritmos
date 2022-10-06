@@ -4,7 +4,7 @@ double pulgadas, milimetros;
 
 int main(int argc, char const *argv[])
 {
-    printf("Ingrese la temperatura en grados celsius: ");
+    printf("Ingrese las pulgadas: ");
     scanf("%lf", &pulgadas);
 
     milimetros = (pulgadas*25.4);
