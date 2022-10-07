@@ -12,6 +12,3 @@ main()
     tiempo = ((double) (fin-inicio)) /CLOCKS_PER_SEC;
     printf("\nTiempo de espera de ingreso de la variable: %f", tiempo);
 }
-
-
-Double Aguanta muchos mas numeros: Intervalo muy grande
