@@ -1,7 +1,6 @@
 #include <stdio.h>// printf
 #include <string.h>// strcmp
 #include <math.h>// floor
-#define MAXIMA_LONGITUD_CADENA 50
 
 int busquedaBinariaRecursiva(int arregloA[], int busqueda[], int izquierda, int derecha);
 
