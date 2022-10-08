@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+int i, tamaño;
 // Funcion para buscar un numero dentro del arreglo [A].
 int buscarNumero(int arreglo[], int tamaño, int numero)
 {
@@ -27,7 +27,7 @@ int main()
     printf("Ingrese el tamaño del arreglo: ");
     scanf("%d", &n);
     double tiempo;
-    int tamaño = n;
+    tamaño = n;
     int arreglo[tamaño];
     clock_t inicio, fin; //Permite crear valores de inicio y fin para calcular el tiempo de ejecución.
 
@@ -51,19 +51,19 @@ int main()
             if (buscarNumero(arreglo, tamaño, aleatorio))
             {
                 aleatorio = ((rand() % 30000) + 1); //Volvemos a ocupar numeros random pero que ya no estan en el arreglo A.
-                veces = veces + 1; //Aumentamos el contador veces para verificar cuantas veces se repite.
+                veces += 1; //Aumentamos el contador veces para verificar cuantas veces se repite.
             }
             else
             {
                 arreglo[i] = aleatorio; //Llenamos el arreglo en posicion i con valor aleatorio gracias a rand()
                 if (veces > max_veces)
-                {
                     max_veces = veces;
-                    veces = 0;
-                    break;
-                }
+                veces = 0;
+                break;
             }
         }
+    }
+    
         //Salimos del ciclo.
         //Para saber cuanto tiempo toma generar un arreglo con valores no repetidos.
         fin = clock();
@@ -81,7 +81,19 @@ int main()
         }
         
         //Ordenamos el arreglo segun metodo que deseemos.
-
+        for (int i = 0; i < tamaño; i++)
+        {
+            for (int j = i + 1; i < tamaño; j++)
+            {
+                if (arreglo[j] < arreglo[i])
+                {
+                    int auxiliar = arreglo[i];
+                    arreglo[j] = arreglo[j];
+                    arreglo[j] = auxiliar;
+                }
+            }
+        }
+        
         //Calculamos el tiempo que toma ordenar el arreglo de manera creciente.
         fin = clock();
         tiempo = (((double) (fin - inicio))/CLOCKS_PER_SEC);
@@ -101,6 +113,6 @@ int main()
             printf("%d\t", arreglo2[i]);
         }
         printf("\n");
-    }
+    
     return 0;
 }
