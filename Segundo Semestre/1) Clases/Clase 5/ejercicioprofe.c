@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int estaEnArreglo(int arr[], int size, int numero)
+int search(int arr[], int size, int numero)
 {
     for (int i = 0; i < size; i++)
     {
@@ -42,7 +42,7 @@ int main()
         while (1)
         {
             // se comprueba que no esté repetido en el arreglo actual.
-            if (estaEnArreglo(arr, size, aleatorio))
+            if (search(arr, size, aleatorio))
             {
                 aleatorio = (rand() % 30000) + 1;
                 veces += 1;
