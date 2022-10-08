@@ -75,20 +75,21 @@ int main()
 
         //Creamos el arreglo B en base al anterior.
         int arreglo2[tamaño];
-        for (i = 0; i < tamaño; i++)
+        for (int i = 0; i < tamaño; i++)
         {
             arreglo2[i] = arreglo[i];
         }
         
         //Ordenamos el arreglo segun metodo que deseemos.
+        inicio = clock();
         for (int i = 0; i < tamaño; i++)
         {
-            for (int j = i + 1; i < tamaño; j++)
+            for (int j = i + 1; j < tamaño; j++)
             {
                 if (arreglo[j] < arreglo[i])
                 {
                     int auxiliar = arreglo[i];
-                    arreglo[j] = arreglo[j];
+                    arreglo[i] = arreglo[j];
                     arreglo[j] = auxiliar;
                 }
             }
