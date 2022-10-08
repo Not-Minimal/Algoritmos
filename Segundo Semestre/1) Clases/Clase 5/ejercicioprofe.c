@@ -62,10 +62,10 @@ int main()
 printf("\nTIEMPO DE ESPERA generar valores aleatorios no repetidos: %f\n",tiempo);
 printf("\n max veces: %d\n", max_veces);
 
-int arr2[size];
+int arrB[size];
 for (int i = 0; i < size; i++)
     {
-        arr2[i] = arr[i];
+        arrB[i] = arr[i];
     }
 
 //Este algoritmo se llama "Bubble Sort" para ordenar un arreglo
@@ -97,7 +97,7 @@ printf("\n");
 
 for(int i = 0; i < 10; i++)
     {
-        printf("%d\t", arr2[i]);
+        printf("%d\t", arrB[i]);
     }
     printf("\n");
 return 0;
