@@ -89,13 +89,13 @@ fin = clock();
 tiempo = ((double) (fin-inicio))/CLOCKS_PER_SEC;
 printf("\nTIEMPO DE ESPERA ordenar arreglo 1: %f\n",tiempo);
 //Imprimir
-for(int i = 0; i < size; i++)
+for(int i = 0; i < 10; i++)
     {
         printf("%d\t", arr[i]);
     }
 printf("\n");
 
-for(int i = 0; i < size; i++)
+for(int i = 0; i < 10; i++)
     {
         printf("%d\t", arr2[i]);
     }
