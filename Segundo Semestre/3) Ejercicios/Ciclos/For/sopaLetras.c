@@ -11,6 +11,7 @@ int main(int argc, char const *argv[])
     clock_t inicio, fin;
     double tiempo;
 
+    system ("Clear");
     printf("Ingrese el tamaño de la Sopa de Letras ");
     scanf("%d", &n);
     filas = n;
@@ -43,22 +44,19 @@ int main(int argc, char const *argv[])
     
     scanf("%d", &opcion);
 
+    inicio = clock();
     if (opcion == 1)
     {
-        /* code */
+        
     } 
     else if (opcion == 2)
     {
-        /* code */
+        
     } 
-    else
-    {
-        printf("La opcion ingresada no es valida :(");
-        printf("\n");
-    }
-    
-    
-    
+
+    fin = clock();
+        tiempo = ((double) (fin - inicio)) / CLOCKS_PER_SEC;
+        printf("El tiempo que tomo en encontrar la palabra es de: %f", tiempo);
     
     return 0;
 }
