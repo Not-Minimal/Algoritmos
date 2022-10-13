@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+
 int n, i, j, filas, columnas, opcion;
 int main(int argc, char const *argv[])
 {
@@ -9,6 +10,7 @@ int main(int argc, char const *argv[])
     time_t t;
     clock_t inicio, fin;
     double tiempo;
+
     do
     {
         printf("Opciones: ");
@@ -23,6 +25,7 @@ int main(int argc, char const *argv[])
         printf("\n");
         printf("Ingrese la opcion: ");
         scanf("%d", &opcion);
+
         switch (opcion)
         {
         case 1:
@@ -49,17 +52,20 @@ int main(int argc, char const *argv[])
                 }
                 printf("\n");
             }
+
             printf("Presione 1 si encontro la palabra: ");
             scanf("%d", &opcion);
             if (opcion)
             {
                 fin = clock();
                 tiempo = ((double)(fin - inicio)) / CLOCKS_PER_SEC;
-                printf("El tiempo que tomo en encontrar la palabra es de: %.2f", tiempo * 10000);
+                printf("El tiempo que tomo en encontrar la palabra es de: %.2f", tiempo*10000);
                 printf("\n");
             }
             break;
         }
+
     } while (opcion < 1 && opcion > 4);
+
     return 0;
 }
