@@ -7,7 +7,7 @@ int n, i, j, filas, columnas, opcion;
 int main(int argc, char const *argv[])
 {
     // Variables Tiempo
-    time_t time;
+    time_t t;
     clock_t inicio, fin;
     double tiempo;
 
