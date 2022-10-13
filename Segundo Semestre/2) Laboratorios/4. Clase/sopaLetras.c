@@ -7,8 +7,8 @@ int n, i, j, filas, columnas, opcion;
 int main(int argc, char const *argv[])
 {
     // Variables Tiempo
-    time_t t;
-    clock_t inicio, fin;
+    time_t time;
+    clock_t inicio(void), fin(void);
     double tiempo;
 
     do
@@ -59,7 +59,7 @@ int main(int argc, char const *argv[])
             {
                 fin = clock();
                 tiempo = ((double)(fin - inicio)) / CLOCKS_PER_SEC;
-                printf("El tiempo que tomo en encontrar la palabra es de: %.2f", tiempo*10000);
+                printf("El tiempo que tomo en encontrar la palabra es de: %.2f", tiempo);
                 printf("\n");
             }
             break;
