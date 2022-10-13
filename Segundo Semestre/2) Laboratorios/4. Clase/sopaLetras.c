@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
 {
     // Variables Tiempo
     time_t time;
-    clock_t inicio(void), fin(void);
+    clock_t inicio, fin;
     double tiempo;
 
     do
