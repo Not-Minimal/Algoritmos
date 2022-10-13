@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
         switch (opcion)
         {
         case 1:
-            inicio = clock();
+            
             system("Clear");
             printf("Ingrese el tamaño de la Sopa de Letras ");
             scanf("%d", &n);
@@ -34,6 +34,7 @@ int main(int argc, char const *argv[])
             columnas = n;
             char matriz[filas][columnas];
             srand(time(NULL));
+            inicio = clock();
             for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
             {
                 for (j = 0; j < columnas; j++)
