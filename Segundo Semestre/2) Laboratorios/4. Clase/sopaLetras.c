@@ -1,4 +1,7 @@
-// Edades aleatorias y mayor o menor de edad del rango.
+/* Generar matriz cuadrada y determinar cuanto toma al usuario hasta encontrar la palabra.
+Solo tengo hecha la situacion donde se encuentra la palabra pero que no busca realmente
+dentro de la matriz.
+*/
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -59,7 +62,7 @@ int main(int argc, char const *argv[])
             {
                 fin = clock();
                 tiempo = ((double)(fin - inicio)) / CLOCKS_PER_SEC;
-                printf("El tiempo que tomo en encontrar la palabra es de: %.2f", tiempo);
+                printf("El tiempo que tomo en encontrar la palabra es de: %.2f", tiempo); //No indica bien el tiempo.
                 printf("\n");
             }
             break;
