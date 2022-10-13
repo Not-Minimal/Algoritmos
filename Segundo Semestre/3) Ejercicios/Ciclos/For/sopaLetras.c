@@ -11,6 +11,7 @@ int main(int argc, char const *argv[])
     double tiempo;
     do
     {
+        system("Clear");
         printf("Opciones: ");
         printf("\n");
         printf("1. Crear una Sopa de Letras de Tamaño NxN");
@@ -55,8 +56,8 @@ int main(int argc, char const *argv[])
             if (opcion)
             {
                 fin = clock();
-                tiempo = ((double)(fin - inicio)) / CLOCKS_PER_SEC;
-                printf("El tiempo que tomo en encontrar la palabra es de: %.2f", tiempo * 10000);
+                tiempo = ((double)(fin-inicio))/CLOCKS_PER_SEC;
+                printf("El tiempo que tomo en encontrar la palabra es de: %f", tiempo);
                 printf("\n");
             }
             break;
