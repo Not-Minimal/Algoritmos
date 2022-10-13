@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
     double tiempo;
 
     system ("Clear");
-    printf("Ingrese el tamaño de la Sopa de Letras ");
+    printf("Ingrese el tamaño de la Sopa de Letras "); 
     scanf("%d", &n);
     filas = n;
     columnas = n;
