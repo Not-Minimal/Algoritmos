@@ -20,11 +20,7 @@ int main(int argc, char const *argv[])
         printf("\n");
         printf("1. Crear una Sopa de Letras de Tamaño NxN");
         printf("\n");
-        printf("2. Esconder una palabra");
-        printf("\n");
-        printf("3. Esconder dos palabras");
-        printf("\n");
-        printf("4. Salir");
+        printf("2. Salir");
         printf("\n");
         printf("Ingrese la opcion: ");
         scanf("%d", &opcion);
@@ -56,19 +52,47 @@ int main(int argc, char const *argv[])
                 printf("\n");
             }
 
-            printf("Presione 1 si encontro la palabra: ");
+            /*printf("Presione 1 si encontro la palabra: ");
             scanf("%d", &opcion);
             if (opcion)
             {
                 fin = clock();
                 tiempo = ((double)(fin - inicio)) / CLOCKS_PER_SEC;
-                printf("El tiempo que tomo en encontrar la palabra es de: %.2f", tiempo); //No indica bien el tiempo.
+                printf("El tiempo que tomo en encontrar la palabra es de: %.2f", tiempo); // No indica bien el tiempo.
                 printf("\n");
-            }
-            break;
+            } */
+
+            //Menu para Ocultar o buscar palabra
+
+            do
+            {
+                printf("Opciones");
+                printf("\n");
+                printf("1. Ocultar Palabra(s)");
+                printf("\n");
+                printf("2. Buscar Palabra(s)");
+                printf("\n");
+                printf("Ingrese la opcion: ");
+                scanf("%d", &opcion);
+
+                switch (opcion)
+                {
+                case 1: 
+                    printf("Hola");
+                    printf("\n");
+                    break;
+                case 2: 
+                    printf("Adios");
+                    printf("\n");
+                    break;
+                }
+
+            } while (opcion < 1 && opcion > 2);
+            
+            continue;;
         }
 
-    } while (opcion < 1 && opcion > 4);
+    } while (opcion < 1 && opcion > 2);
 
     return 0;
 }
