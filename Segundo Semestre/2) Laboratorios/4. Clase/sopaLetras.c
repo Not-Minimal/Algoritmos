@@ -92,13 +92,29 @@ int main(int argc, char const *argv[])
                         {
                         case 1:
 
-                            printf("Hola");
-                            printf("\n");
+                            
+
+                            for (i = 0; i < filas; i++) // Rellenar columna
+                            {
+                                for (j = 0; j < columnas; j++)
+                                {
+                                    matriz[i][j] = rand() % 26 + 10;
+                                }
+                            }
+                            for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
+                            {
+                                for (j = 0; j < columnas; j++)
+                                {
+                                    printf("%c  ", matriz[i][j]);
+                                }
+                                printf("\n");
+                            }
                             break;
-                        case 2:
-                            printf("Adios");
-                            printf("\n");
-                            break;
+                            /* case 2:
+                                printf("Adios");
+                                printf("\n");
+                                break;
+                                */
                         }
 
                     } while (opcion < 1 && opcion > 2);
@@ -112,7 +128,6 @@ int main(int argc, char const *argv[])
             } while (opcion < 1 && opcion > 2);
 
             continue;
-            
         }
 
     } while (opcion < 1 && opcion > 2);
