@@ -62,8 +62,7 @@ int main(int argc, char const *argv[])
                 printf("\n");
             } */
 
-            //Menu para Ocultar o buscar palabra
-
+            // Menu para Ocultar o buscar palabra
             do
             {
                 printf("Opciones");
@@ -77,19 +76,43 @@ int main(int argc, char const *argv[])
 
                 switch (opcion)
                 {
-                case 1: 
-                    printf("Hola");
-                    printf("\n");
+                case 1:
+                    do
+                    {
+                        printf("Opciones");
+                        printf("\n");
+                        printf("1. Ocultar Verticalmente");
+                        printf("\n");
+                        printf("2. Ocultar Horizontalmente");
+                        printf("\n");
+                        printf("Ingrese la opcion: ");
+                        scanf("%d", &opcion);
+
+                        switch (opcion)
+                        {
+                        case 1:
+
+                            printf("Hola");
+                            printf("\n");
+                            break;
+                        case 2:
+                            printf("Adios");
+                            printf("\n");
+                            break;
+                        }
+
+                    } while (opcion < 1 && opcion > 2);
                     break;
-                case 2: 
+                case 2:
                     printf("Adios");
                     printf("\n");
                     break;
                 }
 
             } while (opcion < 1 && opcion > 2);
+
+            continue;
             
-            continue;;
         }
 
     } while (opcion < 1 && opcion > 2);
