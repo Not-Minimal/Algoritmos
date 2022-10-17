@@ -86,7 +86,7 @@ int main(int argc, char const *argv[])
                 break;
             }
             }
-        } while (opcion < 1 && opcion > 2);
+        } while (opcion < 1 && opcion > 5);
 
     } while (opcion < 1 && opcion > 2);
 
