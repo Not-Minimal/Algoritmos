@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 
     do
     {
-        printf("Opciones: ");
+        printf("Bienvenido a LetterSoap: ");
         printf("\n");
         printf("1. Crear una Sopa de Letras de Tamaño NxN");
         printf("\n");
@@ -25,110 +25,68 @@ int main(int argc, char const *argv[])
         printf("Ingrese la opcion: ");
         scanf("%d", &opcion);
 
-        switch (opcion)
+        do
         {
-        case 1:
-            inicio = clock();
-            system("Clear");
-            printf("Ingrese el tamaño de la Sopa de Letras ");
-            scanf("%d", &n);
-            filas = n;
-            columnas = n;
-            char matriz[filas][columnas];
-            srand(time(NULL));
-            for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
-            {
-                for (j = 0; j < columnas; j++)
-                {
-                    matriz[i][j] = rand() % 26 + 65;
-                }
-            }
-            for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
-            {
-                for (j = 0; j < columnas; j++)
-                {
-                    printf("%c  ", matriz[i][j]);
-                }
-                printf("\n");
-            }
-
-            /*printf("Presione 1 si encontro la palabra: ");
+            printf("Opciones: \n");
+            printf("1. Matriz en Blanco \n");
+            printf("2. Agregar palabras a la Matriz de forma aleatoria \n");
+            printf("3. Rellenar espacios vacios con letras aleatorias \n");
+            printf("4. Comenzar busqueda \n");
+            printf("5. Resultados \n");
+            printf("Ingrese la opcion: ");
             scanf("%d", &opcion);
-            if (opcion)
-            {
-                fin = clock();
-                tiempo = ((double)(fin - inicio)) / CLOCKS_PER_SEC;
-                printf("El tiempo que tomo en encontrar la palabra es de: %.2f", tiempo); // No indica bien el tiempo.
-                printf("\n");
-            } */
 
-            // Menu para Ocultar o buscar palabra
-            do
+            switch (opcion)
             {
-                printf("Opciones");
-                printf("\n");
-                printf("1. Ocultar Palabra(s)");
-                printf("\n");
-                printf("2. Buscar Palabra(s)");
-                printf("\n");
-                printf("Ingrese la opcion: ");
-                scanf("%d", &opcion);
-
-                switch (opcion)
+            case 1:
+            {
+                inicio = clock();
+                system("Clear");
+                printf("Ingrese el tamaño de la Sopa de Letras ");
+                scanf("%d", &n);
+                filas = n;
+                columnas = n;
+                char matriz[filas][columnas];
+                srand(time(NULL));
+                for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
                 {
-                case 1:
-                    do
+                    for (j = 0; j < columnas; j++)
                     {
-                        printf("Opciones");
-                        printf("\n");
-                        printf("1. Ocultar Verticalmente");
-                        printf("\n");
-                        printf("2. Ocultar Horizontalmente");
-                        printf("\n");
-                        printf("Ingrese la opcion: ");
-                        scanf("%d", &opcion);
-
-                        switch (opcion)
-                        {
-                        case 1:
-
-                            
-
-                            for (i = 0; i < filas; i++) // Rellenar columna
-                            {
-                                for (j = 0; j < columnas; j++)
-                                {
-                                    matriz[i][j] = rand() % 26 + 10;
-                                }
-                            }
-                            for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
-                            {
-                                for (j = 0; j < columnas; j++)
-                                {
-                                    printf("%c  ", matriz[i][j]);
-                                }
-                                printf("\n");
-                            }
-                            break;
-                            /* case 2:
-                                printf("Adios");
-                                printf("\n");
-                                break;
-                                */
-                        }
-
-                    } while (opcion < 1 && opcion > 2);
-                    break;
-                case 2:
-                    printf("Adios");
-                    printf("\n");
-                    break;
+                        matriz[i][j] = 32;
+                    }
                 }
-
-            } while (opcion < 1 && opcion > 2);
-
-            continue;
-        }
+                for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
+                {
+                    for (j = 0; j < columnas; j++)
+                    {
+                        printf("[%c] ", matriz[i][j]);
+                    }
+                    printf("\n");
+                }
+                break;
+            }
+            case 2:
+            {
+                printf("Agregar palabras a la matriz \n");
+                break;
+            }
+            case 3:
+            {
+                printf("Rellenar espacios vacios con letras aleatorias \n");
+                break;
+            }
+            case 4:
+            {
+                printf("Comenzar busqueda \n");
+                break;
+            }
+            case 5:
+            {
+                printf("Los resultados son: \n");
+                break;
+            }
+            }
+        } while (opcion < 1 && opcion > 2);
 
     } while (opcion < 1 && opcion > 2);
 
