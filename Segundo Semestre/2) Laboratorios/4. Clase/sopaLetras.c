@@ -67,7 +67,7 @@ int main(int argc, char const *argv[])
             }
             case 2:
             {
-                printf("Agregar palabras a la matriz \n");
+                printf("Agregar palabras de forma aleatoria");
                 break;
             }
             case 3:
