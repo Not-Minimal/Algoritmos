@@ -7,7 +7,7 @@ dentro de la matriz.
 #include <stdlib.h>
 
 int n, i, j, k, filas, columnas, opcion, palabras;
-char palabra[];
+
 int main(int argc, char const *argv[])
 {
     // Variables Tiempo
@@ -78,6 +78,7 @@ int main(int argc, char const *argv[])
                         k = palabras;
                     } while (k < (n / 2) || k > (2 * n));
 
+                    char palabra[n];
                     for (i = 0; i < k; i++)
                     {
                         do
