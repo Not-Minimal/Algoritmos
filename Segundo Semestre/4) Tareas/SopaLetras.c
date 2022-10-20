@@ -79,6 +79,7 @@ int main(int argc, char const *argv[])
                         k = palabras;
                     } while (k < (n / 2) || k > (2 * n));
 
+                    //Crear mas matrices para trabajar el tamaño de las palabras
                     //Ingreso de palabras donde el tamaño de la palabra
                     char palabra[n];
                     for (i = 0; i < k; i++)
