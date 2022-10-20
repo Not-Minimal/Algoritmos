@@ -47,9 +47,9 @@ int main(int argc, char const *argv[])
 
                     do
                     {
-                        printf("Ingrese el tamaño de la Sopa de Letras con rango [10,35]");
+                        printf("Ingrese el tamaño de la Sopa de Letras con rango [10,35]: ");
                         scanf("%d", &n);
-                    } while (n >= 10 || n <= 35);
+                    } while (n < 10 || n > 35);
 
                     filas = n;
                     columnas = n;
