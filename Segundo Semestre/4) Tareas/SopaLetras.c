@@ -73,6 +73,7 @@ int main(int argc, char const *argv[])
                     {
                         printf("Ingrese la cantidad de palabras: ");
                         scanf("%d", &palabras);
+                        k = palabras
                     } while (k < (n/2) || k > (2*n));
                     
 
