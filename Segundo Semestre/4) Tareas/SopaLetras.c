@@ -6,7 +6,8 @@ dentro de la matriz.
 #include <time.h>
 #include <stdlib.h>
 
-int n, i, j, k, filas, columnas, opcion, palabras, palabra;
+int n, i, j, k, filas, columnas, opcion, palabras;
+char palabra[];
 int main(int argc, char const *argv[])
 {
     // Variables Tiempo
