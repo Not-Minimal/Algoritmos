@@ -30,61 +30,60 @@ int main(int argc, char const *argv[])
         case 1:
         {
             do
-        {
-            printf("Opciones: \n");
-            printf("1. Matriz en Blanco \n");
-            printf("2. Agregar palabras a la Matriz de forma aleatoria \n");
-            printf("3. Rellenar espacios vacios con letras aleatorias \n");
-            printf("Ingrese la opcion: ");
-            scanf("%d", &opcion);
+            {
+                printf("Opciones: \n");
+                printf("1. Matriz en Blanco \n");
+                printf("2. Agregar palabras a la Matriz de forma aleatoria \n");
+                printf("3. Rellenar espacios vacios con letras aleatorias \n");
+                printf("Ingrese la opcion: ");
+                scanf("%d", &opcion);
 
-            switch (opcion)
-            {
-            case 1:
-            {
-                inicio = clock();
-                system("Clear");
-                printf("Ingrese el tamaño de la Sopa de Letras con rango [10,35]");
+                switch (opcion)
+                {
+                case 1:
+                {
+                    inicio = clock();
+                    system("Clear");
 
-                do
-                {
-                    scanf("%d", &n);
-                } while (n < 10 && n > 35);
-                
-                
-                filas = n;
-                columnas = n;
-                char matriz[filas][columnas];
-                srand(time(NULL));
-                for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
-                {
-                    for (j = 0; j < columnas; j++)
+                    do
                     {
-                        matriz[i][j] = 32;
-                    }
-                }
-                for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
-                {
-                    for (j = 0; j < columnas; j++)
+                        printf("Ingrese el tamaño de la Sopa de Letras con rango [10,35]");
+                        scanf("%d", &n);
+                    } while (n >= 10 || n <= 35);
+
+                    filas = n;
+                    columnas = n;
+                    char matriz[filas][columnas];
+                    srand(time(NULL));
+                    for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
                     {
-                        printf("[%c] ", matriz[i][j]);
+                        for (j = 0; j < columnas; j++)
+                        {
+                            matriz[i][j] = 32;
+                        }
                     }
-                    printf("\n");
+                    for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
+                    {
+                        for (j = 0; j < columnas; j++)
+                        {
+                            printf("[%c] ", matriz[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    break;
                 }
-                break;
-            }
-            case 2:
-            {
-                printf("Agregar palabras de forma aleatoria");
-                break;
-            }
-            case 3:
-            {
-                printf("Rellenar espacios vacios con letras aleatorias \n");
-                break;
-            }
-            }
-        } while (opcion < 1 && opcion > 3);
+                case 2:
+                {
+                    printf("Agregar palabras de forma aleatoria");
+                    break;
+                }
+                case 3:
+                {
+                    printf("Rellenar espacios vacios con letras aleatorias \n");
+                    break;
+                }
+                }
+            } while (opcion < 1 && opcion > 3);
         }
         break;
 
@@ -94,8 +93,6 @@ int main(int argc, char const *argv[])
         }
         break;
         }
-
-        
 
     } while (opcion < 1 && opcion > 2);
 
