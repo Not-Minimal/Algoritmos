@@ -79,6 +79,7 @@ int main(int argc, char const *argv[])
                     for (i = 0; i < palabras; i++)
                     {
                         printf("Ingrese la palabra N° %d", i+1);
+                        printf("\n");
                         scanf("%c", &palabra);
                     }
                     
