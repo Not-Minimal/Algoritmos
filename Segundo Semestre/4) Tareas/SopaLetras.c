@@ -43,7 +43,6 @@ int main(int argc, char const *argv[])
                 case 1:
                 {
                     system("Clear");
-
                     do
                     {
                         printf("Ingrese el tamaño de la Sopa de Letras con rango [10,35]: ");
