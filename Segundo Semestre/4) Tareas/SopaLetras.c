@@ -87,7 +87,7 @@ int main(int argc, char const *argv[])
                             printf("Ingrese la palabra N° %d", i + 1);
                             printf("\n");
                             scanf("%s", palabra);
-                        } while ((strlen(palabra) > n) || (strlen(palabra) < 2));
+                        } while ((strlen(palabra) > n) || (strlen(palabra) < 5));
 
                         for (j = 0; j < k && palabra[j] != NULL; j++)
                         {
