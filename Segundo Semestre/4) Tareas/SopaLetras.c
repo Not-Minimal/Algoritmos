@@ -86,6 +86,12 @@ int main(int argc, char const *argv[])
                             printf("\n");
                             scanf("%s", palabra);
                         } while ((strlen(palabra) > n) || (strlen(palabra) < 2));
+
+                        for (j = 0; j < k && palabra[j] != NULL; j++)
+                        {
+                            matriz[i][j] = palabra[j];
+                        }
+                        
                     }
 
                     break;
