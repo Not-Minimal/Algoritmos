@@ -32,7 +32,7 @@ int main(int argc, char const *argv[])
             do
             {
                 printf("Opciones: \n");
-                printf("1. Crear Sopa de Letras \n");
+                printf("1. Crear Sopa de Letras en blanco\n");
                 printf("2. Agregar palabras a la Matriz de forma aleatoria \n");
                 printf("3. Rellenar espacios vacios con letras aleatorias \n");
                 printf("Ingrese la opcion: ");
