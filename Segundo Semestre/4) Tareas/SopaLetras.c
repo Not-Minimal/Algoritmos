@@ -79,17 +79,19 @@ int main(int argc, char const *argv[])
                         k = palabras;
                     } while (k < (n / 2) || k > (2 * n));
 
+                    //Ingreso de palabras donde el tamaño de la palabra
                     char palabra[n];
                     for (i = 0; i < k; i++)
                     {
                         do
                         {
+                            //Tamaño palabra en posicion (i + 1)
                             printf("Ingrese la palabra N° %d", i + 1);
                             printf("\n");
                             scanf("%s", palabra);
                         } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
 
-                        for (j = 0; j < k && palabra[j] != NULL; j++)
+                        for (j = 0; j < k && palabra[j] != '\0'; j++)
                         {
                             matriz[i][j] = palabra[j];
                         }
