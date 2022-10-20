@@ -93,7 +93,14 @@ int main(int argc, char const *argv[])
                         {
                             matriz[i][j] = palabra[j];
                         }
-                        
+                        for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
+                        {
+                            for (j = 0; j < columnas; j++)
+                            {
+                                printf("[%c] ", matriz[i][j]);
+                            }
+                            printf("\n");
+                        }
                     }
 
                     break;
