@@ -5,6 +5,7 @@ dentro de la matriz.
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <string.h>
 
 int n, i, j, k, filas, columnas, opcion, palabras;
 
