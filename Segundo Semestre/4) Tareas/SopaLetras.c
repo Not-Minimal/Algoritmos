@@ -70,20 +70,23 @@ int main(int argc, char const *argv[])
                         printf("\n");
                     }
 
+                    // Validacion para ingreso cantidad de palabras
                     do
                     {
                         printf("Ingrese la cantidad de palabras: ");
                         scanf("%d", &palabras);
                         k = palabras;
-                    } while (k < (n/2) || k > (2*n));
-                    
-                    for (i = 0; i < palabras; i++)
+                    } while (k < (n / 2) || k > (2 * n));
+
+                    for (i = 0; i < k; i++)
                     {
-                        printf("Ingrese la palabra N° %d", i+1);
-                        printf("\n");
-                        scanf("%s", palabra);
+                        do
+                        {
+                            printf("Ingrese la palabra N° %d", i + 1);
+                            printf("\n");
+                            scanf("%s", palabra);
+                        } while ((strlen(palabra) > n) || (strlen(palabra) < 2));
                     }
-                    
 
                     break;
                 }
