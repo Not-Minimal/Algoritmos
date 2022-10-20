@@ -30,9 +30,9 @@ int main(int argc, char const *argv[])
         case 1:
         {
             do
-            {
+            {ß
                 printf("Opciones: \n");
-                printf("1. Matriz en Blanco \n");
+                printf("1. Crear Sopa de Letras \n");
                 printf("2. Agregar palabras a la Matriz de forma aleatoria \n");
                 printf("3. Rellenar espacios vacios con letras aleatorias \n");
                 printf("Ingrese la opcion: ");
