@@ -6,7 +6,7 @@ dentro de la matriz.
 #include <time.h>
 #include <stdlib.h>
 
-int n, i, j, k, filas, columnas, opcion, palabras;
+int n, i, j, k, filas, columnas, opcion, palabras, palabra;
 int main(int argc, char const *argv[])
 {
     // Variables Tiempo
@@ -75,6 +75,12 @@ int main(int argc, char const *argv[])
                         scanf("%d", &palabras);
                         k = palabras;
                     } while (k < (n/2) || k > (2*n));
+                    
+                    for (i = 0; i < palabras; i++)
+                    {
+                        printf("Ingrese la palabra N° %d", i+1);
+                        scanf("%c", &palabra);
+                    }
                     
 
                     break;
