@@ -42,7 +42,6 @@ int main(int argc, char const *argv[])
                 {
                 case 1:
                 {
-                    inicio = clock();
                     system("Clear");
 
                     do
