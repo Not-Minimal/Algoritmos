@@ -25,14 +25,16 @@ int main(int argc, char const *argv[])
         printf("Ingrese la opcion: ");
         scanf("%d", &opcion);
 
-        do
+        switch (opcion)
+        {
+        case 1:
+        {
+            do
         {
             printf("Opciones: \n");
             printf("1. Matriz en Blanco \n");
             printf("2. Agregar palabras a la Matriz de forma aleatoria \n");
             printf("3. Rellenar espacios vacios con letras aleatorias \n");
-            printf("4. Comenzar busqueda \n");
-            printf("5. Resultados \n");
             printf("Ingrese la opcion: ");
             scanf("%d", &opcion);
 
@@ -42,8 +44,14 @@ int main(int argc, char const *argv[])
             {
                 inicio = clock();
                 system("Clear");
-                printf("Ingrese el tamaño de la Sopa de Letras ");
-                scanf("%d", &n);
+                printf("Ingrese el tamaño de la Sopa de Letras con rango [10,35]");
+
+                do
+                {
+                    scanf("%d", &n);
+                } while (n < 10 && n > 35);
+                
+                
                 filas = n;
                 columnas = n;
                 char matriz[filas][columnas];
@@ -75,18 +83,19 @@ int main(int argc, char const *argv[])
                 printf("Rellenar espacios vacios con letras aleatorias \n");
                 break;
             }
-            case 4:
-            {
-                printf("Comenzar busqueda \n");
-                break;
             }
-            case 5:
-            {
-                printf("Los resultados son: \n");
-                break;
-            }
-            }
-        } while (opcion < 1 && opcion > 5);
+        } while (opcion < 1 && opcion > 3);
+        }
+        break;
+
+        case 2:
+        {
+            printf("Gracias :) \n");
+        }
+        break;
+        }
+
+        
 
     } while (opcion < 1 && opcion > 2);
 
