@@ -122,7 +122,11 @@ int main(int argc, char const *argv[])
                             {
                                 for (j = 0; j < columnas; j++)
                                 {
-                                    matriz[i][j] = rand() % 26 + 65;
+                                    if (matriz[i][j] == 32)
+                                    {
+                                        matriz[i][j] = rand() % 26 + 65;
+                                    }
+                                    
                                 }
                             }
                             for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
