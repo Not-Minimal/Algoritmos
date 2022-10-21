@@ -122,8 +122,16 @@ int main(int argc, char const *argv[])
                             {
                                 for (j = 0; j < columnas; j++)
                                 {
-                                    matriz[i][j] = srand();
+                                    matriz[i][j] = srand() % 26 + 65;
                                 }
+                            }
+                            for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
+                            {
+                                for (j = 0; j < columnas; j++)
+                                {
+                                    printf("[%c] ", matriz[i][j]);
+                                }
+                                printf("\n");
                             }
                         }
                         }
