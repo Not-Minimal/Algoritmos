@@ -7,7 +7,7 @@ dentro de la matriz.
 #include <stdlib.h>
 #include <string.h>
 
-int n, i, j, k, filas, columnas, opcion, palabras;
+int n, i, j, k, filas, aux, columnas, opcion, palabras;
 
 int main(int argc, char const *argv[])
 {
@@ -90,9 +90,10 @@ int main(int argc, char const *argv[])
                             printf("Ingrese la palabra N° %d", i + 1);
                             printf("\n");
                             scanf("%s", palabra);
+                            int aux = palabra;
                         } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
 
-                        for (j = 0; j < palabra && palabra[j] != '\0'; j++)
+                        for (j = 0; j < aux && palabra[j] != '\0'; j++)
                         {
                             matriz[i][j] = palabra[j];
                         }
