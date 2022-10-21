@@ -79,14 +79,14 @@ int main(int argc, char const *argv[])
                         k = palabras;
                     } while (k < (n / 2) || k > (2 * n));
 
-                    //Crear mas matrices para trabajar el tamaño de las palabras
-                    //Ingreso de palabras donde el tamaño de la palabra
+                    // Crear mas matrices para trabajar el tamaño de las palabras
+                    // Ingreso de palabras donde el tamaño de la palabra
                     char palabra[n];
                     for (i = 0; i < k; i++)
                     {
                         do
                         {
-                            //Tamaño palabra en posicion (i + 1)
+                            // Tamaño palabra en posicion (i + 1)
                             printf("Ingrese la palabra N° %d", i + 1);
                             printf("\n");
                             scanf("%s", palabra);
@@ -97,7 +97,7 @@ int main(int argc, char const *argv[])
                             matriz[i][j] = palabra[j];
                         }
                     }
-                    for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
+                    for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
                     {
                         for (j = 0; j < columnas; j++)
                         {
@@ -105,6 +105,29 @@ int main(int argc, char const *argv[])
                         }
                         printf("\n");
                     }
+
+                    do
+                    {
+                        printf("¿Desea rellenar los espacios blancos con caracteres aleatorios? \n");
+                        printf("1. Si \n");
+                        printf("2. No \n");
+                        printf("Ingrese la opcion: ");
+                        scanf("%d", opcion);
+
+                        switch (opcion)
+                        {
+                        case 1:
+                        {
+                            for (i = 0; i < filas; i++) // Relleno el arreglo desde la posicion 0 hasta n-1
+                            {
+                                for (j = 0; j < columnas; j++)
+                                {
+                                    matriz[i][j] = srand();
+                                }
+                            }
+                        }
+                        }
+                    } while (opcion < 1 && opcion > 2);
 
                     break;
                 }
