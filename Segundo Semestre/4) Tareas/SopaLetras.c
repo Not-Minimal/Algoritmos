@@ -112,7 +112,7 @@ int main(int argc, char const *argv[])
                         printf("1. Si \n");
                         printf("2. No \n");
                         printf("Ingrese la opcion: ");
-                        scanf("%d", opcion);
+                        scanf("%d", &opcion);
 
                         switch (opcion)
                         {
@@ -122,7 +122,7 @@ int main(int argc, char const *argv[])
                             {
                                 for (j = 0; j < columnas; j++)
                                 {
-                                    matriz[i][j] = srand() % 26 + 65;
+                                    matriz[i][j] = rand() % 26 + 65;
                                 }
                             }
                             for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
