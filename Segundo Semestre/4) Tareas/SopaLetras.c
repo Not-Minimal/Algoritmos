@@ -144,8 +144,14 @@ int main(int argc, char const *argv[])
                         case 2:
                         {
                             printf("Matriz Generada Aleatoriamente\n");
-                            for (i = rand() % n, j = 0; i < rand() % k - n; i++, j++) // Muestro la matriz con las palabras
+                            for (i = rand() % n, j = 0; i < rand() % k - n; i++, j++)
+                            {
                                 matriz[i][rand() % n] = palabra[j];
+                            }
+                            for (i = rand() % n, j = 0; i < rand() % k - n; i++, j++)
+                            {
+                                matriz[rand() % n][i] = palabra[j];
+                            }
                         }
                             for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
                             {
