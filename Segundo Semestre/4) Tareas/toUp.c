@@ -11,12 +11,14 @@ int main(int argc, char const *argv[])
         scanf("%s", palabra);
     }
 
-    // Convertir cada char a mayúscula
-    // usando toupper
-    for (int i = 0; palabra[i] != '\0'; ++i)
+    for (int i = 0; i < 5; i++)
     {
-        palabra[i] = toupper(palabra[i]);
+        for (int j = 0; palabra[j] != '\0'; ++j)
+        {
+            palabra[j] = toupper(palabra[j]);
+        }
     }
+
     printf("%s\n", palabra);
     return 0;
 }
