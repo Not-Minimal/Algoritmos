@@ -6,6 +6,7 @@ dentro de la matriz.
 #include <time.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 int n, i, j, k, filas, aux, columnas, opcion, palabras;
 
@@ -96,7 +97,7 @@ int main(int argc, char const *argv[])
 
                         for (j = 0; j < aux && palabra[j] != '\0'; j++)
                         {
-                            matriz[i][j] = palabra[j];
+                            matriz[i][j] = toupper(palabra[j]);
                         }
                     }
                     for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
