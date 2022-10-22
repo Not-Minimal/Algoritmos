@@ -144,6 +144,7 @@ int main(int argc, char const *argv[])
                         }
                         case 2:
                         {
+                            printf("Matriz Generada");
                             for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
                             {
                                 for (j = 0; j < columnas; j++)
