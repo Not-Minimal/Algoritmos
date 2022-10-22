@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
     char matriz[5][5];
     for (i = 0; i < 5; i++)
     {
-        for (j = 0; j < 5;j++)
+        for (j = 0; j < 1;j++)
         {
            printf("Ingrese palabra: ");
            scanf("%s", &palabra);
@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
     }
     for (i = 0; i < 5; i++) // Muestro la matriz con las palabras
     {
-        for (j = 0; j < 5; j++)
+        for (j = 0; j < 1; j++)
         {
             printf("[%c] ", matriz[i][j]);
         }
@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
     // usando toupper
     for (int i = 0; matriz[i] != '\0'; ++i)
     {
-        for (j = 0; j < 5; j++)
+        for (j = 0; j < 1; j++)
         {
             matriz[i][j] = toupper(matriz[i][j]);
         }
@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
 
     for (i = 0; i < 5; i++) // Muestro la matriz con las palabras
     {
-        for (j = 0; j < 5; j++)
+        for (j = 0; j < 1; j++)
         {
             printf("[%c] ", matriz[i][j]);
         }
