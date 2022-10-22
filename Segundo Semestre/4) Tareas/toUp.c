@@ -4,7 +4,7 @@ int i, j;
 int main(int argc, char const *argv[])
 {
     char palabra[5];
-    char matriz[5][5;
+    char matriz[5][5];
     for (i = 0; i < 5; i++)
     {
         for (j = 0; j < 5;j++)
@@ -25,9 +25,9 @@ int main(int argc, char const *argv[])
 
     // Convertir cada char a mayúscula
     // usando toupper
-    for (int i = 0; cadena[i] != '\0'; ++indice)
+    for (int i = 0; matriz[i] != '\0'; ++i)
     {
-        cadena[indice] = toupper(cadena[indice]);
+        cadena[i] = toupper(cadena[i]);
     }
     printf("Cadena despues de ser convertida: %s\n", cadena);
     return 0;
