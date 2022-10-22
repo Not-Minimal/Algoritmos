@@ -100,9 +100,9 @@ int main(int argc, char const *argv[])
                             matriz[i][j] = toupper(palabra[j]);
                         }
                     }
-                    for (i = 0; i < k; i++) // Muestro la matriz con las palabras
+                    for (i = 0; i < n; i++) // Muestro la matriz con las palabras
                     {
-                        for (j = 0; j <= aux && palabra[j] != '\0'; j++)
+                        for (j = 0; j < n; j++)
                         {
                             printf("[%c] ", matriz[i][j]);
                         }
