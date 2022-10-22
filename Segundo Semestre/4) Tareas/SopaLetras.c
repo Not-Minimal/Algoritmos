@@ -91,9 +91,9 @@ int main(int argc, char const *argv[])
                             printf("Ingrese la palabra N° %d", i + 1);
                             printf("\n");
                             scanf("%s", palabra);
-                            
+
                         } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
-                        aux = n;
+                        aux = n;ß
 
                         for (j = 0; j < aux && palabra[j] != '\0'; j++)
                         {
@@ -129,7 +129,6 @@ int main(int argc, char const *argv[])
                                     {
                                         matriz[i][j] = rand() % 26 + 65;
                                     }
-                                    
                                 }
                             }
                             for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
