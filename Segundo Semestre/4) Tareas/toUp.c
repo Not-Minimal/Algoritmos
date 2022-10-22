@@ -1,29 +1,22 @@
 #include <stdio.h>
 #include <ctype.h>
-
+int i, j;
 int main(int argc, char const *argv[])
 {
-    char palabra[n];
-    for (i = 0; i < k; i++)
+    char palabra[5];
+    char matriz[5][5;
+    for (i = 0; i < 5; i++)
     {
-        do
+        for (j = 0; j < 5;j++)
         {
-            // Tamaño palabra en posicion (i + 1)
-            printf("Ingrese la palabra N° %d", i + 1);
-            printf("\n");
-            scanf("%s", palabra);
-
-        } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
-        aux = n;
-
-        for (j = 0; j < aux && palabra[j] != '\0'; j++)
-        {
-            matriz[i][j] = palabra[j];
+           printf("Ingrese palabra: ");
+           scanf("%s", &palabra);
         }
+        
     }
-    for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
+    for (i = 0; i < 5; i++) // Muestro la matriz con las palabras
     {
-        for (j = 0; j < columnas; j++)
+        for (j = 0; j < 5; j++)
         {
             printf("[%c] ", matriz[i][j]);
         }
@@ -32,7 +25,7 @@ int main(int argc, char const *argv[])
 
     // Convertir cada char a mayúscula
     // usando toupper
-    for (int indice = 0; cadena[indice] != '\0'; ++indice)
+    for (int i = 0; cadena[i] != '\0'; ++indice)
     {
         cadena[indice] = toupper(cadena[indice]);
     }
