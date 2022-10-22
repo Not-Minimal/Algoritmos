@@ -93,16 +93,16 @@ int main(int argc, char const *argv[])
                             scanf("%s", palabra);
 
                         } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
-                        aux = n;ß
+                        aux = n;
 
                         for (j = 0; j < aux && palabra[j] != '\0'; j++)
                         {
                             matriz[i][j] = toupper(palabra[j]);
                         }
                     }
-                    for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
+                    for (i = 0; i < k; i++) // Muestro la matriz con las palabras
                     {
-                        for (j = 0; j < columnas; j++)
+                        for (j = 0; j <= aux && palabra[j] != '\0'; j++)
                         {
                             printf("[%c] ", matriz[i][j]);
                         }
