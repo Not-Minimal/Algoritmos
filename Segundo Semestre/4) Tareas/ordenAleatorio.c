@@ -4,38 +4,21 @@
 #include <string.h>
 #include <ctype.h>
 
-int i, j, filas, columnas, n;
-int filas = 10;
-int columnas = 10;
+int i, j, filas = 10, columnas = 10, n;
 char palabra[10];
+char matriz[10][10];
 
-void pasarHorizontal(char matriz[filas][columnas], char palabra[], int f, int c)
+void pasarHorizontal(char palabra[], int f, int c)
 {
-
-    for (int i = 0; i < filas; i++)
-    {
-        for (int j = 0; j < columnas; j++)
-        {
-            matriz[i][j] = 32;
-        }
-    }
-
     for (int i = 0; i < strlen(palabra); i++)
     {
         matriz[f][c + i] = palabra[i];
     }
 }
 
-void pasarHorizontalInverso(char matriz[filas][columnas], char palabra[], int f, int c)
+void pasarHorizontalInverso(char palabra[], int f, int c)
 {
     int k = 0;
-    for (int i = 0; i < filas; i++)
-    {
-        for (int j = 0; j < columnas; j++)
-        {
-            matriz[i][j] = 32;
-        }
-    }
 
     for (int i = strlen(palabra) - 1; i >= 0; i--)
     {
@@ -44,32 +27,17 @@ void pasarHorizontalInverso(char matriz[filas][columnas], char palabra[], int f,
     }
 }
 
-void pasarVertical(char matriz[filas][columnas], char palabra[], int f, int c)
+void pasarVertical(char palabra[], int f, int c)
 {
-
-    for (int i = 0; i < filas; i++)
-    {
-        for (int j = 0; j < columnas; j++)
-        {
-            matriz[i][j] = 32;
-        }
-    }
 
     for (int i = 0; i < strlen(palabra); i++)
     {
         matriz[f + i][c] = palabra[i];
     }
 }
-void pasarVerticalInverso(char matriz[filas][columnas], char palabra[], int f, int c)
+void pasarVerticalInverso(char palabra[], int f, int c)
 {
     int k = 0;
-    for (int i = 0; i < filas; i++)
-    {
-        for (int j = 0; j < columnas; j++)
-        {
-            matriz[i][j] = 32;
-        }
-    }
 
     for (int i = strlen(palabra) - 1; i >= 0; i--)
     {
@@ -78,7 +46,7 @@ void pasarVerticalInverso(char matriz[filas][columnas], char palabra[], int f, i
     }
 }
 
-void visualizaerMatriz(char matriz[filas][columnas])
+void visualizaerMatriz()
 {
 
     for (int i = 0; i < filas; i++)
@@ -91,14 +59,36 @@ void visualizaerMatriz(char matriz[filas][columnas])
     }
 }
 
+void generarMatriz()
+{
+
+    for (int i = 0; i < filas; i++)
+    {
+        for (int j = 0; j < columnas; j++)
+        {
+            matriz[i][j] = 32;
+        }
+    }
+}
+
 int main(int argc, char const *argv[])
 {
-    char matriz[filas][columnas];
-    printf("Ingrese palabra: ");
-    printf("\n");
-    scanf("%s", palabra);
-    srand(time(NULL));
-    pasarVerticalInverso(matriz, palabra, rand() % filas, rand() % columnas);
-    visualizaerMatriz(matriz);
+    int cantidadPalabras = 0;
+    generarMatriz();
+    while (cantidadPalabras != 5)
+    {
+
+        printf("Ingrese palabra: ");
+        printf("\n");
+        scanf("%s", palabra);
+        srand(time(NULL));
+        int x, y;
+
+        x = rand() % filas;
+        y = rand() % columnas;
+        pasarVerticalInverso(palabra, x, y);
+        visualizaerMatriz();
+        cantidadPalabras += 1;
+    }
     return 0;
 }
