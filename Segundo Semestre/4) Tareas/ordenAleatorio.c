@@ -12,6 +12,11 @@ int main()
 
 void Mundo()
 {
+
+    time_t t;
+    clock_t inicio, fin;
+    double tiempo;
+    
     printf("Ingrese el tamaño de la matriz: \n");
     scanf("%d", &n);
 
