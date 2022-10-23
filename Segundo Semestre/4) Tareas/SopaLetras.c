@@ -144,20 +144,6 @@ int main(int argc, char const *argv[])
                         case 2:
                         {
                             printf("Matriz Generada verticalmente\n");
-                            printf("------- \n");
-                            for (i = 0; i < strlen(palabra); i++)
-                            {
-                                matriz[filas + i][columnas] = toupper(palabra[i]);
-                            }
-
-                            for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
-                            {
-                                for (j = 0; j < columnas; j++)
-                                {
-                                    printf("[%c] ", matriz[i][j]);
-                                }
-                                printf("\n");
-                            }
                             break;
                         }
                         }
