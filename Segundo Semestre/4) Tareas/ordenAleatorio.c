@@ -7,6 +7,7 @@
 int i, j, filas, columnas, n;
 int filas = 10;
 int columnas = 10;
+char palabra[];
 
 void pasarHorizontal(char matriz[filas][columnas], char palabra[], int f, int c)
 {
@@ -60,11 +61,12 @@ int main(int argc, char const *argv[])
 {
 
     char matriz[filas][columnas];
-    char palabra[] = "Saul";
+    
+    printf("Ingrese palabra: ");
+    scanf("%s", palabra);
+    char palabra[filas];
     srand(time(NULL));
 
-    //pasarHorizontal(matriz, palabra, 1, 1);
-    //visualizaerMatriz(matriz);
     pasarVertical(matriz, palabra, rand()%filas,rand()%columnas);
     visualizaerMatriz(matriz);
 
