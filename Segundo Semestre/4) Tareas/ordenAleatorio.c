@@ -1,44 +1,13 @@
 #include <stdio.h>
-#include<time.h>
+#include <time.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
-void Mundo();
-int n, i, j;
+void pasasHorizontal(char matriz[][], char palabra[], int f, int c){
 
-int main()
-{
-    Mundo();
-    return 0;
-}
-
-void Mundo()
-{
-
-    time_t t;
-    clock_t inicio, fin;
-    double tiempo;
-    
-    printf("Ingrese el tamaño de la matriz: \n");
-    scanf("%d", &n);
-
-    char matriz[n][n];
-    srand(time(NULL));
-    // Crear matriz con caracteres en Mayuscula.
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < strlen(palabra); i++)
     {
-        for (j = 0; j < n; j++)
-        {
-            matriz[i][j] = srand()%26+65;
-        }
-        
-    }
-
-    // Mostrar matriz en pantalla
-    for (i = 0; i < n; i++)
-    {
-        for (j = 0; j < n; j++)
-        {
-            printf("[%c]", matriz[i][j]);
-        }
-        printf("\n");
+        matriz[f][c+i] = palabra[i];
     }
 }

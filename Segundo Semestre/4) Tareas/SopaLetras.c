@@ -139,14 +139,15 @@ int main(int argc, char const *argv[])
                                 }
                                 printf("\n");
                             }
+                            break;
                         }
                         case 2:
                         {
-                            printf("Matriz Generada Aleatoriamente\n");
+                            printf("Matriz Generada verticalmente\n");
                             printf("------- \n");
                             for (i = 0; i < strlen(palabra); i++)
                             {
-                                matriz[filas + i][columnas] = palabra[i];
+                                matriz[i + i][j] = toupper(palabra[j]);
                             }
 
                             for (i = 0; i < filas; i++) // Muestro la matriz con las palabras
