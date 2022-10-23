@@ -9,5 +9,5 @@ int main()
 }
 
 void Mundo(){
-    printf("Hoola");
+    printf("Hoola \n");
 }
