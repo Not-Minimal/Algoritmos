@@ -4,10 +4,69 @@
 #include <string.h>
 #include <ctype.h>
 
-void pasasHorizontal(char matriz[][], char palabra[], int f, int c){
+int i, j, filas, columnas, n;
+int filas = 10;
+int columnas = 10;
+
+void pasarHorizontal(char matriz[filas][columnas], char palabra[], int f, int c)
+{
+
+    for (int i = 0; i < filas; i++)
+    {
+        for (int j = 0; j < columnas; j++)
+        {
+            matriz[i][j] = 32;
+        }
+    }
+
 
     for (int i = 0; i < strlen(palabra); i++)
     {
-        matriz[f][c+i] = palabra[i];
+        matriz[f][c + i] = palabra[i];
     }
+}
+
+void pasarVertical(char matriz[filas][columnas], char palabra[], int f, int c)
+{
+
+    for (int i = 0; i < filas; i++)
+    {
+        for (int j = 0; j < columnas; j++)
+        {
+            matriz[i][j] = 32;
+        }
+    }
+
+    for (int i = 0; i < strlen(palabra); i++)
+    {
+        matriz[f + i][c] = palabra[i];
+    }
+}
+
+void visualizaerMatriz(char matriz[filas][columnas])
+{
+    
+    for (int i = 0; i < filas; i++)
+    {
+        for (int j = 0; j < columnas; j++)
+        {
+            printf("[%c]", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main(int argc, char const *argv[])
+{
+
+    char matriz[filas][columnas];
+    char palabra[] = "Saul";
+    srand(time(NULL));
+
+    //pasarHorizontal(matriz, palabra, 1, 1);
+    //visualizaerMatriz(matriz);
+    pasarVertical(matriz, palabra, rand()%filas,rand()%columnas);
+    visualizaerMatriz(matriz);
+
+    return 0;
 }
