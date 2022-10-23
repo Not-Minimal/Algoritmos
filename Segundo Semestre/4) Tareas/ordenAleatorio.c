@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<time.h>
 
 void Mundo();
 int n, i, j;
@@ -15,13 +16,13 @@ void Mundo()
     scanf("%d", &n);
 
     char matriz[n][n];
-
+    srand(time(NULL));
     // Crear matriz con caracteres en Mayuscula.
     for (i = 0; i < n; i++)
     {
         for (j = 0; j < n; j++)
         {
-            matriz[i][j] = 33;
+            matriz[i][j] = srand()%26+65;
         }
         
     }
