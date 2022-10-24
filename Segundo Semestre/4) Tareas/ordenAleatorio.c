@@ -86,7 +86,7 @@ int main(int argc, char const *argv[])
 
         x = rand() % filas;
         y = rand() % columnas;
-        pasarVerticalInverso(palabra, x, y);
+        pasarHorizontal(palabra, x, y);
         visualizaerMatriz();
         cantidadPalabras += 1;
     }
