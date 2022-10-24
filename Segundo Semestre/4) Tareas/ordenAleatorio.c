@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int i, j, filas = 10, columnas = 10, n;
+int i, j, filas = 10, columnas = 10, n, opcion;
 char palabra[10];
 char matriz[10][10];
 
@@ -46,7 +46,7 @@ void pasarVerticalInverso(char palabra[], int f, int c)
     }
 }
 
-void visualizaerMatriz()
+void visualizarMatriz()
 {
 
     for (int i = 0; i < filas; i++)
@@ -86,8 +86,31 @@ int main(int argc, char const *argv[])
 
         x = rand() % filas;
         y = rand() % columnas;
-        pasarHorizontal(palabra, x, y);
-        visualizaerMatriz();
+        opcion = (rand() % 4) + 1;
+        switch (opcion)
+        {
+        case 1:
+        {
+            pasarHorizontal(palabra, x, y);
+            break;
+        }
+        case 2:
+        {
+            pasarHorizontalInverso(palabra, x, y);
+            break;
+        }
+        case 3:
+        {
+            pasarVertical(palabra, x, y);
+            break;
+        }
+        case 4:
+        {
+            pasarVerticalInverso(palabra, x, y);
+            break;
+        }
+        }
+        visualizarMatriz();
         cantidadPalabras += 1;
     }
     return 0;
