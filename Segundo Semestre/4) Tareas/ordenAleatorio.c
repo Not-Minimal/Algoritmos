@@ -46,6 +46,7 @@ void pasarVerticalInverso(char palabra[], int f, int c)
     }
 }
 
+
 void visualizarMatriz()
 {
 
@@ -70,7 +71,6 @@ void generarMatriz()
         }
     }
 }
-
 void rellenarMatriz()
 {
 
@@ -93,7 +93,7 @@ int main(int argc, char const *argv[])
     while (cantidadPalabras != 5)
     {
 
-        printf("Ingrese palabra: ");
+        printf("Ingrese palabra N°%d: ", cantidadPalabras+1);
         printf("\n");
         scanf("%s", palabra);
         srand(time(NULL));
@@ -125,9 +125,10 @@ int main(int argc, char const *argv[])
             break;
         }
         }
-        visualizarMatriz();
-        cantidadPalabras += 1;
         rellenarMatriz();
+        cantidadPalabras += 1;
     }
+    visualizarMatriz();
+    rellenarMatriz();
     return 0;
 }
