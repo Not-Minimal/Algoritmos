@@ -71,6 +71,21 @@ void generarMatriz()
     }
 }
 
+void rellenarMatriz()
+{
+
+    for (int i = 0; i < filas; i++)
+    {
+        for (int j = 0; j < columnas; j++)
+        {
+            if (matriz[i][j] == 32)
+            {
+                matriz[i][j] = rand() % 26 + 65;
+            }
+        }
+    }
+}
+
 int main(int argc, char const *argv[])
 {
     int cantidadPalabras = 0;
@@ -112,6 +127,7 @@ int main(int argc, char const *argv[])
         }
         visualizarMatriz();
         cantidadPalabras += 1;
+        rellenarMatriz();
     }
     return 0;
 }
