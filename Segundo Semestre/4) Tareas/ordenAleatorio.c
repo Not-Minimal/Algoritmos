@@ -57,7 +57,7 @@ void pasarHorizontal(char palabra[], int f, int c)
 
 void pasarHorizontalInverso(char palabra[], int f, int c)
 {
-    if (strlen(palabra) - f >= 0)
+    if (strlen(palabra) - f <= 0)
     {
         int k = 0;
 
@@ -81,7 +81,7 @@ void pasarVertical(char palabra[], int f, int c)
 }
 void pasarVerticalInverso(char palabra[], int f, int c)
 {
-    if (strlen(palabra) - c >= 0)
+    if (strlen(palabra) - c <= 0)
     {
         int k = 0;
 
