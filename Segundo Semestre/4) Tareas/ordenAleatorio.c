@@ -144,7 +144,7 @@ int main(int argc, char const *argv[])
         generarMatriz();
         do
         {
-            printf("Ingrese la cantidad de palabras: ");
+            printf("Ingrese la cantidad de palabras: \n");
             scanf("%d", &cantidadPalabras);
             k = cantidadPalabras;
         } while (k < (n / 2) || k > (2 * n));
@@ -157,7 +157,7 @@ int main(int argc, char const *argv[])
                 printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
                 printf("\n");
                 scanf("%s", palabra);
-            } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
+            } while ((strlen(palabra) < 2) || (strlen(palabra) > n));
             aux = n;
             for (j = 0; j < aux && palabra[j] !='\0'; j++)
             {
