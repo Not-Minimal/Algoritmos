@@ -152,9 +152,13 @@ int main(int argc, char const *argv[])
         for (int cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
         {
 
-            printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
-            printf("\n");
-            scanf("%s", palabra);
+            do
+            {
+                printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
+                printf("\n");
+                scanf("%s", palabra);
+            } while (/* condition */);
+
             srand(time(NULL));
             int x, y;
 
