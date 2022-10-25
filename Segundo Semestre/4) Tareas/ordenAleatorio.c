@@ -143,6 +143,12 @@ int main(int argc, char const *argv[])
         generarMatriz();
         for (int cantidadPalabras = 0; cantidadPalabras < 5; cantidadPalabras++)
         {
+
+            do
+            {
+                /* code */
+            } while (k < (n / 2) || k > (2 * n));
+
             printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
             printf("\n");
             scanf("%s", palabra);
