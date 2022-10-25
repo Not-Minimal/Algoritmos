@@ -15,7 +15,7 @@ int menuPrincipal()
     {
         printf("Opciones: \n");
         printf("1. Crear Sopa de Letras\n");
-        printf("2. Salir " \n);
+        printf("2. Salir \n");
         printf("Ingrese la opcion: ");
         scanf("%d", &opcion);
 
