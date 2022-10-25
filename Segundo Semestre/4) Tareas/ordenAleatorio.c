@@ -135,7 +135,7 @@ void rellenarMatriz()
 int main(int argc, char const *argv[])
 {
     system("clear");
-    int opcion;
+    int opcion, aux;
     opcion = menuPrincipal();
 
     if (opcion == 1)
@@ -157,7 +157,13 @@ int main(int argc, char const *argv[])
                 printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
                 printf("\n");
                 scanf("%s", palabra);
-            } while (/* condition */);
+            } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
+            aux = n;
+            for (j = 0; j < aux && palabra[j] !='\0'; j++)
+            {
+                matriz[i][j] = toupper(palabra[j]);
+            }
+            
 
             srand(time(NULL));
             int x, y;
