@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int i, j, filas = 10, columnas = 10, n;
+int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras;
 char palabra[10];
 char matriz[35][35];
 
@@ -140,14 +140,17 @@ int main(int argc, char const *argv[])
 
     if (opcion == 1)
     {
-        generarMatriz();
-        for (int cantidadPalabras = 0; cantidadPalabras < 5; cantidadPalabras++)
-        {
 
-            do
-            {
-                /* code */
-            } while (k < (n / 2) || k > (2 * n));
+        generarMatriz();
+        do
+        {
+            printf("Ingrese la cantidad de palabras: ");
+            scanf("%d", &cantidadPalabras);
+            k = cantidadPalabras;
+        } while (k < (n / 2) || k > (2 * n));
+
+        for (int cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
+        {
 
             printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
             printf("\n");
