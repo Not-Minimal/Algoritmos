@@ -126,9 +126,8 @@ void rellenarMatriz()
     }
 }
 
-int main(int argc, char const *argv[])
+void sopaLetras()
 {
-    system("clear");
     int opcion, aux;
     opcion = menuPrincipal();
 
@@ -136,19 +135,26 @@ int main(int argc, char const *argv[])
     {
 
         generarMatriz();
-        generarPalabras();
-        ordenAleatorio();
-        rellenarMatriz();
-        visualizarMatriz();
-    }
-
-    return 0;
-}
-
-void ordenAleatorio()
-{
-    for (int cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
-    {
+        do
+        {
+            printf("Ingrese la cantidad de palabras: \n");
+            scanf("%d", &cantidadPalabras);
+            k = cantidadPalabras;
+        } while (k < (n / 2) || k > (2 * n));
+        for (i = 0; i < k; i++)
+        {
+            do
+            {
+                printf("Ingrese palabra N°%d: ", i + 1);
+                printf("\n");
+                scanf("%s", palabra);
+            } while ((strlen(palabra) < 2) || (strlen(palabra) > n));
+            aux = n;
+            for (j = 0; j < aux && palabra[j] != '\0'; j++)
+            {
+                matriz[i][j] = toupper(palabra[j]);
+            }
+        }
 
         srand(time(NULL));
         int x, y;
@@ -179,29 +185,15 @@ void ordenAleatorio()
             break;
         }
         }
+
+        rellenarMatriz();
+        visualizarMatriz();
     }
 }
 
-void generarPalabras()
+int main(int argc, char const *argv[])
 {
-    do
-    {
-        printf("Ingrese la cantidad de palabras: \n");
-        scanf("%d", &cantidadPalabras);
-        k = cantidadPalabras;
-    } while (k < (n / 2) || k > (2 * n));
-    for (i = 0; i < k; i++)
-    {
-        do
-        {
-            printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
-            printf("\n");
-            scanf("%s", palabra);
-        } while ((strlen(palabra) < 2) || (strlen(palabra) > n));
-        aux = n;
-        for (j = 0; j < aux && palabra[j] != '\0'; j++)
-        {
-            matriz[i][j] = toupper(palabra[j]);
-        }
-    }
+    system("clear");
+    sopaLetras();
+    return 0;
 }
