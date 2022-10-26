@@ -46,13 +46,12 @@ int menuPrincipal()
 
 void pasarHorizontal(char palabra[], int f, int c)
 {
-    if (strlen(palabra) - f >= 0)
-    {
+    
         for (int i = 0; i < strlen(palabra); i++)
         {
             matriz[f][c + i] = palabra[i];
         }
-    }
+    
 }
 
 void pasarHorizontalInverso(char palabra[], int f, int c)
@@ -71,18 +70,16 @@ void pasarHorizontalInverso(char palabra[], int f, int c)
 
 void pasarVertical(char palabra[], int f, int c)
 {
-    if (strlen(palabra) - c >= 0)
-    {
+
         for (int i = 0; i < strlen(palabra); i++)
         {
             matriz[f + i][c] = palabra[i];
         }
-    }
+    
 }
 void pasarVerticalInverso(char palabra[], int f, int c)
 {
-    if (strlen(palabra) - c <= 0)
-    {
+    
         int k = 0;
 
         for (int i = strlen(palabra) - 1; i >= 0; i--)
@@ -90,7 +87,7 @@ void pasarVerticalInverso(char palabra[], int f, int c)
             matriz[f + k][c] = palabra[i];
             k++;
         }
-    }
+    
 }
 
 void visualizarMatriz()
