@@ -148,10 +148,8 @@ int main(int argc, char const *argv[])
             scanf("%d", &cantidadPalabras);
             k = cantidadPalabras;
         } while (k < (n / 2) || k > (2 * n));
-
-        for (int cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
+        for (i = 0; i < k; i++)
         {
-
             do
             {
                 printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
@@ -159,11 +157,14 @@ int main(int argc, char const *argv[])
                 scanf("%s", palabra);
             } while ((strlen(palabra) < 2) || (strlen(palabra) > n));
             aux = n;
-            for (j = 0; j < aux && palabra[j] !='\0'; j++)
+            for (j = 0; j < aux && palabra[j] != '\0'; j++)
             {
                 matriz[i][j] = toupper(palabra[j]);
             }
-            
+        }
+
+        for (int cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
+        {
 
             srand(time(NULL));
             int x, y;
