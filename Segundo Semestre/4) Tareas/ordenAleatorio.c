@@ -46,50 +46,42 @@ int menuPrincipal()
 
 void pasarHorizontal(char palabra[], int f, int c)
 {
-    if (strlen(palabra) - f >= 0)
+
+    for (int i = 0; i < strlen(palabra); i++)
     {
-        for (int i = 0; i < strlen(palabra); i++)
-        {
-            matriz[f][c + i] = palabra[i];
-        }
+        matriz[f][c + i] = palabra[i];
     }
 }
 
 void pasarHorizontalInverso(char palabra[], int f, int c)
 {
-    if (strlen(palabra) - f <= 0)
-    {
-        int k = 0;
 
-        for (int i = strlen(palabra) - 1; i >= 0; i--)
-        {
-            matriz[f][c + k] = palabra[i];
-            k++;
-        }
+    int k = 0;
+
+    for (int i = strlen(palabra) - 1; i >= 0; i--)
+    {
+        matriz[f][c + k] = palabra[i];
+        k++;
     }
 }
 
 void pasarVertical(char palabra[], int f, int c)
 {
-    if (strlen(palabra) - c >= 0)
+
+    for (int i = 0; i < strlen(palabra); i++)
     {
-        for (int i = 0; i < strlen(palabra); i++)
-        {
-            matriz[f + i][c] = palabra[i];
-        }
+        matriz[f + i][c] = palabra[i];
     }
 }
 void pasarVerticalInverso(char palabra[], int f, int c)
 {
-    if (strlen(palabra) - c <= 0)
-    {
-        int k = 0;
 
-        for (int i = strlen(palabra) - 1; i >= 0; i--)
-        {
-            matriz[f + k][c] = palabra[i];
-            k++;
-        }
+    int k = 0;
+
+    for (int i = strlen(palabra) - 1; i >= 0; i--)
+    {
+        matriz[f + k][c] = palabra[i];
+        k++;
     }
 }
 
@@ -151,7 +143,7 @@ int main(int argc, char const *argv[])
 
         char palabra[n];
 
-        for (int cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
+        for (cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
         {
             printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
             printf("\n");
@@ -187,7 +179,6 @@ int main(int argc, char const *argv[])
             }
         }
 
-        rellenarMatriz();
         visualizarMatriz();
     }
 
