@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras;
+int i, j, filas = 10, columnas = 10, n;
 char palabra[10];
 char matriz[35][35];
 
@@ -46,12 +46,13 @@ int menuPrincipal()
 
 void pasarHorizontal(char palabra[], int f, int c)
 {
-    
+    if (strlen(palabra) - f >= 0)
+    {
         for (int i = 0; i < strlen(palabra); i++)
         {
             matriz[f][c + i] = palabra[i];
         }
-    
+    }
 }
 
 void pasarHorizontalInverso(char palabra[], int f, int c)
@@ -70,16 +71,18 @@ void pasarHorizontalInverso(char palabra[], int f, int c)
 
 void pasarVertical(char palabra[], int f, int c)
 {
-
+    if (strlen(palabra) - c >= 0)
+    {
         for (int i = 0; i < strlen(palabra); i++)
         {
             matriz[f + i][c] = palabra[i];
         }
-    
+    }
 }
 void pasarVerticalInverso(char palabra[], int f, int c)
 {
-    
+    if (strlen(palabra) - c <= 0)
+    {
         int k = 0;
 
         for (int i = strlen(palabra) - 1; i >= 0; i--)
@@ -87,7 +90,7 @@ void pasarVerticalInverso(char palabra[], int f, int c)
             matriz[f + k][c] = palabra[i];
             k++;
         }
-    
+    }
 }
 
 void visualizarMatriz()
@@ -97,8 +100,9 @@ void visualizarMatriz()
     {
         for (int j = 0; j < columnas; j++)
         {
-            printf("[%c]", matriz[i][j]);
+            printf("[%c]  ", matriz[i][j]);
         }
+        printf("\n");
         printf("\n");
     }
 }
@@ -131,38 +135,18 @@ void rellenarMatriz()
 
 int main(int argc, char const *argv[])
 {
-    system("clear");
-    int opcion, aux;
+    system("cls");
+    int opcion;
     opcion = menuPrincipal();
 
     if (opcion == 1)
     {
-
         generarMatriz();
-        do
+        for (int cantidadPalabras = 0; cantidadPalabras < 5; cantidadPalabras++)
         {
-            printf("Ingrese la cantidad de palabras: \n");
-            scanf("%d", &cantidadPalabras);
-            k = cantidadPalabras;
-        } while (k < (n / 2) || k > (2 * n));
-        for (i = 0; i < k; i++)
-        {
-            do
-            {
-                printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
-                printf("\n");
-                scanf("%s", palabra);
-            } while ((strlen(palabra) < 2) || (strlen(palabra) > n));
-            aux = n;
-            for (j = 0; j < aux && palabra[j] != '\0'; j++)
-            {
-                matriz[i][j] = toupper(palabra[j]);
-            }
-        }
-
-        for (int cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
-        {
-
+            printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
+            printf("\n");
+            scanf("%s", palabra);
             srand(time(NULL));
             int x, y;
 
