@@ -103,7 +103,6 @@ void visualizarMatriz()
             printf("[%c]  ", matriz[i][j]);
         }
         printf("\n");
-        printf("\n");
     }
 }
 
