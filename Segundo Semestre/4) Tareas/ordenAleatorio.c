@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras;
+int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras, opcion;
 char palabra[10];
 char matriz[35][35];
 
@@ -55,15 +55,13 @@ void pasarHorizontal(char palabra[], int f, int c)
 
 void pasarHorizontalInverso(char palabra[], int f, int c)
 {
-    if (strlen(palabra) - f <= 0)
-    {
-        int k = 0;
 
-        for (int i = strlen(palabra) - 1; i >= 0; i--)
-        {
-            matriz[f][c + k] = palabra[i];
-            k++;
-        }
+    int k = 0;
+
+    for (int i = strlen(palabra) - 1; i >= 0; i--)
+    {
+        matriz[f][c + k] = palabra[i];
+        k++;
     }
 }
 
@@ -150,40 +148,41 @@ void sopaLetras()
                 scanf("%s", palabra);
             } while ((strlen(palabra) < 2) || (strlen(palabra) > n));
             aux = n;
+
             for (j = 0; j < aux && palabra[j] != '\0'; j++)
             {
                 matriz[i][j] = toupper(palabra[j]);
             }
-        }
+            
+            srand(time(NULL));
+            int x, y;
 
-        srand(time(NULL));
-        int x, y;
-
-        x = rand() % filas;
-        y = rand() % columnas;
-        opcion = (rand() % 4) + 1;
-        switch (opcion)
-        {
-        case 1:
-        {
-            pasarHorizontal(palabra, x, y);
-            break;
-        }
-        case 2:
-        {
-            pasarHorizontalInverso(palabra, x, y);
-            break;
-        }
-        case 3:
-        {
-            pasarVertical(palabra, x, y);
-            break;
-        }
-        case 4:
-        {
-            pasarVerticalInverso(palabra, x, y);
-            break;
-        }
+            x = rand() % filas;
+            y = rand() % columnas;
+            opcion = (rand() % 4) + 1;
+            switch (opcion)
+            {
+            case 1:
+            {
+                pasarHorizontal(palabra, x, y);
+                break;
+            }
+            case 2:
+            {
+                pasarHorizontalInverso(palabra, x, y);
+                break;
+            }
+            case 3:
+            {
+                pasarVertical(palabra, x, y);
+                break;
+            }
+            case 4:
+            {
+                pasarVerticalInverso(palabra, x, y);
+                break;
+            }
+            }
         }
 
         rellenarMatriz();
