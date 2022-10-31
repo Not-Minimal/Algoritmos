@@ -185,7 +185,7 @@ int main(int argc, char const *argv[])
             case 2:
             {
                 printf("%d \n%d \n", x, y);
-                if ((strlen(palabra) - 1) - y > 0)
+                if (strlen(palabra) - y > 0)
                 {
                     pasarHorizontalInverso(palabra, x, y);
                 }
