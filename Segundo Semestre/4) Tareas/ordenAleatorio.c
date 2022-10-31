@@ -200,7 +200,7 @@ int main(int argc, char const *argv[])
 
             case 4:
             {
-                if (strlen(palabra) + y >= 0 && matriz[i][j] == 32)
+                if (strlen(palabra) + y >= 0)
                 {
                     pasarHorizontalInverso(palabra, x, y);
                 }
