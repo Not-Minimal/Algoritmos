@@ -162,8 +162,8 @@ int main(int argc, char const *argv[])
             srand(time(NULL));
             int x, y;
 
-            x = rand() % filas;
-            y = rand() % columnas;
+            x = rand() % filas - 1;
+            y = rand() % columnas - 1;
             opcion = 2; //(rand() % 4) + 1;
 
             switch (opcion)
@@ -172,7 +172,7 @@ int main(int argc, char const *argv[])
             {
                 for (i = 0; i < n; i++)
                 {
-                    if (x + strlen(palabra) >= 0)
+                    if (y + strlen(palabra) >= 0)
                     {
                         pasarHorizontal(palabra, x, y);
                     }
@@ -184,7 +184,8 @@ int main(int argc, char const *argv[])
 
             case 2:
             {
-                if (strlen(palabra) - x <= 0)
+                printf("%d \n%d \n", x, y);
+                if ((strlen(palabra) - 1) - y > 0)
                 {
                     pasarHorizontalInverso(palabra, x, y);
                 }
@@ -206,7 +207,7 @@ int main(int argc, char const *argv[])
             {
                 if (strlen(palabra) + y >= 0)
                 {
-                    pasarHorizontalInverso(palabra, x, y);
+                    pasarVerticalInverso(palabra, x, y);
                 }
                 visualizarMatriz();
                 break;
