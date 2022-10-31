@@ -164,23 +164,27 @@ int main(int argc, char const *argv[])
 
             x = rand() % filas;
             y = rand() % columnas;
-            opcion = (rand() % 4) + 1;
+            opcion = 2; //(rand() % 4) + 1;
 
             switch (opcion)
             {
             case 1:
             {
-                if (x + strlen(palabra) >= 0)
+                for (i = 0; i < n; i++)
                 {
-                    pasarHorizontal(palabra, x, y);
+                    if (x + strlen(palabra) >= 0)
+                    {
+                        pasarHorizontal(palabra, x, y);
+                    }
                 }
+
                 visualizarMatriz();
                 break;
             }
 
             case 2:
             {
-                if (strlen(palabra) + x >= 0 )
+                if (strlen(palabra) - x <= 0)
                 {
                     pasarHorizontalInverso(palabra, x, y);
                 }
