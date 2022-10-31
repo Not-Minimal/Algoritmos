@@ -46,7 +46,6 @@ int menuPrincipal()
 
 void pasarHorizontal(char palabra[], int f, int c)
 {
-
     for (int i = 0; i < strlen(palabra); i++)
     {
         matriz[f][c + i] = palabra[i];
@@ -55,7 +54,6 @@ void pasarHorizontal(char palabra[], int f, int c)
 
 void pasarHorizontalInverso(char palabra[], int f, int c)
 {
-
     int k = 0;
     if (matriz[i][j] == 32)
     {
@@ -185,10 +183,15 @@ int main(int argc, char const *argv[])
             case 2:
             {
                 printf("%d \n%d \n", x, y);
-                if (strlen(palabra) + y > 0)
+                if (strlen(palabra) + y >= 0)
                 {
                     pasarHorizontalInverso(palabra, x, y);
+                } else if (strlen(palabra) - y <= 0)
+                {
+                    pasarHorizontalInverso("X", x, y);
                 }
+                
+
                 visualizarMatriz();
                 break;
             }
