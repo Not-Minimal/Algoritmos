@@ -180,7 +180,7 @@ int main(int argc, char const *argv[])
 
             case 2:
             {
-                if (strlen(palabra) + x >= 0 && )
+                if (strlen(palabra) + x >= 0 )
                 {
                     pasarHorizontalInverso(palabra, x, y);
                 }
