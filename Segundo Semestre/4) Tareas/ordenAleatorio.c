@@ -57,12 +57,16 @@ void pasarHorizontalInverso(char palabra[], int f, int c)
 {
 
     int k = 0;
-
-    for (int i = strlen(palabra) - 1; i >= 0; i--)
+    if (matriz[i][j] == 32)
+    {
+       for (int i = strlen(palabra) - 1; i >= 0; i--)
     {
         matriz[f][c + k] = palabra[i];
         k++;
     }
+    }
+    
+    
 }
 
 void pasarVertical(char palabra[], int f, int c)
