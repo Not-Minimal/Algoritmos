@@ -190,7 +190,7 @@ int main(int argc, char const *argv[])
 
             case 3:
             {
-                if (y + strlen(palabra) >= 0 && matriz[i][j] == 32)
+                if (y + strlen(palabra) >= 0)
                 {
                     pasarVertical(palabra, x, y);
                 }
