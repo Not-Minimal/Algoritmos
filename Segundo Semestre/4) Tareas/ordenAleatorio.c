@@ -59,14 +59,12 @@ void pasarHorizontalInverso(char palabra[], int f, int c)
     int k = 0;
     if (matriz[i][j] == 32)
     {
-       for (int i = strlen(palabra) - 1; i >= 0; i--)
-    {
-        matriz[f][c + k] = palabra[i];
-        k++;
+        for (int i = strlen(palabra) - 1; i >= 0; i--)
+        {
+            matriz[f][c + k] = palabra[i];
+            k++;
+        }
     }
-    }
-    
-    
 }
 
 void pasarVertical(char palabra[], int f, int c)
@@ -176,42 +174,42 @@ int main(int argc, char const *argv[])
                 {
                     pasarHorizontal(palabra, x, y);
                 }
-
+                visualizarMatriz();
                 break;
             }
 
             case 2:
             {
-                if (strlen(palabra) + x >= 0)
+                if (strlen(palabra) + x >= 0 && matriz[i][j] == 32)
                 {
                     pasarHorizontalInverso(palabra, x, y);
                 }
+                visualizarMatriz();
                 break;
             }
 
             case 3:
             {
-                if (y + strlen(palabra) >= 0)
+                if (y + strlen(palabra) >= 0 && matriz[i][j] == 32)
                 {
                     pasarVertical(palabra, x, y);
                 }
-
+                visualizarMatriz();
                 break;
             }
 
             case 4:
             {
-                if (strlen(palabra) - +y >= 0)
+                if (strlen(palabra) + y >= 0 && matriz[i][j] == 32)
                 {
                     pasarHorizontalInverso(palabra, x, y);
                 }
+                visualizarMatriz();
                 break;
             }
             }
         }
-
-        visualizarMatriz();
+        // visualizarMatriz();
     }
-
     return 0;
 }
