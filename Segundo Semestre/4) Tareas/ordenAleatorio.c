@@ -162,8 +162,8 @@ int main(int argc, char const *argv[])
             srand(time(NULL));
             int x, y;
 
-            x = rand() % filas - 1;
-            y = rand() % columnas - 1;
+            x = rand() % filas;
+            y = rand() % columnas;
             opcion = 2; //(rand() % 4) + 1;
 
             switch (opcion)
@@ -185,7 +185,7 @@ int main(int argc, char const *argv[])
             case 2:
             {
                 printf("%d \n%d \n", x, y);
-                if (strlen(palabra) - y > 0)
+                if (strlen(palabra) + y > 0)
                 {
                     pasarHorizontalInverso(palabra, x, y);
                 }
