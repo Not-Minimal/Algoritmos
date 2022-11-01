@@ -162,7 +162,7 @@ int main(int argc, char const *argv[])
 
             x = rand() % filas;
             y = rand() % columnas;
-            opcion = 1; //(rand() % 4) + 1;
+            opcion = 3; //(rand() % 4) + 1;
 
             switch (opcion)
             {
@@ -196,6 +196,9 @@ int main(int argc, char const *argv[])
             }
             case 3:
             {
+
+                x = rand() % filas;
+                y = rand() % columnas;
                 for (i = 0; i < n; i++)
                 {
                     if (x + strlen(palabra) >= 0)
