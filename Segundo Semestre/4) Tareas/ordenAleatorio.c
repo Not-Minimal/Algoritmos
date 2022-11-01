@@ -160,8 +160,8 @@ int main(int argc, char const *argv[])
             srand(time(NULL));
             int x, y;
 
-            x = rand() % filas;
-            y = rand() % columnas;
+            // x = rand() % filas;
+            // y = rand() % columnas;
             opcion = 3; //(rand() % 4) + 1;
 
             switch (opcion)
@@ -197,8 +197,8 @@ int main(int argc, char const *argv[])
             case 3:
             {
 
-                x = rand() % filas;
-                y = rand() % columnas;
+                x = rand() % filas - strlen(palabra);
+                y = rand() % columnas - strlen(palabra);
                 for (i = 0; i < n; i++)
                 {
                     if (x + strlen(palabra) >= 0)
