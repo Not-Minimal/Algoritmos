@@ -214,7 +214,6 @@ int main(int argc, char const *argv[])
                 {
                     pasarVerticalInverso(palabra, x, y);
                 }
-
                 visualizarMatriz();
                 break;
             }
