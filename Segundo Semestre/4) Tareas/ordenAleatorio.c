@@ -162,33 +162,33 @@ int main(int argc, char const *argv[])
 
             // x = rand() % filas;
             // y = rand() % columnas;
-            opcion = 3; //(rand() % 4) + 1;
+            opcion = 1; //(rand() % 4) + 1;
 
             switch (opcion)
             {
             case 1:
             {
-
-                if (y + strlen(palabra) >= 0)
+                x = rand() % filas;
+                y = 0 + rand() % (columnas + 1 - strlen(palabra));
+                for (i = 0; i < n; i++)
                 {
-                    pasarHorizontal(palabra, x, y);
+                    if (y + strlen(palabra) >= 0)
+                    {
+                        pasarHorizontal(palabra, x, y);
+                    }
+                    visualizarMatriz();
+                    break;
                 }
-
-                visualizarMatriz();
-                break;
-            }
-
             case 2:
             {
-                printf("%d \n%d \n", x, y);
-                if (strlen(palabra) + y >= 0)
+                for (i = 0; i < n; i++)
                 {
-                    pasarHorizontalInverso(palabra, x, y);
+                    if (strlen(palabra) + y >= 0)
+                    {
+                        pasarHorizontalInverso(palabra, x, y);
+                    }
                 }
-                else if (strlen(palabra) - y <= 0)
-                {
-                    pasarHorizontalInverso("X", x, y);
-                }
+
                 visualizarMatriz();
                 break;
             }
@@ -217,8 +217,9 @@ int main(int argc, char const *argv[])
                 break;
             }
             }
+            }
+            // visualizarMatriz();
         }
-        // visualizarMatriz();
+        return 0;
     }
-    return 0;
 }
