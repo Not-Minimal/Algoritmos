@@ -162,7 +162,7 @@ int main(int argc, char const *argv[])
 
             // x = rand() % filas;
             // y = rand() % columnas;
-            opcion = 2; //(rand() % 4) + 1;
+            opcion = 0 + rand() % (5 - 1);
 
             switch (opcion)
             {
@@ -170,25 +170,22 @@ int main(int argc, char const *argv[])
             {
                 x = rand() % filas;
                 y = 0 + rand() % (columnas + 1 - strlen(palabra));
-                for (i = 0; i < n; i++)
+
+                if (y + strlen(palabra) >= 0)
                 {
-                    if (y + strlen(palabra) >= 0)
-                    {
-                        pasarHorizontal(palabra, x, y);
-                    }
-                    visualizarMatriz();
-                    break;
+                    pasarHorizontal(palabra, x, y);
                 }
+                visualizarMatriz();
+                break;
+
             case 2:
             {
                 x = rand() % filas;
                 y = 0 + rand() % (columnas + 1 - strlen(palabra));
-                for (i = 0; i < n; i++)
+
+                if (strlen(palabra) + y >= 0)
                 {
-                    if (strlen(palabra) + y >= 0)
-                    {
-                        pasarHorizontalInverso(palabra, x, y);
-                    }
+                    pasarHorizontalInverso(palabra, x, y);
                 }
 
                 visualizarMatriz();
@@ -198,25 +195,24 @@ int main(int argc, char const *argv[])
             {
                 x = 0 + rand() % (filas + 1 - strlen(palabra));
                 y = rand() % columnas;
-                for (i = 0; i < n; i++)
+
+                if (x + strlen(palabra) >= 0)
                 {
-                    if (x + strlen(palabra) >= 0)
-                    {
-                        pasarVertical(palabra, x, y);
-                    }
+                    pasarVertical(palabra, x, y);
                 }
+
                 visualizarMatriz();
                 break;
             }
 
             case 4:
             {
-                for (i = 0; i < n; i++)
+                x = 0 + rand() % (filas + 1 - strlen(palabra));
+                y = rand() % columnas;
+
+                if (strlen(palabra) + y >= 0)
                 {
-                    if (strlen(palabra) + y >= 0)
-                    {
-                        pasarVerticalInverso(palabra, x, y);
-                    }
+                    pasarVerticalInverso(palabra, x, y);
                 }
 
                 visualizarMatriz();
