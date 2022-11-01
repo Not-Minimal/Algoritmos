@@ -196,13 +196,8 @@ int main(int argc, char const *argv[])
             }
             case 3:
             {
-                int aux = strlen(palabra);
-
-                printf("%d \n", aux);
                 x = 0 + rand() % (filas + 1 - strlen(palabra));
                 y = rand() % columnas;
-                printf("%d \n", x);
-                printf("%d \n", y);
                 for (i = 0; i < n; i++)
                 {
                     if (x + strlen(palabra) >= 0)
@@ -210,7 +205,6 @@ int main(int argc, char const *argv[])
                         pasarVertical(palabra, x, y);
                     }
                 }
-
                 visualizarMatriz();
                 break;
             }
