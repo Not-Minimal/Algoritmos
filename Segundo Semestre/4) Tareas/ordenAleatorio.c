@@ -162,7 +162,7 @@ int main(int argc, char const *argv[])
 
             x = rand() % filas;
             y = rand() % columnas;
-            opcion = 4; //(rand() % 4) + 1;
+            opcion = 3; //(rand() % 4) + 1;
 
             switch (opcion)
             {
