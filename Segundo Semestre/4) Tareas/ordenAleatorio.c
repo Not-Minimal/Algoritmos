@@ -197,14 +197,20 @@ int main(int argc, char const *argv[])
             case 3:
             {
 
-                x = rand() % filas - strlen(palabra);
-                y = rand() % columnas - strlen(palabra);
+                x = rand() % strlen(palabra) - filas;
+                y = rand() % strlen(palabra) - columnas;
+                printf("%d \n", x);
+                printf("%d \n", y);
                 for (i = 0; i < n; i++)
                 {
                     if (x + strlen(palabra) >= 0)
                     {
-                        pasarVertical(palabra, y, x);
+                        pasarVertical(palabra, x, y);
+                    } else
+                    {
+                        pasarVertical("holaaaaaaaa", x, y);
                     }
+                    
                 }
 
                 visualizarMatriz();
