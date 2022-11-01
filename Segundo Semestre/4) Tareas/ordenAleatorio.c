@@ -162,7 +162,7 @@ int main(int argc, char const *argv[])
 
             x = rand() % filas;
             y = rand() % columnas;
-            opcion = 2; //(rand() % 4) + 1;
+            opcion = 4; //(rand() % 4) + 1;
 
             switch (opcion)
             {
@@ -190,15 +190,12 @@ int main(int argc, char const *argv[])
                 {
                     pasarHorizontalInverso("X", x, y);
                 }
-                
-
                 visualizarMatriz();
                 break;
             }
-
             case 3:
             {
-                if (y + strlen(palabra) >= 0)
+                if (x + strlen(palabra) >= 0)
                 {
                     pasarVertical(palabra, x, y);
                 }
