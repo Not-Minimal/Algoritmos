@@ -219,8 +219,10 @@ int main(int argc, char const *argv[])
             }
             }
             }
-            // visualizarMatriz();
         }
+        // rellenarMatriz();
+        // visualizarMatriz();
         return 0;
     }
+    
 }
