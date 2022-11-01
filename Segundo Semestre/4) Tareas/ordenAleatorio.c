@@ -168,12 +168,10 @@ int main(int argc, char const *argv[])
             {
             case 1:
             {
-                for (i = 0; i < n; i++)
+
+                if (y + strlen(palabra) >= 0)
                 {
-                    if (y + strlen(palabra) >= 0)
-                    {
-                        pasarHorizontal(palabra, x, y);
-                    }
+                    pasarHorizontal(palabra, x, y);
                 }
 
                 visualizarMatriz();
