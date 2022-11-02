@@ -147,7 +147,7 @@ void iniciarJuego()
     {
         visualizarMatriz();
 
-        for (i = 0; i < cantidadPalabras; i++)
+        for (i = 0; i < 3; i++)
         {
             printf("Ingrese palabra N°%d: ", i + 1);
             printf("\n");
