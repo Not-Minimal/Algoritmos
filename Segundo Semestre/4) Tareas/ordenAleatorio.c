@@ -135,17 +135,33 @@ void iniciarJuego()
     int opcion;
     printf("Opciones: \n");
     printf("1. Iniciar Juego \n");
-    printf("1. Salir \n");
+    printf("2. Salir \n");
+    scanf("%d", &opcion);
 
     switch (opcion)
     {
     case 1:
     {
-        for (i = 0; i < filas; i++)
+        for (i = 0; i < cantidadPalabras; i++)
         {
-            printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
+            printf("Ingrese palabra N°%d: ", i + 1);
             printf("\n");
             scanf("%s", palabra);
+        }
+        printf("\n");
+        for (int i = 0; i < filas; i++)
+        {
+            for (int j = 0; j < columnas; j++)
+            {
+                if (matriz[i][j] == palabra[i])
+                {
+                    printf("\n Encontrada");
+                }else
+                {
+                    printf("\n No encontrada");
+                }
+                
+            }
         }
     }
     break;
@@ -234,7 +250,8 @@ int main(int argc, char const *argv[])
             }
         }
     }
+    iniciarJuego();
     // rellenarMatriz();
-    visualizarMatriz();
+    // visualizarMatriz();
     return 0;
 }
