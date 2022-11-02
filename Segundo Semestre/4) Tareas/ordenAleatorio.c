@@ -159,9 +159,6 @@ int main(int argc, char const *argv[])
 
             srand(time(NULL));
             int x, y;
-
-            // x = rand() % filas;
-            // y = rand() % columnas;
             opcion = 0 + rand() % (5 - 1);
 
             switch (opcion)
