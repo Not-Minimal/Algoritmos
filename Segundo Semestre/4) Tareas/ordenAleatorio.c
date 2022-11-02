@@ -129,6 +129,32 @@ void rellenarMatriz()
     }
 }
 
+void iniciarJuego()
+{
+    system("clear");
+    int opcion;
+    printf("Opciones: \n");
+    printf("1. Iniciar Juego \n");
+    printf("1. Salir \n");
+
+    switch (opcion)
+    {
+    case 1:
+    {
+        for (i = 0; i < filas; i++)
+        {
+            
+        }
+        
+    }
+    break;
+    case 2:
+    {
+    }
+    break;
+    }
+}
+
 int main(int argc, char const *argv[])
 {
     system("cls");
@@ -167,13 +193,12 @@ int main(int argc, char const *argv[])
             {
                 x = rand() % filas;
                 y = 0 + rand() % (columnas + 1 - strlen(palabra));
-
                 if (y + strlen(palabra) >= 0)
                 {
                     pasarHorizontal(palabra, x, y);
                 }
                 break;
-
+            }
             case 2:
             {
                 x = rand() % filas;
@@ -188,7 +213,6 @@ int main(int argc, char const *argv[])
             {
                 x = 0 + rand() % (filas + 1 - strlen(palabra));
                 y = rand() % columnas;
-
                 if (x + strlen(palabra) >= 0)
                 {
                     pasarVertical(palabra, x, y);
@@ -200,7 +224,6 @@ int main(int argc, char const *argv[])
             {
                 x = 0 + rand() % (filas + 1 - strlen(palabra));
                 y = rand() % columnas;
-
                 if (strlen(palabra) + y >= 0)
                 {
                     pasarVerticalInverso(palabra, x, y);
@@ -208,10 +231,9 @@ int main(int argc, char const *argv[])
                 break;
             }
             }
-            }
         }
-        // rellenarMatriz();
-        // visualizarMatriz();
-        return 0;
     }
+    // rellenarMatriz();
+    visualizarMatriz();
+    return 0;
 }
