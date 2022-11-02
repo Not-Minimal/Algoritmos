@@ -143,9 +143,10 @@ void iniciarJuego()
     {
         for (i = 0; i < filas; i++)
         {
-            
+            printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
+            printf("\n");
+            scanf("%s", palabra);
         }
-        
     }
     break;
     case 2:
