@@ -4,6 +4,16 @@
 #include <string.h>
 #include <ctype.h>
 
+//Funciones usadas
+int menuPrincipal();
+void pasarHorizontal(char palabra[], int f, int c);
+void pasarHorizontalInverso(char palabra[], int f, int c);
+void pasarVertical(char palabra[], int f, int c);
+void pasarVerticalInverso(char palabra[], int f, int c);
+void generarMatriz();
+void rellenarMatriz();
+void iniciarJuego();
+
 int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra;
 char palabra[10];
 char matriz[35][35];
@@ -40,8 +50,8 @@ int menuPrincipal()
         }
         break;
         }
-
     } while (opcion < 1 && opcion > 2 && opcion != 2);
+    return 0;
 }
 
 void pasarHorizontal(char palabra[], int f, int c)
@@ -155,18 +165,18 @@ void iniciarJuego()
         }
         printf("\n");
 
-        for (int i = 0; i < 2; i++)
-        {
-            for (int j = 0; j < 2; j++)
-            {
-                if ((strcmp(matriz[i][j],palabra[i])) == 0)
-                {
-                    printf("\n Palabra %s Encontrada",palabra[i]);
-                    getchar();
-                }
-            }
-        }
-        printf("\nNo se encontro las palabras :(");
+        // for (int i = 0; i < 2; i++)
+        // {
+        //     for (int j = 0; j < 2; j++)
+        //     {
+        //         if ((strcmp(matriz[i][j],palabra[j])) == 0)
+        //         {
+        //             printf("\n Palabra %s Encontrada",palabra[i]);
+        //             getchar();
+        //         }
+        //     }
+        // }
+        // printf("\nNo se encontro las palabras :(");
     }
     break;
     case 2:
@@ -179,7 +189,7 @@ void iniciarJuego()
 
 int main(int argc, char const *argv[])
 {
-    system("clr");
+    system("clear");
     int opcion;
     opcion = menuPrincipal();
 
