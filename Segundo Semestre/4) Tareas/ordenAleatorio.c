@@ -172,7 +172,6 @@ int main(int argc, char const *argv[])
                 {
                     pasarHorizontal(palabra, x, y);
                 }
-                visualizarMatriz();
                 break;
 
             case 2:
@@ -183,7 +182,6 @@ int main(int argc, char const *argv[])
                 {
                     pasarHorizontalInverso(palabra, x, y);
                 }
-                visualizarMatriz();
                 break;
             }
             case 3:
@@ -195,7 +193,6 @@ int main(int argc, char const *argv[])
                 {
                     pasarVertical(palabra, x, y);
                 }
-                visualizarMatriz();
                 break;
             }
 
@@ -208,7 +205,6 @@ int main(int argc, char const *argv[])
                 {
                     pasarVerticalInverso(palabra, x, y);
                 }
-                visualizarMatriz();
                 break;
             }
             }
