@@ -147,7 +147,7 @@ void iniciarJuego()
     system("clear");
     int opcion;
     printf("Opciones: \n");
-    printf("1. Iniciar Juego \n");
+    printf("1. Iniciar Juego y Buscar palabras(3 intentos) \n");
     printf("2. Salir \n");
     scanf("%d", &opcion);
 
