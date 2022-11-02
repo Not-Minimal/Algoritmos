@@ -214,5 +214,4 @@ int main(int argc, char const *argv[])
         // visualizarMatriz();
         return 0;
     }
-    
 }
