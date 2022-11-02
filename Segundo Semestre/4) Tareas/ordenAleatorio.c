@@ -142,6 +142,8 @@ void iniciarJuego()
     {
     case 1:
     {
+        visualizarMatriz();
+
         for (i = 0; i < cantidadPalabras; i++)
         {
             printf("Ingrese palabra N°%d: ", i + 1);
@@ -150,19 +152,17 @@ void iniciarJuego()
         }
         printf("\n");
 
-        visualizarMatriz();
-
         for (int i = 0; i < filas; i++)
         {
             for (int j = 0; j < columnas; j++)
             {
                 if (matriz[i][j] == palabra[i])
                 {
-                    printf("\n Encontrada");
+                    printf("\nEncontrada");
                 }
             }
         }
-        printf("No se encontro las palabras :(");
+        printf("\nNo se encontro las palabras :(");
     }
     break;
     case 2:
