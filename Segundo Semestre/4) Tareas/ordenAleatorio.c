@@ -157,11 +157,12 @@ void iniciarJuego()
 
         for (int i = 0; i < 2; i++)
         {
-            for (int j = 0; j < columnas; j++)
+            for (int j = 0; j < 2; j++)
             {
-                if (matriz[i][j] == palabra[i])
+                if ((strcmp(matriz[i][j],palabra[i])) == 0)
                 {
-                    printf("\nEncontrada");
+                    printf("\n Palabra %s Encontrada",palabra[i]);
+                    getchar();
                 }
             }
         }
