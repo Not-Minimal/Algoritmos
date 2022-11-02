@@ -46,24 +46,12 @@ int menuPrincipal()
 
 void pasarHorizontal(char palabra[], int f, int c)
 {
-    for (int i = c; c < strlen(palabra); i++)
+    if (matriz[i][j] == 32)
     {
-        if (matriz[f][c] == '\0')
+        for (int i = 0; i < strlen(palabra); i++)
         {
-            matriz[f + i][i] = palabra[i];
+            matriz[f][c + i] = palabra[i];
         }
-        else
-        {
-            i = 0;
-            do
-            {
-                c = 0 + rand() % (columnas + 1 - strlen(palabra));
-            } while ((strlen(palabra) - c) <= palabra[i]);
-
-            i = c - 1;
-        }
-
-        // matriz[f][c + i] = palabra[i];
     }
 }
 
@@ -167,7 +155,7 @@ void iniciarJuego()
         }
         printf("\n");
 
-        for (int i = 0; i < filas; i++)
+        for (int i = 0; i < 2; i++)
         {
             for (int j = 0; j < columnas; j++)
             {
