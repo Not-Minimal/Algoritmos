@@ -46,9 +46,24 @@ int menuPrincipal()
 
 void pasarHorizontal(char palabra[], int f, int c)
 {
-    for (int i = 0; i < strlen(palabra); i++)
+    for (int i = c; c < strlen(palabra); i++)
     {
-        matriz[f][c + i] = palabra[i];
+        if (matriz[f][c] == '\0')
+        {
+            matriz[f + i][i] = palabra[i];
+        }
+        else
+        {
+            i = 0;
+            do
+            {
+                c = 0 + rand() % (columnas + 1 - strlen(palabra));
+            } while ((strlen(palabra) - c) <= palabra[i]);
+
+            i = c - 1;
+        }
+
+        // matriz[f][c + i] = palabra[i];
     }
 }
 
@@ -175,7 +190,7 @@ void iniciarJuego()
 
 int main(int argc, char const *argv[])
 {
-    system("cls");
+    system("clr");
     int opcion;
     opcion = menuPrincipal();
 
@@ -203,7 +218,7 @@ int main(int argc, char const *argv[])
 
             srand(time(NULL));
             int x, y;
-            opcion = 0 + rand() % (5 - 1);
+            opcion = 1; // 0 + rand() % (5 - 1);
 
             switch (opcion)
             {
