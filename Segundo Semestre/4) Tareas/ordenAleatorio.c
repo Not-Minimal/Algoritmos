@@ -291,7 +291,7 @@ int main(int argc, char const *argv[])
         }
         for (i = 0; i < cantidadPalabras; i++)
         {
-            printf("%spalabra: ", palabra);
+            printf("%spalabra: ", palabra[i]);
             printf("%s\npalabra2: ", palabra2);
             if ((strcmp(palabra, palabra2)) == 0)
             {
