@@ -291,7 +291,7 @@ int main(int argc, char const *argv[])
     system("clear");
     printf("\nOpciones: \n");
     printf("1. Iniciar Juego y Buscar palabras(3 intentos): ");
-    printf("\n2. Salir \n");
+    printf("2. Salir \n");
     scanf("%d", &opcion);
     char palabra2[strlen(palabra)];
 
