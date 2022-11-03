@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
-//Funciones usadas
+// Funciones usadas
 int menuPrincipal();
 void pasarHorizontal(char palabra[], int f, int c);
 void pasarHorizontalInverso(char palabra[], int f, int c);
@@ -165,18 +165,19 @@ void iniciarJuego()
         }
         printf("\n");
 
-        // for (int i = 0; i < 2; i++)
-        // {
-        //     for (int j = 0; j < 2; j++)
-        //     {
-        //         if ((strcmp(matriz[i][j],palabra[j])) == 0)
-        //         {
-        //             printf("\n Palabra %s Encontrada",palabra[i]);
-        //             getchar();
-        //         }
-        //     }
-        // }
-        // printf("\nNo se encontro las palabras :(");
+        for (int i = 0; i < 2; i++)
+        {
+
+            if ((strcmp(matriz[i], palabra[i])) == 0)
+            {
+                printf("Son iguales!.\n");
+            }
+            else
+            {
+                printf("No son iguales.\n");
+            }
+        }
+        printf("\nNo se encontro las palabras :(");
     }
     break;
     case 2:
