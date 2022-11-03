@@ -275,6 +275,7 @@ int main(int argc, char const *argv[])
     printf("1. Iniciar Juego y Buscar palabras(3 intentos) \n");
     printf("2. Salir \n");
     scanf("%d", &opcion);
+    char palabra2[strlen(palabra)];
 
     switch (opcion)
     {
@@ -284,15 +285,14 @@ int main(int argc, char const *argv[])
 
         for (i = 0; i < 3; i++)
         {
-            printf("Ingrese palabra N°%d: \n", i + 1);
+            printf("Ingrese palabra N°%d: ", i + 1);
             printf("\n");
             scanf("%s", palabra2);
-            for (l = 0; l < 5; l++)
-            {
-                printf("%s", palabra);
-                printf("%s", palabra2);
-            }
-
+        }
+        for (i = 0; i < cantidadPalabras; i++)
+        {
+            printf("%spalabra: \n", palabra);
+            printf("%s\npalabra2: \n", palabra2);
             if ((strcmp(palabra, palabra2)) == 0)
             {
 
@@ -300,7 +300,7 @@ int main(int argc, char const *argv[])
             }
             else
             {
-                printf("No se encuentra la palabra\n");
+                printf("\nNo se encuentra la palabra\n");
             }
         }
         printf("\n");
