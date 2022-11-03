@@ -16,6 +16,7 @@ void iniciarJuego();
 
 int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra;
 char palabra[10];
+char palabra2[10];
 char matriz[35][35];
 
 int menuPrincipal()
@@ -161,14 +162,14 @@ void iniciarJuego()
         {
             printf("Ingrese palabra N°%d: ", i + 1);
             printf("\n");
-            scanf("%s", palabra);
+            scanf("%s", palabra2);
         }
         printf("\n");
 
         for (int i = 0; i < 2; i++)
         {
 
-            if ((strcmp(matriz[i], palabra[i])) == 0)
+            if ((strcmp(palabra, palabra2)) == 0)
             {
                 printf("Son iguales!.\n");
             }
