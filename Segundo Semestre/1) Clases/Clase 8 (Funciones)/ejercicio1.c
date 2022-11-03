@@ -10,8 +10,8 @@ int base, k;
 
 float factorial(int numero)
 {
-    int i, fx;
-    fx = 1;
+    int i, base;
+    base = 1;
     if (numero == 0)
     {
         return numero;
@@ -20,9 +20,9 @@ float factorial(int numero)
     {
         for (int i = 1; i <= numero; i++)
         {
-            fx = i * fx;
+            base = i * base;
         }
-        return (fx);
+        return (base);
     }
 }
 
