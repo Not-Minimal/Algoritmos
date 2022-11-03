@@ -96,6 +96,5 @@ int main(int argc, char const *argv[])
     {
         printf("El valor ingresado debe estar entre ]0,+inf[");
     }
-    
     return 0;
 }
