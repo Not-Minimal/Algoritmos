@@ -18,6 +18,7 @@ int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra;
 char palabra[10];
 char palabra2[10];
 char matriz[35][35];
+char matrizBusqueda[35][35];
 
 int menuPrincipal()
 {
@@ -210,6 +211,7 @@ int main(int argc, char const *argv[])
         } while (k < (n / 2) || k > (2 * n));
 
         char palabra[n];
+        int aux = n;
 
         for (cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
         {
@@ -218,13 +220,21 @@ int main(int argc, char const *argv[])
                 printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
                 printf("\n");
                 scanf("%s", palabra);
+                // Agregar palabras en una matriz
+                for (j = 0; j < aux && palabra[j] != '\0'; j++)
+                {
+                    matrizBusqueda[i][j] = toupper(palabra[j]);
+                }
             } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
 
-            // Agregar palabras en una matriz
-            for (j = 0; j < n && palabra[j] != '\0'; j++)
-            {
-                matriz[i][j] = toupper(palabra[j]);
-            }
+            // for (i = 0; i < cantidadPalabras; i++) // Muestro la matriz con las palabras
+            // {
+            //     for (j = 0; j <= strlen(palabra); j++)
+            //     {
+            //         printf("[%c]", matriz[i][j]);
+            //     }
+            //     printf("\n");
+            // }
 
             srand(time(NULL));
             int x, y;
@@ -275,16 +285,9 @@ int main(int argc, char const *argv[])
             }
             }
         }
-        for (i = 0; i < cantidadPalabras; i++)
-        {
-            for (j = 0; j < n && palabra[j] != '\0'; j++)
-            {
-                printf("%c", matriz[i][j]);
-            }
-        }
     }
     system("clear");
-    printf("Opciones: \n");
+    printf("\nOpciones: \n");
     printf("1. Iniciar Juego y Buscar palabras(3 intentos) \n");
     printf("2. Salir \n");
     scanf("%d", &opcion);
@@ -301,19 +304,24 @@ int main(int argc, char const *argv[])
             printf("Ingrese palabra N°%d: ", i + 1);
             printf("\n");
             scanf("%s", palabra2);
-        }
-        for (i = 0; i < filas; i++)
-        {
-            printf("%spalabra: ", palabra[i]);
-            printf("%s\npalabra2: ", palabra2);
-            if ((strcmp(palabra, palabra2)) == 0)
-            {
 
-                printf("Palabra encontrada\n");
-            }
-            else
+            // Comparar
+            int contador = 0;
+            for (j = 0; j < cantidadPalabras; j++)
             {
-                printf("\nNo se encuentra la palabra\n");
+                for (k = 0, l = 0; l < strlen(palabra2); k++, l++)
+                {
+                    if (matrizBusqueda[j][k] == palabra2[l])
+                    {
+                        contador++;
+                    }
+                }
+                if (contador == strlen(palabra2))
+                {
+                    printf("Palabra encontrada");
+                    break;
+                }
+                contador = 0;
             }
         }
         printf("\n");
