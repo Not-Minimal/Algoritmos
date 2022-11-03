@@ -166,19 +166,20 @@ void iniciarJuego()
         }
         printf("\n");
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < filas; i++)
         {
-
-            if ((strcmp(palabra, palabra2)) == 0)
+            for (j = 0; j < columnas; j++)
             {
-                printf("Son iguales!.\n");
-            }
-            else
-            {
-                printf("No son iguales.\n");
+                if ((strcmp(palabra, palabra2)) == 0)
+                {
+                    printf("Son iguales!.\n");
+                }
+                else
+                {
+                    printf("No son iguales.\n");
+                }
             }
         }
-        printf("\nNo se encontro las palabras :(");
     }
     break;
     case 2:
