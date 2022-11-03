@@ -143,51 +143,59 @@ void rellenarMatriz()
     }
 }
 
-void iniciarJuego()
-{
-    system("clear");
-    int opcion;
-    printf("Opciones: \n");
-    printf("1. Iniciar Juego y Buscar palabras(3 intentos) \n");
-    printf("2. Salir \n");
-    scanf("%d", &opcion);
+// void iniciarJuego()
+// {
+//     system("clear");
+//     int opcion;
+//     printf("Opciones: \n");
+//     printf("1. Iniciar Juego y Buscar palabras(3 intentos) \n");
+//     printf("2. Salir \n");
+//     scanf("%d", &opcion);
 
-    switch (opcion)
-    {
-    case 1:
-    {
-        visualizarMatriz();
+//     switch (opcion)
+//     {
+//     case 1:
+//     {
+//         visualizarMatriz();
 
-        for (i = 0; i < 3; i++)
-        {
-            printf("Ingrese palabra N°%d: ", i + 1);
-            printf("\n");
-            scanf("%s", palabra2);
-            if ((strcmp(palabra2, palabra)) == 0)
-            {
-                printf("Son iguales!.\n");
-            }
-            else
-            {
-                printf("No son iguales.\n");
-            }
-        }
-        printf("\n");
+//         for (cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
+//         {
 
-    }
-    break;
-    case 2:
-    {
-        printf("Gracias :')");
-    }
-    break;
-    }
-}
+//             printf("Palabra: %s ", palabra);
+//         }
+
+//         for (i = 0; i < 3; i++)
+//         {
+//             printf("Ingrese palabra N°%d: ", i + 1);
+//             printf("\n");
+//             scanf("%s", palabra2);
+//             printf("%s", palabra);
+//             printf("%s", palabra2);
+//             if ((strcmp(palabra, palabra2)) == 0)
+//             {
+
+//                 printf("Son iguales!.\n");
+//             }
+//             else
+//             {
+//                 printf("No son iguales.\n");
+//             }
+//         }
+//         printf("\n");
+//     }
+//     break;
+//     case 2:
+//     {
+//         printf("Gracias :')");
+//     }
+//     break;
+//     }
+// }
 
 int main(int argc, char const *argv[])
 {
     system("clear");
-    int opcion;
+    int opcion, l;
     opcion = menuPrincipal();
 
     if (opcion == 1)
@@ -262,7 +270,48 @@ int main(int argc, char const *argv[])
             }
         }
     }
-    iniciarJuego();
+    system("clear");
+    printf("Opciones: \n");
+    printf("1. Iniciar Juego y Buscar palabras(3 intentos) \n");
+    printf("2. Salir \n");
+    scanf("%d", &opcion);
+
+    switch (opcion)
+    {
+    case 1:
+    {
+        visualizarMatriz();
+
+        for (i = 0; i < 3; i++)
+        {
+            printf("Ingrese palabra N°%d: \n", i + 1);
+            printf("\n");
+            scanf("%s", palabra2);
+            for (l = 0; l < 5; l++)
+            {
+                printf("%s", palabra);
+                printf("%s", palabra2);
+            }
+
+            if ((strcmp(palabra, palabra2)) == 0)
+            {
+
+                printf("Palabra encontrada\n");
+            }
+            else
+            {
+                printf("No se encuentra la palabra\n");
+            }
+        }
+        printf("\n");
+    }
+    break;
+    case 2:
+    {
+        printf("Gracias :')");
+    }
+    break;
+    }
     // rellenarMatriz();
     // visualizarMatriz();
     return 0;
