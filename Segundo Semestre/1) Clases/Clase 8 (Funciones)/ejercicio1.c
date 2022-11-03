@@ -26,7 +26,7 @@ float factorial(int numero)
     }
 }
 
-long potencia(int base, int potencia)
+long potencia(int base, int exponente)
 {
     long resultado = base;
     if (base == 0)
@@ -35,10 +35,12 @@ long potencia(int base, int potencia)
     }
     else
     {
-        while (potencia > 1)
+        //Mientras que x sea mayor a 1, ya va disminuyendo el valor.
+        while (exponente > 1)
         {
+            //Multiplica el resultado con la base hasta que el exponente
             resultado = resultado * base;
-            potencia--;
+            exponente--;
         }        
         return (resultado);
     }
