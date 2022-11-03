@@ -1,13 +1,14 @@
+//Libreria
 #include <stdio.h>
 
 // Funciones
-// int exponente();
 float factorial();
 long potencia();
 
 // Variables Globales
 int base, k;
 
+//Funcion para calculo de factorial con parametro segun definicion
 float factorial(int numero)
 {
     int i, base;
@@ -26,11 +27,14 @@ float factorial(int numero)
     }
 }
 
+//Funcion para calculo de potencia con parametros de base y exponente segun definicion (Tipo long por valores gigantes)
 long potencia(int base, int exponente)
 {
+    //Primerio la base es el primer numero retornado de la funcion main
     long resultado = base;
     if (base == 0)
     {
+        //Solo retorna valor 0
         return base;
     }
     else
@@ -38,7 +42,7 @@ long potencia(int base, int exponente)
         //Mientras que x sea mayor a 1, ya va disminuyendo el valor.
         while (exponente > 1)
         {
-            //Multiplica el resultado con la base hasta que el exponente
+            //Multiplica el resultado con la base hasta que el exponente sea menor a 2
             resultado = resultado * base;
             exponente--;
         }        
@@ -54,11 +58,13 @@ int main(int argc, char const *argv[])
     printf("\nEvaluar F(x)");
     printf("\nIngrese el valor de x: ");
     scanf("%d", &x);
+    //3 Funcion
     if (x > 10)
     {
         resultado = factorial(x);
         printf("El resultado de F(%d) es: %2.f \n", x, resultado);
     }
+    //2 Funcion
     else if (x >= 5 && x <= 10)
     {
         printf("Para este calculo necesita un valor extra (b).");
@@ -68,6 +74,7 @@ int main(int argc, char const *argv[])
         resultadoPot = potencia(resultado, x);
         printf("El resultado de F(%d)! elevado a %d es: %ld \n", (x + b), x, resultadoPot);
     }
+    //3 Funcion
     else if (x > 0 && x < 5)
     {
         printf("Para este calculo necesita un valor extra (b).");
@@ -84,6 +91,7 @@ int main(int argc, char const *argv[])
             printf("El resultado de F(%d)! elevado a %d es: %ld \n", x, (b - x), resultadoPot);
         }
     }
+    //Valor fuera de rango.
     else
     {
         printf("El valor ingresado debe estar entre ]0,+inf[");
