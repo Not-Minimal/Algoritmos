@@ -215,6 +215,7 @@ int main(int argc, char const *argv[])
 
         for (cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
         {
+            i = 0;
             do
             {
                 printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
@@ -223,8 +224,9 @@ int main(int argc, char const *argv[])
                 // Agregar palabras en una matriz
                 for (j = 0; j < aux && palabra[j] != '\0'; j++)
                 {
-                    matrizBusqueda[i][j] = toupper(palabra[j]);
+                    matrizBusqueda[cantidadPalabras][j] = toupper(palabra[j]);
                 }
+                i++;
             } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
 
             // for (i = 0; i < cantidadPalabras; i++) // Muestro la matriz con las palabras
@@ -304,16 +306,32 @@ int main(int argc, char const *argv[])
             printf("Ingrese palabra N°%d: ", i + 1);
             printf("\n");
             scanf("%s", palabra2);
+            for (j = 0; j < n && palabra[j] != '\0'; j++)
+            {
+                palabra2[j] = toupper(palabra2[j]);
+            }
 
             // Comparar
             int contador = 0;
+
+            for (i = 0; i < filas; i++)
+            {
+                for (j = 0; j < columnas; j++)
+                {
+                    printf("[%c]", matrizBusqueda[i][j]);
+                }
+                printf("\n");
+            }
+
             for (j = 0; j < cantidadPalabras; j++)
             {
+                printf("Hola");
                 for (k = 0, l = 0; l < strlen(palabra2); k++, l++)
                 {
                     if (matrizBusqueda[j][k] == palabra2[l])
                     {
                         contador++;
+                        printf("ingresado");
                     }
                 }
                 if (contador == strlen(palabra2))
