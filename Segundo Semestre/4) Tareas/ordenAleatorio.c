@@ -300,13 +300,12 @@ int main(int argc, char const *argv[])
     case 1:
     {
         visualizarMatriz();
-
         for (i = 0; i < 3; i++)
         {
             printf("Ingrese palabra N°%d: ", i + 1);
             printf("\n");
             scanf("%s", palabra2);
-            for (j = 0; j < n && palabra[j] != '\0'; j++)
+            for (j = 0; j < n && palabra2[j] != '\0'; j++)
             {
                 palabra2[j] = toupper(palabra2[j]);
             }
@@ -314,33 +313,33 @@ int main(int argc, char const *argv[])
             // Comparar
             int contador = 0;
 
-            for (i = 0; i < filas; i++)
-            {
-                for (j = 0; j < columnas; j++)
-                {
-                    printf("[%c]", matrizBusqueda[i][j]);
-                }
-                printf("\n");
-            }
-
             for (j = 0; j < cantidadPalabras; j++)
             {
-                printf("Hola");
                 for (k = 0, l = 0; l < strlen(palabra2); k++, l++)
                 {
                     if (matrizBusqueda[j][k] == palabra2[l])
                     {
                         contador++;
-                        printf("ingresado");
                     }
                 }
                 if (contador == strlen(palabra2))
                 {
-                    printf("Palabra encontrada");
-                    break;
+                    j = cantidadPalabras;
                 }
-                contador = 0;
+                else
+                {
+                    contador = 0;
+                }
             }
+            if (contador == strlen(palabra2))
+            {
+                printf("\nPalabra encontrada\n");
+            }
+            else
+            {
+                printf("Palabra no encontrada\n");
+            }
+            contador = 0;
         }
         printf("\n");
     }
