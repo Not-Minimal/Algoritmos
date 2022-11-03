@@ -220,6 +220,12 @@ int main(int argc, char const *argv[])
                 scanf("%s", palabra);
             } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
 
+            // Agregar palabras en una matriz
+            for (j = 0; j < n && palabra[j] != '\0'; j++)
+            {
+                matriz[i][j] = toupper(palabra[j]);
+            }
+
             srand(time(NULL));
             int x, y;
             opcion = 1; // 0 + rand() % (5 - 1);
@@ -269,6 +275,13 @@ int main(int argc, char const *argv[])
             }
             }
         }
+        for (i = 0; i < cantidadPalabras; i++)
+        {
+            for (j = 0; j < n && palabra[j] != '\0'; j++)
+            {
+                printf("%c", matriz[i][j]);
+            }
+        }
     }
     system("clear");
     printf("Opciones: \n");
@@ -289,7 +302,7 @@ int main(int argc, char const *argv[])
             printf("\n");
             scanf("%s", palabra2);
         }
-        for (i = 0; i < (filas*columnas); i++)
+        for (i = 0; i < filas; i++)
         {
             printf("%spalabra: ", palabra[i]);
             printf("%s\npalabra2: ", palabra2);
