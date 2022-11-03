@@ -289,7 +289,7 @@ int main(int argc, char const *argv[])
             printf("\n");
             scanf("%s", palabra2);
         }
-        for (i = 0; i < cantidadPalabras; i++)
+        for (i = 0; i < (filas*columnas); i++)
         {
             printf("%spalabra: ", palabra[i]);
             printf("%s\npalabra2: ", palabra2);
