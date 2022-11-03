@@ -39,7 +39,7 @@ long potencia(int base, int potencia)
         {
             resultado = resultado * base;
             potencia--;
-        }
+        }        
         return (resultado);
     }
 }
@@ -82,5 +82,10 @@ int main(int argc, char const *argv[])
             printf("El resultado de F(%d)! elevado a %d es: %ld \n", x, (b - x), resultadoPot);
         }
     }
+    else
+    {
+        printf("El valor ingresado debe estar entre ]0,+inf[");
+    }
+    
     return 0;
 }
