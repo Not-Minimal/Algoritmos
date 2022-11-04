@@ -54,7 +54,7 @@ int menuPrincipal()
     } while (opcion < 1 && opcion > 2 && opcion != 2);
     return 0;
 }
-//Funcion para pasar isquierda a derecha
+//Funcion para pasar desde isquierda a derecha
 void pasarHorizontal(char palabra[], int f, int c)
 {
     if (matriz[i][j] == 32)
@@ -65,7 +65,7 @@ void pasarHorizontal(char palabra[], int f, int c)
         }
     }
 }
-//Funcion para pasar Derecha a Izquierda
+//Funcion para pasar desde Derecha a Izquierda
 void pasarHorizontalInverso(char palabra[], int f, int c)
 {
     int k = 0;
@@ -78,7 +78,7 @@ void pasarHorizontalInverso(char palabra[], int f, int c)
         }
     }
 }
-//Funcion para pasar Arriba hacia Abajo
+//Funcion para pasar desde Arriba hacia Abajo
 void pasarVertical(char palabra[], int f, int c)
 {
     if (matriz[i][j] == 32)
@@ -89,11 +89,10 @@ void pasarVertical(char palabra[], int f, int c)
         }
     }
 }
+//Funcion para pasar desde Abajo hacia Arriba
 void pasarVerticalInverso(char palabra[], int f, int c)
 {
-
     int k = 0;
-
     if (matriz[i][j] == 32)
     {
         for (int i = strlen(palabra) - 1; i >= 0; i--)
@@ -106,7 +105,6 @@ void pasarVerticalInverso(char palabra[], int f, int c)
 
 void visualizarMatriz()
 {
-
     for (int i = 0; i < filas; i++)
     {
         for (int j = 0; j < columnas; j++)
