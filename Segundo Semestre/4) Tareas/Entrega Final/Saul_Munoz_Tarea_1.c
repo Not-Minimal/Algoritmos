@@ -10,16 +10,16 @@
 
 // Funciones Creadas
 int menuPrincipal();
-void pasarHorizontal(char palabra[], int f, int c);
-void pasarHorizontalInverso(char palabra[], int f, int c);
-void pasarVertical(char palabra[], int f, int c);
-void pasarVerticalInverso(char palabra[], int f, int c);
+void pasarHorizontal(char palabra[], int f, int c, int orientacion);
+void pasarHorizontalInverso(char palabra[], int f, int c, int orientacion);
+void pasarVertical(char palabra[], int f, int c, int orientacion);
+void pasarVerticalInverso(char palabra[], int f, int c, int orientacion);
 void generarMatriz();
 void rellenarMatriz();
 void iniciarJuego();
 
 // Funciones Globales
-int i, j, k, l, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra, opcion, x, y;
+int i, j, k, l, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra, opcion, coordenadaX, coordenadaY;
 char palabra[10];
 char palabra2[10];
 char matriz[35][35];
@@ -62,8 +62,11 @@ int menuPrincipal()
     return 0;
 }
 // Funcion para pasar desde isquierda a derecha
-void pasarHorizontal(char palabra[], int f, int c)
+void pasarHorizontal(char palabra[], int f, int c, int orientacion)
 {
+    orientacion = 1;
+    coordenadaX = f;
+    coordenadaY = c;
     if (matriz[i][j] == 32)
     {
         for (int i = 0; i < strlen(palabra); i++)
@@ -73,8 +76,11 @@ void pasarHorizontal(char palabra[], int f, int c)
     }
 }
 // Funcion para pasar desde Derecha a Izquierda
-void pasarHorizontalInverso(char palabra[], int f, int c)
+void pasarHorizontalInverso(char palabra[], int f, int c, int orientacion)
 {
+    orientacion = 2;
+    coordenadaX = f;
+    coordenadaY = c;
     int k = 0;
     if (matriz[i][j] == 32)
     {
@@ -86,8 +92,11 @@ void pasarHorizontalInverso(char palabra[], int f, int c)
     }
 }
 // Funcion para pasar desde Arriba hacia Abajo
-void pasarVertical(char palabra[], int f, int c)
+void pasarVertical(char palabra[], int f, int c, int orientacion)
 {
+    orientacion = 3;
+    coordenadaX = f;
+    coordenadaY = c;
     if (matriz[i][j] == 32)
     {
         for (int i = 0; i < strlen(palabra); i++)
@@ -97,8 +106,11 @@ void pasarVertical(char palabra[], int f, int c)
     }
 }
 // Funcion para pasar desde Abajo hacia Arriba
-void pasarVerticalInverso(char palabra[], int f, int c)
+void pasarVerticalInverso(char palabra[], int f, int c, int orientacion)
 {
+    orientacion = 4;
+    coordenadaX = f;
+    coordenadaY = c;
     int k = 0;
     if (matriz[i][j] == 32)
     {
@@ -205,7 +217,7 @@ void iniciarJuego()
             }
             if (contador == strlen(palabra2))
             {
-                printf("Palabra encontrada en cordenadas (%d,%d)\n", x,y);
+                printf("Palabra encontrada en cordenadas (%d,%d)\n",coordenadaX, coordenadaY);
             }
             else
             {
@@ -281,7 +293,7 @@ int main(int argc, char const *argv[])
                 y = 0 + rand() % (columnas + 1 - strlen(palabra));
                 if (y + strlen(palabra) >= 0)
                 {
-                    pasarHorizontal(palabra, x, y);
+                    pasarHorizontal(palabra, x, y, 1);
                 }
                 break;
             }
@@ -291,7 +303,7 @@ int main(int argc, char const *argv[])
                 y = 0 + rand() % (columnas + 1 - strlen(palabra));
                 if (strlen(palabra) + y >= 0)
                 {
-                    pasarHorizontalInverso(palabra, x, y);
+                    pasarHorizontalInverso(palabra, x, y, 2);
                 }
                 break;
             }
@@ -301,7 +313,7 @@ int main(int argc, char const *argv[])
                 y = rand() % columnas;
                 if (x + strlen(palabra) >= 0)
                 {
-                    pasarVertical(palabra, x, y);
+                    pasarVertical(palabra, x, y, 3);
                 }
                 break;
             }
@@ -311,7 +323,7 @@ int main(int argc, char const *argv[])
                 y = rand() % columnas;
                 if (strlen(palabra) + y >= 0)
                 {
-                    pasarVerticalInverso(palabra, x, y);
+                    pasarVerticalInverso(palabra, x, y, 4);
                 }
                 break;
             }
