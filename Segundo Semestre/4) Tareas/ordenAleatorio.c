@@ -158,6 +158,7 @@ void iniciarJuego()
     {
     case 1:
     {
+        rellenarMatriz();
         visualizarMatriz();
         printf("\n");
         for (i = 0; i < 3; i++)
@@ -205,6 +206,7 @@ void iniciarJuego()
             contador = 0;
         }
         printf("\n");
+        
     }
     break;
     case 2:
@@ -238,6 +240,7 @@ int main(int argc, char const *argv[])
         for (cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
         {
             i = 0;
+            //Ingresar palabras
             do
             {
                 printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
@@ -246,11 +249,13 @@ int main(int argc, char const *argv[])
                 // Agregar palabras en una matriz
                 for (j = 0; j < n && palabra[j] != '\0'; j++)
                 {
+                    //Ingresar palabra a la matriz con Mayusculas
                     matrizBusqueda[cantidadPalabras][j] = toupper(palabra[j]);
                 }
                 i++;
             } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
-
+            
+            //Reiniciar el tiempo
             srand(time(NULL));
             int x, y;
             opcion = 0 + rand() % (5 - 1);
@@ -301,7 +306,6 @@ int main(int argc, char const *argv[])
             }
         }
     }
-    // rellenarMatriz();
-    // visualizarMatriz();
+    iniciarJuego();
     return 0;
 }
