@@ -257,12 +257,14 @@ int main(int argc, char const *argv[])
             
             //Reiniciar el tiempo
             srand(time(NULL));
+            //Uso de variables locales para pasar como parametro a las funciones de ingreso aleatorio
             int x, y;
+            //Opcion para el switch de forma aleatoria
             opcion = 0 + rand() % (5 - 1);
-
+            //Switch que ingresa las palabras de manera aleatoria a la matriz.
             switch (opcion)
             {
-            case 1:
+            case 1: //Ingresa de Derecha a izquierda
             {
                 x = rand() % filas;
                 y = 0 + rand() % (columnas + 1 - strlen(palabra));
@@ -272,7 +274,7 @@ int main(int argc, char const *argv[])
                 }
                 break;
             }
-            case 2:
+            case 2: //Ingresa de izquierda a Derecha
             {
                 x = rand() % filas;
                 y = 0 + rand() % (columnas + 1 - strlen(palabra));
@@ -282,7 +284,7 @@ int main(int argc, char const *argv[])
                 }
                 break;
             }
-            case 3:
+            case 3:  //Ingresa de Arriba hacia abajo
             {
                 x = 0 + rand() % (filas + 1 - strlen(palabra));
                 y = rand() % columnas;
@@ -292,8 +294,7 @@ int main(int argc, char const *argv[])
                 }
                 break;
             }
-
-            case 4:
+            case 4:  //Ingresa de Abajo hacia Arriba
             {
                 x = 0 + rand() % (filas + 1 - strlen(palabra));
                 y = rand() % columnas;
@@ -306,6 +307,7 @@ int main(int argc, char const *argv[])
             }
         }
     }
+    //Lamar a funcion para iniciar el juego y tomar el tiempo que se demora el usuario en encontrar las palabras.
     iniciarJuego();
     return 0;
 }
