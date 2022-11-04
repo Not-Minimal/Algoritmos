@@ -15,8 +15,11 @@ void rellenarMatriz();
 void iniciarJuego();
 
 // Funciones Globales
-int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra;
-char palabra[10], char palabra2[10], char matriz[35][35], char matrizBusqueda[35][35];
+int i, j, k, l, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra, opcion;
+char palabra[10];
+char palabra2[10];
+char matriz[35][35];
+char matrizBusqueda[35][35];
 
 // Menu de Opciones de Inicio
 int menuPrincipal()
@@ -231,8 +234,7 @@ int main(int argc, char const *argv[])
         } while (k < (n / 2) || k > (2 * n));
         
         char palabra[n];
-        int aux = n;
-
+        //Ciclo para ingresar palabras al arreglo en funcion de la cantidad elegida anteriormente
         for (cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
         {
             i = 0;
@@ -242,7 +244,7 @@ int main(int argc, char const *argv[])
                 printf("\n");
                 scanf("%s", palabra);
                 // Agregar palabras en una matriz
-                for (j = 0; j < aux && palabra[j] != '\0'; j++)
+                for (j = 0; j < n && palabra[j] != '\0'; j++)
                 {
                     matrizBusqueda[cantidadPalabras][j] = toupper(palabra[j]);
                 }
