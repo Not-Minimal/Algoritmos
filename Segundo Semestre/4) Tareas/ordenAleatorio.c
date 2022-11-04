@@ -14,11 +14,11 @@ void generarMatriz();
 void rellenarMatriz();
 void iniciarJuego();
 
-//Funciones Globales
+// Funciones Globales
 int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra;
 char palabra[10], char palabra2[10], char matriz[35][35], char matrizBusqueda[35][35];
 
-//Menu de Opciones de Inicio
+// Menu de Opciones de Inicio
 int menuPrincipal()
 {
     int opcion;
@@ -54,7 +54,7 @@ int menuPrincipal()
     } while (opcion < 1 && opcion > 2 && opcion != 2);
     return 0;
 }
-//Funcion para pasar desde isquierda a derecha
+// Funcion para pasar desde isquierda a derecha
 void pasarHorizontal(char palabra[], int f, int c)
 {
     if (matriz[i][j] == 32)
@@ -65,7 +65,7 @@ void pasarHorizontal(char palabra[], int f, int c)
         }
     }
 }
-//Funcion para pasar desde Derecha a Izquierda
+// Funcion para pasar desde Derecha a Izquierda
 void pasarHorizontalInverso(char palabra[], int f, int c)
 {
     int k = 0;
@@ -78,7 +78,7 @@ void pasarHorizontalInverso(char palabra[], int f, int c)
         }
     }
 }
-//Funcion para pasar desde Arriba hacia Abajo
+// Funcion para pasar desde Arriba hacia Abajo
 void pasarVertical(char palabra[], int f, int c)
 {
     if (matriz[i][j] == 32)
@@ -89,7 +89,7 @@ void pasarVertical(char palabra[], int f, int c)
         }
     }
 }
-//Funcion para pasar desde Abajo hacia Arriba
+// Funcion para pasar desde Abajo hacia Arriba
 void pasarVerticalInverso(char palabra[], int f, int c)
 {
     int k = 0;
@@ -102,7 +102,7 @@ void pasarVerticalInverso(char palabra[], int f, int c)
         }
     }
 }
-
+// Funcion para visualizar o imprimir matriz
 void visualizarMatriz()
 {
     for (int i = 0; i < filas; i++)
@@ -114,10 +114,9 @@ void visualizarMatriz()
         printf("\n");
     }
 }
-
+// Funcion que genera la matriz con espacion vacios
 void generarMatriz()
 {
-
     for (int i = 0; i < filas; i++)
     {
         for (int j = 0; j < columnas; j++)
@@ -126,6 +125,7 @@ void generarMatriz()
         }
     }
 }
+// Funcion que rellena los espacios vacios con letras aleatorias.
 void rellenarMatriz()
 {
 
@@ -140,10 +140,11 @@ void rellenarMatriz()
         }
     }
 }
-
+// Funcion que inicia el juego y ademas toma el tiempo.
 void iniciarJuego()
 {
-system("clear");
+    // Menu de opciones del juego
+    system("clear");
     printf("\nOpciones: \n");
     printf("1. Iniciar Juego y Buscar palabras(3 intentos): \n");
     printf("2. Salir \n");
