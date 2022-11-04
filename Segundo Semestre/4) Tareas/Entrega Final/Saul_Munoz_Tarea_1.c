@@ -1,6 +1,6 @@
 /*Integrantes:
 - Saul Muñoz Pedreros, RUT: 20.374.510-9
-- Dilan Toro Arangui
+- Dilan Toro Moraga, RTU: 20.956.529-3
 */
 #include <stdio.h>
 #include <time.h>
