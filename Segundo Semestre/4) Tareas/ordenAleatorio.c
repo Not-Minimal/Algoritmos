@@ -166,25 +166,28 @@ void iniciarJuego()
             {
                 palabra2[j] = toupper(palabra2[j]);
             }
-
-            // Comparar
+            //Contador que aumenta solo cuando encuentra los caracteres de forma linal
             int contador = 0;
-
+            //Ciclo que recorre las filas en funcion de la cantidad de palabras ingresadas por usuario
             for (j = 0; j < cantidadPalabras; j++)
             {
+                //Ciclo que recoorre las columnas para evaluar caracter a caracter
                 for (k = 0, l = 0; l < strlen(palabra2); k++, l++)
                 {
+                    //Si los caracteres coinciden con el arreglo palabra2, aumenta el contador
                     if (matrizBusqueda[j][k] == palabra2[l])
                     {
                         contador++;
                     }
                 }
+                //si el contador es igual al tamaño de la palabra, ahora j o columnas sera igual a la cantidad de palabras
                 if (contador == strlen(palabra2))
                 {
                     j = cantidadPalabras;
                 }
                 else
                 {
+                    //Vuelve el contador a 0 si es que no encontro coincidencia.
                     contador = 0;
                 }
             }
@@ -217,15 +220,16 @@ int main(int argc, char const *argv[])
 
     if (opcion == 1)
     {
+        //Lamar a funcion para generar inicialmente la matriz vacia
         generarMatriz();
-
+        //Validacion de la cantidad de palabras en funcion del tamaño de la matriz
         do
         {
             printf("Ingrese la cantidad de palabras: ");
             scanf("%d", &cantidadPalabras);
             k = cantidadPalabras;
         } while (k < (n / 2) || k > (2 * n));
-
+        
         char palabra[n];
         int aux = n;
 
