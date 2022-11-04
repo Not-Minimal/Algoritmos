@@ -18,6 +18,7 @@ void iniciarJuego();
 int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra;
 char palabra[10], char palabra2[10], char matriz[35][35], char matrizBusqueda[35][35];
 
+//Menu de Opciones de Inicio
 int menuPrincipal()
 {
     int opcion;
@@ -53,7 +54,7 @@ int menuPrincipal()
     } while (opcion < 1 && opcion > 2 && opcion != 2);
     return 0;
 }
-
+//Funcion para pasar isquierda a derecha
 void pasarHorizontal(char palabra[], int f, int c)
 {
     if (matriz[i][j] == 32)
@@ -64,7 +65,7 @@ void pasarHorizontal(char palabra[], int f, int c)
         }
     }
 }
-
+//Funcion para pasar Derecha a Izquierda
 void pasarHorizontalInverso(char palabra[], int f, int c)
 {
     int k = 0;
@@ -77,7 +78,7 @@ void pasarHorizontalInverso(char palabra[], int f, int c)
         }
     }
 }
-
+//Funcion para pasar Arriba hacia Abajo
 void pasarVertical(char palabra[], int f, int c)
 {
     if (matriz[i][j] == 32)
