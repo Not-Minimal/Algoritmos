@@ -205,7 +205,7 @@ void iniciarJuego()
             }
             if (contador == strlen(palabra2))
             {
-                printf("Palabra encontrada\n");
+                printf("Palabra encontrada en cordenadas (%d,%d)\n", filas,columnas);
             }
             else
             {
