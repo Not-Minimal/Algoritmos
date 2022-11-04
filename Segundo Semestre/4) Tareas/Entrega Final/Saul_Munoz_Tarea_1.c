@@ -19,7 +19,7 @@ void rellenarMatriz();
 void iniciarJuego();
 
 // Funciones Globales
-int i, j, k, l, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra, opcion;
+int i, j, k, l, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra, opcion, x, y;
 char palabra[10];
 char palabra2[10];
 char matriz[35][35];
@@ -205,7 +205,7 @@ void iniciarJuego()
             }
             if (contador == strlen(palabra2))
             {
-                printf("Palabra encontrada en cordenadas (%d,%d)\n", filas,columnas);
+                printf("Palabra encontrada en cordenadas (%d,%d)\n", x,y);
             }
             else
             {
@@ -216,7 +216,7 @@ void iniciarJuego()
         printf("\n");
         fin = clock();
         tiempo = (((double)(fin - inicio)) / CLOCKS_PER_SEC);
-        printf("El tiempo que te tomo en encontrar las palabras fue: %f", tiempo);
+        printf("El tiempo que te tomo en encontrar las palabras fue: %f \n", tiempo);
         printf("Gracias por participar. :')");
     }
     break;
