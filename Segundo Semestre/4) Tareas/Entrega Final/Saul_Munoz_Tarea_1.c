@@ -1,3 +1,7 @@
+/*Integrantes:
+- Saul Muñoz Pedreros, RUT: 20.374.510-9
+- Dilan Toro Arangui
+*/
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
