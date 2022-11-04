@@ -153,11 +153,16 @@ void iniciarJuego()
     printf("2. Salir \n");
     scanf("%d", &opcion);
     char palabra2[strlen(palabra)];
+    //Iniciar el registro de tiempo
+    clock_t inicio, fin;
+    double tiempo;
+    inicio = clock();
 
     switch (opcion)
     {
     case 1:
     {
+
         rellenarMatriz();
         visualizarMatriz();
         printf("\n");
@@ -170,28 +175,28 @@ void iniciarJuego()
             {
                 palabra2[j] = toupper(palabra2[j]);
             }
-            //Contador que aumenta solo cuando encuentra los caracteres de forma linal
+            // Contador que aumenta solo cuando encuentra los caracteres de forma linal
             int contador = 0;
-            //Ciclo que recorre las filas en funcion de la cantidad de palabras ingresadas por usuario
+            // Ciclo que recorre las filas en funcion de la cantidad de palabras ingresadas por usuario
             for (j = 0; j < cantidadPalabras; j++)
             {
-                //Ciclo que recoorre las columnas para evaluar caracter a caracter
+                // Ciclo que recoorre las columnas para evaluar caracter a caracter
                 for (k = 0, l = 0; l < strlen(palabra2); k++, l++)
                 {
-                    //Si los caracteres coinciden con el arreglo palabra2, aumenta el contador
+                    // Si los caracteres coinciden con el arreglo palabra2, aumenta el contador
                     if (matrizBusqueda[j][k] == palabra2[l])
                     {
                         contador++;
                     }
                 }
-                //si el contador es igual al tamaño de la palabra, ahora j o columnas sera igual a la cantidad de palabras
+                // si el contador es igual al tamaño de la palabra, ahora j o columnas sera igual a la cantidad de palabras
                 if (contador == strlen(palabra2))
                 {
                     j = cantidadPalabras;
                 }
                 else
                 {
-                    //Vuelve el contador a 0 si es que no encontro coincidencia.
+                    // Vuelve el contador a 0 si es que no encontro coincidencia.
                     contador = 0;
                 }
             }
@@ -206,7 +211,6 @@ void iniciarJuego()
             contador = 0;
         }
         printf("\n");
-        
     }
     break;
     case 2:
@@ -225,22 +229,22 @@ int main(int argc, char const *argv[])
 
     if (opcion == 1)
     {
-        //Lamar a funcion para generar inicialmente la matriz vacia
+        // Lamar a funcion para generar inicialmente la matriz vacia
         generarMatriz();
-        //Validacion de la cantidad de palabras en funcion del tamaño de la matriz
+        // Validacion de la cantidad de palabras en funcion del tamaño de la matriz
         do
         {
             printf("Ingrese la cantidad de palabras: ");
             scanf("%d", &cantidadPalabras);
             k = cantidadPalabras;
         } while (k < (n / 2) || k > (2 * n));
-        
+
         char palabra[n];
-        //Ciclo para ingresar palabras al arreglo en funcion de la cantidad elegida anteriormente
+        // Ciclo para ingresar palabras al arreglo en funcion de la cantidad elegida anteriormente
         for (cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
         {
             i = 0;
-            //Ingresar palabras
+            // Ingresar palabras
             do
             {
                 printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
@@ -249,22 +253,22 @@ int main(int argc, char const *argv[])
                 // Agregar palabras en una matriz
                 for (j = 0; j < n && palabra[j] != '\0'; j++)
                 {
-                    //Ingresar palabra a la matriz con Mayusculas
+                    // Ingresar palabra a la matriz con Mayusculas
                     matrizBusqueda[cantidadPalabras][j] = toupper(palabra[j]);
                 }
                 i++;
             } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
-            
-            //Reiniciar el tiempo
+
+            // Reiniciar el tiempo
             srand(time(NULL));
-            //Uso de variables locales para pasar como parametro a las funciones de ingreso aleatorio
+            // Uso de variables locales para pasar como parametro a las funciones de ingreso aleatorio
             int x, y;
-            //Opcion para el switch de forma aleatoria
+            // Opcion para el switch de forma aleatoria
             opcion = 0 + rand() % (5 - 1);
-            //Switch que ingresa las palabras de manera aleatoria a la matriz.
+            // Switch que ingresa las palabras de manera aleatoria a la matriz.
             switch (opcion)
             {
-            case 1: //Ingresa de Derecha a izquierda
+            case 1: // Ingresa de Derecha a izquierda
             {
                 x = rand() % filas;
                 y = 0 + rand() % (columnas + 1 - strlen(palabra));
@@ -274,7 +278,7 @@ int main(int argc, char const *argv[])
                 }
                 break;
             }
-            case 2: //Ingresa de izquierda a Derecha
+            case 2: // Ingresa de izquierda a Derecha
             {
                 x = rand() % filas;
                 y = 0 + rand() % (columnas + 1 - strlen(palabra));
@@ -284,7 +288,7 @@ int main(int argc, char const *argv[])
                 }
                 break;
             }
-            case 3:  //Ingresa de Arriba hacia abajo
+            case 3: // Ingresa de Arriba hacia abajo
             {
                 x = 0 + rand() % (filas + 1 - strlen(palabra));
                 y = rand() % columnas;
@@ -294,7 +298,7 @@ int main(int argc, char const *argv[])
                 }
                 break;
             }
-            case 4:  //Ingresa de Abajo hacia Arriba
+            case 4: // Ingresa de Abajo hacia Arriba
             {
                 x = 0 + rand() % (filas + 1 - strlen(palabra));
                 y = rand() % columnas;
@@ -307,7 +311,7 @@ int main(int argc, char const *argv[])
             }
         }
     }
-    //Lamar a funcion para iniciar el juego y tomar el tiempo que se demora el usuario en encontrar las palabras.
+    // Lamar a funcion para iniciar el juego y tomar el tiempo que se demora el usuario en encontrar las palabras.
     iniciarJuego();
     return 0;
 }
