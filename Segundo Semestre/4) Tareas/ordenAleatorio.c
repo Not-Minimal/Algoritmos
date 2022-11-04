@@ -153,11 +153,10 @@ void iniciarJuego()
     printf("2. Salir \n");
     scanf("%d", &opcion);
     char palabra2[strlen(palabra)];
-    //Iniciar el registro de tiempo
+    // Iniciar el registro de tiempo
     clock_t inicio, fin;
     double tiempo;
     inicio = clock();
-
     switch (opcion)
     {
     case 1:
@@ -211,6 +210,9 @@ void iniciarJuego()
             contador = 0;
         }
         printf("\n");
+        fin = clock();
+        tiempo = ((double)(fin - inicio)) / CLOCKS_PER_SEC;
+        printf("\ntiempo de demora al encontrar las palabras: %f", tiempo);
     }
     break;
     case 2:
