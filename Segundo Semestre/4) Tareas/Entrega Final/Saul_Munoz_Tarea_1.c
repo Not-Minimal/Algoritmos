@@ -217,7 +217,21 @@ void iniciarJuego()
             }
             if (contador == strlen(palabra2))
             {
-                printf("Palabra encontrada en cordenadas (%d,%d)\n",coordenadaX, coordenadaY);
+                if (orientacion = 1)
+                {
+                    printf("Palabra encontrada en cordenadas (%d,%d) y orientacion Der-Izq\n", coordenadaX, coordenadaY);
+                }
+                else if (orientacion = 2)
+                {
+                    printf("Palabra encontrada en cordenadas (%d,%d) y orientacion Izq-Der\n", coordenadaX, coordenadaY);
+                }else if (orientacion = 3)
+                {
+                    printf("Palabra encontrada en cordenadas (%d,%d) y orientacion Arr-Aba\n", coordenadaX, coordenadaY);
+                }else if (orientacion = 4)
+                {
+                    printf("Palabra encontrada en cordenadas (%d,%d) y orientacion Aba-Arr\n", coordenadaX, coordenadaY);
+                }
+                
             }
             else
             {
