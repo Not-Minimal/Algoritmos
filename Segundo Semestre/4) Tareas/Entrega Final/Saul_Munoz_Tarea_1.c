@@ -181,7 +181,7 @@ void iniciarJuego()
         rellenarMatriz();
         visualizarMatriz();
         printf("\n");
-        for (i = 0; i < 3; i++)
+        for (i = 0; i < cantidadPalabras; i++)
         {
             printf("Ingrese palabra N°%d: ", i + 1);
             printf("\n");
@@ -192,7 +192,7 @@ void iniciarJuego()
             }
             // Contador que aumenta solo cuando encuentra los caracteres de forma linal
             int contador = 0;
-            //Contador que aumenta en funcion de las palabras no encontradas por el usuario
+            // Contador que aumenta en funcion de las palabras no encontradas por el usuario
             error = 0;
             // Ciclo que recorre las filas en funcion de la cantidad de palabras ingresadas por usuario
             for (j = 0; j < cantidadPalabras; j++)
@@ -227,8 +227,19 @@ void iniciarJuego()
                 printf("Palabra no encontrada\n");
                 error++;
             }
+
             contador = 0;
         }
+        if (error > 2)
+        {
+            fin = clock();
+            tiempo = (((double)(fin - inicio)) / CLOCKS_PER_SEC);
+            printf("Te equivocaste al menos 3 veces. \n");
+            printf("El tiempo transcurrido es: %f \n", tiempo);
+            printf("Gracias por participar. :') \n");
+            break;
+        }
+
         printf("\n");
         fin = clock();
         tiempo = (((double)(fin - inicio)) / CLOCKS_PER_SEC);
