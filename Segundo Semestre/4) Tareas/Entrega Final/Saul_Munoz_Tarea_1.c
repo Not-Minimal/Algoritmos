@@ -19,7 +19,7 @@ void rellenarMatriz();
 void iniciarJuego();
 
 // Funciones Globales
-int i, j, k, l, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra, opcion, coordenadaX, coordenadaY, orientacion, x, y;
+int i, j, k, l, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra, opcion, coordenadaX, coordenadaY, orientacion, x, y, error;
 char palabra[10];
 char palabra2[10];
 char matriz[35][35];
@@ -192,6 +192,8 @@ void iniciarJuego()
             }
             // Contador que aumenta solo cuando encuentra los caracteres de forma linal
             int contador = 0;
+            //Contador que aumenta en funcion de las palabras no encontradas por el usuario
+            error = 0;
             // Ciclo que recorre las filas en funcion de la cantidad de palabras ingresadas por usuario
             for (j = 0; j < cantidadPalabras; j++)
             {
@@ -223,6 +225,7 @@ void iniciarJuego()
             else
             {
                 printf("Palabra no encontrada\n");
+                error++;
             }
             contador = 0;
         }
