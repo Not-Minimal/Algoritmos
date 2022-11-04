@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
-// Funciones usadas
+// Funciones Creadas
 int menuPrincipal();
 void pasarHorizontal(char palabra[], int f, int c);
 void pasarHorizontalInverso(char palabra[], int f, int c);
@@ -14,11 +14,9 @@ void generarMatriz();
 void rellenarMatriz();
 void iniciarJuego();
 
+//Funciones Globales
 int i, j, k, filas = 10, columnas = 10, n, cantidadPalabras, posicionPalabra;
-char palabra[10];
-char palabra2[10];
-char matriz[35][35];
-char matrizBusqueda[35][35];
+char palabra[10], char palabra2[10], char matriz[35][35], char matrizBusqueda[35][35];
 
 int menuPrincipal()
 {
@@ -144,151 +142,9 @@ void rellenarMatriz()
     }
 }
 
-// void iniciarJuego()
-// {
-//     system("clear");
-//     int opcion;
-//     printf("Opciones: \n");
-//     printf("1. Iniciar Juego y Buscar palabras(3 intentos) \n");
-//     printf("2. Salir \n");
-//     scanf("%d", &opcion);
-
-//     switch (opcion)
-//     {
-//     case 1:
-//     {
-//         visualizarMatriz();
-
-//         for (cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
-//         {
-
-//             printf("Palabra: %s ", palabra);
-//         }
-
-//         for (i = 0; i < 3; i++)
-//         {
-//             printf("Ingrese palabra N°%d: ", i + 1);
-//             printf("\n");
-//             scanf("%s", palabra2);
-//             printf("%s", palabra);
-//             printf("%s", palabra2);
-//             if ((strcmp(palabra, palabra2)) == 0)
-//             {
-
-//                 printf("Son iguales!.\n");
-//             }
-//             else
-//             {
-//                 printf("No son iguales.\n");
-//             }
-//         }
-//         printf("\n");
-//     }
-//     break;
-//     case 2:
-//     {
-//         printf("Gracias :')");
-//     }
-//     break;
-//     }
-// }
-
-int main(int argc, char const *argv[])
+void iniciarJuego()
 {
-    system("clear");
-    int opcion, l;
-    opcion = menuPrincipal();
-
-    if (opcion == 1)
-    {
-        generarMatriz();
-
-        do
-        {
-            printf("Ingrese la cantidad de palabras: ");
-            scanf("%d", &cantidadPalabras);
-            k = cantidadPalabras;
-        } while (k < (n / 2) || k > (2 * n));
-
-        char palabra[n];
-        int aux = n;
-
-        for (cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
-        {
-            i = 0;
-            do
-            {
-                printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
-                printf("\n");
-                scanf("%s", palabra);
-                // Agregar palabras en una matriz
-                for (j = 0; j < aux && palabra[j] != '\0'; j++)
-                {
-                    matrizBusqueda[cantidadPalabras][j] = toupper(palabra[j]);
-                }
-                i++;
-            } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
-
-            // for (i = 0; i < cantidadPalabras; i++) // Muestro la matriz con las palabras
-            // {
-            //     for (j = 0; j <= strlen(palabra); j++)
-            //     {
-            //         printf("[%c]", matriz[i][j]);
-            //     }
-            //     printf("\n");
-            // }
-
-            srand(time(NULL));
-            int x, y;
-            opcion = 0 + rand() % (5 - 1);
-
-            switch (opcion)
-            {
-            case 1:
-            {
-                x = rand() % filas;
-                y = 0 + rand() % (columnas + 1 - strlen(palabra));
-                if (y + strlen(palabra) >= 0)
-                {
-                    pasarHorizontal(palabra, x, y);
-                }
-                break;
-            }
-            case 2:
-            {
-                x = rand() % filas;
-                y = 0 + rand() % (columnas + 1 - strlen(palabra));
-                if (strlen(palabra) + y >= 0)
-                {
-                    pasarHorizontalInverso(palabra, x, y);
-                }
-                break;
-            }
-            case 3:
-            {
-                x = 0 + rand() % (filas + 1 - strlen(palabra));
-                y = rand() % columnas;
-                if (x + strlen(palabra) >= 0)
-                {
-                    pasarVertical(palabra, x, y);
-                }
-                break;
-            }
-
-            case 4:
-            {
-                x = 0 + rand() % (filas + 1 - strlen(palabra));
-                y = rand() % columnas;
-                if (strlen(palabra) + y >= 0)
-                {
-                    pasarVerticalInverso(palabra, x, y);
-                }
-                break;
-            }
-            }
-        }
-    }
-    system("clear");
+system("clear");
     printf("\nOpciones: \n");
     printf("1. Iniciar Juego y Buscar palabras(3 intentos): \n");
     printf("2. Salir \n");
@@ -350,6 +206,94 @@ int main(int argc, char const *argv[])
         printf("Gracias :')");
     }
     break;
+    }
+}
+
+int main(int argc, char const *argv[])
+{
+    system("clear");
+    int opcion, l;
+    opcion = menuPrincipal();
+
+    if (opcion == 1)
+    {
+        generarMatriz();
+
+        do
+        {
+            printf("Ingrese la cantidad de palabras: ");
+            scanf("%d", &cantidadPalabras);
+            k = cantidadPalabras;
+        } while (k < (n / 2) || k > (2 * n));
+
+        char palabra[n];
+        int aux = n;
+
+        for (cantidadPalabras = 0; cantidadPalabras < k; cantidadPalabras++)
+        {
+            i = 0;
+            do
+            {
+                printf("Ingrese palabra N°%d: ", cantidadPalabras + 1);
+                printf("\n");
+                scanf("%s", palabra);
+                // Agregar palabras en una matriz
+                for (j = 0; j < aux && palabra[j] != '\0'; j++)
+                {
+                    matrizBusqueda[cantidadPalabras][j] = toupper(palabra[j]);
+                }
+                i++;
+            } while ((strlen(palabra) < 1) || (strlen(palabra) > n));
+
+            srand(time(NULL));
+            int x, y;
+            opcion = 0 + rand() % (5 - 1);
+
+            switch (opcion)
+            {
+            case 1:
+            {
+                x = rand() % filas;
+                y = 0 + rand() % (columnas + 1 - strlen(palabra));
+                if (y + strlen(palabra) >= 0)
+                {
+                    pasarHorizontal(palabra, x, y);
+                }
+                break;
+            }
+            case 2:
+            {
+                x = rand() % filas;
+                y = 0 + rand() % (columnas + 1 - strlen(palabra));
+                if (strlen(palabra) + y >= 0)
+                {
+                    pasarHorizontalInverso(palabra, x, y);
+                }
+                break;
+            }
+            case 3:
+            {
+                x = 0 + rand() % (filas + 1 - strlen(palabra));
+                y = rand() % columnas;
+                if (x + strlen(palabra) >= 0)
+                {
+                    pasarVertical(palabra, x, y);
+                }
+                break;
+            }
+
+            case 4:
+            {
+                x = 0 + rand() % (filas + 1 - strlen(palabra));
+                y = rand() % columnas;
+                if (strlen(palabra) + y >= 0)
+                {
+                    pasarVerticalInverso(palabra, x, y);
+                }
+                break;
+            }
+            }
+        }
     }
     // rellenarMatriz();
     // visualizarMatriz();
