@@ -211,8 +211,9 @@ void iniciarJuego()
         }
         printf("\n");
         fin = clock();
-        tiempo = ((double)(fin - inicio)) / CLOCKS_PER_SEC;
-        printf("\ntiempo de demora al encontrar las palabras: %f", tiempo);
+        tiempo = (((double)(fin - inicio)) / CLOCKS_PER_SEC);
+        printf("El tiempo que te tomo en encontrar las palabras fue: %f", tiempo);
+        printf("Gracias por participar. :')");
     }
     break;
     case 2:
