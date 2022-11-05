@@ -81,7 +81,7 @@ void pasarHorizontalInverso(char palabra[], int f, int c, int orientacion)
 {
     orientacion = 2;
     coordenadaX = f;
-    coordenadaY = c;
+    coordenadaY = c + strlen(palabra) - 1;
     int k = 0;
     if (matriz[i][j] == 32)
     {
@@ -110,7 +110,7 @@ void pasarVertical(char palabra[], int f, int c, int orientacion)
 void pasarVerticalInverso(char palabra[], int f, int c, int orientacion)
 {
     orientacion = 4;
-    coordenadaX = f;
+    coordenadaX = f + strlen(palabra) - 1;
     coordenadaY = c;
     int k = 0;
     if (matriz[i][j] == 32)
@@ -232,7 +232,7 @@ void iniciarJuego()
                 error++;
             }
             contador = 0;
-            //Si se equivoca mas de 2 veces termina el juego
+            // Si se equivoca mas de 2 veces termina el juego
             if (error > 2)
             {
                 fin = clock();
@@ -242,7 +242,7 @@ void iniciarJuego()
                 printf("Gracias por participar. :') \n");
                 break;
             }
-            //Si 
+            // Si
             if (i >= cantidadPalabras - 1)
             {
                 printf("\n");
