@@ -352,7 +352,7 @@ int main(int argc, char const *argv[])
             }
         }
     }
-    // Lamar a funcion para iniciar el juego y tomar el tiempo que se demora el usuario en encontrar las palabras.
+    // Llamar a funcion para iniciar el juego y tomar el tiempo que se demora el usuario en encontrar las palabras.
     iniciarJuego();
     return 0;
 }
