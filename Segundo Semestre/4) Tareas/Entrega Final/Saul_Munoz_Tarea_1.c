@@ -1,7 +1,8 @@
 /*Integrantes:
 - Saul Muñoz Pedreros, RUT: 20.374.510-9
-- Dilan Toro Moraga, RTU: 20.956.529-3
-- Link Github: https://github.com/Not-Minimal/Algoritmos
+- Dilan Toro Moraga, RUT: 20.956.529-3
+- Link Codigo Github: https://cutt.ly/WNCdE7I
+- Link Diagrama Codigo Github: https://cutt.ly/CNCdOwJ
 */
 #include <stdio.h>
 #include <time.h>
