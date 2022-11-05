@@ -185,67 +185,71 @@ void iniciarJuego()
         int bandera = 0;
         error = 0;
 
-        printf("Ingrese palabra N°%d: ", i + 1);
-        printf("\n");
-        scanf("%s", palabra2);
-        for (j = 0; j < n && palabra2[j] != '\0'; j++)
+        for (i = 0; i < cantidadPalabras; i++)
         {
-            palabra2[j] = toupper(palabra2[j]);
-        }
-        // Contador que aumenta solo cuando encuentra los caracteres de forma linal
-        int contador = 0;
-        // Contador que aumenta en funcion de las palabras no encontradas por el usuario
-
-        // Ciclo que recorre las filas en funcion de la cantidad de palabras ingresadas por usuario
-        for (j = 0; j < cantidadPalabras; j++)
-        {
-            // Ciclo que recoorre las columnas para evaluar caracter a caracter
-            for (k = 0, l = 0; l < strlen(palabra2); k++, l++)
+            printf("Ingrese palabra N°%d: ", i + 1);
+            printf("\n");
+            scanf("%s", palabra2);
+            for (j = 0; j < n && palabra2[j] != '\0'; j++)
             {
-                // Si los caracteres coinciden con el arreglo palabra2, aumenta el contador
-                if (matrizBusqueda[j][k] == palabra2[l])
+                palabra2[j] = toupper(palabra2[j]);
+            }
+            // Contador que aumenta solo cuando encuentra los caracteres de forma linal
+            int contador = 0;
+            // Contador que aumenta en funcion de las palabras no encontradas por el usuario
+
+            // Ciclo que recorre las filas en funcion de la cantidad de palabras ingresadas por usuario
+            for (j = 0; j < cantidadPalabras; j++)
+            {
+                // Ciclo que recoorre las columnas para evaluar caracter a caracter
+                for (k = 0, l = 0; l < strlen(palabra2); k++, l++)
                 {
-                    contador++;
+                    // Si los caracteres coinciden con el arreglo palabra2, aumenta el contador
+                    if (matrizBusqueda[j][k] == palabra2[l])
+                    {
+                        contador++;
+                    }
+                }
+                // si el contador es igual al tamaño de la palabra, ahora j o columnas sera igual a la cantidad de palabras
+                if (contador == strlen(palabra2))
+                {
+                    j = cantidadPalabras;
+                }
+                else
+                {
+                    // Vuelve el contador a 0 si es que no encontro coincidencia.
+                    contador = 0;
                 }
             }
-            // si el contador es igual al tamaño de la palabra, ahora j o columnas sera igual a la cantidad de palabras
             if (contador == strlen(palabra2))
             {
-                j = cantidadPalabras;
+
+                printf("Palabra encontrada en cordenadas (%d,%d) y orientacion Der-Izq(%d)\n", coordenadaX, coordenadaY);
             }
             else
             {
-                // Vuelve el contador a 0 si es que no encontro coincidencia.
-                contador = 0;
+                printf("Palabra no encontrada\n");
+                error++;
+            }
+            contador = 0;
+            if (error > 2)
+            {
+                fin = clock();
+                tiempo = (((double)(fin - inicio)) / CLOCKS_PER_SEC);
+                printf("Te equivocaste 3 veces. :(\n");
+                printf("El tiempo transcurrido es: %f \n", tiempo);
+                printf("Gracias por participar. :') \n");
+                break;
+            }
+            else
+            {
+                printf("\n");
+                fin = clock();
+                tiempo = (((double)(fin - inicio)) / CLOCKS_PER_SEC);
+                printf("El tiempo que te tomo en encontrar las palabras fue: %f \n", tiempo);
+                printf("Gracias por participar. :') \n");
             }
         }
-        if (contador == strlen(palabra2))
-        {
-
-            printf("Palabra encontrada en cordenadas (%d,%d) y orientacion Der-Izq(%d)\n", coordenadaX, coordenadaY);
-        }
-        else
-        {
-            printf("Palabra no encontrada\n");
-            error++;
-        }
-        contador = 0;
-
-        if (error > 2)
-        {
-            fin = clock();
-            tiempo = (((double)(fin - inicio)) / CLOCKS_PER_SEC);
-            printf("Te equivocaste 3 veces. :(\n");
-            printf("El tiempo transcurrido es: %f \n", tiempo);
-            printf("Gracias por participar. :') \n");
-            break;
-        }
-
-        printf("\n");
-        fin = clock();
-        tiempo = (((double)(fin - inicio)) / CLOCKS_PER_SEC);
-        printf("El tiempo que te tomo en encontrar las palabras fue: %f \n", tiempo);
-        printf("Gracias por participar. :') \n");
     }
     break;
     case 2:
