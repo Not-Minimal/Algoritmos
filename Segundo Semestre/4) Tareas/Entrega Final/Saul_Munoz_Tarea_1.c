@@ -215,6 +215,7 @@ void iniciarJuego()
                 {
                     // Vuelve el contador a 0 si es que no encontro coincidencia.
                     contador = 0;
+                    
                 }
             }
             if (contador == strlen(palabra2))
@@ -225,20 +226,20 @@ void iniciarJuego()
             else
             {
                 printf("Palabra no encontrada\n");
-                error++;
+                printf("%d",error);
             }
 
             contador = 0;
         }
-        if (error > 2)
-        {
-            fin = clock();
-            tiempo = (((double)(fin - inicio)) / CLOCKS_PER_SEC);
-            printf("Te equivocaste al menos 3 veces. \n");
-            printf("El tiempo transcurrido es: %f \n", tiempo);
-            printf("Gracias por participar. :') \n");
-            break;
-        }
+        // if (error > 2)
+        // {
+        //     fin = clock();
+        //     tiempo = (((double)(fin - inicio)) / CLOCKS_PER_SEC);
+        //     printf("Te equivocaste al menos 3 veces. \n");
+        //     printf("El tiempo transcurrido es: %f \n", tiempo);
+        //     printf("Gracias por participar. :') \n");
+        //     break;
+        // }
 
         printf("\n");
         fin = clock();
