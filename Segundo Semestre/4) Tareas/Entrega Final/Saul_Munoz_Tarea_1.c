@@ -232,6 +232,7 @@ void iniciarJuego()
                 error++;
             }
             contador = 0;
+            //Si se equivoca mas de 2 veces termina el juego
             if (error > 2)
             {
                 fin = clock();
@@ -241,6 +242,7 @@ void iniciarJuego()
                 printf("Gracias por participar. :') \n");
                 break;
             }
+            //Si 
             if (i >= cantidadPalabras - 1)
             {
                 printf("\n");
