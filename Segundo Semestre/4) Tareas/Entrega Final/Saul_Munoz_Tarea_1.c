@@ -72,7 +72,7 @@ void pasarHorizontal(char palabra[], int f, int c, int orientacion)
     {
         for (int i = 0; i < strlen(palabra); i++)
         {
-            matriz[f][c + i] = palabra[i];
+            matriz[f][c + i] = toupper(palabra[i]);
         }
     }
 }
@@ -87,7 +87,7 @@ void pasarHorizontalInverso(char palabra[], int f, int c, int orientacion)
     {
         for (int i = strlen(palabra) - 1; i >= 0; i--)
         {
-            matriz[f][c + k] = palabra[i];
+            matriz[f][c + k] = toupper(palabra[i]);
             k++;
         }
     }
@@ -102,7 +102,7 @@ void pasarVertical(char palabra[], int f, int c, int orientacion)
     {
         for (int i = 0; i < strlen(palabra); i++)
         {
-            matriz[f + i][c] = palabra[i];
+            matriz[f + i][c] = toupper(palabra[i]);
         }
     }
 }
@@ -117,7 +117,7 @@ void pasarVerticalInverso(char palabra[], int f, int c, int orientacion)
     {
         for (int i = strlen(palabra) - 1; i >= 0; i--)
         {
-            matriz[f + k][c] = palabra[i];
+            matriz[f + k][c] = toupper(palabra[i]);
             k++;
         }
     }
@@ -232,6 +232,7 @@ void iniciarJuego()
                 error++;
             }
             contador = 0;
+            //Si se equivoca mas de 2 veces termina el juego
             if (error > 2)
             {
                 fin = clock();
@@ -241,6 +242,7 @@ void iniciarJuego()
                 printf("Gracias por participar. :') \n");
                 break;
             }
+            //Si 
             if (i >= cantidadPalabras - 1)
             {
                 printf("\n");
@@ -350,7 +352,7 @@ int main(int argc, char const *argv[])
             }
         }
     }
-    // Lamar a funcion para iniciar el juego y tomar el tiempo que se demora el usuario en encontrar las palabras.
+    // Llamar a funcion para iniciar el juego y tomar el tiempo que se demora el usuario en encontrar las palabras.
     iniciarJuego();
     return 0;
 }
