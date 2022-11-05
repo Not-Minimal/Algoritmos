@@ -72,7 +72,7 @@ void pasarHorizontal(char palabra[], int f, int c, int orientacion)
     {
         for (int i = 0; i < strlen(palabra); i++)
         {
-            matriz[f][c + i] = palabra[i];
+            matriz[f][c + i] = toupper(palabra[i]);
         }
     }
 }
@@ -87,7 +87,7 @@ void pasarHorizontalInverso(char palabra[], int f, int c, int orientacion)
     {
         for (int i = strlen(palabra) - 1; i >= 0; i--)
         {
-            matriz[f][c + k] = palabra[i];
+            matriz[f][c + k] = toupper(palabra[i]);
             k++;
         }
     }
@@ -102,7 +102,7 @@ void pasarVertical(char palabra[], int f, int c, int orientacion)
     {
         for (int i = 0; i < strlen(palabra); i++)
         {
-            matriz[f + i][c] = palabra[i];
+            matriz[f + i][c] = toupper(palabra[i]);
         }
     }
 }
@@ -117,7 +117,7 @@ void pasarVerticalInverso(char palabra[], int f, int c, int orientacion)
     {
         for (int i = strlen(palabra) - 1; i >= 0; i--)
         {
-            matriz[f + k][c] = palabra[i];
+            matriz[f + k][c] = toupper(palabra[i]);
             k++;
         }
     }
