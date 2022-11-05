@@ -241,7 +241,7 @@ void iniciarJuego()
                 printf("Gracias por participar. :') \n");
                 break;
             }
-            else
+            if (i >= cantidadPalabras - 1)
             {
                 printf("\n");
                 fin = clock();
