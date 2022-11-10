@@ -35,6 +35,8 @@ int main(int argc, char const *argv[])
     {
         fflush(stdin);
         printf("Ingresar datos de la mascota: ");
+		printf("\nIngrese Identificador: ");
+        scanf("%d",&registroAnimal[i].identificador);
 	    printf("\nIngrese categoria: ");
 	    scanf("%s",registroAnimal[i].categoria);
 	    printf("\nIngrese nombre: ");
@@ -49,8 +51,8 @@ int main(int argc, char const *argv[])
 
     for (i = 0; i < n; i++)
     {
-        printf("\n %d \t%s \t%s \t%s \t%d",registroAnimal[i].identificador,registroAnimal[i+1].categoria,registroAnimal[i].nombre,registroAnimal[i].raza,registroAnimal[i].edad);
-	    fprintf(fp,"Identificador: %d \tCategoria: %s Nombre: \t%s Raza: \t%s Edad: \t%d",registroAnimal[i].identificador,registroAnimal[i].categoria,registroAnimal[i].nombre,registroAnimal[i].raza,registroAnimal[i].edad);
+        printf("\n %d \t%s \t%s \t%s \t%d",registroAnimal[i].identificador,registroAnimal[i].categoria,registroAnimal[i].nombre,registroAnimal[i].raza,registroAnimal[i].edad);
+	    fprintf(fp,"Identificador: %d, Categoria: %s, Nombre: %s, Raza: %s, Edad: %d",registroAnimal[i].identificador,registroAnimal[i].categoria,registroAnimal[i].nombre,registroAnimal[i].raza,registroAnimal[i].edad);
         printf("\n");
         fprintf(fp, "\n");
     }

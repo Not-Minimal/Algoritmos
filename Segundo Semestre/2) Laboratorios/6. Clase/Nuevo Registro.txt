@@ -1,2 +1,2 @@
-1 	perro 	doggy 	pitbull 	10
-2 	gato 	tyler 	arabico 	3
+Identificador: 983258728 	Categoria: perro Nombre: 	doggy Raza: 	doberman Edad: 	14
+Identificador: 0 	Categoria: gato Nombre: 	tyler Raza: 	arabigo Edad: 	3
