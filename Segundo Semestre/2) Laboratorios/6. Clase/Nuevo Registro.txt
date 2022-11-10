@@ -1,0 +1,2 @@
+1 	perro 	doggy 	pitbull 	10
+2 	gato 	tyler 	arabico 	3
