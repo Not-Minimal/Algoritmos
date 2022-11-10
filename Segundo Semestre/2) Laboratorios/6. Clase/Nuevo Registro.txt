@@ -1,2 +1,2 @@
-Identificador: 983258728 	Categoria: perro Nombre: 	doggy Raza: 	doberman Edad: 	14
-Identificador: 0 	Categoria: gato Nombre: 	tyler Raza: 	arabigo Edad: 	3
+Identificador: 1, Categoria: Perro, Nombre: doggy, Raza: doberman, Edad: 10
+Identificador: 2, Categoria: gato, Nombre: Tyler, Raza: Arabico, Edad: 3

@@ -51,7 +51,7 @@ int main(int argc, char const *argv[])
 
     for (i = 0; i < n; i++)
     {
-        printf("\n %d \t%s \t%s \t%s \t%d",registroAnimal[i].identificador,registroAnimal[i].categoria,registroAnimal[i].nombre,registroAnimal[i].raza,registroAnimal[i].edad);
+        printf("\nIdentificador: %d, Categoria: %s, Nombre: %s, Raza: %s, Edad: %d",registroAnimal[i].identificador,registroAnimal[i].categoria,registroAnimal[i].nombre,registroAnimal[i].raza,registroAnimal[i].edad);
 	    fprintf(fp,"Identificador: %d, Categoria: %s, Nombre: %s, Raza: %s, Edad: %d",registroAnimal[i].identificador,registroAnimal[i].categoria,registroAnimal[i].nombre,registroAnimal[i].raza,registroAnimal[i].edad);
         printf("\n");
         fprintf(fp, "\n");
