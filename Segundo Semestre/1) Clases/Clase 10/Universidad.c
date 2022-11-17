@@ -16,15 +16,7 @@ typedef struct
 
 } Estudiante;
 
-typedef struct
-{
-    // rut
-    int rutTutor;
-    // Registro Dueño
-    char nombre[50];
-    char direccion[50];
-    int numeroCelular;
-} Propietario;
+
 
 int main(int argc, char const *argv[])
 {
