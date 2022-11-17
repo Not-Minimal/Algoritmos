@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void agregarVehiculo(int arreglo[], int cantidadVehiculos);
+void agregarVehiculo(vehiculo vehiculos[], int cantidadVehiculos);
 
 typedef struct
 {
@@ -21,7 +21,7 @@ int main()
         scanf("%d", &n);
     } while (n < 1 || n > 10);
 
-    int arreglo[n];
+    vehiculo vehiculos[n];
 
     printf("Menu de Opciones: \n");
     printf("1. Agregar Vehiculo\n");
@@ -36,7 +36,7 @@ int main()
         {
         case 1:
         {
-            agregarVehiculo(10, 10);
+            agregarVehiculo(vehiculos, 10);
             break;
         }
         case 2:
@@ -56,7 +56,7 @@ int main()
     return 0;
 }
 
-void agregarVehiculo(int arreglo[], int cantidadVehiculos)
+void agregarVehiculo(vehiculo vehiculos[], int cantidadVehiculos)
 {
     vehiculo registroVehiculo[20];
     int i;
