@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void agregarVehiculo(int cantidadVehiculos);
+void agregarVehiculo(int arreglo[], int cantidadVehiculos);
 
 typedef struct
 {
