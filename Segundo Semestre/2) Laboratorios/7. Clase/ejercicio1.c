@@ -17,9 +17,11 @@ int main()
 
     do
     {
-        printf("Ingrese la cantida de vehiculo [1,10]");
+        printf("Ingrese la cantidad de vehiculos [1,10]");
         scanf("%d", &n);
     } while (n < 1 || n > 10);
+
+    int arreglo[n];
 
     printf("Menu de Opciones: \n");
     printf("1. Agregar Vehiculo\n");
@@ -54,7 +56,7 @@ int main()
     return 0;
 }
 
-void agregarVehiculo(int cantidadVehiculos)
+void agregarVehiculo(int arreglo[], int cantidadVehiculos)
 {
     vehiculo registroVehiculo[20];
     int i;
