@@ -14,7 +14,7 @@ typedef struct
     char departamento[30];
     char Deporte[40];
 
-} Animales;
+} Estudiante;
 
 typedef struct
 {
@@ -28,7 +28,7 @@ typedef struct
 
 int main(int argc, char const *argv[])
 {
-    Animales registroAnimal[20];
+    Estudiante registroEstudiante[20];
     int i, n;
     FILE *fp;
     fp = fopen("Nuevo Registro.txt", "w");
@@ -40,23 +40,23 @@ int main(int argc, char const *argv[])
         fflush(stdin);
         printf("Ingresar datos de la mascota: ");
         printf("\nIngrese rut: ");
-        scanf("%d", &registroAnimal[i].rut);
+        scanf("%d", &registroEstudiante[i].rut);
         printf("\nIngrese Deporte: ");
-        scanf("%s", registroAnimal[i].Deporte);
+        scanf("%s", registroEstudiante[i].Deporte);
         printf("\nIngrese nombre: ");
-        scanf("%s", registroAnimal[i].nombre);
+        scanf("%s", registroEstudiante[i].nombre);
         printf("\nIngrese calle: ");
-        scanf("%s", registroAnimal[i].calle);
+        scanf("%s", registroEstudiante[i].calle);
         printf("\nIngrese edad: ");
-        scanf("%d", &registroAnimal[i].edad);
+        scanf("%d", &registroEstudiante[i].edad);
     }
 
-    printf("\n Los Animales ingresados son: \n");
+    printf("\n Los Estudiante ingresados son: \n");
 
     for (i = 0; i < n; i++)
     {
-        printf("\nrut: %d, Deporte: %s, Nombre: %s, calle: %s, Edad: %d", registroAnimal[i].rut, registroAnimal[i].Deporte, registroAnimal[i].nombre, registroAnimal[i].calle, registroAnimal[i].edad);
-        fprintf(fp, "rut: %d, Deporte: %s, Nombre: %s, calle: %s, Edad: %d", registroAnimal[i].rut, registroAnimal[i].Deporte, registroAnimal[i].nombre, registroAnimal[i].calle, registroAnimal[i].edad);
+        printf("\nRut: %d, Deporte: %s, Nombre: %s, calle: %s, Edad: %d", registroEstudiante[i].rut, registroEstudiante[i].Deporte, registroEstudiante[i].nombre, registroEstudiante[i].calle, registroEstudiante[i].edad);
+        fprintf(fp, "Rut: %d, Deporte: %s, Nombre: %s, calle: %s, Edad: %d", registroEstudiante[i].rut, registroEstudiante[i].Deporte, registroEstudiante[i].nombre, registroEstudiante[i].calle, registroEstudiante[i].edad);
         printf("\n");
         fprintf(fp, "\n");
     }
