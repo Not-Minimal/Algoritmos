@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void agregarVehiculo(int cantidadVehiculos);
+
 typedef struct
 {
     char marca;
