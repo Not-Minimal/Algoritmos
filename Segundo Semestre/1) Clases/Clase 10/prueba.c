@@ -1,7 +1,12 @@
-/*  Author: Alejandro */
-/*  E-mail: farias_io@pm.me */
+//Como calcular el digito verificador: https://validarutchile.cl/calcular-digito-verificador.php
 
 #include <stdio.h>
+
+
+
+int longitud(int rut);
+int calculoDigito(int rut);
+
 
 int longitud(int rut)
 {
@@ -16,14 +21,12 @@ int longitud(int rut)
 
 int calculoDigito(int rut)
 {
-    /* Variables locales */
-    int largo = longitud(rut), val[largo], contador = 2, suma = 0, resta2, i, mod_f, resta;
+    int largo = longitud(rut), valor[largo], contador = 2, suma = 0, resta2, i, mod_f, resta;
     float mod;
-    /* Fin variables locales */
 
     for (i = 0; i <= largo; i++)
     {
-        val[i] = rut % 10 * contador;
+        valor[i] = rut % 10 * contador;
         contador = contador + 1;
         if (contador == 8)
         {
@@ -34,7 +37,7 @@ int calculoDigito(int rut)
 
     for (i = 0; i < largo; i++)
     {
-        suma = suma + val[i];
+        suma = suma + valor[i];
     }
 
     mod = suma / 11;      // Se obtiene el modulo
