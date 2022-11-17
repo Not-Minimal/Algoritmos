@@ -16,8 +16,6 @@ typedef struct
 
 } Estudiante;
 
-
-
 int main(int argc, char const *argv[])
 {
     Estudiante registroEstudiante[20];
@@ -55,4 +53,16 @@ int main(int argc, char const *argv[])
     fclose(fp);
 
     return 0;
+}
+
+void digitoVerificador()
+{
+
+    int m = 0, s = 1;
+    for (int t = 0; t < Math.floor(T / 10); t++)
+    {
+        s = (s + t % 10 * (9 - m++ % 6)) % 11;
+    }
+
+    printf("%d", s);
 }
