@@ -36,7 +36,7 @@ int main()
         {
         case 1:
         {
-            agregarVehiculo(4);
+            agregarVehiculo(10, 10);
             break;
         }
         case 2:
