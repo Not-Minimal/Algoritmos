@@ -11,7 +11,7 @@ typedef struct
     int edad;
     char calle[30];
     int numero;
-    char departamento[30];s
+    char departamento[30];
     char Deporte[40];
 
 } Animales;
