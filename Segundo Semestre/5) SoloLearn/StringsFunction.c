@@ -61,3 +61,31 @@ strncmp(str1, str2, n) Returns 0 when the first n characters of str1 is equal to
 strchr(str1, c) Returns a pointer to the first occurrence of char c in str1, or NULL if character not found.
 strrchr(str1, c) Searches str1 in reverse and returns a pointer to the position of char c in str1, or NULL if character not found.
 strstr(str1, str2) Returns a pointer to the first occurrence of str2 in str1, or NULL if str2 not found.
+
+Converting a String to a Number
+
+Converting a string of number characters to a numeric value is a common task in C programming and is often used to prevent a run-time error.
+Reading a string is less error-prone than expecting a numeric value, only to have the user accidentally type an "o" rather than a "0" (zero).
+
+The stdio.h library contains the following functions for converting a string to a number:
+int atoi(str) Stands for ASCII to integer. Converts str to the equivalent int value. 0 is returned if the first character is not a number or no numbers are encountered.
+double atof(str) Stands for ASCII to float. Converts str to the equivalent double value. 0.0 is returned if the first character is not a number or no numbers are encountered.
+long int atol(str) Stands for ASCII to long int. Converts str to the equivalent long integer value. 0 is returned if the first character is not a number or no numbers are encountered.
+
+The following program demonstrates atoi.
+
+#include <stdio.h>
+int main()
+{
+    char input[10 ];
+    int num;
+    
+    
+    printf("Enter a number: ");
+    gets(input);
+    num = atoi(input);
+      
+    printf("You entered %d", num);
+
+    return 0;
+}
