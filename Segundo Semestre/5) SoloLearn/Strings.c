@@ -67,3 +67,7 @@ String Output
 String output is handled with the fputs(), puts(), and printf() functions.
 The fputs() requires the name of the string and a pointer to where you want to print the string. To print to the screen, use stdout which refers to the standard output.
 For example:
+
+The puts() function takes only a string argument and can also be used to display output. However, it adds a newline to output.
+For example:
+
