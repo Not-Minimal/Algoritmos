@@ -89,10 +89,13 @@ void menuInventario()
         scanf("%d", &opcionMenu);
     } while (opcionMenu < 0 && opcionMenu > 6);
 }
+void usuario_Login(){
+    printf("Nombre: Saul Muñoz Pedreros\n");
+}
 int main(int argc, char const *argv[])
 {
     system("clear");
-    
+    usuario_Login();
     menuInventario();
     return 0;
 }
