@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-//Agregar Prototipos de Funciones
+// Agregar Prototipos de Funciones
 void menuInventario();
 void usuario_Login();
 void agregar_Producto();
@@ -11,33 +11,37 @@ void actualizar_Producto();
 void buscar_Productos();
 void eliminar_Productos();
 
-//Agregar Estructuras Predefinidas
+// Agregar Estructuras Predefinidas
 
-//Estructura Teclado
-struc teclado{
+// Estructura Teclado
+struc teclado
+{
     int identificador;
     char Marca[20];
     char Modelo[20];
     char Idioma[20];
 }
 
-//Estructura Mouse
-struc mouse{
+// Estructura Mouse
+struc mouse
+{
     int identificador;
     char Marca[20];
     char Modelo[20];
 }
 
-//Estructura Monitor
-struc monitor{
+// Estructura Monitor
+struc monitor
+{
     int identificador;
     char Marca[20];
     char Modelo[20];
     int Pulgadas[20];
 }
 
-//Estructura Notebook
-struc notebook{
+// Estructura Notebook
+struc notebook
+{
     int identificador;
     char Marca[20];
     char Modelo[20];
@@ -46,8 +50,9 @@ struc notebook{
     int Pulgadas[20];
 }
 
-//Estructura Escritorio
-struc escritorio{
+// Estructura Escritorio
+struc escritorio
+{
     int identificador;
     char Marca[20];
     char Modelo[20];
@@ -58,8 +63,9 @@ struc escritorio{
     struct monitor;
 }
 
-//Estructura Usuario
-struc usuario{
+// Estructura Usuario
+struc usuario
+{
     int identificador;
     char NombreUsuario[20];
     char Clave[20];
@@ -68,4 +74,7 @@ struc usuario{
     char ApellidoMaterno[20];
 }
 
-
+void menuInventario()
+{
+    
+}
