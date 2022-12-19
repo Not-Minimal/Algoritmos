@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 // Agregar Prototipos de Funciones
-void menuInventario();
 void usuario_Login();
+void menuInventario();
 void agregar_Producto();
 void actualizar_Producto();
 void buscar_Productos();
@@ -87,11 +87,12 @@ void menuInventario()
         printf("\n 6.Salir");
         printf("\n Ingrese opcion: ");
         scanf("%d", &opcionMenu);
-    } while (opcionMenu != 0 && opcionMenu != 6);
+    } while (opcionMenu < 0 && opcionMenu > 6);
 }
 int main(int argc, char const *argv[])
 {
     system("clear");
+    
     menuInventario();
     return 0;
 }
