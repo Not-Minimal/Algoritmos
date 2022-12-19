@@ -35,3 +35,14 @@ struc monitor{
     int Pulgadas[20];
 }
 
+//Estructura Notebook
+struc notebook{
+    int identificador;
+    char Marca[20];
+    char Modelo[20];
+    int CantidadRam;
+    char Procesador[20];
+    int Pulgadas[20];
+}
+
+
