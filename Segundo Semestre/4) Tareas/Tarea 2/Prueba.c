@@ -13,7 +13,7 @@ void eliminar_Productos();
 // Agregar Estructuras Predefinidas
 
 // Estructura Teclado
-typedef struct 
+typedef struct
 {
     int identificador;
     char Marca[20];
@@ -22,12 +22,12 @@ typedef struct
 } teclado;
 
 // Estructura Mouse
-typedef struct 
+typedef struct
 {
     int identificador;
     char Marca[20];
     char Modelo[20];
-}mouse;
+} mouse;
 
 // Estructura Monitor
 typedef struct
@@ -36,7 +36,7 @@ typedef struct
     char Marca[20];
     char Modelo[20];
     int Pulgadas[20];
-}monitor;
+} monitor;
 
 // Estructura Notebook
 typedef struct
@@ -47,7 +47,7 @@ typedef struct
     int CantidadRam;
     char Procesador[20];
     int Pulgadas[20];
-}notebook;
+} notebook;
 
 // Estructura Escritorio
 typedef struct
@@ -60,7 +60,7 @@ typedef struct
     struct teclado;
     struct mouse;
     struct monitor;
-}escritorio;
+} escritorio;
 
 // Estructura Usuario
 typedef struct
@@ -71,25 +71,27 @@ typedef struct
     char Nombres[20];
     char ApellidoPaterno[20];
     char ApellidoMaterno[20];
-}usuario;
+} usuario;
 
 void menuInventario()
 {
     int opcionMenu;
-    while (opcionMenu !=6)
+
+    do
     {
-        printf( "\n   1. Agregar Producto(s).");
-        printf( "\n   2. Actualizar Productos(s)");
-        printf( "\n   3. Visualizar Productos.");
-        printf( "\n   4. Buscar Productos.");
-        printf( "\n   5. Eliminar Productos.");
-        printf( "\n   6. Salir." );
-    }
-    
+        printf("\n 1.Agregar Producto(s)");
+        printf("\n 2.Actualizar Productos(s)");
+        printf("\n 3.Visualizar Productos");
+        printf("\n 4.Buscar Productos");
+        printf("\n 5.Eliminar Productos");
+        printf("\n 6.Salir");
+        printf("\n Ingrese opcion: ");
+        scanf("%d", &opcionMenu);
+    } while (opcionMenu != 0 && opcionMenu != 6);
 }
 int main(int argc, char const *argv[])
 {
+    system("clear");
     menuInventario();
     return 0;
 }
-
