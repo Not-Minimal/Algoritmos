@@ -45,4 +45,18 @@ struc notebook{
     int Pulgadas[20];
 }
 
+//Estructura Escritorio
+struc escritorio{
+    int identificador;
+    char Marca[20];
+    char Modelo[20];
+    int CantidadRam;
+    char Procesador[20];
+    struct teclado;
+    struct mouse;
+    struct monitor;
+}
+
+
+
 
