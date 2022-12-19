@@ -57,6 +57,14 @@ struc escritorio{
     struct monitor;
 }
 
-
+//Estructura Usuario
+struc notebook{
+    int identificador;
+    char Marca[20];
+    char Modelo[20];
+    int Cantidad_Ram;
+    char Procesador[20];
+    int Pulgadas[20];
+}
 
 
