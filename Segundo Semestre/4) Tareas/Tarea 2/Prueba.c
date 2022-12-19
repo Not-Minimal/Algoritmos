@@ -58,13 +58,13 @@ struc escritorio{
 }
 
 //Estructura Usuario
-struc notebook{
+struc usuario{
     int identificador;
-    char Marca[20];
-    char Modelo[20];
-    int Cantidad_Ram;
-    char Procesador[20];
-    int Pulgadas[20];
+    char NombreUsuario[20];
+    char Clave[20];
+    char Nombres[20];
+    char ApellidoPaterno[20];
+    char ApellidoMaterno[20];
 }
 
 
