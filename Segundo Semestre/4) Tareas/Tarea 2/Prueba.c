@@ -19,3 +19,12 @@ struc teclado{
     char Modelo[20];
     char Idioma[20];
 }
+
+//Estructura Mouse
+struc mouse{
+    int identificador;
+    char Marca[20];
+    char Modelo[20];
+}
+
+
