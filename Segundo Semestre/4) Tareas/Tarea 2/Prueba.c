@@ -4,6 +4,7 @@
 #include <conio.h>
 
 //Agregar Prototipos de Funciones
+void menuInventario();
 void usuario_Login();
 void agregar_Producto();
 void actualizar_Producto();
