@@ -27,4 +27,11 @@ struc mouse{
     char Modelo[20];
 }
 
+//Estructura Monitor
+struc monitor{
+    int identificador;
+    char Marca[20];
+    char Modelo[20];
+    int Pulgadas[20];
+}
 
