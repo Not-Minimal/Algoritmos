@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <conio.h>
 
 // Agregar Prototipos de Funciones
 void menuInventario();
@@ -76,5 +75,16 @@ struc usuario
 
 void menuInventario()
 {
+    int opcionMenu;
+    while (opcionMenu !=6)
+    {
+        printf( "\n   1. Agregar Producto(s).");
+        printf( "\n   2. Actualizar Productos(s)");
+        printf( "\n   3. Visualizar Productos.";
+        printf( "\n   4. Buscar Productos.");
+        printf( "\n   5. Eliminar Productos.";
+        printf( "\n   6. Salir." );
+        
+    }
     
 }
