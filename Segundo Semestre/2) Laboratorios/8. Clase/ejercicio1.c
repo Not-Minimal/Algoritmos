@@ -1,24 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// include turbose
+
+// Variables Globales
+int n, i, j, contador;
+
+// Prototipos de Funciones
+void rellenarMatriz();
+
 int main()
 {
-    int n, i, j;
-    int matriz[10][10];
+
+    char matriz[10][10];
 
     for (i = 0; i < 10; i++)
     {
         for (j = 0; j < 10; j++)
         {
-            matriz[i][j] = 32;
+            matriz[i][j] = ' ';
         }
+    }
+    matriz[0][0] = '*';
+
+    contador = 0;
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 10; j++)
+        {
+            while (contador < 6)
+            {
+                if (matriz[i][j] == ' ')
+                {
+                    matriz[i][j] = 'O';
+                }
+            }
+        }
+        contador++;
     }
 
     for (i = 0; i < 10; i++)
     {
         for (j = 0; j < 10; j++)
         {
-            printf("%d", matriz[i][j]);
+            printf("[%c]", matriz[i][j]);
         }
         printf("\n");
     }
