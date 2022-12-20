@@ -28,15 +28,15 @@ int main()
     {
         for (j = 0; j < 10; j++)
         {
-            while (contador < 6)
+            while (contador < 5)
             {
                 if (matriz[i][j] == ' ')
                 {
                     matriz[i][j] = 'O';
+                    contador++;
                 }
             }
         }
-        contador++;
     }
 
     for (i = 0; i < 10; i++)
