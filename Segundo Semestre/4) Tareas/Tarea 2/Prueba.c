@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 // Agregar Prototipos de Funciones
+void iniciar_Sesion();
 void usuario_Login();
 void menuInventario();
 void agregar_Producto();
@@ -89,12 +90,42 @@ void menuInventario()
         scanf("%d", &opcionMenu);
     } while (opcionMenu < 0 && opcionMenu > 6);
 }
-void usuario_Login(){
+void usuario_Login()
+{
     printf("Nombre: Saul Muñoz Pedreros\n");
+}
+int iniciar_Sesion(int clave)
+{
+
+    char usuario[6];
+    int clave;
+    printf("Ingrese Usuario: ");
+    gets(usuario);
+    printf("Ingrese Clave: ");
+    scanf("%d", &clave);
+    if ((strcmp(usuario, "Admin") == 0 && clave == 123456))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
 int main(int argc, char const *argv[])
 {
+    int clave;
     system("clear");
+    clave = iniciar_Sesion();
+    if (clave == 1)
+    {
+        printf("Acceso Permitido");
+    }else
+    {
+        printf("Acceso Denegado");
+    }
+    
+
     usuario_Login();
     menuInventario();
     return 0;
