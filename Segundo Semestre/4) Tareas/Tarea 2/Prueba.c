@@ -113,7 +113,7 @@ int iniciar_Sesion()
 }
 int main(int argc, char const *argv[])
 {
-    int clave;
+    int clave; //Admin 123456
     system("clear");
     clave = iniciar_Sesion();
     if (clave == 1)
