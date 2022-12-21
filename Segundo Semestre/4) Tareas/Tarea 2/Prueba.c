@@ -6,7 +6,7 @@
 int iniciar_Sesion();
 void usuario_Login();
 void menuInventario();
-void agregar_Producto();
+int agregar_Producto();
 void actualizar_Producto();
 void buscar_Productos();
 void eliminar_Productos();
@@ -111,9 +111,31 @@ int iniciar_Sesion()
         return 0;
     }
 }
+
+int agregar_Productos()
+{
+    int opcion;
+    printf("Ingrese opcion: ");
+    scanf("%d", &opcion);
+
+    printf("\n 1.Agregar Teclado");
+    printf("\n 2.Agregar Mouse");
+    printf("\n 3.Agregar Monitor");
+    printf("\n 4.Agregar Notebook");
+    printf("\n 5.Agregar PC de Escritorio");
+
+    if ((strcmp(usuario, "Admin") == 0 && clave == 123456))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
 int main(int argc, char const *argv[])
 {
-    int clave; //Admin 123456
+    int clave; // Admin 123456
     system("clear");
     clave = iniciar_Sesion();
     if (clave == 1)
@@ -121,7 +143,8 @@ int main(int argc, char const *argv[])
         printf("Acceso Permitido\n");
         usuario_Login();
         menuInventario();
-    }else
+    }
+    else
     {
         printf("Acceso Denegado");
     }
