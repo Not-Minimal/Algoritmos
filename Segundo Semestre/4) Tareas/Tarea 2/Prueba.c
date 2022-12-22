@@ -503,8 +503,16 @@ void listar_Teclado() {
         fprintf(stderr, "No se puede abrir el archivo\n")
     } else
     {
-        /* code */
+        printf("Teclados: \n");
     }
+    while (fread(&registro_Informacion,sizeof(struct teclado),1,fp))
+    {
+        printf("Identificador: %d", registro_Informacion.identificador);
+        printf("Identificador: %s", registro_Informacion.Marca);
+        printf("Identificador: %s", registro_Informacion.Modelo);
+        printf("Identificador: %s", registro_Informacion.Idioma);
+    }
+    
     
     
 }
@@ -560,7 +568,7 @@ int eliminar_Productos()
 }
 int main(int argc, char const *argv[])
 {
-    int clave; // Admin 123456
+    int clave; // Admin 123
     int opcion;
 
     clave = iniciar_Sesion();
