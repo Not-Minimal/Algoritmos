@@ -435,11 +435,11 @@ int listar_Productos()
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
 
-    printf("\n1.listar Teclado");
-    printf("\n2.listar Mouse");
-    printf("\n3.listar Monitor");
-    printf("\n4.listar Notebook");
-    printf("\n5.listar PC de Escritorio");
+    printf("\n1.Listar Teclado");
+    printf("\n2.Listar Mouse");
+    printf("\n3.Listar Monitor");
+    printf("\n4.Listar Notebook");
+    printf("\n5.Listar PC de Escritorio");
 
     switch (opcion)
     {
