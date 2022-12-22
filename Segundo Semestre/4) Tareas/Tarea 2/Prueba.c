@@ -92,7 +92,7 @@ void menuInventario()
 }
 void usuario_Login()
 {
-    //Precargar Datos de Usuario
+    // Precargar Datos de Usuario
     usuario registro_Informacion[2];
     strcpy(registro_Informacion->Nombres, "Saul");
     strcpy(registro_Informacion->ApellidoPaterno, "Munoz");
@@ -101,18 +101,18 @@ void usuario_Login()
 }
 int iniciar_Sesion()
 {
-    //Precargar Nombre de Usuario y Contraseña
+    // Precargar Nombre de Usuario y Contraseña
     usuario registro_Informacion[1];
     strcpy(registro_Informacion->NombreUsuario, "Admin");
     registro_Informacion->Clave = 123456;
-    
+
     char usuario[6];
     int clave;
     printf("Ingrese Usuario: ");
     gets(usuario);
     printf("Ingrese Clave: ");
     scanf("%d", &clave);
-    if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave == registro_Informacion->Clave)) //Tiene que pertenecer a una estructura
+    if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave == registro_Informacion->Clave)) // Tiene que pertenecer a una estructura
     {
         return 1;
     }
@@ -133,29 +133,38 @@ int agregar_Productos()
     printf("\nQue desea agregar: ");
     scanf("%d", &opcion);
 
-    if (opcion == 1)
+    switch (opcion)
+    {
+    case 0:
+    {
+        return 0;
+    }
+    break;
+    case 1:
     {
         return 1;
     }
-    else if (opcion == 2)
+    break;
+    case 2:
     {
         return 2;
     }
-    else if (opcion == 3)
+    break;
+    case 3:
     {
         return 3;
     }
-    else if (opcion == 4)
+    break;
+    case 4:
     {
         return 4;
     }
-    else if (opcion == 5)
+    break;
+    case 5:
     {
         return 5;
     }
-    else
-    {
-        return 0;
+    break;
     }
 }
 int actualizar_Producto()
@@ -170,29 +179,38 @@ int actualizar_Producto()
     printf("\n4.Actualizar Notebook");
     printf("\n5.Actualizar PC de Escritorio");
 
-    if (opcion == 1)
+    switch (opcion)
+    {
+    case 0:
+    {
+        return 0;
+    }
+    break;
+    case 1:
     {
         return 1;
     }
-    else if (opcion == 2)
+    break;
+    case 2:
     {
         return 2;
     }
-    else if (opcion == 3)
+    break;
+    case 3:
     {
         return 3;
     }
-    else if (opcion == 4)
+    break;
+    case 4:
     {
         return 4;
     }
-    else if (opcion == 5)
+    break;
+    case 5:
     {
         return 5;
     }
-    else
-    {
-        return 0;
+    break;
     }
 }
 int buscar_Productos()
@@ -207,29 +225,38 @@ int buscar_Productos()
     printf("\n4.Buscar Notebook");
     printf("\n5.Buscar PC de Escritorio");
 
-    if (opcion == 1)
+    switch (opcion)
+    {
+    case 0:
+    {
+        return 0;
+    }
+    break;
+    case 1:
     {
         return 1;
     }
-    else if (opcion == 2)
+    break;
+    case 2:
     {
         return 2;
     }
-    else if (opcion == 3)
+    break;
+    case 3:
     {
         return 3;
     }
-    else if (opcion == 4)
+    break;
+    case 4:
     {
         return 4;
     }
-    else if (opcion == 5)
+    break;
+    case 5:
     {
         return 5;
     }
-    else
-    {
-        return 0;
+    break;
     }
 }
 int eliminar_Productos()
@@ -244,29 +271,38 @@ int eliminar_Productos()
     printf("\n4.Eliminar Notebook");
     printf("\n5.Eliminar PC de Escritorio");
 
-    if (opcion == 1)
+    switch (opcion)
+    {
+    case 0:
+    {
+        return 0;
+    }
+    break;
+    case 1:
     {
         return 1;
     }
-    else if (opcion == 2)
+    break;
+    case 2:
     {
         return 2;
     }
-    else if (opcion == 3)
+    break;
+    case 3:
     {
         return 3;
     }
-    else if (opcion == 4)
+    break;
+    case 4:
     {
         return 4;
     }
-    else if (opcion == 5)
+    break;
+    case 5:
     {
         return 5;
     }
-    else
-    {
-        return 0;
+    break;
     }
 }
 int main(int argc, char const *argv[])
