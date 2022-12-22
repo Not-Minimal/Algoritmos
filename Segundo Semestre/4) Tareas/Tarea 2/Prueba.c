@@ -92,7 +92,12 @@ void menuInventario()
 }
 void usuario_Login()
 {
-   
+    //Precargar Datos de Usuario
+    usuario registro_Informacion[2];
+    strcpy(registro_Informacion->Nombres, "Saul");
+    strcpy(registro_Informacion->ApellidoPaterno, "Munoz");
+    strcpy(registro_Informacion->ApellidoMaterno, "Pedreros");
+    printf("%s %s %s\n", registro_Informacion->Nombres, registro_Informacion->ApellidoPaterno, registro_Informacion->ApellidoMaterno);
 }
 int iniciar_Sesion()
 {
