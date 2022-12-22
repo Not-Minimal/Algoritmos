@@ -80,13 +80,13 @@ void menuInventario()
 
     do
     {
-        printf("\n 1.Agregar Producto(s)");
-        printf("\n 2.Actualizar Productos(s)");
-        printf("\n 3.Visualizar Productos");
-        printf("\n 4.Buscar Productos");
-        printf("\n 5.Eliminar Productos");
-        printf("\n 6.Salir");
-        printf("\n Ingrese opcion: ");
+        printf("\n1.Agregar Producto(s)");
+        printf("\n2.Actualizar Productos(s)");
+        printf("\n3.Visualizar Productos");
+        printf("\n4.Buscar Productos");
+        printf("\n5.Eliminar Productos");
+        printf("\n6.Salir");
+        printf("\nIngrese opcion: ");
         scanf("%d", &opcionMenu);
     } while (opcionMenu < 0 && opcionMenu > 6);
 }
@@ -115,12 +115,12 @@ int iniciar_Sesion()
 int agregar_Productos()
 {
     int opcion;
-    printf("Que desea agregar: ");
-    printf("\n 1.Agregar Teclado");
-    printf("\n 2.Agregar Mouse");
-    printf("\n 3.Agregar Monitor");
-    printf("\n 4.Agregar Notebook");
-    printf("\n 5.Agregar PC de Escritorio");
+    printf("\n1.Agregar Teclado");
+    printf("\n2.Agregar Mouse");
+    printf("\n3.Agregar Monitor");
+    printf("\n4.Agregar Notebook");
+    printf("\n5.Agregar PC de Escritorio");
+    printf("\nQue desea agregar: ");
     scanf("%d", &opcion);
 
     if (opcion == 1)
@@ -154,11 +154,11 @@ int actualizar_Producto()
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
 
-    printf("\n 1.Actualizar Teclado");
-    printf("\n 2.Actualizar Mouse");
-    printf("\n 3.Actualizar Monitor");
-    printf("\n 4.Actualizar Notebook");
-    printf("\n 5.Actualizar PC de Escritorio");
+    printf("\n1.Actualizar Teclado");
+    printf("\n2.Actualizar Mouse");
+    printf("\n3.Actualizar Monitor");
+    printf("\n4.Actualizar Notebook");
+    printf("\n5.Actualizar PC de Escritorio");
 
     if (opcion == 1)
     {
@@ -191,11 +191,11 @@ int buscar_Productos()
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
 
-    printf("\n 1.Buscar Teclado");
-    printf("\n 2.Buscar Mouse");
-    printf("\n 3.Buscar Monitor");
-    printf("\n 4.Buscar Notebook");
-    printf("\n 5.Buscar PC de Escritorio");
+    printf("\n1.Buscar Teclado");
+    printf("\n2.Buscar Mouse");
+    printf("\n3.Buscar Monitor");
+    printf("\n4.Buscar Notebook");
+    printf("\n5.Buscar PC de Escritorio");
 
     if (opcion == 1)
     {
@@ -228,11 +228,11 @@ int eliminar_Productos()
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
 
-    printf("\n 1.Eliminar Teclado");
-    printf("\n 2.Eliminar Mouse");
-    printf("\n 3.Eliminar Monitor");
-    printf("\n 4.Eliminar Notebook");
-    printf("\n 5.Eliminar PC de Escritorio");
+    printf("\n1.Eliminar Teclado");
+    printf("\n2.Eliminar Mouse");
+    printf("\n3.Eliminar Monitor");
+    printf("\n4.Eliminar Notebook");
+    printf("\n5.Eliminar PC de Escritorio");
 
     if (opcion == 1)
     {
