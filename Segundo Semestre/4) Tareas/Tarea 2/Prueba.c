@@ -8,7 +8,7 @@ void usuario_Login();
 void menuInventario();
 int agregar_Productos();
 int actualizar_Producto();
-int buscar_Productos();
+int listar_Productos();
 int eliminar_Productos();
 // Funciones Encargadas de Agregar productos
 void agregar_Teclado();
@@ -22,12 +22,12 @@ void actualizar_Mouse();
 void actualizar_Monitor();
 void actualizar_Notebook();
 void actualizar_Escritorio();
-// Funciones Encargadas de Buscar productos
-void buscar_Teclado();
-void buscar_Mouse();
-void buscar_Monitor();
-void buscar_Notebook();
-void buscar_Escritorio();
+// Funciones Encargadas de Listar productos
+void listar_Teclado();
+void listar_Mouse();
+void listar_Monitor();
+void listar_Notebook();
+void listar_Escritorio();
 // Funciones Encargadas de Eliminar productos
 void eliminar_Teclado();
 void eliminar_Mouse();
@@ -95,7 +95,7 @@ typedef struct
     char Nombres[20];
     char ApellidoPaterno[20];
     char ApellidoMaterno[20];
-}usuario;
+} usuario;
 
 void menuInventario()
 {
@@ -105,7 +105,7 @@ void menuInventario()
         printf("\n1.Agregar Producto(s)");
         printf("\n2.Actualizar Productos(s)");
         printf("\n3.Visualizar Productos");
-        printf("\n4.Buscar Productos");
+        printf("\n4.Listar Productos");
         printf("\n5.Eliminar Productos");
         printf("\n6.Salir");
         printf("\nIngrese opcion: ");
@@ -383,7 +383,7 @@ void agregar_Escritorio()
         scanf("%s", registro_Producto.direccion_monitor.Modelo);
         printf("Pulgadas monitor: \n");
         scanf("%f", registro_Producto.direccion_monitor.Pulgadas);
-        
+
         if (fp == NULL)
         {
             fprintf(stderr, "No se puede abrir el archivo\n");
@@ -447,17 +447,17 @@ int actualizar_Producto()
     break;
     }
 }
-int buscar_Productos()
+int listar_Productos()
 {
     int opcion;
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
 
-    printf("\n1.Buscar Teclado");
-    printf("\n2.Buscar Mouse");
-    printf("\n3.Buscar Monitor");
-    printf("\n4.Buscar Notebook");
-    printf("\n5.Buscar PC de Escritorio");
+    printf("\n1.listar Teclado");
+    printf("\n2.listar Mouse");
+    printf("\n3.listar Monitor");
+    printf("\n4.listar Notebook");
+    printf("\n5.listar PC de Escritorio");
 
     switch (opcion)
     {
@@ -493,6 +493,25 @@ int buscar_Productos()
     break;
     }
 }
+void listar_Teclado() {
+    FILE *fp;
+    struct teclado registro_Informacion;
+    fp = fopen("Listado_Teclados.txt", "r");
+
+    printf("Listado de Teclados\n");
+    if (fp = NULL){
+        fprintf(stderr, "No se puede abrir el archivo\n")
+    } else
+    {
+        /* code */
+    }
+    
+    
+}
+void listar_Mouse() {}
+void listar_Monitor() {}
+void listar_Notebook() {}
+void listar_Escritorio() {}
 int eliminar_Productos()
 {
     int opcion;
