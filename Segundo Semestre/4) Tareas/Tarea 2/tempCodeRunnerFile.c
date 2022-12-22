@@ -1,1 +1,1 @@
-system("cls");
+registro_Informacion

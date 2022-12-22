@@ -175,31 +175,32 @@ void agregar_Teclado()
 {
     int otro_Registro;
     FILE *fp;
-    struct teclado registro_Producto;
+    struct teclado registro_Informacion;
 
     do
     {
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar Teclado\n");
-        fp = fopen("Registro_Teclado.txt", "a");
+        fp = fopen("Teclado.txt", "a");
         printf("Identificador: \n");
-        scanf("%d", &registro_Producto.identificador);
+        scanf("%d", &registro_Informacion.identificador);
         printf("Marca: \n");
-        scanf("%s", registro_Producto.Marca);
+        scanf("%s", &registro_Informacion.Marca);
         printf("Modelo: \n");
-        scanf("%s", registro_Producto.Modelo);
+        scanf("%s", &registro_Informacion.Modelo);
         printf("Idioma: \n");
-        scanf("%s", registro_Producto.Idioma);
+        scanf("%s", &registro_Informacion.Idioma);
+
         if (fp == NULL)
         {
             fprintf(stderr, "No se puede abrir el archivo\n");
         }
         else
         {
-            printf("Se ha agregado correctamente el nuevo teclado\n");
+            printf("Se ha agregado el nuevo teclado\n");
         }
-        fwrite(&registro_Producto, sizeof(struct teclado), 1, fp);
+        fwrite(&registro_Informacion, sizeof(struct teclado), 1, fp);
         fclose(fp);
         printf("Quieres agregar otro teclado?\n");
         printf("1. Si\n");
@@ -479,12 +480,13 @@ void listar_Teclado()
 {
     FILE *fp;
     struct teclado registro_Informacion;
-    fp = fopen("Registro_Teclados.txt", "r");
+    fp = fopen("Teclado.txt", "r");
 
     printf("Listado de Teclados\n");
     if (fp = NULL)
     {
         fprintf(stderr, "No se puede abrir el archivo\n");
+        exit(0);
     }
     else
     {
@@ -493,10 +495,11 @@ void listar_Teclado()
     while (fread(&registro_Informacion, sizeof(struct teclado), 1, fp))
     {
         printf("Identificador: %d", registro_Informacion.identificador);
-        printf("Identificador: %s", registro_Informacion.Marca);
-        printf("Identificador: %s", registro_Informacion.Modelo);
-        printf("Identificador: %s", registro_Informacion.Idioma);
+        printf("Marca: %s", registro_Informacion.Marca);
+        printf("Modelo: %s", registro_Informacion.Modelo);
+        printf("Idioma: %s", registro_Informacion.Idioma);
     }
+    fclose(fp);
 }
 void listar_Mouse() {}
 void listar_Monitor() {}
