@@ -7,9 +7,9 @@ int iniciar_Sesion();
 void usuario_Login();
 void menuInventario();
 int agregar_Producto();
-void actualizar_Producto();
-void buscar_Productos();
-void eliminar_Productos();
+int actualizar_Producto();
+int buscar_Productos();
+int eliminar_Productos();
 
 // Agregar Estructuras Predefinidas
 
@@ -127,25 +127,139 @@ int agregar_Productos()
     if (opcion == 1)
     {
         return 1;
-    }else if (opcion == 2)
+    }
+    else if (opcion == 2)
     {
         return 2;
-    }else if (opcion == 3)
+    }
+    else if (opcion == 3)
     {
         return 3;
-    }else if (opcion == 4)
+    }
+    else if (opcion == 4)
     {
         return 4;
-    }else if (opcion == 5)
+    }
+    else if (opcion == 5)
     {
         return 5;
-    }else
+    }
+    else
     {
         return 0;
     }
-    
-    
-    
+}
+int actualizar_Producto()
+{
+    int opcion;
+    printf("Ingrese opcion: ");
+    scanf("%d", &opcion);
+
+    printf("\n 1.Actualizar Teclado");
+    printf("\n 2.Actualizar Mouse");
+    printf("\n 3.Actualizar Monitor");
+    printf("\n 4.Actualizar Notebook");
+    printf("\n 5.Actualizar PC de Escritorio");
+
+    if (opcion == 1)
+    {
+        return 1;
+    }
+    else if (opcion == 2)
+    {
+        return 2;
+    }
+    else if (opcion == 3)
+    {
+        return 3;
+    }
+    else if (opcion == 4)
+    {
+        return 4;
+    }
+    else if (opcion == 5)
+    {
+        return 5;
+    }
+    else
+    {
+        return 0;
+    }
+}
+int buscar_Productos()
+{
+    int opcion;
+    printf("Ingrese opcion: ");
+    scanf("%d", &opcion);
+
+    printf("\n 1.Buscar Teclado");
+    printf("\n 2.Buscar Mouse");
+    printf("\n 3.Buscar Monitor");
+    printf("\n 4.Buscar Notebook");
+    printf("\n 5.Buscar PC de Escritorio");
+
+    if (opcion == 1)
+    {
+        return 1;
+    }
+    else if (opcion == 2)
+    {
+        return 2;
+    }
+    else if (opcion == 3)
+    {
+        return 3;
+    }
+    else if (opcion == 4)
+    {
+        return 4;
+    }
+    else if (opcion == 5)
+    {
+        return 5;
+    }
+    else
+    {
+        return 0;
+    }
+
+}
+int eliminar_Productos()
+{
+    int opcion;
+    printf("Ingrese opcion: ");
+    scanf("%d", &opcion);
+
+    printf("\n 1.Eliminar Teclado");
+    printf("\n 2.Eliminar Mouse");
+    printf("\n 3.Eliminar Monitor");
+    printf("\n 4.Eliminar Notebook");
+    printf("\n 5.Eliminar PC de Escritorio");
+
+    if (opcion == 1)
+    {
+        return 1;
+    }
+    else if (opcion == 2)
+    {
+        return 2;
+    }
+    else if (opcion == 3)
+    {
+        return 3;
+    }
+    else if (opcion == 4)
+    {
+        return 4;
+    }
+    else if (opcion == 5)
+    {
+        return 5;
+    }
+    else
+    {
+        return 0;
+    }
 }
 int main(int argc, char const *argv[])
 {
