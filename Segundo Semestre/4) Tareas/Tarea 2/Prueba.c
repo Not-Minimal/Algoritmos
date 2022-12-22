@@ -10,34 +10,32 @@ int agregar_Productos();
 int actualizar_Producto();
 int buscar_Productos();
 int eliminar_Productos();
-//Funciones Encargadas de Agregar productos
+// Funciones Encargadas de Agregar productos
 void agregar_Teclado();
 void agregar_Mouse();
 void agregar_Monitor();
 void agregar_Notebook();
 void agregar_Escritorio();
-//Funciones Encargadas de Actualizar productos
+// Funciones Encargadas de Actualizar productos
 void actualizar_Teclado();
 void actualizar_Mouse();
 void actualizar_Monitor();
 void actualizar_Notebook();
 void actualizar_Escritorio();
-//Funciones Encargadas de Buscar productos
+// Funciones Encargadas de Buscar productos
 void buscar_Teclado();
 void buscar_Mouse();
 void buscar_Monitor();
 void buscar_Notebook();
 void buscar_Escritorio();
-//Funciones Encargadas de Eliminar productos
+// Funciones Encargadas de Eliminar productos
 void eliminar_Teclado();
 void eliminar_Mouse();
 void eliminar_Monitor();
 void eliminar_Notebook();
 void eliminar_Escritorio();
 
-
 // Agregar Estructuras Predefinidas
-
 // Estructura Teclado
 struct teclado
 {
@@ -160,7 +158,7 @@ int agregar_Productos()
 
     switch (opcion)
     {
-    break;
+        break;
     case 1:
     {
         return 1;
@@ -191,7 +189,6 @@ int agregar_Productos()
     {
         return 0;
     }
-    
 }
 void agregar_Teclado()
 {
