@@ -81,9 +81,9 @@ struct escritorio
     char Modelo[20];
     int CantidadRam;
     char Procesador[20];
-    struct teclado;
-    struct mouse;
-    struct monitor;
+    struct teclado direccion_teclado;
+    struct mouse direccion_mouse;
+    struct monitor direccion_monitor;
 };
 
 // Estructura Usuario
@@ -200,7 +200,7 @@ void agregar_Teclado()
     {
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
-        printf("Agregar Teclado");
+        printf("Agregar Teclado\n");
         fp = fopen("registro_Teclado.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Producto.identificador);
@@ -221,8 +221,8 @@ void agregar_Teclado()
         fwrite(&registro_Producto, sizeof(struct teclado), 1, fp);
         fclose(fp);
         printf("Quieres agregar otro teclado?");
-        printf("1. Si");
-        printf("2. No");
+        printf("1. Si\n");
+        printf("2. No\n");
         scanf("%d", &otro_Registro);
 
     } while (otro_Registro == 1);
@@ -237,7 +237,7 @@ void agregar_Mouse()
     {
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
-        printf("Agregar mouse");
+        printf("Agregar mouse\n");
         fp = fopen("registro_mouse.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Producto.identificador);
@@ -256,8 +256,8 @@ void agregar_Mouse()
         fwrite(&registro_Producto, sizeof(struct mouse), 1, fp);
         fclose(fp);
         printf("Quieres agregar otro mouse?");
-        printf("1. Si");
-        printf("2. No");
+        printf("1. Si\n");
+        printf("2. No\n");
         scanf("%d", &otro_Registro);
 
     } while (otro_Registro == 1);
@@ -272,7 +272,7 @@ void agregar_Monitor()
     {
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
-        printf("Agregar monitor");
+        printf("Agregar monitor\n");
         fp = fopen("registro_monitor.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Producto.identificador);
@@ -281,7 +281,7 @@ void agregar_Monitor()
         printf("Modelo: \n");
         scanf("%s", registro_Producto.Modelo);
         printf("Pulgadas: \n");
-        scanf("%f", &registro_Producto.identificador);
+        scanf("%f", &registro_Producto.Pulgadas);
         if (fp == NULL)
         {
             fprintf(stderr, "No se puede abrir el archivo\n");
@@ -293,8 +293,111 @@ void agregar_Monitor()
         fwrite(&registro_Producto, sizeof(struct monitor), 1, fp);
         fclose(fp);
         printf("Quieres agregar otro monitor?");
-        printf("1. Si");
-        printf("2. No");
+        printf("1. Si\n");
+        printf("2. No\n");
+        scanf("%d", &otro_Registro);
+
+    } while (otro_Registro == 1);
+}
+void agregar_Notebook()
+{
+    int otro_Registro;
+    FILE *fp;
+    struct notebook registro_Producto;
+
+    do
+    {
+        // Descripcion: Esta función despeja la ventana de texto actual
+        // y coloca el cursor en la esquina superior izquierda: posición (1,1).
+        printf("Agregar notebook\n");
+        fp = fopen("registro_notebook.txt", "a");
+        printf("Identificador: \n");
+        scanf("%d", &registro_Producto.identificador);
+        printf("Marca: \n");
+        scanf("%s", registro_Producto.Marca);
+        printf("Modelo: \n");
+        scanf("%s", registro_Producto.Modelo);
+        printf("Cantidad de Ram: \n");
+        scanf("%d", &registro_Producto.CantidadRam);
+        printf("Procesador: \n");
+        scanf("%s", registro_Producto.Procesador);
+        printf("Pulgadas: \n");
+        scanf("%f", &registro_Producto.Pulgadas);
+        if (fp == NULL)
+        {
+            fprintf(stderr, "No se puede abrir el archivo\n");
+        }
+        else
+        {
+            printf("Se ha agregado correctamente el nuevo notebook\n");
+        }
+        fwrite(&registro_Producto, sizeof(struct notebook), 1, fp);
+        fclose(fp);
+        printf("Quieres agregar otro notebook?");
+        printf("1. Si\n");
+        printf("2. No\n");
+        scanf("%d", &otro_Registro);
+
+    } while (otro_Registro == 1);
+}
+void agregar_Escritorio()
+{
+    int otro_Registro;
+    FILE *fp;
+    struct escritorio registro_Producto;
+
+    do
+    {
+        // Descripcion: Esta función despeja la ventana de texto actual
+        // y coloca el cursor en la esquina superior izquierda: posición (1,1).
+        printf("Agregar escritorio\n");
+        fp = fopen("registro_escritorio.txt", "a");
+        printf("Identificador: \n");
+        scanf("%d", &registro_Producto.identificador);
+        printf("Marca: \n");
+        scanf("%s", registro_Producto.Marca);
+        printf("Modelo: \n");
+        scanf("%s", registro_Producto.Modelo);
+        printf("Cantidad de Ram: \n");
+        scanf("%d", &registro_Producto.CantidadRam);
+        printf("Procesador: \n");
+        scanf("%s", registro_Producto.Procesador);
+        printf("Identificador Teclado: \n");
+        scanf("%d", registro_Producto.direccion_teclado.identificador);
+        printf("Marca Teclado: \n");
+        scanf("%s", registro_Producto.direccion_teclado.Marca);
+        printf("Modelo Teclado: \n");
+        scanf("%d", registro_Producto.direccion_teclado.Modelo);
+        printf("Idioma Teclado: \n");
+        scanf("%d", registro_Producto.direccion_teclado.Idioma);
+        printf("Identificador mouse: \n");
+        scanf("%d", registro_Producto.direccion_mouse.identificador);
+        printf("Marca mouse: \n");
+        scanf("%s", registro_Producto.direccion_mouse.Marca);
+        printf("Modelo mouse: \n");
+        scanf("%s", registro_Producto.direccion_mouse.Modelo);
+        printf("Identificador monitor: \n");
+        scanf("%d", registro_Producto.direccion_monitor.identificador);
+        printf("Marca monitor: \n");
+        scanf("%s", registro_Producto.direccion_monitor.Marca);
+        printf("Modelo monitor: \n");
+        scanf("%s", registro_Producto.direccion_monitor.Modelo);
+        printf("Pulgadas monitor: \n");
+        scanf("%s", registro_Producto.direccion_monitor.Pulgadas);
+        
+        if (fp == NULL)
+        {
+            fprintf(stderr, "No se puede abrir el archivo\n");
+        }
+        else
+        {
+            printf("Se ha agregado correctamente el nuevo escritorio\n");
+        }
+        fwrite(&registro_Producto, sizeof(struct escritorio), 1, fp);
+        fclose(fp);
+        printf("Quieres agregar otro escritorio?");
+        printf("1. Si\n");
+        printf("2. No\n");
         scanf("%d", &otro_Registro);
 
     } while (otro_Registro == 1);
@@ -463,11 +566,11 @@ int main(int argc, char const *argv[])
         }
         else if (opcion == 4)
         {
-            printf("Agregar Notebook\n");
+            agregar_Notebook();
         }
         else if (opcion == 5)
         {
-            printf("Agregar PC Esctritorio\n");
+            agregar_Escritorio();
         }
     }
     else
