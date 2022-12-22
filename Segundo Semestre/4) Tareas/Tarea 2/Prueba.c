@@ -455,11 +455,11 @@ int main(int argc, char const *argv[])
         }
         else if (opcion == 2)
         {
-            printf("Agregar Mouse\n");
+            agregar_Mouse();
         }
         else if (opcion == 3)
         {
-            printf("Agregar Monitor\n");
+            agregar_Monitor();
         }
         else if (opcion == 4)
         {
