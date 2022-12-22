@@ -5,7 +5,6 @@
 // Agregar Prototipos de Funciones
 int iniciar_Sesion();
 void usuario_Login();
-void menuInventario();
 int agregar_Productos();
 int actualizar_Producto();
 int listar_Productos();
@@ -97,20 +96,6 @@ typedef struct
     char ApellidoMaterno[20];
 } usuario;
 
-void menuInventario()
-{
-    int opcionMenu;
-    do
-    {
-        printf("\n1.Agregar Producto(s)");
-        printf("\n2.Listar Productos(s)");
-        printf("\n3.Actualizar Productos");
-        printf("\n4.Eliminar Productos");
-        printf("\n5.Salir");
-        printf("\nIngrese opcion: ");
-        scanf("%d", &opcionMenu);
-    } while (opcionMenu < 0 && opcionMenu > 5);
-}
 void usuario_Login()
 {
     // Precargar Datos de Usuario
@@ -151,8 +136,6 @@ int agregar_Productos()
     printf("\n3.Agregar Monitor");
     printf("\n4.Agregar Notebook");
     printf("\n5.Agregar PC de Escritorio");
-    printf("\nQue desea agregar: ");
-    scanf("%d", &opcion);
 
     switch (opcion)
     {
@@ -199,7 +182,7 @@ void agregar_Teclado()
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar Teclado\n");
-        fp = fopen("registro_Teclado.txt", "a");
+        fp = fopen("Registro_Teclado.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Producto.identificador);
         printf("Marca: \n");
@@ -496,7 +479,7 @@ void listar_Teclado()
 {
     FILE *fp;
     struct teclado registro_Informacion;
-    fp = fopen("Listado_Teclados.txt", "r");
+    fp = fopen("Registro_Teclados.txt", "r");
 
     printf("Listado de Teclados\n");
     if (fp = NULL)
@@ -577,14 +560,20 @@ int main(int argc, char const *argv[])
         usuario_Login();
         while (opcion_Menu != 6)
         {
-            menuInventario();
-            scanf("%d", &opcion_Menu);
+            printf("\n1.Agregar Producto(s)");
+            printf("\n2.Listar Productos(s)");
+            printf("\n3.Actualizar Productos");
+            printf("\n4.Eliminar Productos");
+            printf("\n5.Salir");
+            printf("\nIngrese opcion: ");
+            scanf("%d",&opcion_Menu);
+            
             switch (opcion_Menu)
             {
             case 1:
             {
                 opcion_Menu = agregar_Productos();
-                printf("Que producto desea agregar: ");
+                printf("\nQue producto desea agregar: ");
                 scanf("%d", &opcion);
                 if (opcion == 1)
                 {
@@ -611,7 +600,7 @@ int main(int argc, char const *argv[])
             case 2:
             {
                 opcion_Menu = listar_Productos();
-                printf("Que producto desea listar: ");
+                printf("\nQue producto desea listar: ");
                 scanf("%d", &opcion);
                 if (opcion == 1)
                 {
