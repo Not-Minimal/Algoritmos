@@ -281,7 +281,7 @@ void agregar_Monitor()
         printf("Modelo: \n");
         scanf("%s", registro_Producto.Modelo);
         printf("Pulgadas: \n");
-        scanf("%2.f", &registro_Producto.identificador);
+        scanf("%f", &registro_Producto.identificador);
         if (fp == NULL)
         {
             fprintf(stderr, "No se puede abrir el archivo\n");
