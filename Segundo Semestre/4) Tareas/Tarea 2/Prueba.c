@@ -6,7 +6,7 @@
 int iniciar_Sesion();
 void usuario_Login();
 void menuInventario();
-int agregar_Producto();
+int agregar_Productos();
 int actualizar_Producto();
 int buscar_Productos();
 int eliminar_Productos();
@@ -115,14 +115,13 @@ int iniciar_Sesion()
 int agregar_Productos()
 {
     int opcion;
-    printf("Ingrese opcion: ");
-    scanf("%d", &opcion);
-
+    printf("Que desea agregar: ");
     printf("\n 1.Agregar Teclado");
     printf("\n 2.Agregar Mouse");
     printf("\n 3.Agregar Monitor");
     printf("\n 4.Agregar Notebook");
     printf("\n 5.Agregar PC de Escritorio");
+    scanf("%d", &opcion);
 
     if (opcion == 1)
     {
@@ -271,9 +270,10 @@ int main(int argc, char const *argv[])
         printf("Acceso Permitido\n");
         usuario_Login();
         menuInventario();
+        opcion = agregar_Productos();
         if (opcion == 1)
         {
-            printf("Agregar Teclado\n");
+            printf("\nAgregar Teclado\n");
         }
         else if (opcion == 2)
         {
