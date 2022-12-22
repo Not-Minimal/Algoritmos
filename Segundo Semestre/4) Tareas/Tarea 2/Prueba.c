@@ -68,7 +68,7 @@ typedef struct
 {
     int identificador;
     char NombreUsuario[20];
-    char Clave[20];
+    int Clave;
     char Nombres[20];
     char ApellidoPaterno[20];
     char ApellidoMaterno[20];
@@ -92,17 +92,22 @@ void menuInventario()
 }
 void usuario_Login()
 {
-    printf("Nombre: Saul Muñoz Pedreros\n");
+   
 }
 int iniciar_Sesion()
 {
+    //Precargar Nombre de Usuario y Contraseña
+    usuario registro_Informacion[1];
+    strcpy(registro_Informacion->NombreUsuario, "Admin");
+    registro_Informacion->Clave = 123456;
+    
     char usuario[6];
     int clave;
     printf("Ingrese Usuario: ");
     gets(usuario);
     printf("Ingrese Clave: ");
     scanf("%d", &clave);
-    if ((strcmp(usuario, "Admin") == 0 && clave == 123456)) //Tiene que pertenecer a una estructura
+    if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave == registro_Informacion->Clave)) //Tiene que pertenecer a una estructura
     {
         return 1;
     }
