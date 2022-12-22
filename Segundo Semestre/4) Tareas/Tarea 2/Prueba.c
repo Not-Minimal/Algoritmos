@@ -92,7 +92,7 @@ void menuInventario()
 }
 void usuario_Login()
 {
-    printf("Nombre: Saul Muñoz Pedreros\n");
+    printf("Nombre: Cristóbal\n");
 }
 int iniciar_Sesion()
 {
