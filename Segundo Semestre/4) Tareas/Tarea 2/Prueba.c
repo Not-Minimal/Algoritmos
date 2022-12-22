@@ -222,7 +222,6 @@ int buscar_Productos()
     {
         return 0;
     }
-
 }
 int eliminar_Productos()
 {
@@ -264,6 +263,7 @@ int eliminar_Productos()
 int main(int argc, char const *argv[])
 {
     int clave; // Admin 123456
+    int opcion;
     system("clear");
     clave = iniciar_Sesion();
     if (clave == 1)
@@ -271,6 +271,26 @@ int main(int argc, char const *argv[])
         printf("Acceso Permitido\n");
         usuario_Login();
         menuInventario();
+        if (opcion == 1)
+        {
+            printf("Agregar Teclado\n");
+        }
+        else if (opcion == 2)
+        {
+            printf("Agregar Mouse\n");
+        }
+        else if (opcion == 3)
+        {
+            printf("Agregar Monitor\n");
+        }
+        else if (opcion == 4)
+        {
+            printf("Agregar Notebook\n");
+        }
+        else if (opcion == 5)
+        {
+            printf("Agregar PC Esctritorio\n");
+        }
     }
     else
     {
