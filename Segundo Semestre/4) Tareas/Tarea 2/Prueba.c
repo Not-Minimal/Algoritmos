@@ -14,33 +14,33 @@ int eliminar_Productos();
 // Agregar Estructuras Predefinidas
 
 // Estructura Teclado
-typedef struct
+struct teclado
 {
     int identificador;
     char Marca[20];
     char Modelo[20];
     char Idioma[20];
-} teclado;
+};
 
 // Estructura Mouse
-typedef struct
+struct mouse
 {
     int identificador;
     char Marca[20];
     char Modelo[20];
-} mouse;
+};
 
 // Estructura Monitor
-typedef struct
+struct monitor
 {
     int identificador;
     char Marca[20];
     char Modelo[20];
     int Pulgadas[20];
-} monitor;
+};
 
 // Estructura Notebook
-typedef struct
+struct notebook
 {
     int identificador;
     char Marca[20];
@@ -48,10 +48,10 @@ typedef struct
     int CantidadRam;
     char Procesador[20];
     int Pulgadas[20];
-} notebook;
+};
 
 // Estructura Escritorio
-typedef struct
+struct escritorio
 {
     int identificador;
     char Marca[20];
@@ -61,7 +61,7 @@ typedef struct
     struct teclado;
     struct mouse;
     struct monitor;
-} escritorio;
+};
 
 // Estructura Usuario
 typedef struct
@@ -135,10 +135,6 @@ int agregar_Productos()
 
     switch (opcion)
     {
-    case 0:
-    {
-        return 0;
-    }
     break;
     case 1:
     {
@@ -166,6 +162,48 @@ int agregar_Productos()
     }
     break;
     }
+    if (opcion == 0)
+    {
+        return 0;
+    }
+    
+}
+void agregar_Teclado()
+{
+    int otro_Registro;
+    FILE *fp;
+    struct teclado registro_Producto;
+
+    do
+    {
+        // Descripcion: Esta función despeja la ventana de texto actual
+        // y coloca el cursor en la esquina superior izquierda: posición (1,1).
+        printf("Agregar Teclado");
+        fp = fopen("registro_Teclado.txt", "a");
+        printf("Identificador: \n");
+        scanf("%d", &registro_Producto.identificador);
+        printf("Marca: \n");
+        scanf("%s", registro_Producto.Marca);
+        printf("Modelo: \n");
+        scanf("%s", registro_Producto.Modelo);
+        printf("Idioma: \n");
+        scanf("%s", registro_Producto.Idioma);
+        if (fp == NULL)
+        {
+            fprintf(stderr, "No se puede abrir el archivo\n");
+        }
+        else
+        {
+            printf("Se ha agregado correctamente el nuevo teclado\n");
+        }
+        fwrite(&registro_Producto, sizeof(struct teclado), 1, fp);
+        fclose(fp);
+        printf("Quieres agregar otro teclado?");
+        printf("1. Si");
+        printf("2. No");
+        scanf("%d", &otro_Registro);
+
+    } while (otro_Registro == 1);
 }
 int actualizar_Producto()
 {
@@ -309,7 +347,7 @@ int main(int argc, char const *argv[])
 {
     int clave; // Admin 123456
     int opcion;
-    system("clear");
+
     clave = iniciar_Sesion();
     if (clave == 1)
     {
@@ -319,7 +357,7 @@ int main(int argc, char const *argv[])
         opcion = agregar_Productos();
         if (opcion == 1)
         {
-            printf("\nAgregar Teclado\n");
+            agregar_Teclado();
         }
         else if (opcion == 2)
         {
