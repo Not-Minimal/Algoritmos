@@ -103,11 +103,10 @@ void menuInventario()
     do
     {
         printf("\n1.Agregar Producto(s)");
-        printf("\n2.Actualizar Productos(s)");
-        printf("\n3.Visualizar Productos");
-        printf("\n4.Listar Productos");
-        printf("\n5.Eliminar Productos");
-        printf("\n6.Salir");
+        printf("\n2.Listar Productos(s)");
+        printf("\n3.Actualizar Productos");
+        printf("\n4.Eliminar Productos");
+        printf("\n5.Salir");
         printf("\nIngrese opcion: ");
         scanf("%d", &opcionMenu);
     } while (opcionMenu < 0 && opcionMenu > 5);
@@ -493,28 +492,28 @@ int listar_Productos()
     break;
     }
 }
-void listar_Teclado() {
+void listar_Teclado()
+{
     FILE *fp;
     struct teclado registro_Informacion;
     fp = fopen("Listado_Teclados.txt", "r");
 
     printf("Listado de Teclados\n");
-    if (fp = NULL){
-        fprintf(stderr, "No se puede abrir el archivo\n")
-    } else
+    if (fp = NULL)
+    {
+        fprintf(stderr, "No se puede abrir el archivo\n");
+    }
+    else
     {
         printf("Teclados: \n");
     }
-    while (fread(&registro_Informacion,sizeof(struct teclado),1,fp))
+    while (fread(&registro_Informacion, sizeof(struct teclado), 1, fp))
     {
         printf("Identificador: %d", registro_Informacion.identificador);
         printf("Identificador: %s", registro_Informacion.Marca);
         printf("Identificador: %s", registro_Informacion.Modelo);
         printf("Identificador: %s", registro_Informacion.Idioma);
     }
-    
-    
-    
 }
 void listar_Mouse() {}
 void listar_Monitor() {}
@@ -569,34 +568,86 @@ int eliminar_Productos()
 int main(int argc, char const *argv[])
 {
     int clave; // Admin 123
-    int opcion;
+    int opcion, opcion_Menu;
 
     clave = iniciar_Sesion();
     if (clave == 1)
     {
         printf("Acceso Permitido\n");
         usuario_Login();
-        menuInventario();
-        opcion = agregar_Productos();
-        if (opcion == 1)
+        while (opcion_Menu != 6)
         {
-            agregar_Teclado();
-        }
-        else if (opcion == 2)
-        {
-            agregar_Mouse();
-        }
-        else if (opcion == 3)
-        {
-            agregar_Monitor();
-        }
-        else if (opcion == 4)
-        {
-            agregar_Notebook();
-        }
-        else if (opcion == 5)
-        {
-            agregar_Escritorio();
+            menuInventario();
+            scanf("%d", &opcion_Menu);
+            switch (opcion_Menu)
+            {
+            case 1:
+            {
+                opcion_Menu = agregar_Productos();
+                printf("Que producto desea agregar: ");
+                scanf("%d", &opcion);
+                if (opcion == 1)
+                {
+                    agregar_Teclado();
+                }
+                else if (opcion == 2)
+                {
+                    agregar_Mouse();
+                }
+                else if (opcion == 3)
+                {
+                    agregar_Monitor();
+                }
+                else if (opcion == 4)
+                {
+                    agregar_Notebook();
+                }
+                else if (opcion == 5)
+                {
+                    agregar_Escritorio();
+                }
+            }
+            break;
+            case 2:
+            {
+                opcion_Menu = listar_Productos();
+                printf("Que producto desea listar: ");
+                scanf("%d", &opcion);
+                if (opcion == 1)
+                {
+                    listar_Teclado();
+                }
+                else if (opcion == 2)
+                {
+                    listar_Mouse();
+                }
+                else if (opcion == 3)
+                {
+                    listar_Monitor();
+                }
+                else if (opcion == 4)
+                {
+                    listar_Notebook();
+                }
+                else if (opcion == 5)
+                {
+                    listar_Escritorio();
+                }
+            }
+            break;
+            case 5:
+            {
+                printf("Gracias :)");
+                exit(0);
+                break;
+            }
+            default:
+                printf("Ingrese un numero valido\n");
+                printf("Ingrese 0 para continuar: ");
+                int continuar;
+                scanf("%d", &continuar);
+                break;
+            }
         }
     }
     else
