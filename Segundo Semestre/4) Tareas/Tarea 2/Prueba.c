@@ -102,7 +102,7 @@ int iniciar_Sesion()
     gets(usuario);
     printf("Ingrese Clave: ");
     scanf("%d", &clave);
-    if ((strcmp(usuario, "Admin") == 0 && clave == 123456))
+    if ((strcmp(usuario, "Admin") == 0 && clave == 123456)) //Tiene que pertenecer a una estructura
     {
         return 1;
     }
