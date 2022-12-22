@@ -21,7 +21,7 @@ void lectura(int a[], int cap)
     int i;
     for (i = 0; i < cap; i++)
     {
-        a[i] = srand();
+        a[i] = rand()%4;
     }
     
 }

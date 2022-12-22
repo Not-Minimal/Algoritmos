@@ -1,0 +1,2 @@
+Identificador: 1, Categoria: Perro, Nombre: doggy, Raza: doberman, Edad: 10
+Identificador: 2, Categoria: gato, Nombre: Tyler, Raza: Arabico, Edad: 3
