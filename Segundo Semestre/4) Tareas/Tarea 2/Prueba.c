@@ -124,14 +124,28 @@ int agregar_Productos()
     printf("\n 4.Agregar Notebook");
     printf("\n 5.Agregar PC de Escritorio");
 
-    if ((strcmp(usuario, "Admin") == 0 && clave == 123456))
+    if (opcion == 1)
     {
         return 1;
-    }
-    else
+    }else if (opcion == 2)
+    {
+        return 2;
+    }else if (opcion == 3)
+    {
+        return 3;
+    }else if (opcion == 4)
+    {
+        return 4;
+    }else if (opcion == 5)
+    {
+        return 5;
+    }else
     {
         return 0;
     }
+    
+    
+    
 }
 int main(int argc, char const *argv[])
 {
