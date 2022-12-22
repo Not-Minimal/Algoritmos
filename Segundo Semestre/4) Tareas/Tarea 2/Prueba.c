@@ -95,12 +95,11 @@ typedef struct
     char Nombres[20];
     char ApellidoPaterno[20];
     char ApellidoMaterno[20];
-} usuario;
+}usuario;
 
 void menuInventario()
 {
     int opcionMenu;
-
     do
     {
         printf("\n1.Agregar Producto(s)");
@@ -127,7 +126,7 @@ int iniciar_Sesion()
     // Precargar Nombre de Usuario y Contraseña
     usuario registro_Informacion[1];
     strcpy(registro_Informacion->NombreUsuario, "Admin");
-    registro_Informacion->Clave = 123456;
+    registro_Informacion->Clave = 123;
 
     char usuario[6];
     int clave;
@@ -220,7 +219,7 @@ void agregar_Teclado()
         }
         fwrite(&registro_Producto, sizeof(struct teclado), 1, fp);
         fclose(fp);
-        printf("Quieres agregar otro teclado?");
+        printf("Quieres agregar otro teclado?\n");
         printf("1. Si\n");
         printf("2. No\n");
         scanf("%d", &otro_Registro);
@@ -255,7 +254,7 @@ void agregar_Mouse()
         }
         fwrite(&registro_Producto, sizeof(struct mouse), 1, fp);
         fclose(fp);
-        printf("Quieres agregar otro mouse?");
+        printf("Quieres agregar otro mouse?\n");
         printf("1. Si\n");
         printf("2. No\n");
         scanf("%d", &otro_Registro);
@@ -292,7 +291,7 @@ void agregar_Monitor()
         }
         fwrite(&registro_Producto, sizeof(struct monitor), 1, fp);
         fclose(fp);
-        printf("Quieres agregar otro monitor?");
+        printf("Quieres agregar otro monitor?\n");
         printf("1. Si\n");
         printf("2. No\n");
         scanf("%d", &otro_Registro);
@@ -333,7 +332,7 @@ void agregar_Notebook()
         }
         fwrite(&registro_Producto, sizeof(struct notebook), 1, fp);
         fclose(fp);
-        printf("Quieres agregar otro notebook?");
+        printf("Quieres agregar otro notebook?\n");
         printf("1. Si\n");
         printf("2. No\n");
         scanf("%d", &otro_Registro);
@@ -363,27 +362,27 @@ void agregar_Escritorio()
         printf("Procesador: \n");
         scanf("%s", registro_Producto.Procesador);
         printf("Identificador Teclado: \n");
-        scanf("%d", registro_Producto.direccion_teclado.identificador);
+        scanf("%d", &registro_Producto.direccion_teclado.identificador);
         printf("Marca Teclado: \n");
         scanf("%s", registro_Producto.direccion_teclado.Marca);
         printf("Modelo Teclado: \n");
-        scanf("%d", registro_Producto.direccion_teclado.Modelo);
+        scanf("%s", registro_Producto.direccion_teclado.Modelo);
         printf("Idioma Teclado: \n");
-        scanf("%d", registro_Producto.direccion_teclado.Idioma);
+        scanf("%s", registro_Producto.direccion_teclado.Idioma);
         printf("Identificador mouse: \n");
-        scanf("%d", registro_Producto.direccion_mouse.identificador);
+        scanf("%d", &registro_Producto.direccion_mouse.identificador);
         printf("Marca mouse: \n");
         scanf("%s", registro_Producto.direccion_mouse.Marca);
         printf("Modelo mouse: \n");
         scanf("%s", registro_Producto.direccion_mouse.Modelo);
         printf("Identificador monitor: \n");
-        scanf("%d", registro_Producto.direccion_monitor.identificador);
+        scanf("%d", &registro_Producto.direccion_monitor.identificador);
         printf("Marca monitor: \n");
         scanf("%s", registro_Producto.direccion_monitor.Marca);
         printf("Modelo monitor: \n");
         scanf("%s", registro_Producto.direccion_monitor.Modelo);
         printf("Pulgadas monitor: \n");
-        scanf("%s", registro_Producto.direccion_monitor.Pulgadas);
+        scanf("%f", registro_Producto.direccion_monitor.Pulgadas);
         
         if (fp == NULL)
         {
@@ -395,7 +394,7 @@ void agregar_Escritorio()
         }
         fwrite(&registro_Producto, sizeof(struct escritorio), 1, fp);
         fclose(fp);
-        printf("Quieres agregar otro escritorio?");
+        printf("Quieres agregar otro escritorio?\n");
         printf("1. Si\n");
         printf("2. No\n");
         scanf("%d", &otro_Registro);
