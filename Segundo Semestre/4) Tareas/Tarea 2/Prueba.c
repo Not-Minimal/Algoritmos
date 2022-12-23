@@ -224,9 +224,9 @@ void agregar_Mouse()
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         printf("Marca: \n");
-        scanf("%s", registro_Informacion.Marca);
+        scanf("%s", &registro_Informacion.Marca);
         printf("Modelo: \n");
-        scanf("%s", registro_Informacion.Modelo);
+        scanf("%s", &registro_Informacion.Modelo);
         if (fp == NULL)
         {
             fprintf(stderr, "No se puede abrir el archivo\n");
@@ -259,11 +259,9 @@ void agregar_Monitor()
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         printf("Marca: \n");
-        gets(registro_Informacion.Marca);
-        //scanf("%s", &registro_Informacion.Marca);
+        scanf("%s", &registro_Informacion.Marca);
         printf("Modelo: \n");
-        gets(registro_Informacion.Modelo);
-        //scanf("%s", &registro_Informacion.Modelo);
+        scanf("%s", &registro_Informacion.Modelo);
         printf("Pulgadas: \n");
         scanf("%f", &registro_Informacion.Pulgadas);
         if (fp == NULL)
@@ -294,17 +292,17 @@ void agregar_Notebook()
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar notebook\n");
-        fp = fopen("registro_notebook.txt", "a");
+        fp = fopen("Notebook.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         printf("Marca: \n");
-        scanf("%s", registro_Informacion.Marca);
+        scanf("%s", &registro_Informacion.Marca);
         printf("Modelo: \n");
-        scanf("%s", registro_Informacion.Modelo);
+        scanf("%s", &registro_Informacion.Modelo);
         printf("Cantidad de Ram: \n");
         scanf("%d", &registro_Informacion.CantidadRam);
         printf("Procesador: \n");
-        scanf("%s", registro_Informacion.Procesador);
+        scanf("%s", &registro_Informacion.Procesador);
         printf("Pulgadas: \n");
         scanf("%f", &registro_Informacion.Pulgadas);
         if (fp == NULL)
@@ -339,35 +337,35 @@ void agregar_Escritorio()
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         printf("Marca: \n");
-        scanf("%s", registro_Informacion.Marca);
+        scanf("%s", &registro_Informacion.Marca);
         printf("Modelo: \n");
-        scanf("%s", registro_Informacion.Modelo);
+        scanf("%s", &registro_Informacion.Modelo);
         printf("Cantidad de Ram: \n");
         scanf("%d", &registro_Informacion.CantidadRam);
         printf("Procesador: \n");
-        scanf("%s", registro_Informacion.Procesador);
+        scanf("%s", &registro_Informacion.Procesador);
         printf("Identificador Teclado: \n");
         scanf("%d", &registro_Informacion.direccion_teclado.identificador);
         printf("Marca Teclado: \n");
-        scanf("%s", registro_Informacion.direccion_teclado.Marca);
+        scanf("%s", &registro_Informacion.direccion_teclado.Marca);
         printf("Modelo Teclado: \n");
-        scanf("%s", registro_Informacion.direccion_teclado.Modelo);
+        scanf("%s", &registro_Informacion.direccion_teclado.Modelo);
         printf("Idioma Teclado: \n");
-        scanf("%s", registro_Informacion.direccion_teclado.Idioma);
+        scanf("%s", &registro_Informacion.direccion_teclado.Idioma);
         printf("Identificador mouse: \n");
         scanf("%d", &registro_Informacion.direccion_mouse.identificador);
         printf("Marca mouse: \n");
-        scanf("%s", registro_Informacion.direccion_mouse.Marca);
+        scanf("%s", &registro_Informacion.direccion_mouse.Marca);
         printf("Modelo mouse: \n");
-        scanf("%s", registro_Informacion.direccion_mouse.Modelo);
+        scanf("%s", &registro_Informacion.direccion_mouse.Modelo);
         printf("Identificador monitor: \n");
         scanf("%d", &registro_Informacion.direccion_monitor.identificador);
         printf("Marca monitor: \n");
-        scanf("%s", registro_Informacion.direccion_monitor.Marca);
+        scanf("%s", &registro_Informacion.direccion_monitor.Marca);
         printf("Modelo monitor: \n");
-        scanf("%s", registro_Informacion.direccion_monitor.Modelo);
+        scanf("%s", &registro_Informacion.direccion_monitor.Modelo);
         printf("Pulgadas monitor: \n");
-        scanf("%f", registro_Informacion.direccion_monitor.Pulgadas);
+        scanf("%f", &registro_Informacion.direccion_monitor.Pulgadas);
 
         if (fp == NULL)
         {
@@ -529,7 +527,8 @@ void listar_Mouse()
     }
     fclose(fp);
 }
-void listar_Monitor() {
+void listar_Monitor()
+{
     FILE *fp;
     struct monitor registro_Informacion;
     fp = fopen("Monitor.txt", "r");
@@ -549,13 +548,77 @@ void listar_Monitor() {
         printf("\nIdentificador: %d", registro_Informacion.identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
         printf("\nModelo: %s", registro_Informacion.Modelo);
-        printf("\nPulgadas: %d", registro_Informacion.Pulgadas);
+        printf("\nPulgadas: %f", registro_Informacion.Pulgadas);
         printf("\n___________________________\n");
     }
     fclose(fp);
 }
-void listar_Notebook() {}
-void listar_Escritorio() {}
+void listar_Notebook()
+{
+    FILE *fp;
+    struct notebook registro_Informacion;
+    fp = fopen("Notebook.txt", "r");
+
+    printf("Listado de notebooks\n");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "No se puede abrir el archivo\n");
+        exit(0);
+    }
+    else
+    {
+        printf("Notebooks: \n");
+    }
+    while (fread(&registro_Informacion, sizeof(struct notebook), 1, fp))
+    {
+        printf("\nIdentificador: %d", registro_Informacion.identificador);
+        printf("\nMarca: %s", registro_Informacion.Marca);
+        printf("\nModelo: %s", registro_Informacion.Modelo);
+        printf("\nCantidad de Ram: %s", registro_Informacion.CantidadRam);
+        printf("\nProcesador: %d", registro_Informacion.Procesador);
+        printf("\nPulgadas: %f", registro_Informacion.Pulgadas);
+        printf("\n___________________________\n");
+    }
+    fclose(fp);
+}
+void listar_Escritorio()
+{
+    FILE *fp;
+    struct escritorio registro_Informacion;
+    fp = fopen("Escritorio.txt", "r");
+
+    printf("Listado de Escritorios\n");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "No se puede abrir el archivo\n");
+        exit(0);
+    }
+    else
+    {
+        printf("Escritorios: \n");
+    }
+    while (fread(&registro_Informacion, sizeof(struct escritorio), 1, fp))
+    {
+        printf("\nIdentificador: %d", registro_Informacion.identificador);
+        printf("\nMarca: %s", registro_Informacion.Marca);
+        printf("\nModelo: %s", registro_Informacion.Modelo);
+        printf("\nCantidad de Ram: %s", registro_Informacion.CantidadRam);
+        printf("\nProcesador: %d", registro_Informacion.Procesador);
+        printf("\nIdentificador Teclado: %d", registro_Informacion.direccion_teclado.identificador);
+        printf("\nMarca Teclado: %d", registro_Informacion.direccion_teclado.Marca);
+        printf("\nModelo Teclado: %d", registro_Informacion.direccion_teclado.Modelo);
+        printf("\nIdioma Teclado: %d", registro_Informacion.direccion_teclado.Idioma);
+        printf("\nIdentificador Mouse: %d", registro_Informacion.direccion_mouse.identificador);
+        printf("\nMarca Mouse: %d", registro_Informacion.direccion_mouse.Marca);
+        printf("\nModelo Mouse: %d", registro_Informacion.direccion_mouse.Modelo);
+        printf("\nIdentificador Monitor: %d", registro_Informacion.direccion_monitor.identificador);
+        printf("\nMarca Monitor: %d", registro_Informacion.direccion_monitor.Marca);
+        printf("\nModelo Monitor: %d", registro_Informacion.direccion_monitor.Modelo);
+        printf("\nPulgadas Monitor: %d", registro_Informacion.direccion_monitor.Idioma);
+        printf("\n___________________________\n");
+    }
+    fclose(fp);
+}
 int eliminar_Productos()
 {
     int opcion;
@@ -678,8 +741,8 @@ int main(int argc, char const *argv[])
                 }
             }
             break;
-            //Case 3: Buscar
-            //Case 4: Eliminar
+            // Case 3: Buscar
+            // Case 4: Eliminar
             case 5:
             {
                 printf("Gracias :)");
