@@ -278,7 +278,7 @@ int eliminar_Productos()
     scanf("%d", &opcion);
     fflush(stdin);
 
-    printf("\n1.Eliminar mouse");
+    printf("\n1.Eliminar Teclado");
     printf("\n2.Eliminar Mouse");
     printf("\n3.Eliminar Monitor");
     printf("\n4.Eliminar Notebook");
@@ -755,10 +755,91 @@ void eliminar_Teclado()
         printf("Teclado Borrado Correctamente");
     }
 }
-// void eliminar_Mouse(){}
-// void eliminar_Monitor() {}
-// void eliminar_Notebook() {}
-// void eliminar_Escritorio() {}
+void eliminar_Mouse()
+{
+    struct mouse registro_Informacion;
+    FILE *fp, *fp1;
+    int identificador, bandera = 0;
+
+    printf("Eliminar mouses");
+    fp = fopen("Mouse.txt", "r");
+    fp1 = fopen("Temporal.txt", "w");
+    printf("Ingrese el Identificador: ");
+    scanf("%d", &identificador);
+    if (fp == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+
+    while (fread(&registro_Informacion, sizeof(struct mouse), 1, fp))
+    {
+        if (registro_Informacion.identificador == identificador)
+        {
+            bandera = 1;
+        }
+        else
+        {
+            fwrite(&registro_Informacion, sizeof(struct mouse), 1, fp1);
+        }
+    }
+    fclose(fp);
+    fclose(fp1);
+
+    if (!bandera)
+    {
+        printf("No se encuentra el identificador \n");
+    }
+    if (bandera)
+    {
+        remove("Mouse.txt");
+        rename("Temporal.txt", "Mouse.txt");
+        printf("mouse Borrado Correctamente");
+    }
+}
+void eliminar_Monitor()
+{
+    struct mouse registro_Informacion;
+    FILE *fp, *fp1;
+    int identificador, bandera = 0;
+
+    printf("Eliminar mouses");
+    fp = fopen("Mouse.txt", "r");
+    fp1 = fopen("Temporal.txt", "w");
+    printf("Ingrese el Identificador: ");
+    scanf("%d", &identificador);
+    if (fp == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+
+    while (fread(&registro_Informacion, sizeof(struct mouse), 1, fp))
+    {
+        if (registro_Informacion.identificador == identificador)
+        {
+            bandera = 1;
+        }
+        else
+        {
+            fwrite(&registro_Informacion, sizeof(struct mouse), 1, fp1);
+        }
+    }
+    fclose(fp);
+    fclose(fp1);
+
+    if (!bandera)
+    {
+        printf("No se encuentra el identificador \n");
+    }
+    if (bandera)
+    {
+        remove("Mouse.txt");
+        rename("Temporal.txt", "Mouse.txt");
+        printf("mouse Borrado Correctamente");
+    }
+}
+
 
 int main(int argc, char const *argv[])
 {
@@ -847,19 +928,19 @@ int main(int argc, char const *argv[])
                 }
                 else if (opcion == 2)
                 {
-                    eliminar_Mouse();
+                    //eliminar_Mouse();
                 }
                 else if (opcion == 3)
                 {
-                    eliminar_Monitor();
+                    //eliminar_Monitor();
                 }
                 else if (opcion == 4)
                 {
-                    eliminar_Notebook();
+                    //eliminar_Notebook();
                 }
                 else if (opcion == 5)
                 {
-                    eliminar_Escritorio();
+                    //eliminar_Escritorio();
                 }
             }
             break;
