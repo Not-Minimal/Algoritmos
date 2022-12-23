@@ -113,7 +113,7 @@ int iniciar_Sesion()
     registro_Informacion->Clave = 123;
 
     char usuario[6];
-    int clave;
+    int clave, clave_erronea = 0;
     printf("Ingrese Usuario: ");
     scanf("%s", usuario);
     fflush(stdin);
@@ -128,6 +128,16 @@ int iniciar_Sesion()
     {
         return 0;
     }
+    
+    // do
+    // {
+    //     if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave != registro_Informacion->Clave))
+    //     {
+    //         clave_erronea++;
+    //         return 0;
+    //     } 
+
+    // } while (clave_erronea < 2);
 }
 
 // Funciones Principales
@@ -713,6 +723,15 @@ void listar_Escritorio()
     }
     fclose(fp);
 }
+
+//Buscar Productos
+// void buscar_Teclado(){}
+// void buscar_Mouse(){}
+// void buscar_Monitor(){}
+// void buscar_Notebook(){}
+// void buscar_Escritorio(){}
+
+//Eliminar Productos
 void eliminar_Teclado()
 {
     struct teclado registro_Informacion;
@@ -799,12 +818,12 @@ void eliminar_Mouse()
 }
 void eliminar_Monitor()
 {
-    struct mouse registro_Informacion;
+    struct monitor registro_Informacion;
     FILE *fp, *fp1;
     int identificador, bandera = 0;
 
-    printf("Eliminar mouses");
-    fp = fopen("Mouse.txt", "r");
+    printf("Eliminar Monitoress");
+    fp = fopen("Monitor.txt", "r");
     fp1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
     scanf("%d", &identificador);
@@ -814,7 +833,7 @@ void eliminar_Monitor()
         exit(0);
     }
 
-    while (fread(&registro_Informacion, sizeof(struct mouse), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct monitor), 1, fp))
     {
         if (registro_Informacion.identificador == identificador)
         {
@@ -822,7 +841,7 @@ void eliminar_Monitor()
         }
         else
         {
-            fwrite(&registro_Informacion, sizeof(struct mouse), 1, fp1);
+            fwrite(&registro_Informacion, sizeof(struct monitor), 1, fp1);
         }
     }
     fclose(fp);
@@ -834,12 +853,95 @@ void eliminar_Monitor()
     }
     if (bandera)
     {
-        remove("Mouse.txt");
-        rename("Temporal.txt", "Mouse.txt");
-        printf("mouse Borrado Correctamente");
+        remove("Monitor.txt");
+        rename("Temporal.txt", "Monitor.txt");
+        printf("Monitor Borrado Correctamente");
     }
 }
+void eliminar_Notebook()
+{
+    struct notebook registro_Informacion;
+    FILE *fp, *fp1;
+    int identificador, bandera = 0;
 
+    printf("Eliminar Notebooks");
+    fp = fopen("Notebook.txt", "r");
+    fp1 = fopen("Temporal.txt", "w");
+    printf("Ingrese el Identificador: ");
+    scanf("%d", &identificador);
+    if (fp == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+
+    while (fread(&registro_Informacion, sizeof(struct notebook), 1, fp))
+    {
+        if (registro_Informacion.identificador == identificador)
+        {
+            bandera = 1;
+        }
+        else
+        {
+            fwrite(&registro_Informacion, sizeof(struct notebook), 1, fp1);
+        }
+    }
+    fclose(fp);
+    fclose(fp1);
+
+    if (!bandera)
+    {
+        printf("No se encuentra el identificador \n");
+    }
+    if (bandera)
+    {
+        remove("Notebook.txt");
+        rename("Temporal.txt", "Notebook.txt");
+        printf("Notebook Borrado Correctamente");
+    }
+}
+void eliminar_Escritorio()
+{
+    struct escritorio registro_Informacion;
+    FILE *fp, *fp1;
+    int identificador, bandera = 0;
+
+    printf("Eliminar Escritorios");
+    fp = fopen("Escritorio.txt", "r");
+    fp1 = fopen("Temporal.txt", "w");
+    printf("Ingrese el Identificador: ");
+    scanf("%d", &identificador);
+    if (fp == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+
+    while (fread(&registro_Informacion, sizeof(struct escritorio), 1, fp))
+    {
+        if (registro_Informacion.identificador == identificador)
+        {
+            bandera = 1;
+        }
+        else
+        {
+            fwrite(&registro_Informacion, sizeof(struct escritorio), 1, fp1);
+        }
+    }
+    fclose(fp);
+    fclose(fp1);
+
+    if (!bandera)
+    {
+        printf("No se encuentra el identificador \n");
+    }
+    if (bandera)
+    {
+        remove("Escritorio.txt");
+        rename("Temporal.txt", "Escritorio.txt");
+        printf("Escritorio Borrado Correctamente");
+    }
+}
 
 int main(int argc, char const *argv[])
 {
@@ -917,6 +1019,33 @@ int main(int argc, char const *argv[])
                 }
             }
             break;
+            // case 3:
+            // {
+            //     opcion_Menu = buscar_Productos();
+            //     printf("\nQue producto desea buscar: ");
+            //     scanf("%d", &opcion);
+            //     if (opcion == 1)
+            //     {
+            //         buscar_Teclado();
+            //     }
+            //     else if (opcion == 2)
+            //     {
+            //         buscar_Mouse();
+            //     }
+            //     else if (opcion == 3)
+            //     {
+            //         buscar_Monitor();
+            //     }
+            //     else if (opcion == 4)
+            //     {
+            //         buscar_Notebook();
+            //     }
+            //     else if (opcion == 5)
+            //     {
+            //         buscar_Escritorio();
+            //     }
+            // }
+            // break;
             case 4:
             {
                 opcion_Menu = eliminar_Productos();
@@ -928,19 +1057,19 @@ int main(int argc, char const *argv[])
                 }
                 else if (opcion == 2)
                 {
-                    //eliminar_Mouse();
+                    eliminar_Mouse();
                 }
                 else if (opcion == 3)
                 {
-                    //eliminar_Monitor();
+                    eliminar_Monitor();
                 }
                 else if (opcion == 4)
                 {
-                    //eliminar_Notebook();
+                    eliminar_Notebook();
                 }
                 else if (opcion == 5)
                 {
-                    //eliminar_Escritorio();
+                    eliminar_Escritorio();
                 }
             }
             break;
