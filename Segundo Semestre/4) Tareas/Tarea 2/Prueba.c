@@ -338,7 +338,7 @@ void agregar_Teclado()
 
         if (fp == NULL)
         {
-            fprintf(stderr, "No se puede abrir el archivo\n");
+            fprintf(stderr, "No existen registros\n");
         }
         else
         {
@@ -373,7 +373,7 @@ void agregar_Mouse()
         scanf("%s", &registro_Informacion.Modelo);
         if (fp == NULL)
         {
-            fprintf(stderr, "No se puede abrir el archivo\n");
+            fprintf(stderr, "No existen registros\n");
         }
         else
         {
@@ -410,7 +410,7 @@ void agregar_Monitor()
         scanf("%f", &registro_Informacion.Pulgadas);
         if (fp == NULL)
         {
-            fprintf(stderr, "No se puede abrir el archivo\n");
+            fprintf(stderr, "No existen registros\n");
         }
         else
         {
@@ -451,7 +451,7 @@ void agregar_Notebook()
         scanf("%f", &registro_Informacion.Pulgadas);
         if (fp == NULL)
         {
-            fprintf(stderr, "No se puede abrir el archivo\n");
+            fprintf(stderr, "No existen registros\n");
         }
         else
         {
@@ -513,7 +513,7 @@ void agregar_Escritorio()
 
         if (fp == NULL)
         {
-            fprintf(stderr, "No se puede abrir el archivo\n");
+            fprintf(stderr, "No existen registros\n");
         }
         else
         {
@@ -539,7 +539,7 @@ void listar_Teclado()
     printf("Listado de Teclados\n");
     if (fp == NULL)
     {
-        fprintf(stderr, "No se puede abrir el archivo\n");
+        fprintf(stderr, "No existen registros\n");
         exit(0);
     }
     else
@@ -565,7 +565,7 @@ void listar_Mouse()
     printf("Listado de mouses\n");
     if (fp == NULL)
     {
-        fprintf(stderr, "No se puede abrir el archivo\n");
+        fprintf(stderr, "No existen registros\n");
         exit(0);
     }
     else
@@ -590,7 +590,7 @@ void listar_Monitor()
     printf("Listado de monitores\n");
     if (fp == NULL)
     {
-        fprintf(stderr, "No se puede abrir el archivo\n");
+        fprintf(stderr, "No existen registros\n");
         exit(0);
     }
     else
@@ -616,7 +616,7 @@ void listar_Notebook()
     printf("Listado de notebooks\n");
     if (fp == NULL)
     {
-        fprintf(stderr, "No se puede abrir el archivo\n");
+        fprintf(stderr, "No existen registros\n");
         exit(0);
     }
     else
@@ -628,8 +628,8 @@ void listar_Notebook()
         printf("\nIdentificador: %d", registro_Informacion.identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
         printf("\nModelo: %s", registro_Informacion.Modelo);
-        printf("\nCantidad de Ram: %s", registro_Informacion.CantidadRam);
-        printf("\nProcesador: %d", registro_Informacion.Procesador);
+        printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
+        printf("\nProcesador: %s", registro_Informacion.Procesador);
         printf("\nPulgadas: %f", registro_Informacion.Pulgadas);
         printf("\n___________________________\n");
     }
@@ -644,7 +644,7 @@ void listar_Escritorio()
     printf("Listado de Escritorios\n");
     if (fp == NULL)
     {
-        fprintf(stderr, "No se puede abrir el archivo\n");
+        fprintf(stderr, "No existen registros\n");
         exit(0);
     }
     else
@@ -656,19 +656,19 @@ void listar_Escritorio()
         printf("\nIdentificador: %d", registro_Informacion.identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
         printf("\nModelo: %s", registro_Informacion.Modelo);
-        printf("\nCantidad de Ram: %s", registro_Informacion.CantidadRam);
-        printf("\nProcesador: %d", registro_Informacion.Procesador);
+        printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
+        printf("\nProcesador: %s", registro_Informacion.Procesador);
         printf("\nIdentificador Teclado: %d", registro_Informacion.direccion_teclado.identificador);
-        printf("\nMarca Teclado: %d", registro_Informacion.direccion_teclado.Marca);
-        printf("\nModelo Teclado: %d", registro_Informacion.direccion_teclado.Modelo);
-        printf("\nIdioma Teclado: %d", registro_Informacion.direccion_teclado.Idioma);
+        printf("\nMarca Teclado: %s", registro_Informacion.direccion_teclado.Marca);
+        printf("\nModelo Teclado: %s", registro_Informacion.direccion_teclado.Modelo);
+        printf("\nIdioma Teclado: %s", registro_Informacion.direccion_teclado.Idioma);
         printf("\nIdentificador Mouse: %d", registro_Informacion.direccion_mouse.identificador);
-        printf("\nMarca Mouse: %d", registro_Informacion.direccion_mouse.Marca);
-        printf("\nModelo Mouse: %d", registro_Informacion.direccion_mouse.Modelo);
+        printf("\nMarca Mouse: %s", registro_Informacion.direccion_mouse.Marca);
+        printf("\nModelo Mouse: %s", registro_Informacion.direccion_mouse.Modelo);
         printf("\nIdentificador Monitor: %d", registro_Informacion.direccion_monitor.identificador);
-        printf("\nMarca Monitor: %d", registro_Informacion.direccion_monitor.Marca);
-        printf("\nModelo Monitor: %d", registro_Informacion.direccion_monitor.Modelo);
-        printf("\nPulgadas Monitor: %d", registro_Informacion.direccion_monitor.Pulgadas);
+        printf("\nMarca Monitor: %s", registro_Informacion.direccion_monitor.Marca);
+        printf("\nModelo Monitor: %s", registro_Informacion.direccion_monitor.Modelo);
+        printf("\nPulgadas Monitor: %f", registro_Informacion.direccion_monitor.Pulgadas);
         printf("\n___________________________\n");
     }
     fclose(fp);
