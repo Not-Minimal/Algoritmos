@@ -220,7 +220,7 @@ void agregar_Mouse()
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar mouse\n");
-        fp = fopen("registro_mouse.txt", "a");
+        fp = fopen("Mouse.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         printf("Marca: \n");
@@ -506,7 +506,7 @@ void listar_Mouse()
 {
     FILE *fp;
     struct teclado registro_Informacion;
-    fp = fopen("mouse.txt", "r");
+    fp = fopen("Mouse.txt", "r");
 
     printf("Listado de mouses\n");
     if (fp == NULL)
@@ -516,7 +516,7 @@ void listar_Mouse()
     }
     else
     {
-        printf("mouses: \n");
+        printf("Mouses: \n");
     }
     while (fread(&registro_Informacion, sizeof(struct mouse), 1, fp))
     {
@@ -652,6 +652,8 @@ int main(int argc, char const *argv[])
                 }
             }
             break;
+            //Case 3: Buscar
+            //Case 4: Eliminar
             case 5:
             {
                 printf("Gracias :)");
