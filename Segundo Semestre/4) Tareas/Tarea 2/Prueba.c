@@ -116,8 +116,10 @@ int iniciar_Sesion()
     int clave;
     printf("Ingrese Usuario: ");
     scanf("%s", usuario);
+    fflush(stdin);
     printf("Ingrese Clave: ");
     scanf("%d", &clave);
+    fflush(stdin);
     if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave == registro_Informacion->Clave)) // Tiene que pertenecer a una estructura
     {
         return 1;
@@ -128,7 +130,7 @@ int iniciar_Sesion()
     }
 }
 
-//Funciones Principales
+// Funciones Principales
 int agregar_Productos()
 {
     int opcion;
@@ -178,6 +180,7 @@ int actualizar_Producto()
     int opcion;
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
+    fflush(stdin);
 
     printf("\n1.Actualizar Teclado");
     printf("\n2.Actualizar Mouse");
@@ -225,6 +228,7 @@ int listar_Productos()
     int opcion;
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
+    fflush(stdin);
 
     printf("\n1.Listar Teclado");
     printf("\n2.Listar Mouse");
@@ -272,6 +276,7 @@ int eliminar_Productos()
     int opcion;
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
+    fflush(stdin);
 
     printf("\n1.Eliminar mouse");
     printf("\n2.Eliminar Mouse");
@@ -314,7 +319,7 @@ int eliminar_Productos()
     }
 }
 
-//Funciones Secundarias de Agregar Productos
+// Funciones Secundarias de Agregar Productos
 void agregar_Teclado()
 {
     int otro_Registro;
@@ -329,12 +334,16 @@ void agregar_Teclado()
         fp = fopen("Teclado.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
+        fflush(stdin);
         printf("Marca: \n");
         scanf("%s", &registro_Informacion.Marca);
+        fflush(stdin);
         printf("Modelo: \n");
         scanf("%s", &registro_Informacion.Modelo);
+        fflush(stdin);
         printf("Idioma: \n");
         scanf("%s", &registro_Informacion.Idioma);
+        fflush(stdin);
 
         if (fp == NULL)
         {
@@ -367,10 +376,13 @@ void agregar_Mouse()
         fp = fopen("Mouse.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
+        fflush(stdin);
         printf("Marca: \n");
         scanf("%s", &registro_Informacion.Marca);
+        fflush(stdin);
         printf("Modelo: \n");
         scanf("%s", &registro_Informacion.Modelo);
+        fflush(stdin);
         if (fp == NULL)
         {
             fprintf(stderr, "No existen registros\n");
@@ -385,6 +397,7 @@ void agregar_Mouse()
         printf("1. Si\n");
         printf("2. No\n");
         scanf("%d", &otro_Registro);
+        fflush(stdin);
 
     } while (otro_Registro == 1);
 }
@@ -402,12 +415,16 @@ void agregar_Monitor()
         fp = fopen("Monitor.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
+        fflush(stdin);
         printf("Marca: \n");
         scanf("%s", &registro_Informacion.Marca);
+        fflush(stdin);
         printf("Modelo: \n");
         scanf("%s", &registro_Informacion.Modelo);
+        fflush(stdin);
         printf("Pulgadas: \n");
         scanf("%f", &registro_Informacion.Pulgadas);
+        fflush(stdin);
         if (fp == NULL)
         {
             fprintf(stderr, "No existen registros\n");
@@ -439,16 +456,22 @@ void agregar_Notebook()
         fp = fopen("Notebook.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
+        fflush(stdin);
         printf("Marca: \n");
         scanf("%s", &registro_Informacion.Marca);
+        fflush(stdin);
         printf("Modelo: \n");
         scanf("%s", &registro_Informacion.Modelo);
+        fflush(stdin);
         printf("Cantidad de Ram: \n");
         scanf("%d", &registro_Informacion.CantidadRam);
+        fflush(stdin);
         printf("Procesador: \n");
         scanf("%s", &registro_Informacion.Procesador);
+        fflush(stdin);
         printf("Pulgadas: \n");
         scanf("%f", &registro_Informacion.Pulgadas);
+        fflush(stdin);
         if (fp == NULL)
         {
             fprintf(stderr, "No existen registros\n");
@@ -463,6 +486,7 @@ void agregar_Notebook()
         printf("1. Si\n");
         printf("2. No\n");
         scanf("%d", &otro_Registro);
+        fflush(stdin);
 
     } while (otro_Registro == 1);
 }
@@ -480,36 +504,52 @@ void agregar_Escritorio()
         fp = fopen("Escritorio.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
+        fflush(stdin);
         printf("Marca: \n");
         scanf("%s", &registro_Informacion.Marca);
+        fflush(stdin);
         printf("Modelo: \n");
         scanf("%s", &registro_Informacion.Modelo);
+        fflush(stdin);
         printf("Cantidad de Ram: \n");
         scanf("%d", &registro_Informacion.CantidadRam);
+        fflush(stdin);
         printf("Procesador: \n");
         scanf("%s", &registro_Informacion.Procesador);
+        fflush(stdin);
         printf("Identificador Teclado: \n");
         scanf("%d", &registro_Informacion.direccion_teclado.identificador);
+        fflush(stdin);
         printf("Marca Teclado: \n");
         scanf("%s", &registro_Informacion.direccion_teclado.Marca);
+        fflush(stdin);
         printf("Modelo Teclado: \n");
         scanf("%s", &registro_Informacion.direccion_teclado.Modelo);
+        fflush(stdin);
         printf("Idioma Teclado: \n");
         scanf("%s", &registro_Informacion.direccion_teclado.Idioma);
+        fflush(stdin);
         printf("Identificador mouse: \n");
         scanf("%d", &registro_Informacion.direccion_mouse.identificador);
+        fflush(stdin);
         printf("Marca mouse: \n");
         scanf("%s", &registro_Informacion.direccion_mouse.Marca);
+        fflush(stdin);
         printf("Modelo mouse: \n");
         scanf("%s", &registro_Informacion.direccion_mouse.Modelo);
+        fflush(stdin);
         printf("Identificador monitor: \n");
         scanf("%d", &registro_Informacion.direccion_monitor.identificador);
+        fflush(stdin);
         printf("Marca monitor: \n");
         scanf("%s", &registro_Informacion.direccion_monitor.Marca);
+        fflush(stdin);
         printf("Modelo monitor: \n");
         scanf("%s", &registro_Informacion.direccion_monitor.Modelo);
+        fflush(stdin);
         printf("Pulgadas monitor: \n");
         scanf("%f", &registro_Informacion.direccion_monitor.Pulgadas);
+        fflush(stdin);
 
         if (fp == NULL)
         {
@@ -529,7 +569,7 @@ void agregar_Escritorio()
     } while (otro_Registro == 1);
 }
 
-//Funciones Secundarias de Listar Productos
+// Funciones Secundarias de Listar Productos
 void listar_Teclado()
 {
     FILE *fp;
