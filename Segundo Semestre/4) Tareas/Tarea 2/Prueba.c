@@ -483,7 +483,7 @@ void listar_Teclado()
     fp = fopen("Teclado.txt", "r");
 
     printf("Listado de Teclados\n");
-    if (fp = NULL)
+    if (fp == NULL)
     {
         fprintf(stderr, "No se puede abrir el archivo\n");
         exit(0);
