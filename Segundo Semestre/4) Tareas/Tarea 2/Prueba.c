@@ -477,7 +477,7 @@ void agregar_Escritorio()
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar escritorio\n");
-        fp = fopen("registro_escritorio.txt", "a");
+        fp = fopen("Escritorio.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         printf("Marca: \n");
