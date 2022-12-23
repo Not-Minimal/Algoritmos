@@ -259,9 +259,11 @@ void agregar_Monitor()
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         printf("Marca: \n");
-        scanf("%s", &registro_Informacion.Marca);
+        gets(registro_Informacion.Marca);
+        //scanf("%s", &registro_Informacion.Marca);
         printf("Modelo: \n");
-        scanf("%s", &registro_Informacion.Modelo);
+        gets(registro_Informacion.Modelo);
+        //scanf("%s", &registro_Informacion.Modelo);
         printf("Pulgadas: \n");
         scanf("%f", &registro_Informacion.Pulgadas);
         if (fp == NULL)
