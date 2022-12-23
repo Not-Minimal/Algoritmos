@@ -713,6 +713,54 @@ void listar_Escritorio()
     }
     fclose(fp);
 }
+void eliminar_Teclado()
+{
+    struct teclado registro_Informacion;
+    FILE *fp, *fp1;
+    int identificador, bandera = 0;
+
+    printf("Eliminar Teclados");
+    fp = fopen("Teclado.txt", "r");
+    fp1 = fopen("Temporal.txt", "w");
+    printf("Ingrese el Identificador: ");
+    scanf("%d", &identificador);
+    if (fp == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+
+    while (fread(% registro_Informacion, sizeof(struct teclado), 1, fp))
+    {
+        if (registro_Informacion.identificador == identificador)
+        {
+            bandera = 1;
+        }
+        else
+        {
+            fwrite(% registro_Informacion, sizeof(struct teclado), 1, fp1);
+        }
+    }
+    fclose(fp);
+    fclose(fp1);
+
+    if (!bandera)
+    {
+        printf("No se encuentra el identificador \n");
+    }
+    if (bandera)
+    {
+        remove("Teclado.txt");
+        rename("Temporal.txt", "Teclado.txt");
+        printf("Teclado Borrado Correctamente");
+    }
+}
+void eliminar_Mouse()
+{
+}
+void eliminar_Monitor() {}
+void eliminar_Notebook() {}
+void eliminar_Escritorio() {}
 
 int main(int argc, char const *argv[])
 {
