@@ -128,6 +128,7 @@ int iniciar_Sesion()
     }
 }
 
+//Funciones Principales
 int agregar_Productos()
 {
     int opcion;
@@ -171,6 +172,149 @@ int agregar_Productos()
         return 0;
     }
 }
+
+int actualizar_Producto()
+{
+    int opcion;
+    printf("Ingrese opcion: ");
+    scanf("%d", &opcion);
+
+    printf("\n1.Actualizar Teclado");
+    printf("\n2.Actualizar Mouse");
+    printf("\n3.Actualizar Monitor");
+    printf("\n4.Actualizar Notebook");
+    printf("\n5.Actualizar PC de Escritorio");
+
+    switch (opcion)
+    {
+    case 0:
+    {
+        return 0;
+    }
+    break;
+    case 1:
+    {
+        return 1;
+    }
+    break;
+    case 2:
+    {
+        return 2;
+    }
+    break;
+    case 3:
+    {
+        return 3;
+    }
+    break;
+    case 4:
+    {
+        return 4;
+    }
+    break;
+    case 5:
+    {
+        return 5;
+    }
+    break;
+    }
+}
+
+int listar_Productos()
+{
+    int opcion;
+    printf("Ingrese opcion: ");
+    scanf("%d", &opcion);
+
+    printf("\n1.Listar Teclado");
+    printf("\n2.Listar Mouse");
+    printf("\n3.Listar Monitor");
+    printf("\n4.Listar Notebook");
+    printf("\n5.Listar PC de Escritorio");
+
+    switch (opcion)
+    {
+    case 0:
+    {
+        return 0;
+    }
+    break;
+    case 1:
+    {
+        return 1;
+    }
+    break;
+    case 2:
+    {
+        return 2;
+    }
+    break;
+    case 3:
+    {
+        return 3;
+    }
+    break;
+    case 4:
+    {
+        return 4;
+    }
+    break;
+    case 5:
+    {
+        return 5;
+    }
+    break;
+    }
+}
+
+int eliminar_Productos()
+{
+    int opcion;
+    printf("Ingrese opcion: ");
+    scanf("%d", &opcion);
+
+    printf("\n1.Eliminar mouse");
+    printf("\n2.Eliminar Mouse");
+    printf("\n3.Eliminar Monitor");
+    printf("\n4.Eliminar Notebook");
+    printf("\n5.Eliminar PC de Escritorio");
+
+    switch (opcion)
+    {
+    case 0:
+    {
+        return 0;
+    }
+    break;
+    case 1:
+    {
+        return 1;
+    }
+    break;
+    case 2:
+    {
+        return 2;
+    }
+    break;
+    case 3:
+    {
+        return 3;
+    }
+    break;
+    case 4:
+    {
+        return 4;
+    }
+    break;
+    case 5:
+    {
+        return 5;
+    }
+    break;
+    }
+}
+
+//Funciones Secundarias de Agregar Productos
 void agregar_Teclado()
 {
     int otro_Registro;
@@ -384,98 +528,8 @@ void agregar_Escritorio()
 
     } while (otro_Registro == 1);
 }
-int actualizar_Producto()
-{
-    int opcion;
-    printf("Ingrese opcion: ");
-    scanf("%d", &opcion);
 
-    printf("\n1.Actualizar Teclado");
-    printf("\n2.Actualizar Mouse");
-    printf("\n3.Actualizar Monitor");
-    printf("\n4.Actualizar Notebook");
-    printf("\n5.Actualizar PC de Escritorio");
-
-    switch (opcion)
-    {
-    case 0:
-    {
-        return 0;
-    }
-    break;
-    case 1:
-    {
-        return 1;
-    }
-    break;
-    case 2:
-    {
-        return 2;
-    }
-    break;
-    case 3:
-    {
-        return 3;
-    }
-    break;
-    case 4:
-    {
-        return 4;
-    }
-    break;
-    case 5:
-    {
-        return 5;
-    }
-    break;
-    }
-}
-int listar_Productos()
-{
-    int opcion;
-    printf("Ingrese opcion: ");
-    scanf("%d", &opcion);
-
-    printf("\n1.Listar Teclado");
-    printf("\n2.Listar Mouse");
-    printf("\n3.Listar Monitor");
-    printf("\n4.Listar Notebook");
-    printf("\n5.Listar PC de Escritorio");
-
-    switch (opcion)
-    {
-    case 0:
-    {
-        return 0;
-    }
-    break;
-    case 1:
-    {
-        return 1;
-    }
-    break;
-    case 2:
-    {
-        return 2;
-    }
-    break;
-    case 3:
-    {
-        return 3;
-    }
-    break;
-    case 4:
-    {
-        return 4;
-    }
-    break;
-    case 5:
-    {
-        return 5;
-    }
-    break;
-    }
-}
+//Funciones Secundarias de Listar Productos
 void listar_Teclado()
 {
     FILE *fp;
@@ -619,52 +673,7 @@ void listar_Escritorio()
     }
     fclose(fp);
 }
-int eliminar_Productos()
-{
-    int opcion;
-    printf("Ingrese opcion: ");
-    scanf("%d", &opcion);
 
-    printf("\n1.Eliminar mouse");
-    printf("\n2.Eliminar Mouse");
-    printf("\n3.Eliminar Monitor");
-    printf("\n4.Eliminar Notebook");
-    printf("\n5.Eliminar PC de Escritorio");
-
-    switch (opcion)
-    {
-    case 0:
-    {
-        return 0;
-    }
-    break;
-    case 1:
-    {
-        return 1;
-    }
-    break;
-    case 2:
-    {
-        return 2;
-    }
-    break;
-    case 3:
-    {
-        return 3;
-    }
-    break;
-    case 4:
-    {
-        return 4;
-    }
-    break;
-    case 5:
-    {
-        return 5;
-    }
-    break;
-    }
-}
 int main(int argc, char const *argv[])
 {
     int clave; // Admin 123
