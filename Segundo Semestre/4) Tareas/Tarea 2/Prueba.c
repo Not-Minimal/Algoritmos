@@ -2,32 +2,32 @@
 #include <string.h>
 #include <stdlib.h>
 
-// Agregar Prototipos de Funciones
+// Prototipos de Funciones Principales
 int iniciar_Sesion();
 void usuario_Login();
 int agregar_Productos();
 int actualizar_Producto();
 int listar_Productos();
 int eliminar_Productos();
-// Funciones Encargadas de Agregar productos
+// Funciones Secundarias Encargadas de Agregar productos
 void agregar_Teclado();
 void agregar_Mouse();
 void agregar_Monitor();
 void agregar_Notebook();
 void agregar_Escritorio();
-// Funciones Encargadas de Actualizar productos
+// Funciones Secundarias Encargadas de Actualizar productos
 void actualizar_Teclado();
 void actualizar_Mouse();
 void actualizar_Monitor();
 void actualizar_Notebook();
 void actualizar_Escritorio();
-// Funciones Encargadas de Listar productos
+// Funciones Secundarias Encargadas de Listar productos
 void listar_Teclado();
 void listar_Mouse();
 void listar_Monitor();
 void listar_Notebook();
 void listar_Escritorio();
-// Funciones Encargadas de Eliminar productos
+// Funciones Secundarias Encargadas de Eliminar productos
 void eliminar_Teclado();
 void eliminar_Mouse();
 void eliminar_Monitor();
