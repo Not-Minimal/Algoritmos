@@ -1,1 +1,1 @@
-registro_Informacion
+elim

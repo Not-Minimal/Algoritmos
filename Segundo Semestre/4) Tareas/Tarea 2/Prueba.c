@@ -730,7 +730,7 @@ void eliminar_Teclado()
         exit(0);
     }
 
-    while (fread(% registro_Informacion, sizeof(struct teclado), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct teclado), 1, fp))
     {
         if (registro_Informacion.identificador == identificador)
         {
@@ -738,7 +738,7 @@ void eliminar_Teclado()
         }
         else
         {
-            fwrite(% registro_Informacion, sizeof(struct teclado), 1, fp1);
+            fwrite(&registro_Informacion, sizeof(struct teclado), 1, fp1);
         }
     }
     fclose(fp);
@@ -755,12 +755,10 @@ void eliminar_Teclado()
         printf("Teclado Borrado Correctamente");
     }
 }
-void eliminar_Mouse()
-{
-}
-void eliminar_Monitor() {}
-void eliminar_Notebook() {}
-void eliminar_Escritorio() {}
+// void eliminar_Mouse(){}
+// void eliminar_Monitor() {}
+// void eliminar_Notebook() {}
+// void eliminar_Escritorio() {}
 
 int main(int argc, char const *argv[])
 {
@@ -838,8 +836,33 @@ int main(int argc, char const *argv[])
                 }
             }
             break;
-            // Case 3: Buscar
-            // Case 4: Eliminar
+            case 4:
+            {
+                opcion_Menu = eliminar_Productos();
+                printf("\nQue producto desea eliminar: ");
+                scanf("%d", &opcion);
+                if (opcion == 1)
+                {
+                    eliminar_Teclado();
+                }
+                else if (opcion == 2)
+                {
+                    eliminar_Mouse();
+                }
+                else if (opcion == 3)
+                {
+                    eliminar_Monitor();
+                }
+                else if (opcion == 4)
+                {
+                    eliminar_Notebook();
+                }
+                else if (opcion == 5)
+                {
+                    eliminar_Escritorio();
+                }
+            }
+            break;
             case 5:
             {
                 printf("Gracias :)");
