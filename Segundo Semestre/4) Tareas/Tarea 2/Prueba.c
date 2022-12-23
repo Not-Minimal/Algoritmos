@@ -255,7 +255,7 @@ void agregar_Monitor()
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar monitor\n");
-        fp = fopen("registro_monitor.txt", "a");
+        fp = fopen("Monitor.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         printf("Marca: \n");
@@ -505,7 +505,7 @@ void listar_Teclado()
 void listar_Mouse()
 {
     FILE *fp;
-    struct teclado registro_Informacion;
+    struct mouse registro_Informacion;
     fp = fopen("Mouse.txt", "r");
 
     printf("Listado de mouses\n");
@@ -527,7 +527,31 @@ void listar_Mouse()
     }
     fclose(fp);
 }
-void listar_Monitor() {}
+void listar_Monitor() {
+    FILE *fp;
+    struct monitor registro_Informacion;
+    fp = fopen("Monitor.txt", "r");
+
+    printf("Listado de monitores\n");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "No se puede abrir el archivo\n");
+        exit(0);
+    }
+    else
+    {
+        printf("Monitores: \n");
+    }
+    while (fread(&registro_Informacion, sizeof(struct mouse), 1, fp))
+    {
+        printf("\nIdentificador: %d", registro_Informacion.identificador);
+        printf("\nMarca: %s", registro_Informacion.Marca);
+        printf("\nModelo: %s", registro_Informacion.Modelo);
+        printf("\nPulgadas: %d", registro_Informacion.Pulgadas);
+        printf("\n___________________________\n");
+    }
+    fclose(fp);
+}
 void listar_Notebook() {}
 void listar_Escritorio() {}
 int eliminar_Productos()
