@@ -668,7 +668,7 @@ void listar_Escritorio()
         printf("\nIdentificador Monitor: %d", registro_Informacion.direccion_monitor.identificador);
         printf("\nMarca Monitor: %d", registro_Informacion.direccion_monitor.Marca);
         printf("\nModelo Monitor: %d", registro_Informacion.direccion_monitor.Modelo);
-        printf("\nPulgadas Monitor: %d", registro_Informacion.direccion_monitor.Idioma);
+        printf("\nPulgadas Monitor: %d", registro_Informacion.direccion_monitor.Pulgadas);
         printf("\n___________________________\n");
     }
     fclose(fp);
