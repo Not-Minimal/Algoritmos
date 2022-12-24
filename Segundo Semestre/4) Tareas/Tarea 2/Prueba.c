@@ -1040,7 +1040,6 @@ void actualizar_Escritorio()
         printf("Escritorio Actualizado Correctamente");
     }
 }
-
 // Eliminar Productos
 void eliminar_Teclado()
 {
