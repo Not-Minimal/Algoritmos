@@ -981,7 +981,18 @@ void actualizar_Escritorio()
             printf("\nModelo: %s", registro_Informacion.Modelo);
             printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
             printf("\nProcesador: %s", registro_Informacion.Procesador);
-            printf("\nPulgadas: %f", registro_Informacion.Pulgadas);
+            printf("\nIdentificador Teclado: %d", registro_Informacion.direccion_teclado.identificador);
+            printf("\nMarca Teclado: %s", registro_Informacion.direccion_teclado.Marca);
+            printf("\nModelo Teclado: %s", registro_Informacion.direccion_teclado.Modelo);
+            printf("\nIdioma Teclado: %s", registro_Informacion.direccion_teclado.Idioma);
+            printf("\nIdentificador Mouse: %d", registro_Informacion.direccion_mouse.identificador);
+            printf("\nMarca Mouse: %s", registro_Informacion.direccion_mouse.Marca);
+            printf("\nModelo Mouse: %s", registro_Informacion.direccion_mouse.Modelo);
+            printf("\nIdentificador Monitor: %d", registro_Informacion.direccion_monitor.identificador);
+            printf("\nMarca Monitor: %s", registro_Informacion.direccion_monitor.Marca);
+            printf("\nModelo Monitor: %s", registro_Informacion.direccion_monitor.Modelo);
+            printf("\nPulgadas Monitor: %f", registro_Informacion.direccion_monitor.Pulgadas);
+
             printf("Ingrese Nueva Marca: \n");
             scanf("%s", &registro_Informacion.Marca);
             fflush(stdin);
@@ -1014,9 +1025,6 @@ void actualizar_Escritorio()
             fflush(stdin);
             printf("Ingrese nuevo Modelo Monitor: \n");
             scanf("%s", &registro_Informacion.direccion_monitor.Modelo);
-            fflush(stdin);
-            printf("Ingrese nuevo Tamaño Pulgads Monitor: \n");
-            scanf("%s", &registro_Informacion.direccion_monitor.Idioma);
             fflush(stdin);
             bandera = 1;
             fwrite(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal1);
@@ -1337,22 +1345,22 @@ int main(int argc, char const *argv[])
                 {
                     actualizar_Teclado();
                 }
-                //     else if (opcion == 2)
-                //     {
-                //         buscar_Mouse();
-                //     }
-                //     else if (opcion == 3)
-                //     {
-                //         buscar_Monitor();
-                //     }
-                //     else if (opcion == 4)
-                //     {
-                //         buscar_Notebook();
-                //     }
-                //     else if (opcion == 5)
-                //     {
-                //         buscar_Escritorio();
-                //     }
+                else if (opcion == 2)
+                {
+                    actualizar_Mouse();
+                }
+                else if (opcion == 3)
+                {
+                    actualizar_Monitor();
+                }
+                else if (opcion == 4)
+                {
+                    actualizar_Notebook();
+                }
+                else if (opcion == 5)
+                {
+                    actualizar_Escritorio();
+                }
             }
             break;
             case 4:
