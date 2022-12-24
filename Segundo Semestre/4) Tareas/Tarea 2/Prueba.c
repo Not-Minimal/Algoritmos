@@ -866,6 +866,9 @@ void actualizar_Monitor()
             printf("Ingrese nuevo Modelo: \n");
             scanf("%s", &registro_Informacion.Modelo);
             fflush(stdin);
+            printf("Pulgadas: \n");
+            scanf("%f", &registro_Informacion.Pulgadas);
+            fflush(stdin);
             bandera = 1;
             fwrite(&registro_Informacion, sizeof(struct monitor), 1, archivoLocal1);
         }
