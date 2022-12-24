@@ -333,7 +333,7 @@ int eliminar_Productos()
 void agregar_Teclado()
 {
     int otro_Registro;
-    FILE *fp;
+    FILE *archivoLocal;
     struct teclado registro_Informacion;
 
     do
@@ -341,7 +341,7 @@ void agregar_Teclado()
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar Teclado\n");
-        fp = fopen("Teclado.txt", "a");
+        archivoLocal = fopen("Teclado.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         fflush(stdin);
@@ -355,7 +355,7 @@ void agregar_Teclado()
         scanf("%s", &registro_Informacion.Idioma);
         fflush(stdin);
 
-        if (fp == NULL)
+        if (archivoLocal == NULL)
         {
             fprintf(stderr, "No existen registros\n");
         }
@@ -363,8 +363,8 @@ void agregar_Teclado()
         {
             printf("Se ha agregado el nuevo teclado\n");
         }
-        fwrite(&registro_Informacion, sizeof(struct teclado), 1, fp);
-        fclose(fp);
+        fwrite(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal);
+        fclose(archivoLocal);
         printf("Quieres agregar otro teclado?\n");
         printf("1. Si\n");
         printf("2. No\n");
@@ -375,7 +375,7 @@ void agregar_Teclado()
 void agregar_Mouse()
 {
     int otro_Registro;
-    FILE *fp;
+    FILE *archivoLocal;
     struct mouse registro_Informacion;
 
     do
@@ -383,7 +383,7 @@ void agregar_Mouse()
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar mouse\n");
-        fp = fopen("Mouse.txt", "a");
+        archivoLocal = fopen("Mouse.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         fflush(stdin);
@@ -393,7 +393,7 @@ void agregar_Mouse()
         printf("Modelo: \n");
         scanf("%s", &registro_Informacion.Modelo);
         fflush(stdin);
-        if (fp == NULL)
+        if (archivoLocal == NULL)
         {
             fprintf(stderr, "No existen registros\n");
         }
@@ -401,8 +401,8 @@ void agregar_Mouse()
         {
             printf("Se ha agregado correctamente el nuevo mouse\n");
         }
-        fwrite(&registro_Informacion, sizeof(struct mouse), 1, fp);
-        fclose(fp);
+        fwrite(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal);
+        fclose(archivoLocal);
         printf("Quieres agregar otro mouse?\n");
         printf("1. Si\n");
         printf("2. No\n");
@@ -414,7 +414,7 @@ void agregar_Mouse()
 void agregar_Monitor()
 {
     int otro_Registro;
-    FILE *fp;
+    FILE *archivoLocal;
     struct monitor registro_Informacion;
 
     do
@@ -422,7 +422,7 @@ void agregar_Monitor()
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar monitor\n");
-        fp = fopen("Monitor.txt", "a");
+        archivoLocal = fopen("Monitor.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         fflush(stdin);
@@ -435,7 +435,7 @@ void agregar_Monitor()
         printf("Pulgadas: \n");
         scanf("%f", &registro_Informacion.Pulgadas);
         fflush(stdin);
-        if (fp == NULL)
+        if (archivoLocal == NULL)
         {
             fprintf(stderr, "No existen registros\n");
         }
@@ -443,8 +443,8 @@ void agregar_Monitor()
         {
             printf("Se ha agregado correctamente el nuevo monitor\n");
         }
-        fwrite(&registro_Informacion, sizeof(struct monitor), 1, fp);
-        fclose(fp);
+        fwrite(&registro_Informacion, sizeof(struct monitor), 1, archivoLocal);
+        fclose(archivoLocal);
         printf("Quieres agregar otro monitor?\n");
         printf("1. Si\n");
         printf("2. No\n");
@@ -455,7 +455,7 @@ void agregar_Monitor()
 void agregar_Notebook()
 {
     int otro_Registro;
-    FILE *fp;
+    FILE *archivoLocal;
     struct notebook registro_Informacion;
 
     do
@@ -463,7 +463,7 @@ void agregar_Notebook()
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar notebook\n");
-        fp = fopen("Notebook.txt", "a");
+        archivoLocal = fopen("Notebook.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         fflush(stdin);
@@ -482,7 +482,7 @@ void agregar_Notebook()
         printf("Pulgadas: \n");
         scanf("%f", &registro_Informacion.Pulgadas);
         fflush(stdin);
-        if (fp == NULL)
+        if (archivoLocal == NULL)
         {
             fprintf(stderr, "No existen registros\n");
         }
@@ -490,8 +490,8 @@ void agregar_Notebook()
         {
             printf("Se ha agregado correctamente el nuevo notebook\n");
         }
-        fwrite(&registro_Informacion, sizeof(struct notebook), 1, fp);
-        fclose(fp);
+        fwrite(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal);
+        fclose(archivoLocal);
         printf("Quieres agregar otro notebook?\n");
         printf("1. Si\n");
         printf("2. No\n");
@@ -503,7 +503,7 @@ void agregar_Notebook()
 void agregar_Escritorio()
 {
     int otro_Registro;
-    FILE *fp;
+    FILE *archivoLocal;
     struct escritorio registro_Informacion;
 
     do
@@ -511,7 +511,7 @@ void agregar_Escritorio()
         // Descripcion: Esta función despeja la ventana de texto actual
         // y coloca el cursor en la esquina superior izquierda: posición (1,1).
         printf("Agregar escritorio\n");
-        fp = fopen("Escritorio.txt", "a");
+        archivoLocal = fopen("Escritorio.txt", "a");
         printf("Identificador: \n");
         scanf("%d", &registro_Informacion.identificador);
         fflush(stdin);
@@ -561,7 +561,7 @@ void agregar_Escritorio()
         scanf("%f", &registro_Informacion.direccion_monitor.Pulgadas);
         fflush(stdin);
 
-        if (fp == NULL)
+        if (archivoLocal == NULL)
         {
             fprintf(stderr, "No existen registros\n");
         }
@@ -569,8 +569,8 @@ void agregar_Escritorio()
         {
             printf("Se ha agregado correctamente el nuevo escritorio\n");
         }
-        fwrite(&registro_Informacion, sizeof(struct escritorio), 1, fp);
-        fclose(fp);
+        fwrite(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal);
+        fclose(archivoLocal);
         printf("Quieres agregar otro escritorio?\n");
         printf("1. Si\n");
         printf("2. No\n");
@@ -582,12 +582,12 @@ void agregar_Escritorio()
 // Funciones Secundarias de Listar Productos
 void listar_Teclado()
 {
-    FILE *fp;
+    FILE *archivoLocal;
     struct teclado registro_Informacion;
-    fp = fopen("Teclado.txt", "r");
+    archivoLocal = fopen("Teclado.txt", "r");
 
     printf("Listado de Teclados\n");
-    if (fp == NULL)
+    if (archivoLocal == NULL)
     {
         fprintf(stderr, "No existen registros\n");
         exit(0);
@@ -596,7 +596,7 @@ void listar_Teclado()
     {
         printf("Teclados: \n");
     }
-    while (fread(&registro_Informacion, sizeof(struct teclado), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal))
     {
         printf("\nIdentificador: %d", registro_Informacion.identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
@@ -604,16 +604,16 @@ void listar_Teclado()
         printf("\nIdioma: %s", registro_Informacion.Idioma);
         printf("\n___________________________\n");
     }
-    fclose(fp);
+    fclose(archivoLocal);
 }
 void listar_Mouse()
 {
-    FILE *fp;
+    FILE *archivoLocal;
     struct mouse registro_Informacion;
-    fp = fopen("Mouse.txt", "r");
+    archivoLocal = fopen("Mouse.txt", "r");
 
     printf("Listado de mouses\n");
-    if (fp == NULL)
+    if (archivoLocal == NULL)
     {
         fprintf(stderr, "No existen registros\n");
         exit(0);
@@ -622,23 +622,23 @@ void listar_Mouse()
     {
         printf("Mouses: \n");
     }
-    while (fread(&registro_Informacion, sizeof(struct mouse), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal))
     {
         printf("\nIdentificador: %d", registro_Informacion.identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
         printf("\nModelo: %s", registro_Informacion.Modelo);
         printf("\n___________________________\n");
     }
-    fclose(fp);
+    fclose(archivoLocal);
 }
 void listar_Monitor()
 {
-    FILE *fp;
+    FILE *archivoLocal;
     struct monitor registro_Informacion;
-    fp = fopen("Monitor.txt", "r");
+    archivoLocal = fopen("Monitor.txt", "r");
 
     printf("Listado de monitores\n");
-    if (fp == NULL)
+    if (archivoLocal == NULL)
     {
         fprintf(stderr, "No existen registros\n");
         exit(0);
@@ -647,7 +647,7 @@ void listar_Monitor()
     {
         printf("Monitores: \n");
     }
-    while (fread(&registro_Informacion, sizeof(struct mouse), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal))
     {
         printf("\nIdentificador: %d", registro_Informacion.identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
@@ -655,16 +655,16 @@ void listar_Monitor()
         printf("\nPulgadas: %f", registro_Informacion.Pulgadas);
         printf("\n___________________________\n");
     }
-    fclose(fp);
+    fclose(archivoLocal);
 }
 void listar_Notebook()
 {
-    FILE *fp;
+    FILE *archivoLocal;
     struct notebook registro_Informacion;
-    fp = fopen("Notebook.txt", "r");
+    archivoLocal = fopen("Notebook.txt", "r");
 
     printf("Listado de notebooks\n");
-    if (fp == NULL)
+    if (archivoLocal == NULL)
     {
         fprintf(stderr, "No existen registros\n");
         exit(0);
@@ -673,7 +673,7 @@ void listar_Notebook()
     {
         printf("Notebooks: \n");
     }
-    while (fread(&registro_Informacion, sizeof(struct notebook), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal))
     {
         printf("\nIdentificador: %d", registro_Informacion.identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
@@ -683,16 +683,16 @@ void listar_Notebook()
         printf("\nPulgadas: %f", registro_Informacion.Pulgadas);
         printf("\n___________________________\n");
     }
-    fclose(fp);
+    fclose(archivoLocal);
 }
 void listar_Escritorio()
 {
-    FILE *fp;
+    FILE *archivoLocal;
     struct escritorio registro_Informacion;
-    fp = fopen("Escritorio.txt", "r");
+    archivoLocal = fopen("Escritorio.txt", "r");
 
     printf("Listado de Escritorios\n");
-    if (fp == NULL)
+    if (archivoLocal == NULL)
     {
         fprintf(stderr, "No existen registros\n");
         exit(0);
@@ -701,7 +701,7 @@ void listar_Escritorio()
     {
         printf("Escritorios: \n");
     }
-    while (fread(&registro_Informacion, sizeof(struct escritorio), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal))
     {
         printf("\nIdentificador: %d", registro_Informacion.identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
@@ -721,59 +721,173 @@ void listar_Escritorio()
         printf("\nPulgadas Monitor: %f", registro_Informacion.direccion_monitor.Pulgadas);
         printf("\n___________________________\n");
     }
-    fclose(fp);
+    fclose(archivoLocal);
 }
 
 // Buscar Productos
 void actualizar_Teclado()
 {
-    FILE *fp;
     struct teclado registro_Informacion;
-    fp = fopen("Teclado.txt", "r+");
-    printf("Listado de Teclados\n");
-
-    if (fp == NULL)
-    {
-        fprintf(stderr, "No existen registros\n");
-        exit(0);
-    }
+    FILE *archivoLocal, *archivoLocal1;
     int identificador, bandera = 0;
 
-    printf("Ingrese el identificador para actualizar: ");
+    printf("Eliminar Teclados");
+    archivoLocal = fopen("Teclado.txt", "r");
+    archivoLocal1 = fopen("Temporal.txt", "w");
+    printf("Ingrese el Identificador: ");
     scanf("%d", &identificador);
-    fread(&registro_Informacion, sizeof(struct teclado), 1, fp);
-    while (!feof(fp))
+    if (archivoLocal == NULL)
     {
-        if (identificador == registro_Informacion.identificador)
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+
+    while (fread(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal))
+    {
+        if (registro_Informacion.identificador == identificador)
         {
-            printf("\nIngrese los nuevos datos: ");
+            printf("\nIngrese los nuevos datos: \n");
+            printf("\nMarca: %s", registro_Informacion.Marca);
+            printf("\nModelo: %s", registro_Informacion.Modelo);
             fflush(stdin);
-            printf("Marca: \n");
+            printf("Ingrese nueva Marca: \n");
             scanf("%s", &registro_Informacion.Marca);
             fflush(stdin);
-            printf("Modelo: \n");
+            printf("Ingrese nuevo Modelo: \n");
             scanf("%s", &registro_Informacion.Modelo);
             fflush(stdin);
-            printf("Idioma: \n");
+            printf("Ingrese nuevo Idioma: \n");
             scanf("%s", &registro_Informacion.Idioma);
             fflush(stdin);
-            int posicion = ftell(fp) - sizeof(struct teclado);
-            fseek(fp, posicion, SEEK_SET);
-            fwrite(&registro_Informacion, sizeof(struct teclado), 1, fp);
-            printf("Se han actualizado los datos\n");
             bandera = 1;
-            break;
+            fwrite(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal1);
         }
-        fread(&registro_Informacion, sizeof(struct teclado), 1, fp);
+        else
+        {
+            fwrite(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal1);
+        }
     }
-    if (bandera == 0)
+    fclose(archivoLocal);
+    fclose(archivoLocal1);
+
+    if (!bandera)
     {
-        printf("No existen registros con ese identificador\n");
-        fclose(fp);
+        printf("No se encuentra el identificador \n");
+    }
+    if (bandera)
+    {
+        remove("Teclado.txt");
+        rename("Temporal.txt", "Teclado.txt");
+        printf("Teclado Actualizado Correctamente");
     }
 }
-//  void actualizar_Mouse(){}
-//  void actualizar_Monitor(){}
+void actualizar_Mouse()
+{
+    struct mouse registro_Informacion;
+    FILE *archivoLocal, *archivoLocal1;
+    int identificador, bandera = 0;
+
+    printf("Eliminar Mouses");
+    archivoLocal = fopen("Mouse.txt", "r");
+    archivoLocal1 = fopen("Temporal.txt", "w");
+    printf("Ingrese el Identificador: ");
+    scanf("%d", &identificador);
+    if (archivoLocal == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+
+    while (fread(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal))
+    {
+        if (registro_Informacion.identificador == identificador)
+        {
+            printf("\nIngrese los nuevos datos: \n");
+            printf("\nMarca: %s", registro_Informacion.Marca);
+            printf("\nModelo: %s", registro_Informacion.Modelo);
+            fflush(stdin);
+            printf("Ingrese nueva Marca: \n");
+            scanf("%s", &registro_Informacion.Marca);
+            fflush(stdin);
+            printf("Ingrese nuevo Modelo: \n");
+            scanf("%s", &registro_Informacion.Modelo);
+            fflush(stdin);
+            bandera = 1;
+            fwrite(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal1);
+        }
+        else
+        {
+            fwrite(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal1);
+        }
+    }
+    fclose(archivoLocal);
+    fclose(archivoLocal1);
+
+    if (!bandera)
+    {
+        printf("No se encuentra el identificador \n");
+    }
+    if (bandera)
+    {
+        remove("Mouse.txt");
+        rename("Temporal.txt", "Mouse.txt");
+        printf("Mouse Actualizado Correctamente");
+    }
+}
+void actualizar_Monitor()
+{
+    struct monitor registro_Informacion;
+    FILE *archivoLocal, *archivoLocal1;
+    int identificador, bandera = 0;
+
+    printf("Eliminar Monitores");
+    archivoLocal = fopen("Monitor.txt", "r");
+    archivoLocal1 = fopen("Temporal.txt", "w");
+    printf("Ingrese el Identificador: ");
+    scanf("%d", &identificador);
+    if (archivoLocal == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+
+    while (fread(&registro_Informacion, sizeof(struct monitor), 1, archivoLocal))
+    {
+        if (registro_Informacion.identificador == identificador)
+        {
+            printf("\nIngrese los nuevos datos: \n");
+            printf("\nMarca: %s", registro_Informacion.Marca);
+            printf("\nModelo: %s", registro_Informacion.Modelo);
+            printf("\nPulgadas: %f", registro_Informacion.Pulgadas);
+            fflush(stdin);
+            printf("Ingrese nueva Marca: \n");
+            scanf("%s", &registro_Informacion.Marca);
+            fflush(stdin);
+            printf("Ingrese nuevo Modelo: \n");
+            scanf("%s", &registro_Informacion.Modelo);
+            fflush(stdin);
+            bandera = 1;
+            fwrite(&registro_Informacion, sizeof(struct monitor), 1, archivoLocal1);
+        }
+        else
+        {
+            fwrite(&registro_Informacion, sizeof(struct monitor), 1, archivoLocal1);
+        }
+    }
+    fclose(archivoLocal);
+    fclose(archivoLocal1);
+
+    if (!bandera)
+    {
+        printf("No se encuentra el identificador \n");
+    }
+    if (bandera)
+    {
+        remove("Monitor.txt");
+        rename("Temporal.txt", "Monitor.txt");
+        printf("Monitor Actualizado Correctamente");
+    }
+}
 //  void actualizar_Notebook(){}
 //  void actualizar_Escritorio(){}
 
@@ -781,21 +895,21 @@ void actualizar_Teclado()
 void eliminar_Teclado()
 {
     struct teclado registro_Informacion;
-    FILE *fp, *fp1;
+    FILE *archivoLocal, *archivoLocal1;
     int identificador, bandera = 0;
 
     printf("Eliminar Teclados");
-    fp = fopen("Teclado.txt", "r");
-    fp1 = fopen("Temporal.txt", "w");
+    archivoLocal = fopen("Teclado.txt", "r");
+    archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
     scanf("%d", &identificador);
-    if (fp == NULL)
+    if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
         exit(0);
     }
 
-    while (fread(&registro_Informacion, sizeof(struct teclado), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal))
     {
         if (registro_Informacion.identificador == identificador)
         {
@@ -803,11 +917,11 @@ void eliminar_Teclado()
         }
         else
         {
-            fwrite(&registro_Informacion, sizeof(struct teclado), 1, fp1);
+            fwrite(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal1);
         }
     }
-    fclose(fp);
-    fclose(fp1);
+    fclose(archivoLocal);
+    fclose(archivoLocal1);
 
     if (!bandera)
     {
@@ -823,21 +937,21 @@ void eliminar_Teclado()
 void eliminar_Mouse()
 {
     struct mouse registro_Informacion;
-    FILE *fp, *fp1;
+    FILE *archivoLocal, *archivoLocal1;
     int identificador, bandera = 0;
 
     printf("Eliminar mouses");
-    fp = fopen("Mouse.txt", "r");
-    fp1 = fopen("Temporal.txt", "w");
+    archivoLocal = fopen("Mouse.txt", "r");
+    archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
     scanf("%d", &identificador);
-    if (fp == NULL)
+    if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
         exit(0);
     }
 
-    while (fread(&registro_Informacion, sizeof(struct mouse), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal))
     {
         if (registro_Informacion.identificador == identificador)
         {
@@ -845,11 +959,11 @@ void eliminar_Mouse()
         }
         else
         {
-            fwrite(&registro_Informacion, sizeof(struct mouse), 1, fp1);
+            fwrite(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal1);
         }
     }
-    fclose(fp);
-    fclose(fp1);
+    fclose(archivoLocal);
+    fclose(archivoLocal1);
 
     if (!bandera)
     {
@@ -865,21 +979,21 @@ void eliminar_Mouse()
 void eliminar_Monitor()
 {
     struct monitor registro_Informacion;
-    FILE *fp, *fp1;
+    FILE *archivoLocal, *archivoLocal1;
     int identificador, bandera = 0;
 
     printf("Eliminar Monitoress");
-    fp = fopen("Monitor.txt", "r");
-    fp1 = fopen("Temporal.txt", "w");
+    archivoLocal = fopen("Monitor.txt", "r");
+    archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
     scanf("%d", &identificador);
-    if (fp == NULL)
+    if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
         exit(0);
     }
 
-    while (fread(&registro_Informacion, sizeof(struct monitor), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct monitor), 1, archivoLocal))
     {
         if (registro_Informacion.identificador == identificador)
         {
@@ -887,11 +1001,11 @@ void eliminar_Monitor()
         }
         else
         {
-            fwrite(&registro_Informacion, sizeof(struct monitor), 1, fp1);
+            fwrite(&registro_Informacion, sizeof(struct monitor), 1, archivoLocal1);
         }
     }
-    fclose(fp);
-    fclose(fp1);
+    fclose(archivoLocal);
+    fclose(archivoLocal1);
 
     if (!bandera)
     {
@@ -907,21 +1021,21 @@ void eliminar_Monitor()
 void eliminar_Notebook()
 {
     struct notebook registro_Informacion;
-    FILE *fp, *fp1;
+    FILE *archivoLocal, *archivoLocal1;
     int identificador, bandera = 0;
 
     printf("Eliminar Notebooks");
-    fp = fopen("Notebook.txt", "r");
-    fp1 = fopen("Temporal.txt", "w");
+    archivoLocal = fopen("Notebook.txt", "r");
+    archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
     scanf("%d", &identificador);
-    if (fp == NULL)
+    if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
         exit(0);
     }
 
-    while (fread(&registro_Informacion, sizeof(struct notebook), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal))
     {
         if (registro_Informacion.identificador == identificador)
         {
@@ -929,11 +1043,11 @@ void eliminar_Notebook()
         }
         else
         {
-            fwrite(&registro_Informacion, sizeof(struct notebook), 1, fp1);
+            fwrite(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal1);
         }
     }
-    fclose(fp);
-    fclose(fp1);
+    fclose(archivoLocal);
+    fclose(archivoLocal1);
 
     if (!bandera)
     {
@@ -949,21 +1063,21 @@ void eliminar_Notebook()
 void eliminar_Escritorio()
 {
     struct escritorio registro_Informacion;
-    FILE *fp, *fp1;
+    FILE *archivoLocal, *archivoLocal1;
     int identificador, bandera = 0;
 
     printf("Eliminar Escritorios");
-    fp = fopen("Escritorio.txt", "r");
-    fp1 = fopen("Temporal.txt", "w");
+    archivoLocal = fopen("Escritorio.txt", "r");
+    archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
     scanf("%d", &identificador);
-    if (fp == NULL)
+    if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
         exit(0);
     }
 
-    while (fread(&registro_Informacion, sizeof(struct escritorio), 1, fp))
+    while (fread(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal))
     {
         if (registro_Informacion.identificador == identificador)
         {
@@ -971,11 +1085,11 @@ void eliminar_Escritorio()
         }
         else
         {
-            fwrite(&registro_Informacion, sizeof(struct escritorio), 1, fp1);
+            fwrite(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal1);
         }
     }
-    fclose(fp);
-    fclose(fp1);
+    fclose(archivoLocal);
+    fclose(archivoLocal1);
 
     if (!bandera)
     {
@@ -1090,8 +1204,8 @@ int main(int argc, char const *argv[])
                 //     {
                 //         buscar_Escritorio();
                 //     }
-                }
-                break;
+            }
+            break;
             case 4:
             {
                 opcion_Menu = eliminar_Productos();
@@ -1132,11 +1246,11 @@ int main(int argc, char const *argv[])
                 scanf("%d", &continuar);
                 break;
             }
-            }
         }
-        else
-        {
-            printf("Acceso Denegado");
-        }
-        return 0;
     }
+    else
+    {
+        printf("Acceso Denegado");
+    }
+    return 0;
+}
