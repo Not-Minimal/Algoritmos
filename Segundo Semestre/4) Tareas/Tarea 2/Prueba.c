@@ -725,7 +725,7 @@ void listar_Escritorio()
 }
 
 // Buscar Productos
-void buscar_Teclado(){
+void actualizar_Teclado(){
     FILE *fp;
     struct teclado registro_Informacion;
     fp = fopen("Teclado.txt", "r+");
@@ -738,7 +738,7 @@ void buscar_Teclado(){
     }
     int identificador, bandera = 0;
 
-    printf("Ingrese el identificador para buscar: ");
+    printf("Ingrese el identificador para actualizar: ");
     scanf("%d", &identificador);
     fread(&registro_Informacion, sizeof(struct teclado), 1, fp);
 
@@ -747,10 +747,10 @@ void buscar_Teclado(){
     
 
 }
-//  void buscar_Mouse(){}
-//  void buscar_Monitor(){}
-//  void buscar_Notebook(){}
-//  void buscar_Escritorio(){}
+//  void actualizar_Mouse(){}
+//  void actualizar_Monitor(){}
+//  void actualizar_Notebook(){}
+//  void actualizar_Escritorio(){}
 
 // Eliminar Productos
 void eliminar_Teclado()
