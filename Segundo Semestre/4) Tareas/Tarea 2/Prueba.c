@@ -866,7 +866,7 @@ void actualizar_Monitor()
             printf("Ingrese nuevo Modelo: \n");
             scanf("%s", &registro_Informacion.Modelo);
             fflush(stdin);
-            printf("Pulgadas: \n");
+            printf("Ingrese nuevo tamaño Pulgadas: \n");
             scanf("%f", &registro_Informacion.Pulgadas);
             fflush(stdin);
             bandera = 1;
@@ -891,8 +891,155 @@ void actualizar_Monitor()
         printf("Monitor Actualizado Correctamente");
     }
 }
-//  void actualizar_Notebook(){}
-//  void actualizar_Escritorio(){}
+void actualizar_Notebook()
+{
+    struct notebook registro_Informacion;
+    FILE *archivoLocal, *archivoLocal1;
+    int identificador, bandera = 0;
+
+    printf("Eliminar Notebooks");
+    archivoLocal = fopen("Notebook.txt", "r");
+    archivoLocal1 = fopen("Temporal.txt", "w");
+    printf("Ingrese el Identificador: ");
+    scanf("%d", &identificador);
+    if (archivoLocal == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+
+    while (fread(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal))
+    {
+        if (registro_Informacion.identificador == identificador)
+        {
+            printf("\nIngrese los nuevos datos: \n");
+            printf("\nMarca: %s", registro_Informacion.Marca);
+            printf("\nModelo: %s", registro_Informacion.Modelo);
+            printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
+            printf("\nProcesador: %s", registro_Informacion.Procesador);
+            printf("\nPulgadas: %f", registro_Informacion.Pulgadas);
+            printf("Ingrese Nueva Marca: \n");
+            scanf("%s", &registro_Informacion.Marca);
+            fflush(stdin);
+            printf("Ingrese Nuevo Modelo: \n");
+            scanf("%s", &registro_Informacion.Modelo);
+            fflush(stdin);
+            printf("Ingrese Nueva Cantidad de Ram: \n");
+            scanf("%d", &registro_Informacion.CantidadRam);
+            fflush(stdin);
+            printf("Ingrese Nuevo Procesador: \n");
+            scanf("%s", &registro_Informacion.Procesador);
+            fflush(stdin);
+            printf("Ingrese Nuevo Tamaño Pulgadas: \n");
+            scanf("%f", &registro_Informacion.Pulgadas);
+            fflush(stdin);
+            bandera = 1;
+            fwrite(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal1);
+        }
+        else
+        {
+            fwrite(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal1);
+        }
+    }
+    fclose(archivoLocal);
+    fclose(archivoLocal1);
+
+    if (!bandera)
+    {
+        printf("No se encuentra el identificador \n");
+    }
+    if (bandera)
+    {
+        remove("Notebook.txt");
+        rename("Temporal.txt", "Notebook.txt");
+        printf("Notebook Actualizado Correctamente");
+    }
+}
+void actualizar_Escritorio()
+{
+    struct escritorio registro_Informacion;
+    FILE *archivoLocal, *archivoLocal1;
+    int identificador, bandera = 0;
+
+    printf("Eliminar Escritorios");
+    archivoLocal = fopen("Escritorio.txt", "r");
+    archivoLocal1 = fopen("Temporal.txt", "w");
+    printf("Ingrese el Identificador: ");
+    scanf("%d", &identificador);
+    if (archivoLocal == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+
+    while (fread(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal))
+    {
+        if (registro_Informacion.identificador == identificador)
+        {
+            printf("\nIngrese los nuevos datos: \n");
+            printf("\nMarca: %s", registro_Informacion.Marca);
+            printf("\nModelo: %s", registro_Informacion.Modelo);
+            printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
+            printf("\nProcesador: %s", registro_Informacion.Procesador);
+            printf("\nPulgadas: %f", registro_Informacion.Pulgadas);
+            printf("Ingrese Nueva Marca: \n");
+            scanf("%s", &registro_Informacion.Marca);
+            fflush(stdin);
+            printf("Ingrese Nuevo Modelo: \n");
+            scanf("%s", &registro_Informacion.Modelo);
+            fflush(stdin);
+            printf("Ingrese Nueva Cantidad de Ram: \n");
+            scanf("%d", &registro_Informacion.CantidadRam);
+            fflush(stdin);
+            printf("Ingrese Nuevo Procesador: \n");
+            scanf("%s", &registro_Informacion.Procesador);
+            fflush(stdin);
+            printf("Ingrese nueva Marca Teclado: \n");
+            scanf("%s", &registro_Informacion.direccion_teclado.Marca);
+            fflush(stdin);
+            printf("Ingrese nuevo Modelo Teclado: \n");
+            scanf("%s", &registro_Informacion.direccion_teclado.Modelo);
+            fflush(stdin);
+            printf("Ingrese nuevo Idioma Teclado: \n");
+            scanf("%s", &registro_Informacion.direccion_teclado.Idioma);
+            fflush(stdin);
+            printf("Ingrese nueva Marca Mouse: \n");
+            scanf("%s", &registro_Informacion.direccion_mouse.Marca);
+            fflush(stdin);
+            printf("Ingrese nuevo Modelo Mouse : \n");
+            scanf("%s", &registro_Informacion.direccion_mouse.Modelo);
+            fflush(stdin);
+            printf("Ingrese nueva Marca Monitor: \n");
+            scanf("%s", &registro_Informacion.direccion_monitor.Marca);
+            fflush(stdin);
+            printf("Ingrese nuevo Modelo Monitor: \n");
+            scanf("%s", &registro_Informacion.direccion_monitor.Modelo);
+            fflush(stdin);
+            printf("Ingrese nuevo Tamaño Pulgads Monitor: \n");
+            scanf("%s", &registro_Informacion.direccion_monitor.Idioma);
+            fflush(stdin);
+            bandera = 1;
+            fwrite(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal1);
+        }
+        else
+        {
+            fwrite(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal1);
+        }
+    }
+    fclose(archivoLocal);
+    fclose(archivoLocal1);
+
+    if (!bandera)
+    {
+        printf("No se encuentra el identificador \n");
+    }
+    if (bandera)
+    {
+        remove("Escritorio.txt");
+        rename("Temporal.txt", "Escritorio.txt");
+        printf("Escritorio Actualizado Correctamente");
+    }
+}
 
 // Eliminar Productos
 void eliminar_Teclado()
