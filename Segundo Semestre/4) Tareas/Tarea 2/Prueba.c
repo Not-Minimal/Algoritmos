@@ -128,14 +128,14 @@ int iniciar_Sesion()
     {
         return 0;
     }
-    
+
     // do
     // {
     //     if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave != registro_Informacion->Clave))
     //     {
     //         clave_erronea++;
     //         return 0;
-    //     } 
+    //     }
 
     // } while (clave_erronea < 2);
 }
@@ -724,14 +724,35 @@ void listar_Escritorio()
     fclose(fp);
 }
 
-//Buscar Productos
-// void buscar_Teclado(){}
-// void buscar_Mouse(){}
-// void buscar_Monitor(){}
-// void buscar_Notebook(){}
-// void buscar_Escritorio(){}
+// Buscar Productos
+void buscar_Teclado(){
+    FILE *fp;
+    struct teclado registro_Informacion;
+    fp = fopen("Teclado.txt", "r+");
+    printf("Listado de Teclados\n");
+    
+    if (fp == NULL)
+    {
+        fprintf(stderr, "No existen registros\n");
+        exit(0);
+    }
+    int identificador, bandera = 0;
 
-//Eliminar Productos
+    printf("Ingrese el identificador para buscar: ");
+    scanf("%d", &identificador);
+    fread(&registro_Informacion, sizeof(struct teclado), 1, fp);
+
+
+
+    
+
+}
+//  void buscar_Mouse(){}
+//  void buscar_Monitor(){}
+//  void buscar_Notebook(){}
+//  void buscar_Escritorio(){}
+
+// Eliminar Productos
 void eliminar_Teclado()
 {
     struct teclado registro_Informacion;
