@@ -6,7 +6,7 @@
 int iniciar_Sesion();
 void usuario_Login();
 int agregar_Productos();
-int actualizar_Producto();
+int actualizar_Productos();
 int listar_Productos();
 int eliminar_Productos();
 // Funciones Secundarias Encargadas de Agregar productos
@@ -185,7 +185,7 @@ int agregar_Productos()
     }
 }
 
-int actualizar_Producto()
+int actualizar_Productos()
 {
     int opcion;
     printf("Ingrese opcion: ");
@@ -725,12 +725,13 @@ void listar_Escritorio()
 }
 
 // Buscar Productos
-void actualizar_Teclado(){
+void actualizar_Teclado()
+{
     FILE *fp;
     struct teclado registro_Informacion;
     fp = fopen("Teclado.txt", "r+");
     printf("Listado de Teclados\n");
-    
+
     if (fp == NULL)
     {
         fprintf(stderr, "No existen registros\n");
@@ -741,11 +742,35 @@ void actualizar_Teclado(){
     printf("Ingrese el identificador para actualizar: ");
     scanf("%d", &identificador);
     fread(&registro_Informacion, sizeof(struct teclado), 1, fp);
-
-
-
-    
-
+    while (!feof(fp))
+    {
+        if (identificador == registro_Informacion.identificador)
+        {
+            printf("\nIngrese los nuevos datos: ");
+            fflush(stdin);
+            printf("Marca: \n");
+            scanf("%s", &registro_Informacion.Marca);
+            fflush(stdin);
+            printf("Modelo: \n");
+            scanf("%s", &registro_Informacion.Modelo);
+            fflush(stdin);
+            printf("Idioma: \n");
+            scanf("%s", &registro_Informacion.Idioma);
+            fflush(stdin);
+            int posicion = ftell(fp) - sizeof(struct teclado);
+            fseek(fp, posicion, SEEK_SET);
+            fwrite(&registro_Informacion, sizeof(struct teclado), 1, fp);
+            printf("Se han actualizado los datos\n");
+            bandera = 1;
+            break;
+        }
+        fread(&registro_Informacion, sizeof(struct teclado), 1, fp);
+    }
+    if (bandera == 0)
+    {
+        printf("No existen registros con ese identificador\n");
+        fclose(fp);
+    }
 }
 //  void actualizar_Mouse(){}
 //  void actualizar_Monitor(){}
@@ -1040,33 +1065,33 @@ int main(int argc, char const *argv[])
                 }
             }
             break;
-            // case 3:
-            // {
-            //     opcion_Menu = buscar_Productos();
-            //     printf("\nQue producto desea buscar: ");
-            //     scanf("%d", &opcion);
-            //     if (opcion == 1)
-            //     {
-            //         buscar_Teclado();
-            //     }
-            //     else if (opcion == 2)
-            //     {
-            //         buscar_Mouse();
-            //     }
-            //     else if (opcion == 3)
-            //     {
-            //         buscar_Monitor();
-            //     }
-            //     else if (opcion == 4)
-            //     {
-            //         buscar_Notebook();
-            //     }
-            //     else if (opcion == 5)
-            //     {
-            //         buscar_Escritorio();
-            //     }
-            // }
-            // break;
+            case 3:
+            {
+                opcion_Menu = actualizar_Productos();
+                printf("\nQue producto desea buscar: ");
+                scanf("%d", &opcion);
+                if (opcion == 1)
+                {
+                    actualizar_Teclado();
+                }
+                //     else if (opcion == 2)
+                //     {
+                //         buscar_Mouse();
+                //     }
+                //     else if (opcion == 3)
+                //     {
+                //         buscar_Monitor();
+                //     }
+                //     else if (opcion == 4)
+                //     {
+                //         buscar_Notebook();
+                //     }
+                //     else if (opcion == 5)
+                //     {
+                //         buscar_Escritorio();
+                //     }
+                }
+                break;
             case 4:
             {
                 opcion_Menu = eliminar_Productos();
@@ -1107,11 +1132,11 @@ int main(int argc, char const *argv[])
                 scanf("%d", &continuar);
                 break;
             }
+            }
         }
+        else
+        {
+            printf("Acceso Denegado");
+        }
+        return 0;
     }
-    else
-    {
-        printf("Acceso Denegado");
-    }
-    return 0;
-}
