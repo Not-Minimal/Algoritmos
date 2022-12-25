@@ -756,7 +756,7 @@ void listar_Escritorio()
     fclose(archivoLocal);
 }
 
-// Buscar Productos
+// Actualizar Productos
 void actualizar_Teclado()
 {
     //system("clear");
@@ -1437,7 +1437,7 @@ int main(int argc, char const *argv[])
             case 3:
             {
                 opcion_Menu = actualizar_Productos();
-                printf("\nQue producto desea buscar: ");
+                printf("\nQue producto desea actualizar: ");
                 scanf("%d", &opcion);
                 if (opcion == 1)
                 {
