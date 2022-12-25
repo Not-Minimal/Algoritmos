@@ -33,6 +33,8 @@ void eliminar_Mouse();
 void eliminar_Monitor();
 void eliminar_Notebook();
 void eliminar_Escritorio();
+//Variables Globales para Stock de Productos
+int stock_Teclado = 0, stock_Mouse = 0, stock_Monitor = 0, stock_Notebook = 0, stock_Escritorio = 0;
 
 // Agregar Estructuras Predefinidas
 // Estructura Teclado
@@ -86,7 +88,7 @@ struct escritorio
 };
 
 // Estructura Usuario
-typedef struct
+struct usuario
 {
     int Identificador;
     char NombreUsuario[20];
@@ -94,50 +96,47 @@ typedef struct
     char Nombres[20];
     char ApellidoPaterno[20];
     char ApellidoMaterno[20];
-} usuario;
+};
 
 void usuario_Login()
 {
+    system("clear");
     // Precargar Datos de Usuario
-    usuario registro_Informacion[2];
+    struct usuario registro_Informacion[2];
     strcpy(registro_Informacion->Nombres, "Saul");
     strcpy(registro_Informacion->ApellidoPaterno, "Munoz");
     strcpy(registro_Informacion->ApellidoMaterno, "Pedreros");
-    printf("%s %s %s\n", registro_Informacion->Nombres, registro_Informacion->ApellidoPaterno, registro_Informacion->ApellidoMaterno);
+    printf("Usuario: %s %s %s\n", registro_Informacion->Nombres, registro_Informacion->ApellidoPaterno, registro_Informacion->ApellidoMaterno);
 }
 int iniciar_Sesion()
 {
     // Precargar Nombre de Usuario y Contraseña
-    usuario registro_Informacion[1];
+    struct usuario registro_Informacion[1];
     strcpy(registro_Informacion->NombreUsuario, "Admin");
     registro_Informacion->Clave = 123;
 
     char usuario[6];
-    int clave, clave_erronea = 0;
-    printf("Ingrese Usuario: ");
-    scanf("%s", usuario);
-    fflush(stdin);
-    printf("Ingrese Clave: ");
-    scanf("%d", &clave);
-    fflush(stdin);
-    // if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave == registro_Informacion->Clave)) // Tiene que pertenecer a una estructura
-    // {
-    //     return 1;
-    // }
-    // else
-    // {
-    //     return 0;
-    // }
-    while (strcmp(usuario, registro_Informacion->NombreUsuario) == 1 && clave_erronea < 3)
+    int clave, clave_erronea = 0, bandera = 0;
+    while (strcmp(usuario, registro_Informacion->NombreUsuario) != 0 || clave_erronea < 3)
     {
-        clave_erronea++;
-        if (strcmp(usuario, registro_Informacion->NombreUsuario) == 1)
+        printf("Ingrese Usuario: ");
+        scanf("%s", usuario);
+        fflush(stdin);
+        printf("Ingrese Clave: ");
+        scanf("%d", &clave);
+        fflush(stdin);
+        if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave == registro_Informacion->Clave))
         {
-            return 0;
+            bandera = 1;
         }
-        else
+        clave_erronea++;
+        if (bandera == 1)
         {
             return 1;
+        }
+        else if (clave_erronea == 3)
+        {
+            return 0;
         }
     }
 }
@@ -145,6 +144,8 @@ int iniciar_Sesion()
 // Funciones Principales
 int agregar_Productos()
 {
+    system("clear");
+    usuario_Login();
     int opcion;
     printf("\n1.Agregar Teclado");
     printf("\n2.Agregar Mouse");
@@ -189,6 +190,8 @@ int agregar_Productos()
 
 int actualizar_Productos()
 {
+    system("clear");
+    usuario_Login();
     int opcion;
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
@@ -237,6 +240,8 @@ int actualizar_Productos()
 
 int listar_Productos()
 {
+    system("clear");
+    usuario_Login();
     int opcion;
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
@@ -285,6 +290,8 @@ int listar_Productos()
 
 int eliminar_Productos()
 {
+    system("clear");
+    usuario_Login();
     int opcion;
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
@@ -334,6 +341,8 @@ int eliminar_Productos()
 // Funciones Secundarias de Agregar Productos
 void agregar_Teclado()
 {
+    system("clear");
+    usuario_Login();
     int otro_Registro;
     FILE *archivoLocal;
     struct teclado registro_Informacion;
@@ -376,6 +385,8 @@ void agregar_Teclado()
 }
 void agregar_Mouse()
 {
+    system("clear");
+    usuario_Login();
     int otro_Registro;
     FILE *archivoLocal;
     struct mouse registro_Informacion;
@@ -415,6 +426,8 @@ void agregar_Mouse()
 }
 void agregar_Monitor()
 {
+    system("clear");
+    usuario_Login();
     int otro_Registro;
     FILE *archivoLocal;
     struct monitor registro_Informacion;
@@ -456,6 +469,8 @@ void agregar_Monitor()
 }
 void agregar_Notebook()
 {
+    system("clear");
+    usuario_Login();
     int otro_Registro;
     FILE *archivoLocal;
     struct notebook registro_Informacion;
@@ -504,6 +519,8 @@ void agregar_Notebook()
 }
 void agregar_Escritorio()
 {
+    system("clear");
+    usuario_Login();
     int otro_Registro;
     FILE *archivoLocal;
     struct escritorio registro_Informacion;
@@ -584,6 +601,8 @@ void agregar_Escritorio()
 // Funciones Secundarias de Listar Productos
 void listar_Teclado()
 {
+    system("clear");
+    usuario_Login();
     FILE *archivoLocal;
     struct teclado registro_Informacion;
     archivoLocal = fopen("Teclado.txt", "r");
@@ -610,6 +629,8 @@ void listar_Teclado()
 }
 void listar_Mouse()
 {
+    system("clear");
+    usuario_Login();
     FILE *archivoLocal;
     struct mouse registro_Informacion;
     archivoLocal = fopen("Mouse.txt", "r");
@@ -635,6 +656,8 @@ void listar_Mouse()
 }
 void listar_Monitor()
 {
+    system("clear");
+    usuario_Login();
     FILE *archivoLocal;
     struct monitor registro_Informacion;
     archivoLocal = fopen("Monitor.txt", "r");
@@ -661,6 +684,8 @@ void listar_Monitor()
 }
 void listar_Notebook()
 {
+    system("clear");
+    usuario_Login();
     FILE *archivoLocal;
     struct notebook registro_Informacion;
     archivoLocal = fopen("Notebook.txt", "r");
@@ -689,6 +714,8 @@ void listar_Notebook()
 }
 void listar_Escritorio()
 {
+    system("clear");
+    usuario_Login();
     FILE *archivoLocal;
     struct escritorio registro_Informacion;
     archivoLocal = fopen("Escritorio.txt", "r");
@@ -729,6 +756,8 @@ void listar_Escritorio()
 // Buscar Productos
 void actualizar_Teclado()
 {
+    system("clear");
+    usuario_Login();
     struct teclado registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
     int Identificador, bandera = 0;
@@ -785,6 +814,8 @@ void actualizar_Teclado()
 }
 void actualizar_Mouse()
 {
+    system("clear");
+    usuario_Login();
     struct mouse registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
     int Identificador, bandera = 0;
@@ -838,6 +869,8 @@ void actualizar_Mouse()
 }
 void actualizar_Monitor()
 {
+    system("clear");
+    usuario_Login();
     struct monitor registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
     int Identificador, bandera = 0;
@@ -895,6 +928,8 @@ void actualizar_Monitor()
 }
 void actualizar_Notebook()
 {
+    system("clear");
+    usuario_Login();
     struct notebook registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
     int Identificador, bandera = 0;
@@ -959,6 +994,8 @@ void actualizar_Notebook()
 }
 void actualizar_Escritorio()
 {
+    system("clear");
+    usuario_Login();
     struct escritorio registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
     int Identificador, bandera = 0;
@@ -1053,6 +1090,8 @@ void actualizar_Escritorio()
 // Eliminar Productos
 void eliminar_Teclado()
 {
+    system("clear");
+    usuario_Login();
     struct teclado registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
     int Identificador, bandera = 0;
@@ -1095,6 +1134,8 @@ void eliminar_Teclado()
 }
 void eliminar_Mouse()
 {
+    system("clear");
+    usuario_Login();
     struct mouse registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
     int Identificador, bandera = 0;
@@ -1137,6 +1178,8 @@ void eliminar_Mouse()
 }
 void eliminar_Monitor()
 {
+    system("clear");
+    usuario_Login();
     struct monitor registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
     int Identificador, bandera = 0;
@@ -1179,6 +1222,8 @@ void eliminar_Monitor()
 }
 void eliminar_Notebook()
 {
+    system("clear");
+    usuario_Login();
     struct notebook registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
     int Identificador, bandera = 0;
@@ -1221,6 +1266,8 @@ void eliminar_Notebook()
 }
 void eliminar_Escritorio()
 {
+    system("clear");
+    usuario_Login();
     struct escritorio registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
     int Identificador, bandera = 0;
@@ -1274,6 +1321,8 @@ int main(int argc, char const *argv[])
         usuario_Login();
         while (opcion_Menu != 6)
         {
+            system("clear");
+            usuario_Login();
             printf("\n1.Agregar Producto(s)");
             printf("\n2.Listar Productos(s)");
             printf("\n3.Actualizar Productos");
@@ -1407,9 +1456,12 @@ int main(int argc, char const *argv[])
             }
         }
     }
-    else
+    else if (clave == 0)
     {
-        printf("Acceso Denegado");
+        {
+            printf("Acceso Denegado\n");
+        }
     }
+
     return 0;
 }
