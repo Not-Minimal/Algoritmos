@@ -33,7 +33,7 @@ void eliminar_Mouse();
 void eliminar_Monitor();
 void eliminar_Notebook();
 void eliminar_Escritorio();
-//Variables Globales para Stock de Productos
+// Variables Globales para Stock de Productos
 int stock_Teclado = 0, stock_Mouse = 0, stock_Monitor = 0, stock_Notebook = 0, stock_Escritorio = 0;
 
 // Agregar Estructuras Predefinidas
@@ -380,7 +380,7 @@ void agregar_Teclado()
         printf("1. Si\n");
         printf("2. No\n");
         scanf("%d", &otro_Registro);
-
+        stock_Teclado++;
     } while (otro_Registro == 1);
 }
 void agregar_Mouse()
@@ -421,7 +421,7 @@ void agregar_Mouse()
         printf("2. No\n");
         scanf("%d", &otro_Registro);
         fflush(stdin);
-
+        stock_Mouse++;
     } while (otro_Registro == 1);
 }
 void agregar_Monitor()
@@ -464,7 +464,7 @@ void agregar_Monitor()
         printf("1. Si\n");
         printf("2. No\n");
         scanf("%d", &otro_Registro);
-
+        stock_Monitor++;
     } while (otro_Registro == 1);
 }
 void agregar_Notebook()
@@ -514,6 +514,7 @@ void agregar_Notebook()
         printf("2. No\n");
         scanf("%d", &otro_Registro);
         fflush(stdin);
+        stock_Monitor++;
 
     } while (otro_Registro == 1);
 }
@@ -594,7 +595,7 @@ void agregar_Escritorio()
         printf("1. Si\n");
         printf("2. No\n");
         scanf("%d", &otro_Registro);
-
+        stock_Escritorio++;
     } while (otro_Registro == 1);
 }
 
@@ -1131,6 +1132,15 @@ void eliminar_Teclado()
         rename("Temporal.txt", "Teclado.txt");
         printf("Teclado Borrado Correctamente");
     }
+    if (stock_Teclado > 0)
+    {
+        stock_Teclado--;
+    }else
+    {
+        remove("Teclado.txt");
+        stock_Teclado == 0;
+    }
+    
 }
 void eliminar_Mouse()
 {
@@ -1174,6 +1184,14 @@ void eliminar_Mouse()
         remove("Mouse.txt");
         rename("Temporal.txt", "Mouse.txt");
         printf("mouse Borrado Correctamente");
+    }
+    if (stock_Mouse > 0)
+    {
+        stock_Mouse--;
+    }else
+    {
+        remove("Mouse.txt");
+        stock_Mouse == 0;
     }
 }
 void eliminar_Monitor()
@@ -1219,6 +1237,14 @@ void eliminar_Monitor()
         rename("Temporal.txt", "Monitor.txt");
         printf("Monitor Borrado Correctamente");
     }
+    if (stock_Monitor > 0)
+    {
+        stock_Monitor--;
+    }else
+    {
+        remove("Monitor.txt");
+        stock_Monitor == 0;
+    }
 }
 void eliminar_Notebook()
 {
@@ -1263,6 +1289,14 @@ void eliminar_Notebook()
         rename("Temporal.txt", "Notebook.txt");
         printf("Notebook Borrado Correctamente");
     }
+    if (stock_Notebook > 0)
+    {
+        stock_Notebook--;
+    }else
+    {
+        remove("Notebook.txt");
+        stock_Notebook == 0;
+    }
 }
 void eliminar_Escritorio()
 {
@@ -1306,6 +1340,14 @@ void eliminar_Escritorio()
         remove("Escritorio.txt");
         rename("Temporal.txt", "Escritorio.txt");
         printf("Escritorio Borrado Correctamente");
+    }
+    if (stock_Escritorio > 0)
+    {
+        stock_Escritorio--;
+    }else
+    {
+        remove("Escritorio.txt");
+        stock_Escritorio == 0;
     }
 }
 
