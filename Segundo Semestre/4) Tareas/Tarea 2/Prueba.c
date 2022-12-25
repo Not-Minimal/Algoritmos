@@ -38,7 +38,7 @@ void eliminar_Escritorio();
 // Estructura Teclado
 struct teclado
 {
-    int identificador;
+    int Identificador;
     char Marca[20];
     char Modelo[20];
     char Idioma[20];
@@ -47,7 +47,7 @@ struct teclado
 // Estructura Mouse
 struct mouse
 {
-    int identificador;
+    int Identificador;
     char Marca[20];
     char Modelo[20];
 };
@@ -55,7 +55,7 @@ struct mouse
 // Estructura Monitor
 struct monitor
 {
-    int identificador;
+    int Identificador;
     char Marca[20];
     char Modelo[20];
     float Pulgadas[20];
@@ -64,7 +64,7 @@ struct monitor
 // Estructura Notebook
 struct notebook
 {
-    int identificador;
+    int Identificador;
     char Marca[20];
     char Modelo[20];
     int CantidadRam;
@@ -75,7 +75,7 @@ struct notebook
 // Estructura Escritorio
 struct escritorio
 {
-    int identificador;
+    int Identificador;
     char Marca[20];
     char Modelo[20];
     int CantidadRam;
@@ -88,7 +88,7 @@ struct escritorio
 // Estructura Usuario
 typedef struct
 {
-    int identificador;
+    int Identificador;
     char NombreUsuario[20];
     int Clave;
     char Nombres[20];
@@ -120,24 +120,26 @@ int iniciar_Sesion()
     printf("Ingrese Clave: ");
     scanf("%d", &clave);
     fflush(stdin);
-    if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave == registro_Informacion->Clave)) // Tiene que pertenecer a una estructura
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-
-    // do
+    // if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave == registro_Informacion->Clave)) // Tiene que pertenecer a una estructura
     // {
-    //     if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave != registro_Informacion->Clave))
-    //     {
-    //         clave_erronea++;
-    //         return 0;
-    //     }
-
-    // } while (clave_erronea < 2);
+    //     return 1;
+    // }
+    // else
+    // {
+    //     return 0;
+    // }
+    while (strcmp(usuario, registro_Informacion->NombreUsuario) == 1 && clave_erronea < 3)
+    {
+        clave_erronea++;
+        if (strcmp(usuario, registro_Informacion->NombreUsuario) == 1)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+    }
 }
 
 // Funciones Principales
@@ -343,7 +345,7 @@ void agregar_Teclado()
         printf("Agregar Teclado\n");
         archivoLocal = fopen("Teclado.txt", "a");
         printf("Identificador: \n");
-        scanf("%d", &registro_Informacion.identificador);
+        scanf("%d", &registro_Informacion.Identificador);
         fflush(stdin);
         printf("Marca: \n");
         scanf("%s", registro_Informacion.Marca);
@@ -385,7 +387,7 @@ void agregar_Mouse()
         printf("Agregar mouse\n");
         archivoLocal = fopen("Mouse.txt", "a");
         printf("Identificador: \n");
-        scanf("%d", &registro_Informacion.identificador);
+        scanf("%d", &registro_Informacion.Identificador);
         fflush(stdin);
         printf("Marca: \n");
         scanf("%s", registro_Informacion.Marca);
@@ -424,7 +426,7 @@ void agregar_Monitor()
         printf("Agregar monitor\n");
         archivoLocal = fopen("Monitor.txt", "a");
         printf("Identificador: \n");
-        scanf("%d", &registro_Informacion.identificador);
+        scanf("%d", &registro_Informacion.Identificador);
         fflush(stdin);
         printf("Marca: \n");
         scanf("%s", registro_Informacion.Marca);
@@ -465,7 +467,7 @@ void agregar_Notebook()
         printf("Agregar notebook\n");
         archivoLocal = fopen("Notebook.txt", "a");
         printf("Identificador: \n");
-        scanf("%d", &registro_Informacion.identificador);
+        scanf("%d", &registro_Informacion.Identificador);
         fflush(stdin);
         printf("Marca: \n");
         scanf("%s", registro_Informacion.Marca);
@@ -513,7 +515,7 @@ void agregar_Escritorio()
         printf("Agregar escritorio\n");
         archivoLocal = fopen("Escritorio.txt", "a");
         printf("Identificador: \n");
-        scanf("%d", &registro_Informacion.identificador);
+        scanf("%d", &registro_Informacion.Identificador);
         fflush(stdin);
         printf("Marca: \n");
         scanf("%s", registro_Informacion.Marca);
@@ -528,7 +530,7 @@ void agregar_Escritorio()
         scanf("%s", registro_Informacion.Procesador);
         fflush(stdin);
         printf("Identificador Teclado: \n");
-        scanf("%d", &registro_Informacion.direccion_teclado.identificador);
+        scanf("%d", &registro_Informacion.direccion_teclado.Identificador);
         fflush(stdin);
         printf("Marca Teclado: \n");
         scanf("%s", registro_Informacion.direccion_teclado.Marca);
@@ -540,7 +542,7 @@ void agregar_Escritorio()
         scanf("%s", registro_Informacion.direccion_teclado.Idioma);
         fflush(stdin);
         printf("Identificador mouse: \n");
-        scanf("%d", &registro_Informacion.direccion_mouse.identificador);
+        scanf("%d", &registro_Informacion.direccion_mouse.Identificador);
         fflush(stdin);
         printf("Marca mouse: \n");
         scanf("%s", registro_Informacion.direccion_mouse.Marca);
@@ -549,7 +551,7 @@ void agregar_Escritorio()
         scanf("%s", registro_Informacion.direccion_mouse.Modelo);
         fflush(stdin);
         printf("Identificador monitor: \n");
-        scanf("%d", &registro_Informacion.direccion_monitor.identificador);
+        scanf("%d", &registro_Informacion.direccion_monitor.Identificador);
         fflush(stdin);
         printf("Marca monitor: \n");
         scanf("%s", registro_Informacion.direccion_monitor.Marca);
@@ -598,7 +600,7 @@ void listar_Teclado()
     }
     while (fread(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal))
     {
-        printf("\nIdentificador: %d", registro_Informacion.identificador);
+        printf("\nIdentificador: %d", registro_Informacion.Identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
         printf("\nModelo: %s", registro_Informacion.Modelo);
         printf("\nIdioma: %s", registro_Informacion.Idioma);
@@ -612,7 +614,7 @@ void listar_Mouse()
     struct mouse registro_Informacion;
     archivoLocal = fopen("Mouse.txt", "r");
 
-    printf("Listado de mouses\n");
+    printf("Listado de Mouses\n");
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "No existen registros\n");
@@ -624,7 +626,7 @@ void listar_Mouse()
     }
     while (fread(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal))
     {
-        printf("\nIdentificador: %d", registro_Informacion.identificador);
+        printf("\nIdentificador: %d", registro_Informacion.Identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
         printf("\nModelo: %s", registro_Informacion.Modelo);
         printf("\n___________________________\n");
@@ -637,7 +639,7 @@ void listar_Monitor()
     struct monitor registro_Informacion;
     archivoLocal = fopen("Monitor.txt", "r");
 
-    printf("Listado de monitores\n");
+    printf("Listado de Monitores\n");
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "No existen registros\n");
@@ -649,7 +651,7 @@ void listar_Monitor()
     }
     while (fread(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal))
     {
-        printf("\nIdentificador: %d", registro_Informacion.identificador);
+        printf("\nIdentificador: %d", registro_Informacion.Identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
         printf("\nModelo: %s", registro_Informacion.Modelo);
         printf("\nPulgadas: %f", registro_Informacion.Pulgadas);
@@ -663,7 +665,7 @@ void listar_Notebook()
     struct notebook registro_Informacion;
     archivoLocal = fopen("Notebook.txt", "r");
 
-    printf("Listado de notebooks\n");
+    printf("Listado de Notebooks\n");
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "No existen registros\n");
@@ -675,7 +677,7 @@ void listar_Notebook()
     }
     while (fread(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal))
     {
-        printf("\nIdentificador: %d", registro_Informacion.identificador);
+        printf("\nIdentificador: %d", registro_Informacion.Identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
         printf("\nModelo: %s", registro_Informacion.Modelo);
         printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
@@ -703,19 +705,19 @@ void listar_Escritorio()
     }
     while (fread(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal))
     {
-        printf("\nIdentificador: %d", registro_Informacion.identificador);
+        printf("\nIdentificador: %d", registro_Informacion.Identificador);
         printf("\nMarca: %s", registro_Informacion.Marca);
         printf("\nModelo: %s", registro_Informacion.Modelo);
         printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
         printf("\nProcesador: %s", registro_Informacion.Procesador);
-        printf("\nIdentificador Teclado: %d", registro_Informacion.direccion_teclado.identificador);
+        printf("\nIdentificador Teclado: %d", registro_Informacion.direccion_teclado.Identificador);
         printf("\nMarca Teclado: %s", registro_Informacion.direccion_teclado.Marca);
         printf("\nModelo Teclado: %s", registro_Informacion.direccion_teclado.Modelo);
         printf("\nIdioma Teclado: %s", registro_Informacion.direccion_teclado.Idioma);
-        printf("\nIdentificador Mouse: %d", registro_Informacion.direccion_mouse.identificador);
+        printf("\nIdentificador Mouse: %d", registro_Informacion.direccion_mouse.Identificador);
         printf("\nMarca Mouse: %s", registro_Informacion.direccion_mouse.Marca);
         printf("\nModelo Mouse: %s", registro_Informacion.direccion_mouse.Modelo);
-        printf("\nIdentificador Monitor: %d", registro_Informacion.direccion_monitor.identificador);
+        printf("\nIdentificador Monitor: %d", registro_Informacion.direccion_monitor.Identificador);
         printf("\nMarca Monitor: %s", registro_Informacion.direccion_monitor.Marca);
         printf("\nModelo Monitor: %s", registro_Informacion.direccion_monitor.Modelo);
         printf("\nPulgadas Monitor: %f", registro_Informacion.direccion_monitor.Pulgadas);
@@ -729,13 +731,13 @@ void actualizar_Teclado()
 {
     struct teclado registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
-    int identificador, bandera = 0;
+    int Identificador, bandera = 0;
 
-    printf("Eliminar Teclados");
+    printf("Actualizar Teclados\n");
     archivoLocal = fopen("Teclado.txt", "r");
     archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
-    scanf("%d", &identificador);
+    scanf("%d", &Identificador);
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
@@ -744,7 +746,7 @@ void actualizar_Teclado()
 
     while (fread(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal))
     {
-        if (registro_Informacion.identificador == identificador)
+        if (registro_Informacion.Identificador == Identificador)
         {
             printf("\nIngrese los nuevos datos: \n");
             printf("\nMarca: %s", registro_Informacion.Marca);
@@ -772,7 +774,7 @@ void actualizar_Teclado()
 
     if (!bandera)
     {
-        printf("No se encuentra el identificador \n");
+        printf("No se encuentra el Identificador \n");
     }
     if (bandera)
     {
@@ -785,13 +787,13 @@ void actualizar_Mouse()
 {
     struct mouse registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
-    int identificador, bandera = 0;
+    int Identificador, bandera = 0;
 
-    printf("Eliminar Mouses");
+    printf("Actualizar Mouses\n");
     archivoLocal = fopen("Mouse.txt", "r");
     archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
-    scanf("%d", &identificador);
+    scanf("%d", &Identificador);
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
@@ -800,7 +802,7 @@ void actualizar_Mouse()
 
     while (fread(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal))
     {
-        if (registro_Informacion.identificador == identificador)
+        if (registro_Informacion.Identificador == Identificador)
         {
             printf("\nIngrese los nuevos datos: \n");
             printf("\nMarca: %s", registro_Informacion.Marca);
@@ -825,7 +827,7 @@ void actualizar_Mouse()
 
     if (!bandera)
     {
-        printf("No se encuentra el identificador \n");
+        printf("No se encuentra el Identificador \n");
     }
     if (bandera)
     {
@@ -838,13 +840,13 @@ void actualizar_Monitor()
 {
     struct monitor registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
-    int identificador, bandera = 0;
+    int Identificador, bandera = 0;
 
-    printf("Eliminar Monitores");
+    printf("Actualizar Monitores\n");
     archivoLocal = fopen("Monitor.txt", "r");
     archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
-    scanf("%d", &identificador);
+    scanf("%d", &Identificador);
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
@@ -853,7 +855,7 @@ void actualizar_Monitor()
 
     while (fread(&registro_Informacion, sizeof(struct monitor), 1, archivoLocal))
     {
-        if (registro_Informacion.identificador == identificador)
+        if (registro_Informacion.Identificador == Identificador)
         {
             printf("\nIngrese los nuevos datos: \n");
             printf("\nMarca: %s", registro_Informacion.Marca);
@@ -882,7 +884,7 @@ void actualizar_Monitor()
 
     if (!bandera)
     {
-        printf("No se encuentra el identificador \n");
+        printf("No se encuentra el Identificador \n");
     }
     if (bandera)
     {
@@ -895,13 +897,13 @@ void actualizar_Notebook()
 {
     struct notebook registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
-    int identificador, bandera = 0;
+    int Identificador, bandera = 0;
 
-    printf("Eliminar Notebooks");
+    printf("Actualizar Notebooks\n");
     archivoLocal = fopen("Notebook.txt", "r");
     archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
-    scanf("%d", &identificador);
+    scanf("%d", &Identificador);
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
@@ -910,7 +912,7 @@ void actualizar_Notebook()
 
     while (fread(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal))
     {
-        if (registro_Informacion.identificador == identificador)
+        if (registro_Informacion.Identificador == Identificador)
         {
             printf("\nIngrese los nuevos datos: \n");
             printf("\nMarca: %s", registro_Informacion.Marca);
@@ -946,7 +948,7 @@ void actualizar_Notebook()
 
     if (!bandera)
     {
-        printf("No se encuentra el identificador \n");
+        printf("No se encuentra el Identificador \n");
     }
     if (bandera)
     {
@@ -959,13 +961,13 @@ void actualizar_Escritorio()
 {
     struct escritorio registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
-    int identificador, bandera = 0;
+    int Identificador, bandera = 0;
 
-    printf("Eliminar Escritorios");
+    printf("Actualizar Escritorios\n");
     archivoLocal = fopen("Escritorio.txt", "r");
     archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
-    scanf("%d", &identificador);
+    scanf("%d", &Identificador);
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
@@ -974,21 +976,21 @@ void actualizar_Escritorio()
 
     while (fread(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal))
     {
-        if (registro_Informacion.identificador == identificador)
+        if (registro_Informacion.Identificador == Identificador)
         {
             printf("\nIngrese los nuevos datos: \n");
             printf("\nMarca: %s", registro_Informacion.Marca);
             printf("\nModelo: %s", registro_Informacion.Modelo);
             printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
             printf("\nProcesador: %s", registro_Informacion.Procesador);
-            printf("\nIdentificador Teclado: %d", registro_Informacion.direccion_teclado.identificador);
+            printf("\nIdentificador Teclado: %d", registro_Informacion.direccion_teclado.Identificador);
             printf("\nMarca Teclado: %s", registro_Informacion.direccion_teclado.Marca);
             printf("\nModelo Teclado: %s", registro_Informacion.direccion_teclado.Modelo);
             printf("\nIdioma Teclado: %s", registro_Informacion.direccion_teclado.Idioma);
-            printf("\nIdentificador Mouse: %d", registro_Informacion.direccion_mouse.identificador);
+            printf("\nIdentificador Mouse: %d", registro_Informacion.direccion_mouse.Identificador);
             printf("\nMarca Mouse: %s", registro_Informacion.direccion_mouse.Marca);
             printf("\nModelo Mouse: %s", registro_Informacion.direccion_mouse.Modelo);
-            printf("\nIdentificador Monitor: %d", registro_Informacion.direccion_monitor.identificador);
+            printf("\nIdentificador Monitor: %d", registro_Informacion.direccion_monitor.Identificador);
             printf("\nMarca Monitor: %s", registro_Informacion.direccion_monitor.Marca);
             printf("\nModelo Monitor: %s", registro_Informacion.direccion_monitor.Modelo);
             printf("\nPulgadas Monitor: %f", registro_Informacion.direccion_monitor.Pulgadas);
@@ -1039,7 +1041,7 @@ void actualizar_Escritorio()
 
     if (!bandera)
     {
-        printf("No se encuentra el identificador \n");
+        printf("No se encuentra el Identificador \n");
     }
     if (bandera)
     {
@@ -1053,13 +1055,13 @@ void eliminar_Teclado()
 {
     struct teclado registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
-    int identificador, bandera = 0;
+    int Identificador, bandera = 0;
 
-    printf("Eliminar Teclados");
+    printf("Eliminar Teclados\n");
     archivoLocal = fopen("Teclado.txt", "r");
     archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
-    scanf("%d", &identificador);
+    scanf("%d", &Identificador);
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
@@ -1068,7 +1070,7 @@ void eliminar_Teclado()
 
     while (fread(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal))
     {
-        if (registro_Informacion.identificador == identificador)
+        if (registro_Informacion.Identificador == Identificador)
         {
             bandera = 1;
         }
@@ -1082,7 +1084,7 @@ void eliminar_Teclado()
 
     if (!bandera)
     {
-        printf("No se encuentra el identificador \n");
+        printf("No se encuentra el Identificador \n");
     }
     if (bandera)
     {
@@ -1095,13 +1097,13 @@ void eliminar_Mouse()
 {
     struct mouse registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
-    int identificador, bandera = 0;
+    int Identificador, bandera = 0;
 
-    printf("Eliminar mouses");
+    printf("Eliminar Mouses\n");
     archivoLocal = fopen("Mouse.txt", "r");
     archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
-    scanf("%d", &identificador);
+    scanf("%d", &Identificador);
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
@@ -1110,7 +1112,7 @@ void eliminar_Mouse()
 
     while (fread(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal))
     {
-        if (registro_Informacion.identificador == identificador)
+        if (registro_Informacion.Identificador == Identificador)
         {
             bandera = 1;
         }
@@ -1124,7 +1126,7 @@ void eliminar_Mouse()
 
     if (!bandera)
     {
-        printf("No se encuentra el identificador \n");
+        printf("No se encuentra el Identificador \n");
     }
     if (bandera)
     {
@@ -1137,13 +1139,13 @@ void eliminar_Monitor()
 {
     struct monitor registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
-    int identificador, bandera = 0;
+    int Identificador, bandera = 0;
 
-    printf("Eliminar Monitoress");
+    printf("Eliminar Monitores\n");
     archivoLocal = fopen("Monitor.txt", "r");
     archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
-    scanf("%d", &identificador);
+    scanf("%d", &Identificador);
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
@@ -1152,7 +1154,7 @@ void eliminar_Monitor()
 
     while (fread(&registro_Informacion, sizeof(struct monitor), 1, archivoLocal))
     {
-        if (registro_Informacion.identificador == identificador)
+        if (registro_Informacion.Identificador == Identificador)
         {
             bandera = 1;
         }
@@ -1166,7 +1168,7 @@ void eliminar_Monitor()
 
     if (!bandera)
     {
-        printf("No se encuentra el identificador \n");
+        printf("No se encuentra el Identificador \n");
     }
     if (bandera)
     {
@@ -1179,13 +1181,13 @@ void eliminar_Notebook()
 {
     struct notebook registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
-    int identificador, bandera = 0;
+    int Identificador, bandera = 0;
 
-    printf("Eliminar Notebooks");
+    printf("Eliminar Notebooks\n");
     archivoLocal = fopen("Notebook.txt", "r");
     archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
-    scanf("%d", &identificador);
+    scanf("%d", &Identificador);
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
@@ -1194,7 +1196,7 @@ void eliminar_Notebook()
 
     while (fread(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal))
     {
-        if (registro_Informacion.identificador == identificador)
+        if (registro_Informacion.Identificador == Identificador)
         {
             bandera = 1;
         }
@@ -1208,7 +1210,7 @@ void eliminar_Notebook()
 
     if (!bandera)
     {
-        printf("No se encuentra el identificador \n");
+        printf("No se encuentra el Identificador \n");
     }
     if (bandera)
     {
@@ -1221,13 +1223,13 @@ void eliminar_Escritorio()
 {
     struct escritorio registro_Informacion;
     FILE *archivoLocal, *archivoLocal1;
-    int identificador, bandera = 0;
+    int Identificador, bandera = 0;
 
-    printf("Eliminar Escritorios");
+    printf("Eliminar Escritorios\n");
     archivoLocal = fopen("Escritorio.txt", "r");
     archivoLocal1 = fopen("Temporal.txt", "w");
     printf("Ingrese el Identificador: ");
-    scanf("%d", &identificador);
+    scanf("%d", &Identificador);
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
@@ -1236,7 +1238,7 @@ void eliminar_Escritorio()
 
     while (fread(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal))
     {
-        if (registro_Informacion.identificador == identificador)
+        if (registro_Informacion.Identificador == Identificador)
         {
             bandera = 1;
         }
@@ -1250,7 +1252,7 @@ void eliminar_Escritorio()
 
     if (!bandera)
     {
-        printf("No se encuentra el identificador \n");
+        printf("No se encuentra el Identificador \n");
     }
     if (bandera)
     {
@@ -1397,8 +1399,8 @@ int main(int argc, char const *argv[])
                 break;
             }
             default:
-                printf("Ingrese un numero valido\n");
-                printf("Ingrese 0 para continuar: ");
+                printf("Opcion Invalidad\n");
+                printf("Ingrese algun numero para continuar: ");
                 int continuar;
                 scanf("%d", &continuar);
                 break;
