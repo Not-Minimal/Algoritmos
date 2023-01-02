@@ -33,6 +33,8 @@ void eliminar_Mouse();
 void eliminar_Monitor();
 void eliminar_Notebook();
 void eliminar_Escritorio();
+// Funcion para volver stock de productos a 0
+void reiniciar_Stock();
 // Variables Globales para Stock de Productos
 int stock_Teclado = 0, stock_Mouse = 0, stock_Monitor = 0, stock_Notebook = 0, stock_Escritorio = 0;
 
@@ -194,9 +196,6 @@ int actualizar_Productos()
     // system("clear");
     usuario_Login();
     int opcion;
-    printf("Ingrese opcion: ");
-    scanf("%d", &opcion);
-    fflush(stdin);
 
     printf("\n1.Actualizar Teclado");
     printf("\n2.Actualizar Mouse");
@@ -244,9 +243,6 @@ int listar_Productos()
     // system("clear");
     usuario_Login();
     int opcion;
-    printf("Ingrese opcion: ");
-    scanf("%d", &opcion);
-    fflush(stdin);
 
     printf("\n1.Listar Teclado");
     printf("\n2.Listar Mouse");
@@ -294,9 +290,7 @@ int eliminar_Productos()
     // system("clear");
     usuario_Login();
     int opcion;
-    printf("Ingrese opcion: ");
-    scanf("%d", &opcion);
-    fflush(stdin);
+    
 
     printf("\n1.Eliminar Teclado");
     printf("\n2.Eliminar Mouse");
@@ -781,9 +775,9 @@ void actualizar_Teclado()
     {
         if (registro_Informacion.Identificador == Identificador)
         {
-            printf("\nIngrese los nuevos datos: \n");
-            printf("\nMarca: %s", registro_Informacion.Marca);
-            printf("\nModelo: %s", registro_Informacion.Modelo);
+            printf("\nIngrese los nuevos datos:\n");
+            printf("Marca: %s\n", registro_Informacion.Marca);
+            printf("Modelo: %s\n", registro_Informacion.Modelo);
             fflush(stdin);
             printf("Ingrese nueva Marca: \n");
             scanf("%s", registro_Informacion.Marca);
@@ -840,8 +834,8 @@ void actualizar_Mouse()
         if (registro_Informacion.Identificador == Identificador)
         {
             printf("\nIngrese los nuevos datos: \n");
-            printf("\nMarca: %s", registro_Informacion.Marca);
-            printf("\nModelo: %s", registro_Informacion.Modelo);
+            printf("Marca: %s\n", registro_Informacion.Marca);
+            printf("Modelo: %s\n", registro_Informacion.Modelo);
             fflush(stdin);
             printf("Ingrese nueva Marca: \n");
             scanf("%s", registro_Informacion.Marca);
@@ -895,9 +889,9 @@ void actualizar_Monitor()
         if (registro_Informacion.Identificador == Identificador)
         {
             printf("\nIngrese los nuevos datos: \n");
-            printf("\nMarca: %s", registro_Informacion.Marca);
-            printf("\nModelo: %s", registro_Informacion.Modelo);
-            printf("\nPulgadas: %d", registro_Informacion.Pulgadas);
+            printf("Marca: %s\n", registro_Informacion.Marca);
+            printf("Modelo: %s\n", registro_Informacion.Modelo);
+            printf("Pulgadas: %d\n", registro_Informacion.Pulgadas);
             fflush(stdin);
             printf("Ingrese nueva Marca: \n");
             scanf("%s", registro_Informacion.Marca);
@@ -954,11 +948,11 @@ void actualizar_Notebook()
         if (registro_Informacion.Identificador == Identificador)
         {
             printf("\nIngrese los nuevos datos: \n");
-            printf("\nMarca: %s", registro_Informacion.Marca);
-            printf("\nModelo: %s", registro_Informacion.Modelo);
-            printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
-            printf("\nProcesador: %s", registro_Informacion.Procesador);
-            printf("\nPulgadas: %d", registro_Informacion.Pulgadas);
+            printf("Marca: %s\n", registro_Informacion.Marca);
+            printf("Modelo: %s\n", registro_Informacion.Modelo);
+            printf("Cantidad de Ram: %d\n", registro_Informacion.CantidadRam);
+            printf("Procesador: %s\n", registro_Informacion.Procesador);
+            printf("Pulgadas: %d\n", registro_Informacion.Pulgadas);
             printf("Ingrese Nueva Marca: \n");
             scanf("%s", registro_Informacion.Marca);
             fflush(stdin);
@@ -1020,21 +1014,21 @@ void actualizar_Escritorio()
         if (registro_Informacion.Identificador == Identificador)
         {
             printf("\nIngrese los nuevos datos: \n");
-            printf("\nMarca: %s", registro_Informacion.Marca);
-            printf("\nModelo: %s", registro_Informacion.Modelo);
-            printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
-            printf("\nProcesador: %s", registro_Informacion.Procesador);
-            printf("\nIdentificador Teclado: %d", registro_Informacion.direccion_teclado.Identificador);
-            printf("\nMarca Teclado: %s", registro_Informacion.direccion_teclado.Marca);
-            printf("\nModelo Teclado: %s", registro_Informacion.direccion_teclado.Modelo);
-            printf("\nIdioma Teclado: %s", registro_Informacion.direccion_teclado.Idioma);
-            printf("\nIdentificador Mouse: %d", registro_Informacion.direccion_mouse.Identificador);
-            printf("\nMarca Mouse: %s", registro_Informacion.direccion_mouse.Marca);
-            printf("\nModelo Mouse: %s", registro_Informacion.direccion_mouse.Modelo);
-            printf("\nIdentificador Monitor: %d", registro_Informacion.direccion_monitor.Identificador);
-            printf("\nMarca Monitor: %s", registro_Informacion.direccion_monitor.Marca);
-            printf("\nModelo Monitor: %s", registro_Informacion.direccion_monitor.Modelo);
-            printf("\nPulgadas Monitor: %d", registro_Informacion.direccion_monitor.Pulgadas);
+            printf("Marca: %s\n", registro_Informacion.Marca);
+            printf("Modelo: %s\n", registro_Informacion.Modelo);
+            printf("Cantidad de Ram: %d", registro_Informacion.CantidadRam);
+            printf("Procesador: %s\n", registro_Informacion.Procesador);
+            printf("Identificador Teclado: %d", registro_Informacion.direccion_teclado.Identificador);
+            printf("Marca Teclado: %s\n", registro_Informacion.direccion_teclado.Marca);
+            printf("Modelo Teclado: %s\n", registro_Informacion.direccion_teclado.Modelo);
+            printf("Idioma Teclado: %s\n", registro_Informacion.direccion_teclado.Idioma);
+            printf("Identificador Mouse: %d", registro_Informacion.direccion_mouse.Identificador);
+            printf("Marca Mouse: %s\n", registro_Informacion.direccion_mouse.Marca);
+            printf("Modelo Mouse: %s\n", registro_Informacion.direccion_mouse.Modelo);
+            printf("Identificador Monitor: %d\n", registro_Informacion.direccion_monitor.Identificador);
+            printf("Marca Monitor: %s\n", registro_Informacion.direccion_monitor.Marca);
+            printf("Modelo Monitor: %s\n", registro_Informacion.direccion_monitor.Modelo);
+            printf("Pulgadas Monitor: %d\n", registro_Informacion.direccion_monitor.Pulgadas);
 
             printf("Ingrese Nueva Marca: \n");
             scanf("%s", registro_Informacion.Marca);
@@ -1135,12 +1129,7 @@ void eliminar_Teclado()
         rename("Temporal.txt", "Teclado.txt");
         printf("Teclado Borrado Correctamente\n");
     }
-    if (stock_Teclado == 0)
-    {
-        remove("Temporal.txt");
-        remove("Teclado.txt");
-    }
-    else
+    if (stock_Teclado > 0)
     {
         stock_Teclado--;
     }
@@ -1192,10 +1181,6 @@ void eliminar_Mouse()
     {
         stock_Mouse--;
     }
-    else
-    {
-        remove("Mouse.txt");
-    }
 }
 void eliminar_Monitor()
 {
@@ -1243,10 +1228,6 @@ void eliminar_Monitor()
     if (stock_Monitor > 0)
     {
         stock_Monitor--;
-    }
-    else
-    {
-        remove("Monitor.txt");
     }
 }
 void eliminar_Notebook()
@@ -1344,14 +1325,18 @@ void eliminar_Escritorio()
         rename("Temporal.txt", "Escritorio.txt");
         printf("Escritorio Borrado Correctamente\n");
     }
-    if (stock_Escritorio == 0)
-    {
-        remove("Escritorio.txt");
-    }
-    else
+    if (stock_Escritorio > 0)
     {
         stock_Escritorio--;
     }
+}
+void reiniciar_Stock()
+{
+    remove("Teclado.txt");
+    remove("Mouse.txt");
+    remove("Monitor.txt");
+    remove("Notebook.txt");
+    remove("Escritorio.txt");
 }
 
 int main(int argc, char const *argv[])
@@ -1364,7 +1349,7 @@ int main(int argc, char const *argv[])
     {
         system("Clear");
         printf("Acceso Permitido\n");
-        while (opcion_Menu != 6)
+        while (opcion_Menu != 7)
         {
 
             usuario_Login();
@@ -1373,7 +1358,8 @@ int main(int argc, char const *argv[])
             printf("\n3.Actualizar Productos");
             printf("\n4.Eliminar Productos");
             printf("\n5.Ver Stock Productos");
-            printf("\n6.Salir");
+            printf("\n6.Reiniciar Stock(Elimina todo registro)");
+            printf("\n7.Salir");
             printf("\nIngrese opcion: ");
             scanf("%d", &opcion_Menu);
 
@@ -1499,6 +1485,17 @@ int main(int argc, char const *argv[])
             }
             case 6:
             {
+                reiniciar_Stock();
+                printf("El Inventario se ha reiniciado:\n");
+                printf("Teclados Eliminados\n");
+                printf("Mouses Eliminados\n");
+                printf("Monitores Eliminados\n");
+                printf("Notebooks Eliminados\n");
+                printf("PC Escritorio Eliminados\n");
+                break;
+            }
+            case 7:
+            {
                 printf("Gracias :)");
                 exit(0);
                 break;
@@ -1521,4 +1518,4 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
-//Ver parte de eliminar ficheros... Dejar igual todas las funciones, Falta funcion buscar por marca y listo.
+// Ver parte de eliminar ficheros... Dejar igual todas las funciones, Falta funcion buscar por marca y listo.
