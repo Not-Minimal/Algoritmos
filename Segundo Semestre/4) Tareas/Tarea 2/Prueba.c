@@ -35,6 +35,14 @@ void eliminar_Notebook();
 void eliminar_Escritorio();
 // Funcion para volver stock de productos a 0
 void reiniciar_Stock();
+// Funcion para buscar por marcas de productos
+void buscar_Marcas();
+// Funciones Secundarias Encargadas de buscar productos por marca
+void buscar_Teclado();
+void buscar_Mouse();
+void buscar_Monitor();
+void buscar_Notebook();
+void buscar_Escritorio();
 // Variables Globales para Stock de Productos
 int stock_Teclado = 0, stock_Mouse = 0, stock_Monitor = 0, stock_Notebook = 0, stock_Escritorio = 0;
 
@@ -290,7 +298,6 @@ int eliminar_Productos()
     // system("clear");
     usuario_Login();
     int opcion;
-    
 
     printf("\n1.Eliminar Teclado");
     printf("\n2.Eliminar Mouse");
@@ -1339,6 +1346,15 @@ void reiniciar_Stock()
     remove("Escritorio.txt");
 }
 
+void buscar_Marcas()
+{
+    buscar_Teclado();
+    buscar_Mouse();
+    buscar_Monitor();
+    buscar_Notebook();
+    buscar_Escritorio();
+}
+
 int main(int argc, char const *argv[])
 {
     int clave; // Admin 123
@@ -1349,7 +1365,7 @@ int main(int argc, char const *argv[])
     {
         system("Clear");
         printf("Acceso Permitido\n");
-        while (opcion_Menu != 7)
+        while (opcion_Menu != 8)
         {
 
             usuario_Login();
@@ -1359,7 +1375,8 @@ int main(int argc, char const *argv[])
             printf("\n4.Eliminar Productos");
             printf("\n5.Ver Stock Productos");
             printf("\n6.Reiniciar Stock(Elimina todo registro)");
-            printf("\n7.Salir");
+            printf("\n7.Buscar por Marca");
+            printf("\n8.Salir");
             printf("\nIngrese opcion: ");
             scanf("%d", &opcion_Menu);
 
@@ -1481,8 +1498,8 @@ int main(int argc, char const *argv[])
                 printf("%d Monitores\n", stock_Monitor);
                 printf("%d Notebooks\n", stock_Notebook);
                 printf("%d PC Escritorio\n", stock_Escritorio);
-                break;
             }
+            break;
             case 6:
             {
                 reiniciar_Stock();
@@ -1491,10 +1508,15 @@ int main(int argc, char const *argv[])
                 printf("Mouses Eliminados\n");
                 printf("Monitores Eliminados\n");
                 printf("Notebooks Eliminados\n");
-                printf("PC Escritorio Eliminados\n");
+                printf("PC's de Escritorio Eliminados\n");
+            }
+            break;
+            case 7:
+            {
+                buscar_Marcas();
                 break;
             }
-            case 7:
+            case 8:
             {
                 printf("Gracias :)");
                 exit(0);
