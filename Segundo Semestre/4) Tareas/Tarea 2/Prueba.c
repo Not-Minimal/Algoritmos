@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 // Prototipos de Funciones Principales
-int iniciar_Sesion();
-void usuario_Login();
-int agregar_Productos();
-int actualizar_Productos();
-int listar_Productos();
-int eliminar_Productos();
+int iniciar_Sesion(); //Funcion para Entrar en el programa con maximo 3 intentos
+void usuario_Login(); //Funcion en la que los datos del usuario estan precargados: Nombres, Apellido Paterno y Materno 
+int agregar_Productos(); //Funcion que retorna la opcion seleccionada para Agregar productos
+int actualizar_Productos(); //Funcion que retorna la opcion seleccionada para Actualizar productos
+int listar_Productos(); //Funcion que retorna la opcion seleccionada para Listar productos
+int eliminar_Productos(); //Funcion que retorna la opcion seleccionada para Eliminar productos
 void reiniciar_Stock(); // Funcion para volver stock de productos a 0
 void buscar_Marcas();   // Funcion para buscar por marcas de productos
 // Funciones Secundarias Encargadas de Agregar productos
@@ -107,8 +107,7 @@ struct usuario
 
 void usuario_Login()
 {
-    // system("clear");
-    //  Precargar Datos de Usuario
+    // Precargar Datos de Usuario
     struct usuario registro_Informacion[2];
     strcpy(registro_Informacion->Nombres, "Saul");
     strcpy(registro_Informacion->ApellidoPaterno, "Munoz");
@@ -117,12 +116,10 @@ void usuario_Login()
 }
 int iniciar_Sesion()
 {
-    // system("clear");
-    //  Precargar Nombre de Usuario y Contraseña
+    // Precargar Nombre de Usuario y Contraseña
     struct usuario registro_Informacion[1];
-    strcpy(registro_Informacion->NombreUsuario, "Admin");
-    registro_Informacion->Clave = 123;
-
+    strcpy(registro_Informacion->NombreUsuario, "Admin"); //Copia el Usuario a la estructura
+    registro_Informacion->Clave = 123; //Copia la contraseña a la estructura
     char usuario[6];
     int clave, clave_erronea = 0, bandera = 0;
     while (strcmp(usuario, registro_Informacion->NombreUsuario) != 0 || clave_erronea < 3)
@@ -133,7 +130,7 @@ int iniciar_Sesion()
         printf("Ingrese Clave: ");
         scanf("%d", &clave);
         fflush(stdin);
-        if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave == registro_Informacion->Clave))
+        if ((strcmp(usuario, registro_Informacion->NombreUsuario) == 0 && clave == registro_Informacion->Clave)) //Si se cumple la condicion pasa al siguiente if donde retorna el valor 1, de lo contrario al intento numero 3 retorna 0.
         {
             bandera = 1;
         }
@@ -1696,7 +1693,7 @@ int main(int argc, char const *argv[])
                 break;
             }
             default:
-                printf("Opcion Invalidad\n");
+                printf("Opcion Invalida\n");
                 printf("Ingrese algun numero para continuar: ");
                 int continuar;
                 scanf("%d", &continuar);
