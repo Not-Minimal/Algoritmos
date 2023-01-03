@@ -1539,8 +1539,8 @@ int main(int argc, char const *argv[])
         {
 
             usuario_Login();
-            printf("\n1.Agregar Producto(s)");
-            printf("\n2.Listar Productos(s)");
+            printf("\n1.Agregar Productos");
+            printf("\n2.Listar Productos");
             printf("\n3.Actualizar Productos");
             printf("\n4.Eliminar Productos");
             printf("\n5.Ver Stock Productos");
