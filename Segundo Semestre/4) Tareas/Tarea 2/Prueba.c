@@ -2,6 +2,15 @@
 #include <string.h>
 #include <stdlib.h>
 
+//Definir variables clave para el procesador
+#define Longitud_Cadena_Maxima 1000
+#define Cantidad_Lineas 20
+#define Teclado "Teclado.txt"
+#define Mouse "Mouse.txt"
+#define Monitor "Monitor.txt"
+#define Notebook "Notebook.txt"
+#define Escritorio "Escritorio.txt"
+
 // Prototipos de Funciones Principales
 int iniciar_Sesion();
 void usuario_Login();
@@ -19,7 +28,7 @@ void agregar_Notebook();
 void agregar_Escritorio();
 // Funciones Secundarias Encargadas de Actualizar productos
 void actualizar_Teclado();
-void actualizar_Mouse();
+void actualizar_Mouse();ß
 void actualizar_Monitor();
 void actualizar_Notebook();
 void actualizar_Escritorio();
