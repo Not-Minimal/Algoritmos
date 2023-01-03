@@ -10,7 +10,7 @@ int actualizar_Productos();
 int listar_Productos();
 int eliminar_Productos();
 void reiniciar_Stock(); // Funcion para volver stock de productos a 0
-void buscar_Marcas(); // Funcion para buscar por marcas de productos
+void buscar_Marcas();   // Funcion para buscar por marcas de productos
 // Funciones Secundarias Encargadas de Agregar productos
 void agregar_Teclado();
 void agregar_Mouse();
@@ -44,7 +44,6 @@ void buscar_Escritorio();
 // Variables Globales para Stock de Productos
 int stock_Teclado = 0, stock_Mouse = 0, stock_Monitor = 0, stock_Notebook = 0, stock_Escritorio = 0;
 
-// Agregar Estructuras Predefinidas
 // Estructura Teclado
 struct teclado
 {
@@ -336,6 +335,23 @@ int eliminar_Productos()
     }
     break;
     }
+}
+void reiniciar_Stock()
+{
+    remove("Teclado.txt");
+    remove("Mouse.txt");
+    remove("Monitor.txt");
+    remove("Notebook.txt");
+    remove("Escritorio.txt");
+}
+
+void buscar_Marcas()
+{
+    buscar_Teclado();
+    buscar_Mouse();
+    buscar_Monitor();
+    buscar_Notebook();
+    buscar_Escritorio();
 }
 
 // Funciones Secundarias de Agregar Productos
@@ -1335,22 +1351,181 @@ void eliminar_Escritorio()
         stock_Escritorio--;
     }
 }
-void reiniciar_Stock()
-{
-    remove("Teclado.txt");
-    remove("Mouse.txt");
-    remove("Monitor.txt");
-    remove("Notebook.txt");
-    remove("Escritorio.txt");
-}
 
-void buscar_Marcas()
+void buscar_Teclado()
 {
-    buscar_Teclado();
-    buscar_Mouse();
-    buscar_Monitor();
-    buscar_Notebook();
-    buscar_Escritorio();
+    usuario_Login();
+    struct teclado registro_Informacion;
+    FILE *archivoLocal;
+    char marca[20];
+
+    printf("Teclados por Marca\n");
+    archivoLocal = fopen("Teclado.txt", "r");
+    printf("Ingrese la marca: ");
+    scanf("%s", marca);
+    if (archivoLocal == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+    printf("Teclados\n");
+    while (fread(&registro_Informacion, sizeof(struct teclado), 1, archivoLocal))
+    {
+        if ((strcmp(marca, registro_Informacion.Marca)) == 0)
+        {
+            printf("\n");
+            usuario_Login();
+            printf("\nIdentificador: %d", registro_Informacion.Identificador);
+            printf("\nMarca: %s", registro_Informacion.Marca);
+            printf("\nModelo: %s", registro_Informacion.Modelo);
+            printf("\nIdioma: %s", registro_Informacion.Idioma);
+            printf("\n___________________________\n");
+        }
+    }
+    fclose(archivoLocal);
+}
+void buscar_Mouse()
+{
+    usuario_Login();
+    struct mouse registro_Informacion;
+    FILE *archivoLocal;
+    char marca[20];
+
+    printf("Mouses por Marca\n");
+    archivoLocal = fopen("Mouse.txt", "r");
+    printf("Ingrese la marca: ");
+    scanf("%s", marca);
+    if (archivoLocal == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+    printf("Mouses\n");
+    while (fread(&registro_Informacion, sizeof(struct mouse), 1, archivoLocal))
+    {
+        if ((strcmp(marca, registro_Informacion.Marca)) == 0)
+        {
+            printf("\n");
+            usuario_Login();
+            printf("\nIdentificador: %d", registro_Informacion.Identificador);
+            printf("\nMarca: %s", registro_Informacion.Marca);
+            printf("\nModelo: %s", registro_Informacion.Modelo);
+            printf("\n___________________________\n");
+        }
+    }
+    fclose(archivoLocal);
+}
+void buscar_Monitor()
+{
+    usuario_Login();
+    struct monitor registro_Informacion;
+    FILE *archivoLocal;
+    char marca[20];
+
+    printf("Monitores por Marca\n");
+    archivoLocal = fopen("Monitor.txt", "r");
+    printf("Ingrese la marca: ");
+    scanf("%s", marca);
+    if (archivoLocal == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+    printf("Monitores\n");
+    while (fread(&registro_Informacion, sizeof(struct monitor), 1, archivoLocal))
+    {
+        if ((strcmp(marca, registro_Informacion.Marca)) == 0)
+        {
+            printf("\n");
+            usuario_Login();
+            printf("\nIdentificador: %d", registro_Informacion.Identificador);
+            printf("\nMarca: %s", registro_Informacion.Marca);
+            printf("\nModelo: %s", registro_Informacion.Modelo);
+            printf("\nPulgadas: %d", registro_Informacion.Pulgadas);
+            printf("\n___________________________\n");
+        }
+    }
+    fclose(archivoLocal);
+}
+void buscar_Notebook()
+{
+
+    usuario_Login();
+    struct notebook registro_Informacion;
+    FILE *archivoLocal;
+    char marca[20];
+
+    printf("Notebooks por Marca\n");
+    archivoLocal = fopen("Notebook.txt", "r");
+    printf("Ingrese la marca: ");
+    scanf("%s", marca);
+    if (archivoLocal == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+    printf("Notebooks\n");
+    while (fread(&registro_Informacion, sizeof(struct notebook), 1, archivoLocal))
+    {
+        if ((strcmp(marca, registro_Informacion.Marca)) == 0)
+        {
+            printf("\n");
+            usuario_Login();
+            printf("\nIdentificador: %d", registro_Informacion.Identificador);
+            printf("\nMarca: %s", registro_Informacion.Marca);
+            printf("\nModelo: %s", registro_Informacion.Modelo);
+            printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
+            printf("\nProcesador: %s", registro_Informacion.Procesador);
+            printf("\nPulgadas: %d", registro_Informacion.Pulgadas);
+            printf("\n___________________________\n");
+        }
+    }
+    fclose(archivoLocal);
+}
+void buscar_Escritorio()
+{
+
+    usuario_Login();
+    struct escritorio registro_Informacion;
+    FILE *archivoLocal;
+    char marca[20];
+
+    printf("Escritorios por Marca\n");
+    archivoLocal = fopen("Escritorio.txt", "r");
+    printf("Ingrese la marca: ");
+    scanf("%s", marca);
+    if (archivoLocal == NULL)
+    {
+        fprintf(stderr, "\nNo se encuentra el archivo\n");
+        exit(0);
+    }
+    printf("Escritorios\n");
+    while (fread(&registro_Informacion, sizeof(struct escritorio), 1, archivoLocal))
+    {
+        if ((strcmp(marca, registro_Informacion.Marca)) == 0)
+        {
+            printf("\n");
+            usuario_Login();
+            printf("\nIdentificador: %d", registro_Informacion.Identificador);
+            printf("\nMarca: %s", registro_Informacion.Marca);
+            printf("\nModelo: %s", registro_Informacion.Modelo);
+            printf("\nCantidad de Ram: %d", registro_Informacion.CantidadRam);
+            printf("\nProcesador: %s", registro_Informacion.Procesador);
+            printf("\nIdentificador Teclado: %d", registro_Informacion.direccion_teclado.Identificador);
+            printf("\nMarca Teclado: %s", registro_Informacion.direccion_teclado.Marca);
+            printf("\nModelo Teclado: %s", registro_Informacion.direccion_teclado.Modelo);
+            printf("\nIdioma Teclado: %s", registro_Informacion.direccion_teclado.Idioma);
+            printf("\nIdentificador Mouse: %d", registro_Informacion.direccion_mouse.Identificador);
+            printf("\nMarca Mouse: %s", registro_Informacion.direccion_mouse.Marca);
+            printf("\nModelo Mouse: %s", registro_Informacion.direccion_mouse.Modelo);
+            printf("\nIdentificador Monitor: %d", registro_Informacion.direccion_monitor.Identificador);
+            printf("\nMarca Monitor: %s", registro_Informacion.direccion_monitor.Marca);
+            printf("\nModelo Monitor: %s", registro_Informacion.direccion_monitor.Modelo);
+            printf("\nPulgadas Monitor: %d", registro_Informacion.direccion_monitor.Pulgadas);
+            printf("\n___________________________\n");
+        }
+    }
+    fclose(archivoLocal);
 }
 
 int main(int argc, char const *argv[])
