@@ -9,6 +9,8 @@ int agregar_Productos();
 int actualizar_Productos();
 int listar_Productos();
 int eliminar_Productos();
+void reiniciar_Stock(); // Funcion para volver stock de productos a 0
+void buscar_Marcas(); // Funcion para buscar por marcas de productos
 // Funciones Secundarias Encargadas de Agregar productos
 void agregar_Teclado();
 void agregar_Mouse();
@@ -33,10 +35,6 @@ void eliminar_Mouse();
 void eliminar_Monitor();
 void eliminar_Notebook();
 void eliminar_Escritorio();
-// Funcion para volver stock de productos a 0
-void reiniciar_Stock();
-// Funcion para buscar por marcas de productos
-void buscar_Marcas();
 // Funciones Secundarias Encargadas de buscar productos por marca
 void buscar_Teclado();
 void buscar_Mouse();
