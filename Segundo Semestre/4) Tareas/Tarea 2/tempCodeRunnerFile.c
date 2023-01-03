@@ -1,1 +1,1 @@
-elim
+fprintf
