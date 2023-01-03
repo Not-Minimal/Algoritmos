@@ -1713,4 +1713,4 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
-// Ver ciclo while que a veces cierra cuando no deberia
+// Ver ciclo while que a veces cierra cuando no deberia...  Error en C :(
