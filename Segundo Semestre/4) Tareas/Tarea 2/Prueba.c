@@ -1713,4 +1713,4 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
-// Ver parte de eliminar ficheros... Dejar igual todas las funciones, Falta funcion buscar por marca y listo.
+// Ver ciclo while que a veces cierra cuando no deberia
