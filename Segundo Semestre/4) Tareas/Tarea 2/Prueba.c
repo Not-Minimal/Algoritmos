@@ -1,3 +1,4 @@
+//20.374.510-9, Saul Muñoz Pedreros
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -784,6 +785,7 @@ void actualizar_Teclado()
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
+        remove("Temporal.txt");
         exit(0);
     }
 
@@ -841,6 +843,7 @@ void actualizar_Mouse()
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
+        remove("Temporal.txt");
         exit(0);
     }
 
@@ -895,6 +898,7 @@ void actualizar_Monitor()
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
+        remove("Temporal.txt");
         exit(0);
     }
 
@@ -953,6 +957,7 @@ void actualizar_Notebook()
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
+        remove("Temporal.txt");
         exit(0);
     }
 
@@ -1018,6 +1023,7 @@ void actualizar_Escritorio()
     if (archivoLocal == NULL)
     {
         fprintf(stderr, "\nNo se encuentra el archivo\n");
+        remove("Temporal.txt");
         exit(0);
     }
 
