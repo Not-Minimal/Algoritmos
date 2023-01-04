@@ -1,4 +1,5 @@
 //20.374.510-9, Saul Muñoz Pedreros
+//Link a github: https://github.com/Not-Minimal/Algoritmos/blob/main/Segundo%20Semestre/4)%20Tareas/Tarea%202/Prueba.c
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
