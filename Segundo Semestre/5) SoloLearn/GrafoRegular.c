@@ -123,3 +123,74 @@ int main()
 
     return 0;
 }
+
+/*
+Para determinar si una secuencia de m vértices Ci es un ciclo en un grafo G(V,E), se pueden seguir estos pasos:
+
+Verificar que el primer y último vértice de la secuencia sean iguales.
+Verificar que cada par consecutivo de vértices en la secuencia tenga un arco entre ellos en el grafo G.
+Verificar que no haya ningún arco que no está dentro de la secuencia.
+Si todas las condiciones anteriores son verdaderas, entonces la secuencia de vértices es un ciclo en G.
+Aquí te dejo un ejemplo de código en C que ilustra cómo determinar si una secuencia de vértices es un ciclo en un grafo utilizando una matriz de adyacencia:
+
+#include <stdio.h>
+
+#define MAX_VERTICES 5
+
+int main() {
+    // Create the adjacency matrix
+    int graph[MAX_VERTICES][MAX_VERTICES];
+
+    // fill the matrix with edges
+    //....
+
+    // Sequence of vertices
+    int sequence[4] = {0, 1, 2, 0};
+
+    // First and last vertex are not the same
+    if (sequence[0] != sequence[3]) {
+        printf("The sequence is not a cycle\n");
+        return 0;
+    }
+
+    // Check that each pair of vertices in the sequence has an edge between them
+    int is_cycle = 1;
+    for (int i = 0; i < 3; i++) {
+        if (graph[sequence[i]][sequence[i+1]] != 1) {
+            is_cycle = 0;
+            break;
+        }
+    }
+
+    //Check that no edge not in the sequence
+    for(int i = 0; i < MAX_VERTICES; i++) {
+        for (int j = 0; j < MAX_VERTICES; j++) {
+            if (graph[i][j] == 1) {
+                int found = 0;
+                for (int k = 0; k < 4; k++) {
+                    if (i == sequence[k] && j == sequence[k+1]){
+                        found = 1;
+                        break;
+                    }
+                }
+                if(!found){
+                    is_cycle = 0;
+                    break;
+                }
+            }
+        }
+    }
+
+    if (is_cycle) {
+        printf("The sequence is a cycle\n");
+    } else {
+        printf("The sequence is not a cycle\n");
+    }
+
+    return 0;
+}
+
+
+
+
+*/
