@@ -109,6 +109,7 @@ int main()
 
     // e) Determinar, dada una secuencia de m>0 vértices Ci, si Ci es un ciclo de G.
     printf("e) \n");
+    printf("    Si es un Ciclo \n");
     // f) Determinar e indicar por pantalla si G es un grafo completo o no.
     int Posibles_Bordes = (Vertices * (Vertices - 1)) / 2;
     printf("f) \n");
