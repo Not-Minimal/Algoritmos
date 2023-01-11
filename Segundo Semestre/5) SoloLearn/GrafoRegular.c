@@ -66,6 +66,7 @@ int main()
     }
 
     // a) Ingresar y desplegar por pantalla la matriz de adyacencia que lo representa.
+    printf("a) \n");
     for (int i = 0; i < Vertices; i++)
     {
         for (int j = 0; j < Vertices; j++)
@@ -76,44 +77,48 @@ int main()
     }
 
     // b) Desplegar por pantalla una tabla de grados para los vértices de G.
+    printf("b) \n");
     for (int i = 0; i < Vertices; i++)
     {
-        printf("El Vertice %d tiene grado %d\n", i, grados_Grafo[i]);
+        printf("    El Vertice %d tiene grado %d\n", i, grados_Grafo[i]);
     }
 
     /* c) Determinar si una secuencia de m >0 nodos o vértices, corresponde o no a los m nodos adyacentes a un vértice
-    Vi, indicando la respuesta por pantalla 
+    Vi, indicando la respuesta por pantalla
     */
+    printf("c) \n");
     if (bandera)
     {
-        printf("La secuencia corresponde a los vértices adyacentes al vértice %d\n", vertice);
+        printf("    La secuencia corresponde a los vértices adyacentes al vértice %d\n", vertice);
     }
     else
     {
-        printf("La secuencia no corresponde a los vértices adyacentes al vértice %d\n", vertice);
+        printf("    La secuencia no corresponde a los vértices adyacentes al vértice %d\n", vertice);
     }
 
     // d) Indicar si el grafo es k-regular o no.
+    printf("d) \n");
     if (Vertices % grado == 0)
     {
-        printf("El grafo es K-Regular\n");
+        printf("    El grafo es K-Regular\n");
     }
     else
     {
-        printf("El grafo no es K-Regular\n");
+        printf("    El grafo no es K-Regular\n");
     }
 
-    // e) Determinar, dada una secuencia de m>0 vértices Ci, si Ci es un ciclo de G. 
-
+    // e) Determinar, dada una secuencia de m>0 vértices Ci, si Ci es un ciclo de G.
+    printf("e) \n");
     // f) Determinar e indicar por pantalla si G es un grafo completo o no.
     int Posibles_Bordes = (Vertices * (Vertices - 1)) / 2;
+    printf("f) \n");
     if (contador == Posibles_Bordes)
     {
-        printf("El grafo es completo\n");
+        printf("    El grafo es completo\n");
     }
     else
     {
-        printf("El grafo no es completo\n");
+        printf("    El grafo no es completo\n");
     }
 
     return 0;
