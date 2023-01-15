@@ -1,5 +1,5 @@
 <div align="center" id="madewithlua">
-    <img src="https://github.com/Not-Minimal/Algoritmos/blob/1fe960de0baf1cd8425c200c2dca5ac53d44efd6/Algoritmos.png" width="110", height="100">
+    <img src="" width="110", height="100">
 </div>
 
 <h1 align="center">Algoritmos</h1>
