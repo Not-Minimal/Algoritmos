@@ -35,11 +35,10 @@ Ramo de Algoritmos y Programación del Segundo Semestre basado en el lenguaje de
 
 ## 🌟 Preview
 
-![Dashboard Preview Image](https://github.com/AstroNvim/astronvim.github.io/raw/main/static/img/dashboard.png)
-![Coding Preview Image](https://github.com/AstroNvim/astronvim.github.io/raw/main/static/img/overview.png)
-![Debugging Preview Image](https://github.com/AstroNvim/astronvim.github.io/raw/main/static/img/dap.png)
+![Tarea Sopa de Letras](https://github.com/AstroNvim/astronvim.github.io/raw/main/static/img/dashboard.png)
+![Tarea Sistema de Inventario](https://github.com/AstroNvim/astronvim.github.io/raw/main/static/img/overview.png)
 
-## ✨ Features
+<!-- ## ✨ Features
 
 - File explorer with [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - Autocompletion with [Cmp](https://github.com/hrsh7th/nvim-cmp)
@@ -51,4 +50,4 @@ Ramo de Algoritmos y Programación del Segundo Semestre basado en el lenguaje de
 - Formatting and linting with [Null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - Language Server Protocol with [Native LSP](https://github.com/neovim/nvim-lspconfig)
 - Debug Adapter Protocol with [nvim-dap](https://github.com/mfussenegger/nvim-dap)
-- Buffer Line with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+- Buffer Line with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) -->
