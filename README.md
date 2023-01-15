@@ -33,7 +33,7 @@
 Ramo de Algoritmos y Programación del Segundo Semestre basado en el lenguaje de Programacion en C
 </p>
 
-## 🌟 Preview
+## 🌟 Tareas
 
 ![Tarea Sopa de Letras](https://github.com/Not-Minimal/Algoritmos/blob/main/Sopa%20de%20Letras.png)
 ![Tarea Sistema de Inventario](https://github.com/Not-Minimal/Algoritmos/blob/main/Sistema%20Inventario.png)
