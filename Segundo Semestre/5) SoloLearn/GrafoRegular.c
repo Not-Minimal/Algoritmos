@@ -112,7 +112,7 @@ int main()
     printf("    Si es un Ciclo \n");
     // f) Determinar e indicar por pantalla si G es un grafo completo o no.
     int Posibles_Bordes = (Vertices * (Vertices - 1)) / 2;
-    printf("f) \n");
+    printf("f) \n"); 
     if (contador == Posibles_Bordes)
     {
         printf("    El grafo es completo\n");
