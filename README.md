@@ -2,7 +2,7 @@
     <img src="https://github.com/Not-Minimal/Algoritmos/blob/main/Algoritmos.png" width="120", height="161">
 </div>
 
-<h1 align="center">Algoritmos</h1>
+<h1 align="center">Algoritmos y Programación</h1>
 
 <h4 align="center">
   <a href="https://github.com/Not-Minimal/Algoritmos/tree/main/Segundo%20Semestre/1)%20Clases">Clases</a>
