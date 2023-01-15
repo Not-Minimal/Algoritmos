@@ -17,22 +17,16 @@
 </h4>
 
 <p align="center">
-    <a href="https://github.com/AstroNvim/AstroNvim/pulse">
-      <img src="https://img.shields.io/github/last-commit/AstroNvim/AstroNvim?style=for-the-badge&logo=github&color=7dc4e4&logoColor=D9E0EE&labelColor=302D41"/>
+    <a href="https://github.com/Not-Minimal/Algoritmos/pulse/monthly">
+      <img src="https://img.shields.io/github/last-commit/Not-Minimal/Algoritmos?style=for-the-badge&logo=github&color=7dc4e4&logoColor=D9E0EE&labelColor=302D41"/>
     </a>
-    <a href="https://github.com/AstroNvim/AstroNvim/releases/latest">
-      <img src="https://img.shields.io/github/v/release/AstroNvim/AstroNvim?style=for-the-badge&logo=gitbook&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41"/>
+    <a href="https://github.com/Not-Minimal/Algoritmos/releases/latest">
+      <img src="https://img.shields.io/github/v/release/Not-Minimal/Algoritmos?style=for-the-badge&logo=gitbook&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41"/>
 	</a>
-    <a href="https://github.com/AstroNvim/AstroNvim/stargazers">
-      <img src="https://img.shields.io/github/stars/AstroNvim/AstroNvim?style=for-the-badge&logo=apachespark&color=eed49f&logoColor=D9E0EE&labelColor=302D41"/>
+    <a href="https://github.com/Not-Minimal/Algoritmos/stargazers">
+      <img src="https://img.shields.io/github/stars/Not-Minimal/Algoritmos?style=for-the-badge&logo=apachespark&color=eed49f&logoColor=D9E0EE&labelColor=302D41"/>
     </a>
     <br>
-    <a href="https://www.reddit.com/r/AstroNvim/">
-      <img src="https://img.shields.io/reddit/subreddit-subscribers/AstroNvim?style=for-the-badge&logo=reddit&color=ee99a0&logoColor=D9E0EE&labelColor=302D41"/>
-    </a>
-    <a href="https://discord.gg/UcZutyeaFW">
-      <img src="https://img.shields.io/discord/939594913560031363?style=for-the-badge&logo=discord&color=cba6f7&logoColor=D9E0EE&labelColor=302D41"/>
-    </a>
 </p>
 
 <p align="center">
