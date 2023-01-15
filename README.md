@@ -35,8 +35,8 @@ Ramo de Algoritmos y Programación del Segundo Semestre basado en el lenguaje de
 
 ## 🌟 Preview
 
-![Tarea Sopa de Letras](https://github.com/AstroNvim/astronvim.github.io/raw/main/static/img/dashboard.png)
-![Tarea Sistema de Inventario](https://github.com/AstroNvim/astronvim.github.io/raw/main/static/img/overview.png)
+![Tarea Sopa de Letras](https://github.com/Not-Minimal/Algoritmos/blob/main/Sopa%20de%20Letras.png)
+![Tarea Sistema de Inventario](https://github.com/Not-Minimal/Algoritmos/blob/main/Sistema%20Inventario.png)
 
 <!-- ## ✨ Features
 
