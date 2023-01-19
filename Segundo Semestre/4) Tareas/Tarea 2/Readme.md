@@ -2,8 +2,11 @@
 Tarea 2 de asignatura "Algoritmos y programación"
 
 
-
-# TAREA 2
+<p align="center">
+    <a href="https://github.com/Not-Minimal/Algoritmos/pulse/monthly">
+      <img src="https://github.com/Not-Minimal/Algoritmos/blob/main/Segundo%20Semestre/4)%20Tareas/Tarea%202/Portada.pnghttps://github.com/Not-Minimal/Algoritmos/blob/main/Segundo%20Semestre/4)%20Tareas/Tarea%202/Portada.png"/>
+    </a>
+</p>
 
 ## Algoritmos de programación
 
