@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-  <a href="" target="_blank" rel="noreferrer"><img src="https://github.com/Not-Minimal/Algoritmos/blob/main/Segundo%20Semestre/4)%20Tareas/Tarea%202/Portada.png" alt="my banner"></a>
+  <a href="" target="_blank" rel="noreferrer"><img src="https://github.com/Not-Minimal/Algoritmos/blob/main/Segundo%20Semestre/4)%20Tareas/Tarea%201/Portada.png" alt="my banner"></a>
 </p>
 
 ## Problema
