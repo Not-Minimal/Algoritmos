@@ -1,8 +1,11 @@
 # Tarea N°2
 
 <div align="center" id="Sistema de Inventario">
-    <img src="https://github.com/Not-Minimal/Algoritmos/blob/main/Segundo%20Semestre/4)%20Tareas/Tarea%202/Portada.pnghttps://github.com/Not-Minimal/Algoritmos/blob/main/Segundo%20Semestre/4)%20Tareas/Tarea%202/Portada.png" width="1920", height="843">
 </div>
+
+<p align="center">
+  <a href="" target="_blank" rel="noreferrer"><img src="https://github.com/Not-Minimal/Algoritmos/blob/main/Segundo%20Semestre/4)%20Tareas/Tarea%202/Portada.png" alt="my banner"></a>
+</p>
 
 ## Algoritmos de programación
 
