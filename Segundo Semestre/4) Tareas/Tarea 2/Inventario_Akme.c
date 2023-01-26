@@ -4,6 +4,15 @@
 #include <string.h>
 #include <stdlib.h>
 
+//Definir variables clave para el procesador
+#define Longitud_Cadena_Maxima 1000
+#define Cantidad_Lineas 20
+#define Teclado "Teclado.txt"
+#define Mouse "Mouse.txt"
+#define Monitor "Monitor.txt"
+#define Notebook "Notebook.txt"
+#define Escritorio "Escritorio.txt"
+
 // Prototipos de Funciones Principales
 int iniciar_Sesion();       // Funcion para Entrar en el programa con maximo 3 intentos
 void usuario_Login();       // Funcion en la que los datos del usuario estan precargados: Nombres, Apellido Paterno y Materno
