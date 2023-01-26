@@ -30,7 +30,7 @@ void agregar_Notebook();
 void agregar_Escritorio();
 // Funciones Secundarias Encargadas de Actualizar productos
 void actualizar_Teclado();
-void actualizar_Mouse();ß
+void actualizar_Mouse();
 void actualizar_Monitor();
 void actualizar_Notebook();
 void actualizar_Escritorio();
