@@ -4,7 +4,6 @@ int x;
 
 int main(int argc, char const *argv[])
 {
-
     printf("Ingrese el valor: ");
     scanf("%d", &x);
     if ( x < 0)
@@ -39,7 +38,5 @@ int main(int argc, char const *argv[])
         printf("%d", x);
         printf("\n");
     }
-    
-    
     return 0;
 }
