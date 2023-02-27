@@ -4,15 +4,12 @@ int sumatoria(int n, int i);
 
 int sumatoria(int n, int i)
 {
-
     if (n == i)
-    {
         return n;
-    }
     else
     {
         int resultado = (((3 * i) + 1) / (2 * i));
-        return i + sumatoria(n, resultado + 1);
+        return i + sumatoria(resultado + 1, n);
     }
 }
 
